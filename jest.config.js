@@ -20,9 +20,12 @@ const customJestConfig = {
   },
   setupFilesAfterEnv: ['<rootDir>/.jest/setup.ts'],
   verbose: true, // modo verboso ativado
-  testEnvironment: 'node', // falar o tipo de ambiente que vai rodar os testes
+  testEnvironment: 'jsdom', // falar o tipo de ambiente que vai rodar os testes
   testPathIgnorePatterns: ['/node_modules/'], // pastas a serem ignoradas
   collectCoverage: true, // se vai coletar as coberturas de linhas testadas
+  transform: {
+    '.(ts|tsx)': 'ts-jest',
+  },
   collectCoverageFrom: [
     // essa opção fala de onde e de quais arquivos ele vai
     'src/**/*.ts(x)?', // pegar pra fazer a cobertura do código

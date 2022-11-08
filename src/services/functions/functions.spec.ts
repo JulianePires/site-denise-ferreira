@@ -1,4 +1,4 @@
-import { StatusRequisicao } from 'src/data/enums';
+import { StatusRequisicao } from '@data/enums';
 import { trataRespostaRequisicao } from './functions';
 
 describe('Função trataRespostaRequisicao', () => {
