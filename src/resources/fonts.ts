@@ -1,24 +1,26 @@
 import { Lato } from '@next/font/google';
-import localFont from '@next/font/local';
-
-import Xilian from '@assets/fonts/Xilian-Regular.otf';
 
 const latoLight = Lato({
   style: 'normal',
   weight: '300',
+  subsets: ['latin'],
 });
 
 const latoRegular = Lato({
   style: 'normal',
   weight: '400',
+  subsets: ['latin'],
 });
 
-const xilian = localFont({
-  src: Xilian,
-});
+const xillian = {
+  style: {
+    fontFamily: 'Xillian',
+    fontWeight: '400',
+  },
+};
 
 const fonts = {
-  xilian,
+  xillian,
   latoLight,
   latoRegular,
 };

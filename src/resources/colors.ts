@@ -1,4 +1,4 @@
-const cores = {
+const colors = {
   azulRoyal: '#2B3193',
   azulPetroleo: '#24828A',
   laranja: '#F36B2B',
@@ -9,4 +9,4 @@ const cores = {
   branco: '#ffffff',
 };
 
-export default cores;
+export default colors;

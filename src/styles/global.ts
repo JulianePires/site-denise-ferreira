@@ -1,13 +1,23 @@
 import { createGlobalStyle } from 'styled-components';
 
+import fonts from '@resources/fonts';
+import colors from '@resources/colors';
+
 const GlobalStyle = createGlobalStyle`
+  @font-face {
+    font-family: 'Xillian';
+    src: url('/fonts/Xillian-Regular.otf') format('opentype');
+    font-style: normal;
+    font-weight: 500;  
+  }
+
   html,
   body {
     padding: 0;
     margin: 0;
-    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-      Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+    font-family: ${fonts.latoRegular.style.fontFamily};
   }
+
 
   a {
     color: inherit;
@@ -23,8 +33,8 @@ const GlobalStyle = createGlobalStyle`
       color-scheme: dark;
     }
     body {
-      color: white;
-      background: black;
+      color: ${colors.branco};
+      background: ${colors.terra};
     }
   }
 `;

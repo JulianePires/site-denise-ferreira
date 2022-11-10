@@ -1,3 +1,10 @@
+import { Head } from '@components/Head';
+
 export default function Dashboard() {
-  return <h1>Dashboard</h1>;
+  return (
+    <div>
+      <Head title="Dashboard" />
+      <h1>Dashboard</h1>
+    </div>
+  );
 }
