@@ -4,3 +4,9 @@ export enum StatusRequisicao {
   SUCESSO = 'sucesso',
   ERRO = 'erro',
 }
+
+export enum OpcoesParametroDashboard {
+  POSTAGENS = 'postagens',
+  CRIARPOSTAGEM = 'criarPostagem',
+  USUARIOS = 'usuarios',
+}

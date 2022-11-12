@@ -24,7 +24,8 @@
       "@pages/*": ["src/pages/*"],
       "@services/*": ["src/services/*"],
       "@resources/*": ["src/resources/*"],
-      "@routes/*": ["src/routes/*"]
+      "@routes/*": ["src/routes/*"],
+      "@layouts/*": ["src/layouts/*"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],

@@ -45,3 +45,7 @@ export type Imagem = {
   src: string;
   alt: string;
 };
+
+export type Caminho = {
+  params: ChaveValor<string>;
+};
