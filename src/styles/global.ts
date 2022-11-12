@@ -1,9 +1,9 @@
 import { createGlobalStyle } from 'styled-components';
 
-import fonts from '@resources/fonts';
-import colors from '@resources/colors';
+import fontes from '@resources/fontes';
+import cores from '@resources/cores';
 
-const GlobalStyle = createGlobalStyle`
+const EstiloGlobal = createGlobalStyle`
   @font-face {
     font-family: 'Xillian';
     src: url('/fonts/Xillian-Regular.otf') format('opentype');
@@ -15,7 +15,7 @@ const GlobalStyle = createGlobalStyle`
   body {
     padding: 0;
     margin: 0;
-    font-family: ${fonts.latoRegular.style.fontFamily};
+    font-family: ${fontes.latoRegular.style.fontFamily};
   }
 
 
@@ -33,10 +33,10 @@ const GlobalStyle = createGlobalStyle`
       color-scheme: dark;
     }
     body {
-      color: ${colors.branco};
-      background: ${colors.terra};
+      color: ${cores.branco};
+      background: ${cores.terra};
     }
   }
 `;
 
-export default GlobalStyle;
+export default EstiloGlobal;

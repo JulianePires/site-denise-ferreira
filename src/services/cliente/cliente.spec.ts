@@ -1,5 +1,5 @@
 import { gql } from '@apollo/client';
-import { cliente } from './client';
+import { cliente } from './cliente';
 
 describe('Apollo Client', () => {
   it('deve retornar valor informado pela query quando esta for resolvida', async () => {

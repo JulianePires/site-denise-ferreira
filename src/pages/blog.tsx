@@ -1,5 +1,5 @@
-import { Post } from '@data/types';
-import { getPosts } from '@services/requests/post';
+import { Post } from '@data/tipos';
+import { buscaPosts } from '@services/requisicoes/post';
 import { StatusRequisicao } from 'src/data/enums';
 
 interface BlogProps {
@@ -13,7 +13,7 @@ export default function Blog(props: BlogProps) {
 }
 
 export async function getStaticProps() {
-  const { dados, status } = await getPosts();
+  const { dados, status } = await buscaPosts();
 
   let posts = [];
 

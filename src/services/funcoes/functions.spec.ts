@@ -1,5 +1,5 @@
 import { StatusRequisicao } from '@data/enums';
-import { trataRespostaRequisicao } from './functions';
+import { trataRespostaRequisicao } from './funcoes';
 
 describe('Função trataRespostaRequisicao', () => {
   it("DEVE retornar status 'carregando' quando resposta tiver status loading verdadeiro", () => {

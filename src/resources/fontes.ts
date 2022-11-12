@@ -1,4 +1,6 @@
+import { ChaveValor } from '@data/tipos';
 import { Lato } from '@next/font/google';
+import { FontModule } from 'next/font';
 
 const latoLight = Lato({
   style: 'normal',
@@ -12,17 +14,18 @@ const latoRegular = Lato({
   subsets: ['latin'],
 });
 
-const xillian = {
+const xillian: FontModule = {
+  className: 'xillian',
   style: {
     fontFamily: 'Xillian',
-    fontWeight: '400',
+    fontWeight: 400,
   },
 };
 
-const fonts = {
+const fontes: ChaveValor<FontModule> = {
   xillian,
   latoLight,
   latoRegular,
 };
 
-export default fonts;
+export default fontes;

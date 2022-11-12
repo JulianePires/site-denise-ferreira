@@ -1,9 +1,9 @@
 import { gql } from '@apollo/client';
-import { cliente } from '@infraestrutura/cliente';
-import { trataRespostaRequisicao } from '@infraestrutura/funcoes';
+import { cliente } from '@services/cliente';
+import { trataRespostaRequisicao } from '@services/funcoes';
 
-export const GET_POSTS_QUERY = gql`
-  query GetPosts {
+export const BUSCA_POSTS_QUERY = gql`
+  query BuscaPosts {
     posts(orderBy: publishedAt_ASC) {
       id
       title
@@ -25,9 +25,9 @@ export const GET_POSTS_QUERY = gql`
   }
 `;
 
-export async function getPosts() {
+export async function buscaPosts() {
   const resposta = await cliente.query({
-    query: GET_POSTS_QUERY,
+    query: BUSCA_POSTS_QUERY,
   });
 
   const respostaTratada = trataRespostaRequisicao(resposta);

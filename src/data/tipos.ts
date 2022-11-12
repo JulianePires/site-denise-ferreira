@@ -1,12 +1,16 @@
 import { StatusRequisicao } from './enums';
 
+export type ChaveValor<T> = {
+  [key: string]: T;
+};
+
 export type RespostaRequisicao = {
   status: StatusRequisicao;
   erro?: string;
   dados: any;
 };
 
-export type User = {
+export type Usuario = {
   id: string;
   name: string;
   email: string;
@@ -30,4 +34,14 @@ export type Post = {
     url: string;
   };
   publishedAt: string;
+};
+
+export type OpcaoMenu = {
+  nome: string;
+  caminho: string;
+};
+
+export type Imagem = {
+  src: string;
+  alt: string;
 };

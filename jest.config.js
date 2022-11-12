@@ -17,6 +17,7 @@ const customJestConfig = {
     '^@services/(.*)$': '<rootDir>/src/services/$1',
     '^@resources/(.*)$': '<rootDir>/src/resources/$1',
     '^@pages/(.*)$': '<rootDir>/src/pages/$1',
+    '^@routes/(.*)$': '<rootDir>/src/routes/$1',
   },
   setupFilesAfterEnv: ['<rootDir>/.jest/setup.ts'],
   verbose: true, // modo verboso ativado

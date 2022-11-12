@@ -1,4 +1,6 @@
-const colors = {
+import { ChaveValor } from '@data/tipos';
+
+const cores: ChaveValor<string> = {
   azulRoyal: '#2B3193',
   azulPetroleo: '#24828A',
   laranja: '#F36B2B',
@@ -9,4 +11,4 @@ const colors = {
   branco: '#ffffff',
 };
 
-export default colors;
+export default cores;

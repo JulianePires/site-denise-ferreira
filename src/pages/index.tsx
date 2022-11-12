@@ -1,11 +1,11 @@
 import { Head } from '@components/Head/Head';
-import { Header } from '@components/Header';
+import { Cabecalho } from '@components/Cabecalho';
 
 export default function Home() {
   return (
     <div>
-      <Head title="Home" />
-      <Header />
+      <Head titulo="Home" />
+      <Cabecalho />
     </div>
   );
 }
