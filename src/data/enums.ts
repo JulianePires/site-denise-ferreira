@@ -5,6 +5,12 @@ export enum StatusRequisicao {
   ERRO = 'erro',
 }
 
+export enum OpcoesPaginasDashboard {
+  POSTAGENS = 'Postagens',
+  CRIARPOSTAGEM = 'Criar Postagem',
+  USUARIOS = 'Usuários',
+}
+
 export enum OpcoesParametroDashboard {
   POSTAGENS = 'postagens',
   CRIARPOSTAGEM = 'criarPostagem',

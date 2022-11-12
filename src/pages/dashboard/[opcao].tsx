@@ -8,7 +8,9 @@ import {
   RespostaRequisicao,
   Usuario,
 } from '@data/tipos';
-import { PostagensDashboard } from '@layouts/PostagensDashboard/PostagensDashboard';
+import { CriarPostagemDashboard } from '@layouts/CriarPostagemDashboard';
+import { PostagensDashboard } from '@layouts/PostagensDashboard';
+import { UsuariosDashboard } from '@layouts/UsuariosDashboard';
 import opcoesMenuDashboard from '@routes/dashboard';
 import { buscaPosts } from '@services/requisicoes/post';
 import { buscaUsuarios } from '@services/requisicoes/usuario';
@@ -35,7 +37,11 @@ export default function Dashboard(dados: Props) {
       const { posts } = dados;
       return <PostagensDashboard postagens={posts!} />;
     }
-    return [];
+    if (opcaoAtual === OpcoesParametroDashboard.USUARIOS) {
+      const { usuarios } = dados;
+      return <UsuariosDashboard usuarios={usuarios!} />;
+    }
+    return <CriarPostagemDashboard />;
   }
 
   return (

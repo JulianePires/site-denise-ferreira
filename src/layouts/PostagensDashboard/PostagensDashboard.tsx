@@ -1,4 +1,6 @@
+import { LayoutDashboard } from '@components/LayoutDashboard';
 import { Post } from '@data/tipos';
+import { ContainerPostagens } from './PostagensDashboard.styled';
 
 interface Props {
   postagens: Post[];
@@ -6,5 +8,9 @@ interface Props {
 
 export function PostagensDashboard({ postagens }: Props) {
   console.log(postagens);
-  return <h1>Postagens</h1>;
+  return (
+    <LayoutDashboard titulo="Postagens">
+      <ContainerPostagens>Alguma coisa</ContainerPostagens>
+    </LayoutDashboard>
+  );
 }
