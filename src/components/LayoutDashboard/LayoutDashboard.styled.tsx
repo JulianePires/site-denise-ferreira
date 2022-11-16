@@ -7,7 +7,7 @@ export const ContainerLayout = styled.section`
   flex-direction: column;
 
   width: 100%;
-  padding: ${margens.medium}px;
+  padding: ${margens.medium}px ${margens.large}px;
 `;
 
 export const TituloLayout = styled.h2`
@@ -15,3 +15,7 @@ export const TituloLayout = styled.h2`
   width: 100%;
   height: max-content;
 `;
+
+export const BannerLayout = styled.div`
+  
+`

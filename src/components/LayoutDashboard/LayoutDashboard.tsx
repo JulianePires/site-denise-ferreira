@@ -1,5 +1,9 @@
 import { ReactNode } from 'react';
-import { ContainerLayout, TituloLayout } from './LayoutDashboard.styled';
+import {
+  BannerLayout,
+  ContainerLayout,
+  TituloLayout,
+} from './LayoutDashboard.styled';
 
 interface Props {
   titulo: string;
@@ -9,6 +13,7 @@ interface Props {
 export function LayoutDashboard({ titulo, children }: Props) {
   return (
     <ContainerLayout>
+      <BannerLayout />
       <TituloLayout>{titulo}</TituloLayout>
       {children}
     </ContainerLayout>

@@ -15,7 +15,7 @@ const EstiloGlobal = createGlobalStyle`
   body {
     padding: 0;
     margin: 0;
-    font-family: ${fontes.latoRegular.style.fontFamily};
+    font-family: ${fontes.barlowCondensedMedium.style.fontFamily};
   }
 
 
