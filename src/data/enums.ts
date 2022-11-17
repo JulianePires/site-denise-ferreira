@@ -16,3 +16,9 @@ export enum OpcoesParametroDashboard {
   CRIARPOSTAGEM = 'criarPostagem',
   USUARIOS = 'usuarios',
 }
+
+export enum TamanhosComponente {
+  P = 50,
+  M = 100,
+  G = 150,
+}

@@ -13,7 +13,7 @@ import SankofaLongaAmarela from '@assets/imagens/SankofaLongaAmarela.png';
 import SankofaLongaAzul from '@assets/imagens/SankofaLongaAzul.png';
 import SankofaLongaBranco from '@assets/imagens/SankofaLongaBranco.png';
 import SankofaLongaLaranja from '@assets/imagens/SankofaLongaLaranja.png';
-import SankofaLongaPetroleo from '@assets/imagens/SankofaLongaPetroleo.png';
+import SankofaVerdePetroleo from '@assets/imagens/SankofaVerdePetroleo.png';
 import SankofaLongaTerra from '@assets/imagens/SankofaLongaTerra.png';
 import SankofaVinho from '@assets/imagens/SankofaVinho.png';
 import TexturaAmarelo from '@assets/imagens/TexturaAmarelo.png';
@@ -22,6 +22,7 @@ import TexturaAzulPetroleo from '@assets/imagens/TexturaAzulPetroleo.png';
 import TexturaLaranja from '@assets/imagens/TexturaLaranja.png';
 import TexturaTerra from '@assets/imagens/TexturaTerra.png';
 import TexturaVinho from '@assets/imagens/TexturaVinho.png';
+import Placeholder from '@assets/imagens/Placeholder.jpg';
 
 import { ChaveValor, Imagem } from '@data/tipos';
 
@@ -94,9 +95,9 @@ const imagens: ChaveValor<Imagem> = {
     src: SankofaLongaTerra.src,
     alt: 'Sankofa Longa Terra',
   },
-  sankofaLongaPetroleo: {
-    src: SankofaLongaPetroleo.src,
-    alt: 'Sankofa Longa Petroleo',
+  sankofaVerdePetroleo: {
+    src: SankofaVerdePetroleo.src,
+    alt: 'Sankofa Verde Petroleo',
   },
   texturaAmarelo: {
     src: TexturaAmarelo.src,
@@ -121,6 +122,10 @@ const imagens: ChaveValor<Imagem> = {
   texturaTerra: {
     src: TexturaTerra.src,
     alt: 'Textura Terra',
+  },
+  placeholder: {
+    src: Placeholder.src,
+    alt: 'Placeholder',
   },
 };
 

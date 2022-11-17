@@ -48,7 +48,7 @@ export default function Dashboard(dados: Props) {
     <Container>
       <Head titulo="Dashboard" />
       <MenuLateral
-        titulo="Administrar Blog"
+        titulo="Administradora"
         opcoes={opcoesMenuDashboard}
         opcaoAtual={opcaoAtual}
         aoAlterarOpcao={aoAlterarOpcao}

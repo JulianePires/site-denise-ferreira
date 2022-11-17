@@ -1,7 +1,8 @@
 import { ReactNode } from 'react';
 import {
   BannerLayout,
-  ContainerLayout,
+  ContainerExternoLayout,
+  ContainerInternoLayout,
   TituloLayout,
 } from './LayoutDashboard.styled';
 
@@ -12,10 +13,12 @@ interface Props {
 
 export function LayoutDashboard({ titulo, children }: Props) {
   return (
-    <ContainerLayout>
+    <ContainerExternoLayout>
       <BannerLayout />
-      <TituloLayout>{titulo}</TituloLayout>
-      {children}
-    </ContainerLayout>
+      <ContainerInternoLayout>
+        <TituloLayout>{titulo}</TituloLayout>
+        {children}
+      </ContainerInternoLayout>
+    </ContainerExternoLayout>
   );
 }
