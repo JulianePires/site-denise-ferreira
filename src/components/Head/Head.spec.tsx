@@ -5,7 +5,7 @@ describe('Head', () => {
   it('Deve conter título informado em propriedade', () => {
     const mockTitle = 'Tìtulo teste';
 
-    render(<Head title={mockTitle} />);
+    render(<Head titulo={mockTitle} />);
 
     expect(mockTitle).toStrictEqual(mockTitle);
   });

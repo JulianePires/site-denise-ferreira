@@ -5,7 +5,12 @@ import { ContainerLogo } from './Logo.styled';
 export function Logo() {
   return (
     <ContainerLogo>
-      <Image src={imagens.logoBranca.src} alt={imagens.logoBranca.alt} width={120} />
+      <Image
+        src={imagens.sankofaLongaBranco.src}
+        alt={imagens.sankofaLongaBranco.alt}
+        width={94}
+        height={70}
+      />
     </ContainerLogo>
   );
 }

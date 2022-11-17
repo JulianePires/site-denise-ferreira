@@ -22,3 +22,10 @@ export enum TamanhosComponente {
   M = 100,
   G = 150,
 }
+
+export enum OpcoesMenu {
+  HOME = 'Home',
+  ATUACAO = 'Atuação',
+  BLOG = 'Blog',
+  CONTATO = 'Contato',
+}

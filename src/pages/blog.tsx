@@ -1,4 +1,5 @@
 import { Post } from '@data/tipos';
+import { LayoutPaginasSite } from '@layouts/LayoutPaginasSite/LayoutPaginasSite';
 import { buscaPosts } from '@services/requisicoes/post';
 import { StatusRequisicao } from 'src/data/enums';
 
@@ -9,7 +10,11 @@ interface BlogProps {
 export default function Blog(props: BlogProps) {
   console.log(props);
 
-  return <h1>Blog</h1>;
+  return (
+    <LayoutPaginasSite titulo="Blog">
+      <h1>Blog</h1>
+    </LayoutPaginasSite>
+  );
 }
 
 export async function getStaticProps() {
