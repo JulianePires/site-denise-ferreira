@@ -1,4 +1,4 @@
-import { LayoutPaginasSite } from '@layouts/LayoutPaginasSite/LayoutPaginasSite';
+import { LayoutPaginasSite } from '@layouts/LayoutPaginasSite';
 
 export default function Contato() {
   return (

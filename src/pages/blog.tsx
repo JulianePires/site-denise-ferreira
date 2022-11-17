@@ -1,5 +1,5 @@
 import { Post } from '@data/tipos';
-import { LayoutPaginasSite } from '@layouts/LayoutPaginasSite/LayoutPaginasSite';
+import { LayoutPaginasSite } from '@layouts/LayoutPaginasSite';
 import { buscaPosts } from '@services/requisicoes/post';
 import { StatusRequisicao } from 'src/data/enums';
 

@@ -1,6 +1,4 @@
-import { Head } from '@components/Head/Head';
-import { Cabecalho } from '@components/Cabecalho';
-import { LayoutPaginasSite } from '@layouts/LayoutPaginasSite/LayoutPaginasSite';
+import { LayoutPaginasSite } from '@layouts/LayoutPaginasSite';
 
 export default function Home() {
   return (
