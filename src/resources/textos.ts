@@ -1,24 +1,24 @@
 import fontes from './fontes';
 
 const detalhe = {
-  fontFamily: fontes.barlowCondensedLight.style.fontFamily,
+  fontFamily: fontes.barlowLight.style.fontFamily,
   fontSize: '14px',
   lineHeight: '20px',
-  fontWeight: fontes.barlowCondensedLight.style.fontWeight,
+  fontWeight: fontes.barlowLight.style.fontWeight,
 };
 
 const paragrafo = {
-  fontFamily: fontes.barlowCondensedMedium.style.fontFamily,
+  fontFamily: fontes.barlowMedium.style.fontFamily,
   fontSize: '18px',
   lineHeight: '25px',
-  fontWeight: fontes.barlowCondensedMedium.style.fontWeight,
+  fontWeight: fontes.barlowMedium.style.fontWeight,
 };
 
 const subtitulo = {
-  fontFamily: fontes.barlowCondensedMedium.style.fontFamily,
+  fontFamily: fontes.barlowMedium.style.fontFamily,
   fontSize: '24px',
   lineHeight: '30px',
-  fontWeight: fontes.barlowCondensedMedium.style.fontWeight,
+  fontWeight: fontes.barlowMedium.style.fontWeight,
 };
 
 const titulo1 = {

@@ -1,7 +1,7 @@
 import cores from '@resources/cores';
 import dispositivos from '@resources/dispositivos';
 import margens from '@resources/margens';
-import { paragrafo, subtitulo } from '@resources/textos';
+import { detalhe, paragrafo, subtitulo } from '@resources/textos';
 import styled from 'styled-components';
 
 export const ContainerCabecalho = styled.header`
@@ -15,7 +15,7 @@ export const ContainerCabecalho = styled.header`
   }
 
   height: 140px;
-  padding: ${margens.xsmall}px ${margens.xxlarge}px;
+  padding: ${margens.xsmall}px ${margens.xxxlarge}px;
 
   background: ${cores.vinho};
 
@@ -44,7 +44,8 @@ export const OpcaoMenu = styled.li<OpcaoMenuProps>`
   ${paragrafo}
 
   @media ${dispositivos.tablet} {
-    ${subtitulo}
+    font-family: ${detalhe.fontFamily};
+    font-size: ${subtitulo.fontSize};
   }
 
   color: ${(props) => (props.atual === 'true' ? cores.laranja : cores.branco)};

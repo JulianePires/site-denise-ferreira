@@ -1,4 +1,4 @@
-import { ChaveValor } from '@data/tipos';
+import { ChaveValor } from "@data/tipos";
 
 const margens: ChaveValor<number> = {
   xxsmall: 4,
@@ -8,6 +8,7 @@ const margens: ChaveValor<number> = {
   large: 32,
   xlarge: 48,
   xxlarge: 64,
+  xxxlarge: 80,
 };
 
 export default margens;

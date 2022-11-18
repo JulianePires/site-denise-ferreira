@@ -1,14 +1,20 @@
 import { ChaveValor } from '@data/tipos';
-import { Barlow_Condensed } from '@next/font/google';
+import { Barlow } from '@next/font/google';
 import { FontModule } from 'next/font';
 
-const barlowCondensedLight = Barlow_Condensed({
+const barlowLight = Barlow({
+  style: 'normal',
+  weight: '300',
+  subsets: ['latin'],
+});
+
+const barlowRegular = Barlow({
   style: 'normal',
   weight: '400',
   subsets: ['latin'],
 });
 
-const barlowCondensedMedium = Barlow_Condensed({
+const barlowMedium = Barlow({
   style: 'normal',
   weight: '500',
   subsets: ['latin'],
@@ -24,8 +30,9 @@ const xillian: FontModule = {
 
 const fontes: ChaveValor<FontModule> = {
   xillian,
-  barlowCondensedLight,
-  barlowCondensedMedium,
+  barlowLight,
+  barlowRegular,
+  barlowMedium,
 };
 
 export default fontes;

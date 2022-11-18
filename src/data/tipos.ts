@@ -1,4 +1,4 @@
-import { StatusRequisicao } from './enums';
+import { StatusRequisicao } from "./enums";
 
 export type ChaveValor<T> = {
   [key: string]: T;
@@ -48,4 +48,26 @@ export type Imagem = {
 
 export type Caminho = {
   params: ChaveValor<string>;
+};
+
+export type TemasCores = "vinho" | "terra" | "amarelo" | "azulPetroleo";
+
+export type Tema = {
+  corPrimaria: string;
+  corSecundaria: string;
+  corGhost: string;
+};
+
+export type Asset = {
+  id: string;
+  updatedBy: {
+    name: string;
+    picture: string;
+  };
+  createdAt: string;
+  updatedAt: string;
+  fileName: string;
+  width: number;
+  height: number;
+  url: string;
 };
