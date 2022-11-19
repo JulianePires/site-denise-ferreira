@@ -1,8 +1,8 @@
-import cores from "@resources/cores";
-import dispositivos from "@resources/dispositivos";
-import margens from "@resources/margens";
-import { detalhe, paragrafo, subtitulo } from "@resources/textos";
-import styled from "styled-components";
+import cores from '@resources/cores'
+import dispositivos from '@resources/dispositivos'
+import margens from '@resources/margens'
+import { detalhe, paragrafo, subtitulo } from '@resources/textos'
+import styled from 'styled-components'
 
 export const ContainerCabecalho = styled.header`
   display: flex;
@@ -21,7 +21,7 @@ export const ContainerCabecalho = styled.header`
   background: ${cores.vinho};
 
   transition: 0.3s ease-in-out all;
-`;
+`
 
 export const ContainerOpcoesMenu = styled.ul`
   display: flex;
@@ -35,10 +35,10 @@ export const ContainerOpcoesMenu = styled.ul`
   padding: 0;
 
   list-style: none;
-`;
+`
 
 interface OpcaoMenuProps {
-  atual: string;
+  atual: string
 }
 
 export const OpcaoMenu = styled.li<OpcaoMenuProps>`
@@ -49,7 +49,7 @@ export const OpcaoMenu = styled.li<OpcaoMenuProps>`
     font-size: ${subtitulo.fontSize};
   }
 
-  color: ${(props) => (props.atual === "true" ? cores.laranja : cores.branco)};
+  color: ${(props) => (props.atual === 'true' ? cores.laranja : cores.branco)};
 
   cursor: pointer;
   transition: 0.3s ease-in-out all;
@@ -57,4 +57,4 @@ export const OpcaoMenu = styled.li<OpcaoMenuProps>`
   &:hover {
     color: ${cores.amarelo};
   }
-`;
+`

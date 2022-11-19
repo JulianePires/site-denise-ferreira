@@ -1,20 +1,20 @@
 export enum StatusRequisicao {
-  PARADO = "parado",
-  CARREGANDO = "carregando",
-  SUCESSO = "sucesso",
-  ERRO = "erro",
+  PARADO = 'parado',
+  CARREGANDO = 'carregando',
+  SUCESSO = 'sucesso',
+  ERRO = 'erro',
 }
 
 export enum OpcoesPaginasDashboard {
-  POSTAGENS = "Postagens",
-  CRIARPOSTAGEM = "Criar Postagem",
-  USUARIOS = "Usuários",
+  POSTAGENS = 'Postagens',
+  CRIARPOSTAGEM = 'Criar Postagem',
+  USUARIOS = 'Usuários',
 }
 
 export enum OpcoesParametroDashboard {
-  POSTAGENS = "postagens",
-  CRIARPOSTAGEM = "criarPostagem",
-  USUARIOS = "usuarios",
+  POSTAGENS = 'postagens',
+  CRIARPOSTAGEM = 'criarPostagem',
+  USUARIOS = 'usuarios',
 }
 
 export enum TamanhosComponente {
@@ -24,20 +24,20 @@ export enum TamanhosComponente {
 }
 
 export enum OpcoesMenu {
-  HOME = "Home",
-  ATUACAO = "Atuação",
-  BLOG = "Blog",
-  CONTATO = "Contato",
+  HOME = 'Home',
+  ATUACAO = 'Atuação',
+  BLOG = 'Blog',
+  CONTATO = 'Contato',
 }
 
 export enum EstilosBotao {
-  UNSTYLED = "unstyled",
-  GHOST = "ghost",
-  OUTLINE = "outline",
-  SOLID = "solid",
+  UNSTYLED = 'unstyled',
+  GHOST = 'ghost',
+  OUTLINE = 'outline',
+  SOLID = 'solid',
 }
 
 export enum Direcoes {
-  H = "horizontal",
-  V = "vertical",
+  H = 'horizontal',
+  V = 'vertical',
 }

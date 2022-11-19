@@ -1,5 +1,5 @@
-import { OpcoesMenu } from '@data/enums';
-import { OpcaoMenu } from '@data/tipos';
+import {OpcoesMenu} from '@data/enums'
+import {OpcaoMenu} from '@data/tipos'
 
 const opcoesMenuHome: OpcaoMenu[] = [
   {
@@ -18,6 +18,6 @@ const opcoesMenuHome: OpcaoMenu[] = [
     nome: OpcoesMenu.CONTATO,
     caminho: '/contato',
   },
-];
+]
 
-export default opcoesMenuHome;
+export default opcoesMenuHome

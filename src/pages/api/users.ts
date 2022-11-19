@@ -1,10 +1,10 @@
-import { NextApiRequest, NextApiResponse } from 'next';
+import {NextApiRequest, NextApiResponse} from 'next'
 
 export default function handler(
   request: NextApiRequest,
-  response: NextApiResponse
+  response: NextApiResponse,
 ) {
-  const users = [];
+  //const users = []
 
-  return response;
+  return response
 }

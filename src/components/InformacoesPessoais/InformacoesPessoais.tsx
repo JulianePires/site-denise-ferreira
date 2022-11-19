@@ -1,16 +1,13 @@
-import { Avatar } from '@components/Avatar';
-import { TamanhosComponente } from '@data/enums';
-import {
-  ContainerInformacoesPessoais,
-  Nome,
-} from './InformacoesPessoais.styled';
+import {Avatar} from '@components/Avatar'
+import {TamanhosComponente} from '@data/enums'
+import {ContainerInformacoesPessoais, Nome} from './InformacoesPessoais.styled'
 
 interface Props {
-  nome: string;
-  imagem: string;
+  nome: string
+  imagem: string
 }
 
-export function InformacoesPessoais({ nome, imagem }: Props) {
+export function InformacoesPessoais({nome, imagem}: Props) {
   return (
     <ContainerInformacoesPessoais>
       <Avatar
@@ -20,5 +17,5 @@ export function InformacoesPessoais({ nome, imagem }: Props) {
       />
       <Nome>Olá, {nome}!</Nome>
     </ContainerInformacoesPessoais>
-  );
+  )
 }

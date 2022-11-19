@@ -1,30 +1,30 @@
-import { Post } from '@data/tipos';
-import { LayoutPaginasSite } from '@layouts/LayoutPaginasSite';
-import { buscaPosts } from '@services/requisicoes/post';
-import { StatusRequisicao } from 'src/data/enums';
+import {Post} from '@data/tipos'
+import {LayoutPaginasSite} from '@layouts/LayoutPaginasSite'
+import {buscaPosts} from '@services/requisicoes/post'
+import {StatusRequisicao} from 'src/data/enums'
 
 interface BlogProps {
-  posts: Post[];
+  posts: Post[]
 }
 
 export default function Blog(props: BlogProps) {
-  console.log(props);
+  console.log(props)
 
   return (
     <LayoutPaginasSite titulo="Blog">
       <h1>Blog</h1>
     </LayoutPaginasSite>
-  );
+  )
 }
 
 export async function getStaticProps() {
-  const { dados, status } = await buscaPosts();
+  const {dados, status} = await buscaPosts()
 
-  let posts = [];
+  let posts = []
 
-  if (status === StatusRequisicao.SUCESSO) posts = dados.posts;
+  if (status === StatusRequisicao.SUCESSO) posts = dados.posts
 
   return {
-    props: { posts },
-  };
+    props: {posts},
+  }
 }

@@ -1,11 +1,11 @@
-import { BotaoIcone } from "@components/BotaoIcone";
-import { Logo } from "@components/Logo";
-import { ContainerRodape, TextoRodape } from "./Rodape.styled";
-import { FaInstagram, FaLinkedinIn } from "react-icons/fa";
-import { GrMail } from "react-icons/gr";
-import { Stack } from "@components/Stack";
-import { Direcoes } from "@data/enums";
-import conteudoTexto from "@resources/conteudoTexto";
+import {BotaoIcone} from '@components/BotaoIcone'
+import {Logo} from '@components/Logo'
+import {ContainerRodape, TextoRodape} from './Rodape.styled'
+import {FaInstagram, FaLinkedinIn} from 'react-icons/fa'
+import {GrMail} from 'react-icons/gr'
+import {Stack} from '@components/Stack'
+import {Direcoes} from '@data/enums'
+import conteudoTexto from '@resources/conteudoTexto'
 
 export function Rodape() {
   return (
@@ -26,5 +26,5 @@ export function Rodape() {
         />
       </Stack>
     </ContainerRodape>
-  );
+  )
 }

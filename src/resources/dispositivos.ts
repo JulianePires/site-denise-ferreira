@@ -1,5 +1,5 @@
-import { ChaveValor } from '@data/tipos';
-import tamanhosTela from './tamanhosTela';
+import {ChaveValor} from '@data/tipos'
+import tamanhosTela from './tamanhosTela'
 
 const dispositivos: ChaveValor<string> = {
   mobileS: `(min-width: ${tamanhosTela.mobileS})`,
@@ -10,6 +10,6 @@ const dispositivos: ChaveValor<string> = {
   laptopL: `(min-width: ${tamanhosTela.laptopL})`,
   desktop: `(min-width: ${tamanhosTela.desktop})`,
   desktopL: `(min-width: ${tamanhosTela.desktop})`,
-};
+}
 
-export default dispositivos;
+export default dispositivos

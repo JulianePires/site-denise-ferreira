@@ -1,8 +1,8 @@
-import dispositivos from "@resources/dispositivos";
-import styled from "styled-components";
+import dispositivos from '@resources/dispositivos'
+import styled from 'styled-components'
 
 interface ContainerExternoConteudoProps {
-  corBackground: string;
+  corBackground: string
 }
 
 export const ContainerExternoConteudo = styled.section<ContainerExternoConteudoProps>`
@@ -16,4 +16,4 @@ export const ContainerExternoConteudo = styled.section<ContainerExternoConteudoP
   @media ${dispositivos.tablet} {
     flex-wrap: nowrap;
   }
-`;
+`

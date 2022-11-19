@@ -1,10 +1,10 @@
-import { gql } from "@apollo/client";
-import { cliente } from "@services/cliente";
-import { trataRespostaRequisicao } from "@services/funcoes";
+import {gql} from '@apollo/client'
+import {cliente} from '@services/cliente'
+import {trataRespostaRequisicao} from '@services/funcoes'
 
 const BUSCA_ASSET_QUERY = gql`
   query BuscaAsset($id: ID!) {
-    asset(where: { id: $id }) {
+    asset(where: {id: $id}) {
       id
       createdBy {
         entryId: id
@@ -27,15 +27,15 @@ const BUSCA_ASSET_QUERY = gql`
       url
     }
   }
-`;
+`
 
 export async function buscaAsset(id: string) {
   const resposta = await cliente.query({
     query: BUSCA_ASSET_QUERY,
-    variables: { id },
-  });
+    variables: {id},
+  })
 
-  const respostaTratada = trataRespostaRequisicao(resposta);
+  const respostaTratada = trataRespostaRequisicao(resposta)
 
-  return respostaTratada;
+  return respostaTratada
 }

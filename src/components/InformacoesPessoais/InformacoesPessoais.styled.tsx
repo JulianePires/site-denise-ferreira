@@ -1,12 +1,12 @@
-import cores from '@resources/cores';
-import styled from 'styled-components';
+import cores from '@resources/cores'
+import styled from 'styled-components'
 
 export const ContainerInformacoesPessoais = styled.div`
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-`;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`
 
 export const Nome = styled.p`
-    color: ${cores.terra};
-`;
+  color: ${cores.terra};
+`

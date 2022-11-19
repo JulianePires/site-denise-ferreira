@@ -1,1 +1,1 @@
-export * from './PostagensDashboard';
+export * from './PostagensDashboard'

@@ -1,1 +1,1 @@
-export * from './UsuariosDashboard';
+export * from './UsuariosDashboard'

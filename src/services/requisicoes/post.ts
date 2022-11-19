@@ -1,6 +1,6 @@
-import { gql } from '@apollo/client';
-import { cliente } from '@services/cliente';
-import { trataRespostaRequisicao } from '@services/funcoes';
+import {gql} from '@apollo/client'
+import {cliente} from '@services/cliente'
+import {trataRespostaRequisicao} from '@services/funcoes'
 
 export const BUSCA_POSTS_QUERY = gql`
   query BuscaPosts {
@@ -23,14 +23,14 @@ export const BUSCA_POSTS_QUERY = gql`
       publishedAt
     }
   }
-`;
+`
 
 export async function buscaPosts() {
   const resposta = await cliente.query({
     query: BUSCA_POSTS_QUERY,
-  });
+  })
 
-  const respostaTratada = trataRespostaRequisicao(resposta);
+  const respostaTratada = trataRespostaRequisicao(resposta)
 
-  return respostaTratada;
+  return respostaTratada
 }

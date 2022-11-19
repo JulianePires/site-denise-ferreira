@@ -1,4 +1,4 @@
-import { OpcaoMenu } from '@data/tipos';
+import {OpcaoMenu} from '@data/tipos'
 
 const opcoesMenuDashboard: OpcaoMenu[] = [
   {
@@ -13,6 +13,6 @@ const opcoesMenuDashboard: OpcaoMenu[] = [
     nome: 'Usuários',
     caminho: 'usuarios',
   },
-];
+]
 
-export default opcoesMenuDashboard;
+export default opcoesMenuDashboard

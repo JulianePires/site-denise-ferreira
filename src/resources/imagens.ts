@@ -1,30 +1,30 @@
-import LogoAmarelo from '@assets/imagens/LogoAmarelo.png';
-import LogoAzul from '@assets/imagens/LogoAzul.png';
-import LogoAzulPetroleo from '@assets/imagens/LogoAzulPetroleo.png';
-import LogoBranca from '@assets/imagens/LogoBranca.png';
-import LogoLaranja from '@assets/imagens/LogoLaranja.png';
-import LogoPreta from '@assets/imagens/LogoPreta.png';
-import LogoVinho from '@assets/imagens/LogoVinho.png';
-import SankofaAmarelo from '@assets/imagens/SankofaAmarelo.png';
-import SankofaAzul from '@assets/imagens/SankofaAzul.png';
-import SankofaBranco from '@assets/imagens/SankofaBranco.png';
-import SankofaLaranjaAberto from '@assets/imagens/SankofaLaranjaAberto.png';
-import SankofaLongaAmarela from '@assets/imagens/SankofaLongaAmarela.png';
-import SankofaLongaAzul from '@assets/imagens/SankofaLongaAzul.png';
-import SankofaLongaBranco from '@assets/imagens/SankofaLongaBranco.png';
-import SankofaLongaLaranja from '@assets/imagens/SankofaLongaLaranja.png';
-import SankofaVerdePetroleo from '@assets/imagens/SankofaVerdePetroleo.png';
-import SankofaLongaTerra from '@assets/imagens/SankofaLongaTerra.png';
-import SankofaVinho from '@assets/imagens/SankofaVinho.png';
-import TexturaAmarelo from '@assets/imagens/TexturaAmarelo.png';
-import TexturaAzul from '@assets/imagens/TexturaAzul.png';
-import TexturaAzulPetroleo from '@assets/imagens/TexturaAzulPetroleo.png';
-import TexturaLaranja from '@assets/imagens/TexturaLaranja.png';
-import TexturaTerra from '@assets/imagens/TexturaTerra.png';
-import TexturaVinho from '@assets/imagens/TexturaVinho.png';
-import Placeholder from '@assets/imagens/Placeholder.jpg';
+import LogoAmarelo from '@assets/imagens/LogoAmarelo.png'
+import LogoAzul from '@assets/imagens/LogoAzul.png'
+import LogoAzulPetroleo from '@assets/imagens/LogoAzulPetroleo.png'
+import LogoBranca from '@assets/imagens/LogoBranca.png'
+import LogoLaranja from '@assets/imagens/LogoLaranja.png'
+import LogoPreta from '@assets/imagens/LogoPreta.png'
+import LogoVinho from '@assets/imagens/LogoVinho.png'
+import SankofaAmarelo from '@assets/imagens/SankofaAmarelo.png'
+import SankofaAzul from '@assets/imagens/SankofaAzul.png'
+import SankofaBranco from '@assets/imagens/SankofaBranco.png'
+import SankofaLaranjaAberto from '@assets/imagens/SankofaLaranjaAberto.png'
+import SankofaLongaAmarela from '@assets/imagens/SankofaLongaAmarela.png'
+import SankofaLongaAzul from '@assets/imagens/SankofaLongaAzul.png'
+import SankofaLongaBranco from '@assets/imagens/SankofaLongaBranco.png'
+import SankofaLongaLaranja from '@assets/imagens/SankofaLongaLaranja.png'
+import SankofaVerdePetroleo from '@assets/imagens/SankofaVerdePetroleo.png'
+import SankofaLongaTerra from '@assets/imagens/SankofaLongaTerra.png'
+import SankofaVinho from '@assets/imagens/SankofaVinho.png'
+import TexturaAmarelo from '@assets/imagens/TexturaAmarelo.png'
+import TexturaAzul from '@assets/imagens/TexturaAzul.png'
+import TexturaAzulPetroleo from '@assets/imagens/TexturaAzulPetroleo.png'
+import TexturaLaranja from '@assets/imagens/TexturaLaranja.png'
+import TexturaTerra from '@assets/imagens/TexturaTerra.png'
+import TexturaVinho from '@assets/imagens/TexturaVinho.png'
+import Placeholder from '@assets/imagens/Placeholder.jpg'
 
-import { ChaveValor, Imagem } from '@data/tipos';
+import {ChaveValor, Imagem} from '@data/tipos'
 
 const imagens: ChaveValor<Imagem> = {
   logoAmarelo: {
@@ -127,6 +127,6 @@ const imagens: ChaveValor<Imagem> = {
     src: Placeholder.src,
     alt: 'Placeholder',
   },
-};
+}
 
-export default imagens;
+export default imagens

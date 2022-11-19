@@ -1,15 +1,15 @@
-import { TamanhosComponente } from '@data/enums';
-import imagens from '@resources/imagens';
-import { ContainerAvatar } from './Avatar.styled';
+import {TamanhosComponente} from '@data/enums'
+import imagens from '@resources/imagens'
+import {ContainerAvatar} from './Avatar.styled'
 
 interface Props {
-  src?: string;
-  alt?: string;
-  tamanho: TamanhosComponente;
+  src?: string
+  alt?: string
+  tamanho: TamanhosComponente
 }
 
-export function Avatar({ src, alt, tamanho }: Props) {
-  console.log(tamanho);
+export function Avatar({src, alt, tamanho}: Props) {
+  console.log(tamanho)
   return (
     <ContainerAvatar
       src={src ? src : imagens.placeholder.src}
@@ -17,5 +17,5 @@ export function Avatar({ src, alt, tamanho }: Props) {
       width={tamanho}
       height={tamanho}
     />
-  );
+  )
 }

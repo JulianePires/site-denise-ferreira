@@ -1,11 +1,11 @@
-import dispositivos from "@resources/dispositivos";
-import margens from "@resources/margens";
-import { detalhe, subtitulo } from "@resources/textos";
-import Image from "next/image";
-import styled from "styled-components";
+import dispositivos from '@resources/dispositivos'
+import margens from '@resources/margens'
+import {detalhe, subtitulo} from '@resources/textos'
+import Image from 'next/image'
+import styled from 'styled-components'
 
 interface ContainerBannerProps {
-  largura: string;
+  largura: string
 }
 
 export const ContainerBanner = styled.span<ContainerBannerProps>`
@@ -19,7 +19,7 @@ export const ContainerBanner = styled.span<ContainerBannerProps>`
   @media ${dispositivos.laptop} {
     padding: 0 0 0 ${margens.xxxlarge}px;
   }
-`;
+`
 
 export const LogoBanner = styled(Image)`
   width: 200px;
@@ -36,7 +36,7 @@ export const LogoBanner = styled(Image)`
   @media ${dispositivos.laptopL} {
     width: 420px;
   }
-`;
+`
 
 export const TextoDescricaoBanner = styled.p`
   ${detalhe}
@@ -57,7 +57,7 @@ export const TextoDescricaoBanner = styled.p`
     font-size: 1.5rem;
     width: 650px;
   }
-`;
+`
 
 export const FotoBanner = styled(Image)`
   width: 200px;
@@ -82,4 +82,4 @@ export const FotoBanner = styled(Image)`
   @media (min-width: 1440px) {
     width: 420px;
   }
-`;
+`

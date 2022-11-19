@@ -1,7 +1,7 @@
-import { createGlobalStyle } from 'styled-components';
+import {createGlobalStyle} from 'styled-components'
 
-import fontes from '@resources/fontes';
-import cores from '@resources/cores';
+import fontes from '@resources/fontes'
+import cores from '@resources/cores'
 
 const EstiloGlobal = createGlobalStyle`
   @font-face {
@@ -37,6 +37,6 @@ const EstiloGlobal = createGlobalStyle`
       background: ${cores.terra};
     }
   }
-`;
+`
 
-export default EstiloGlobal;
+export default EstiloGlobal

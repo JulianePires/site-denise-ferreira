@@ -1,1 +1,1 @@
-export * from "./Rodape";
+export * from './Rodape'

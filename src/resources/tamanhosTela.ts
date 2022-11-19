@@ -1,4 +1,4 @@
-import { ChaveValor } from '@data/tipos';
+import {ChaveValor} from '@data/tipos'
 
 const tamanhosTela: ChaveValor<string> = {
   mobileS: '320px',
@@ -8,6 +8,6 @@ const tamanhosTela: ChaveValor<string> = {
   laptop: '1024px',
   laptopL: '1440px',
   desktop: '2560px',
-};
+}
 
-export default tamanhosTela;
+export default tamanhosTela

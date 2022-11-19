@@ -1,9 +1,9 @@
-import styled from 'styled-components';
+import styled from 'styled-components'
 
-import cores from '@resources/cores';
-import dispositivos from '@resources/dispositivos';
-import margens from '@resources/margens';
-import { subtitulo, titulo1 } from '@resources/textos';
+import cores from '@resources/cores'
+import dispositivos from '@resources/dispositivos'
+import margens from '@resources/margens'
+import {subtitulo, titulo1} from '@resources/textos'
 
 export const ContainerMenuLateral = styled.section`
   display: flex;
@@ -34,13 +34,13 @@ export const ContainerMenuLateral = styled.section`
   padding: ${margens.medium}px;
 
   background: ${cores.branco};
-`;
+`
 
 export const Titulo = styled.h1`
   ${titulo1}
   text-align: center;
-  color: ${cores.azulPetroleo}
-`;
+  color: ${cores.azulPetroleo};
+`
 
 export const OpcoesMenu = styled.ul`
   display: flex;
@@ -50,9 +50,9 @@ export const OpcoesMenu = styled.ul`
 
   padding: 0;
   width: 100%;
-`;
+`
 
-export const Opcao = styled.li<{ atual: string }>`
+export const Opcao = styled.li<{atual: string}>`
   ${subtitulo}
 
   color: ${(props) => (props.atual === 'true' ? cores.amarelo : cores.vinho)};
@@ -64,4 +64,4 @@ export const Opcao = styled.li<{ atual: string }>`
   &:hover {
     color: ${cores.laranja};
   }
-`;
+`

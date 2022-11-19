@@ -1,8 +1,8 @@
-import cores from "@resources/cores";
-import dispositivos from "@resources/dispositivos";
-import margens from "@resources/margens";
-import { paragrafo, subtitulo } from "@resources/textos";
-import styled from "styled-components";
+import cores from '@resources/cores'
+import dispositivos from '@resources/dispositivos'
+import margens from '@resources/margens'
+import {paragrafo, subtitulo} from '@resources/textos'
+import styled from 'styled-components'
 
 export const ContainerRodape = styled.footer`
   display: flex;
@@ -21,7 +21,7 @@ export const ContainerRodape = styled.footer`
   background: ${cores.amarelo};
 
   transition: 0.3s ease-in-out all;
-`;
+`
 
 export const TextoRodape = styled.p`
   ${paragrafo}
@@ -29,4 +29,4 @@ export const TextoRodape = styled.p`
   font-size: ${subtitulo.fontSize};
 
   color: ${cores.terra};
-`;
+`

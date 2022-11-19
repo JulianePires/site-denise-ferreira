@@ -1,0 +1,7 @@
+.eslintrc.js
+jest.config.js
+jest.setup.js
+metro.config.js
+react-native.config.js
+/node_modules/
+/coverage/

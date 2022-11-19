@@ -1,15 +1,16 @@
-import { RespostaRequisicao } from '@data/tipos';
-import { StatusRequisicao } from 'src/data/enums';
+import {RespostaRequisicao} from '@data/tipos'
+import {StatusRequisicao} from 'src/data/enums'
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export function trataRespostaRequisicao(resposta: any): RespostaRequisicao {
-  const { loading, error, data } = resposta;
+  const {loading, error, data} = resposta
 
   if (loading) {
     return {
       dados: [],
       status: StatusRequisicao.CARREGANDO,
       erro: '',
-    };
+    }
   }
 
   if (error) {
@@ -17,12 +18,12 @@ export function trataRespostaRequisicao(resposta: any): RespostaRequisicao {
       dados: [],
       status: StatusRequisicao.ERRO,
       erro: error.message,
-    };
+    }
   }
 
   return {
     dados: data,
     status: StatusRequisicao.SUCESSO,
     erro: '',
-  };
+  }
 }

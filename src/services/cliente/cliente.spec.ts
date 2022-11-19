@@ -1,5 +1,5 @@
-import { gql } from '@apollo/client';
-import { cliente } from './cliente';
+import {gql} from '@apollo/client'
+import {cliente} from './cliente'
 
 describe('Apollo Client', () => {
   it('deve retornar valor informado pela query quando esta for resolvida', async () => {
@@ -9,8 +9,8 @@ describe('Apollo Client', () => {
           test(bool: false)
         }
       `,
-    });
-    expect(result).toBeTruthy();
-    expect(result.errors).toBeFalsy();
-  });
-});
+    })
+    expect(result).toBeTruthy()
+    expect(result.errors).toBeFalsy()
+  })
+})

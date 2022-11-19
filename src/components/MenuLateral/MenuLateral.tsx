@@ -1,20 +1,19 @@
-import { Avatar } from '@components/Avatar';
-import { InformacoesPessoais } from '@components/InformacoesPessoais';
-import { OpcaoMenu } from '@data/tipos';
-import imagens from '@resources/imagens';
-import Image from 'next/image';
+import {InformacoesPessoais} from '@components/InformacoesPessoais'
+import {OpcaoMenu} from '@data/tipos'
+import imagens from '@resources/imagens'
+import Image from 'next/image'
 import {
   ContainerMenuLateral,
-  OpcoesMenu,
   Opcao,
+  OpcoesMenu,
   Titulo,
-} from './MenuLateral.styled';
+} from './MenuLateral.styled'
 
 interface Props {
-  titulo: string;
-  opcoes: OpcaoMenu[];
-  opcaoAtual: string;
-  aoAlterarOpcao: (opcao: OpcaoMenu) => void;
+  titulo: string
+  opcoes: OpcaoMenu[]
+  opcaoAtual: string
+  aoAlterarOpcao: (opcao: OpcaoMenu) => void
 }
 
 export function MenuLateral({
@@ -40,12 +39,11 @@ export function MenuLateral({
           <Opcao
             atual={String(opcao.caminho === opcaoAtual)}
             onClick={() => aoAlterarOpcao(opcao)}
-            key={index}
-          >
+            key={index}>
             {opcao.nome}
           </Opcao>
         ))}
       </OpcoesMenu>
     </ContainerMenuLateral>
-  );
+  )
 }

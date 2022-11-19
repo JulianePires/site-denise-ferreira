@@ -1,1 +1,1 @@
-export * from "./ContainerConteudo";
+export * from './ContainerConteudo'

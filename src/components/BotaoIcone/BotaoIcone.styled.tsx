@@ -1,11 +1,11 @@
-import { TamanhosComponente } from "@data/enums";
-import { TemasCores } from "@data/tipos";
-import cores from "@resources/cores";
-import styled from "styled-components";
+import { TamanhosComponente } from '@data/enums'
+import { TemasCores } from '@data/tipos'
+import cores from '@resources/cores'
+import styled from 'styled-components'
 
 interface ContainerBotaoIconeProps {
-  corBackground: TemasCores;
-  corIcone: TemasCores;
+  corBackground: TemasCores
+  corIcone: TemasCores
 }
 
 export const ContainerBotaoIcone = styled.button<ContainerBotaoIconeProps>`
@@ -29,4 +29,4 @@ export const ContainerBotaoIcone = styled.button<ContainerBotaoIconeProps>`
   &:hover {
     opacity: 0.8;
   }
-`;
+`
