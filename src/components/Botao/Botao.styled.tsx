@@ -1,7 +1,7 @@
 import { EstilosBotao, TamanhosComponente } from "@data/enums";
 import { Tema, TemasCores } from "@data/tipos";
 import cores from "@resources/cores";
-import { detalhe } from "@resources/textos";
+import { paragrafo } from "@resources/textos";
 import styled from "styled-components";
 
 interface ContainerBotaoProps {
@@ -70,11 +70,12 @@ export const ContainerBotao = styled.button<ContainerBotaoProps>`
     return "none";
   }};
 
-  ${detalhe}
+  ${paragrafo}
 
   height: 45px;
-  width: ${(props) => TamanhosComponente[props.tamanho] + "px"};
+  width: fit-content;
   border-radius: 8px;
+  padding: 1.5rem;
 
   text-transform: uppercase;
   cursor: pointer;

@@ -22,7 +22,7 @@ interface Props {
 export default function Home({ fotoDenise, logoBranca }: Props) {
   return (
     <LayoutPaginasSite titulo="Página Inicial">
-      <ContainerConteudo corBackground={cores.laranja}>
+      <ContainerConteudo corBackground={cores.terra}>
         <ContainerBanner largura="70%">
           <Stack direcao={Direcoes.V} gap="1rem" margem="0 0 2.5rem 0">
             <LogoBanner
