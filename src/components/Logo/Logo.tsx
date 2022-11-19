@@ -1,4 +1,5 @@
 import {Asset} from '@data/tipos'
+import imagens from '@resources/imagens'
 import {buscaAsset} from '@services/requisicoes/asset'
 import Image from 'next/image'
 import {useEffect, useState} from 'react'
@@ -9,13 +10,11 @@ interface Props {
 }
 
 export function Logo({cor = 'branco'}: Props) {
+  const {idSankofaLongaTerra, idSankofaLongaBranca} = imagens
   const [imagem, setImagem] = useState({
     src: '',
     alt: '',
   })
-
-  const idSankofaLongaTerra = 'claldx1g4206b0blvefe7vpuj'
-  const idSankofaLongaBranca = 'claldx1c720590blvktvpwagh'
 
   const reqSankofaBranca = buscaAsset(idSankofaLongaBranca)
   const reqSankofaTerra = buscaAsset(idSankofaLongaTerra)

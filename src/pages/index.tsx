@@ -6,20 +6,24 @@ import {Asset} from '@data/tipos'
 import {LayoutPaginasSite} from '@layouts/LayoutPaginasSite'
 import conteudoTexto from '@resources/conteudoTexto'
 import cores from '@resources/cores'
+import imagens from '@resources/imagens'
 import {buscaAsset} from '@services/requisicoes/asset'
 import {
   ContainerBanner,
   FotoBanner,
   LogoBanner,
   TextoDescricaoBanner,
+  TexturaSecaoApresentacao,
 } from '@styles/Home.styled'
 
 interface Props {
   fotoDenise: Asset
   logoBranca: Asset
+  texturaAzul: Asset
 }
 
-export default function Home({fotoDenise, logoBranca}: Props) {
+export default function Home({fotoDenise, logoBranca, texturaAzul}: Props) {
+  console.log(texturaAzul)
   return (
     <LayoutPaginasSite titulo="Página Inicial">
       <ContainerConteudo corBackground={cores.terra}>
@@ -53,29 +57,38 @@ export default function Home({fotoDenise, logoBranca}: Props) {
           />
         </ContainerBanner>
       </ContainerConteudo>
+      <ContainerConteudo corBackground={cores.vinho}>
+        Quem eu sou
+        <TexturaSecaoApresentacao urlTexturaFundo={texturaAzul.url} />
+      </ContainerConteudo>
     </LayoutPaginasSite>
   )
 }
 
 export async function getStaticProps() {
-  const idLogoBranca = 'clale22ud1yk809kc82o4r7d7'
-  const idFotoDenise = 'claldupz61zxu0blvrwyp7se9'
+  const {idLogoBranca, idFotoDenise, idTexturaAzul} = imagens
 
   const reqLogoBranca = await buscaAsset(idLogoBranca)
   const reqFotoDenise = await buscaAsset(idFotoDenise)
+  const reqTexturaAzul = await buscaAsset(idTexturaAzul)
 
   let logoBranca = {}
   let fotoDenise = {}
+  let texturaAzul = {}
 
   if (reqLogoBranca.status === StatusRequisicao.SUCESSO) {
     logoBranca = reqLogoBranca.dados.asset as Asset
   }
 
-  if (reqLogoBranca.status === StatusRequisicao.SUCESSO) {
+  if (reqFotoDenise.status === StatusRequisicao.SUCESSO) {
     fotoDenise = reqFotoDenise.dados.asset as Asset
   }
 
+  if (reqTexturaAzul.status === StatusRequisicao.SUCESSO) {
+    texturaAzul = reqTexturaAzul.dados.asset as Asset
+  }
+
   return {
-    props: {logoBranca, fotoDenise},
+    props: {logoBranca, fotoDenise, texturaAzul},
   }
 }

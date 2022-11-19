@@ -2,7 +2,7 @@ import fontes from './fontes'
 
 const detalhe = {
   fontFamily: fontes.barlowLight.style.fontFamily,
-  fontSize: '14px',
+  fontSize: '16px',
   lineHeight: '20px',
   fontWeight: fontes.barlowLight.style.fontWeight,
 }

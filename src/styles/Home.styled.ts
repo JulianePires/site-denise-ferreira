@@ -83,3 +83,14 @@ export const FotoBanner = styled(Image)`
     width: 420px;
   }
 `
+
+interface ContainerTexturaProps {
+  urlTexturaFundo: string
+}
+
+export const TexturaSecaoApresentacao = styled.span<ContainerTexturaProps>`
+  width: 30%;
+
+  background: url(${(props) => props.urlTexturaFundo});
+  background-size: cover;
+`
