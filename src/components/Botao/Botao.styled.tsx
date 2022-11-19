@@ -72,11 +72,19 @@ export const ContainerBotao = styled.button<ContainerBotaoProps>`
 
   ${detalhe}
 
-  height: 70px;
+  height: 45px;
   width: ${(props) => TamanhosComponente[props.tamanho] + "px"};
-  border-radius: 4px;
+  border-radius: 8px;
+
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: 0.3s ease-in-out all;
 
   display: flex;
   align-items: center;
   justify-content: center;
+
+  &:hover {
+    opacity: 0.8;
+  }
 `;

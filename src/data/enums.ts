@@ -36,3 +36,8 @@ export enum EstilosBotao {
   OUTLINE = "outline",
   SOLID = "solid",
 }
+
+export enum Direcoes {
+  H = "horizontal",
+  V = "vertical",
+}

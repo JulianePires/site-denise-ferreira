@@ -71,3 +71,5 @@ export type Asset = {
   height: number;
   url: string;
 };
+
+export type DirecoesTipo = "horizontal" | "vertical";
