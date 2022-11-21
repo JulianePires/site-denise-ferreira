@@ -15,8 +15,8 @@ export const ContainerRodape = styled.footer`
   }
 
   width: 100%;
-  height: 140px;
-  padding: ${margens.xsmall}px ${margens.xxxlarge}px;
+  height: fit-content;
+  padding: ${margens.xlarge}px ${margens.xxxlarge}px;
 
   background: ${cores.amarelo};
 
@@ -26,7 +26,12 @@ export const ContainerRodape = styled.footer`
 export const TextoRodape = styled.p`
   ${paragrafo}
 
-  font-size: ${subtitulo.fontSize};
-
+  text-align: center;
   color: ${cores.terra};
+
+  margin: ${margens.medium}px ${margens.small}px;
+
+  @media ${dispositivos.tablet} {
+    font-size: ${subtitulo.fontSize};
+  }
 `

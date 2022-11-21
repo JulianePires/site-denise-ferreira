@@ -1,6 +1,7 @@
 import {Botao} from '@components/Botao'
 import {ContainerConteudo} from '@components/ContainerConteudo'
 import {Stack} from '@components/Stack'
+import {Tab} from '@components/Tab'
 import {Direcoes, EstilosBotao, StatusRequisicao} from '@data/enums'
 import {Asset} from '@data/tipos'
 import {LayoutPaginasSite} from '@layouts/LayoutPaginasSite'
@@ -58,7 +59,7 @@ export default function Home({fotoDenise, logoBranca, texturaAzul}: Props) {
         </ContainerBanner>
       </ContainerConteudo>
       <ContainerConteudo corBackground={cores.vinho}>
-        Quem eu sou
+        <Tab />
         <TexturaSecaoApresentacao urlTexturaFundo={texturaAzul.url} />
       </ContainerConteudo>
     </LayoutPaginasSite>

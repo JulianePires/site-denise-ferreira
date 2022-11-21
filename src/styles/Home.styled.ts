@@ -89,7 +89,7 @@ interface ContainerTexturaProps {
 }
 
 export const TexturaSecaoApresentacao = styled.span<ContainerTexturaProps>`
-  width: 30%;
+  width: 100%;
 
   background: url(${(props) => props.urlTexturaFundo});
   background-size: cover;

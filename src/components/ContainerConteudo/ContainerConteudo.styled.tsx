@@ -1,4 +1,5 @@
 import dispositivos from '@resources/dispositivos'
+import margens from '@resources/margens'
 import styled from 'styled-components'
 
 interface ContainerExternoConteudoProps {
@@ -9,11 +10,12 @@ export const ContainerExternoConteudo = styled.section<ContainerExternoConteudoP
   display: flex;
   flex-wrap: wrap;
 
-  height: 764px;
+  height: fit-content;
 
   background: ${(props) => props.corBackground};
 
-  @media ${dispositivos.tablet} {
+  @media ${dispositivos.laptop} {
     flex-wrap: nowrap;
+    height: 764px;
   }
 `
