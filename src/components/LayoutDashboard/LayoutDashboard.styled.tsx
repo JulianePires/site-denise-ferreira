@@ -1,5 +1,4 @@
 import cores from '@resources/cores'
-import imagens from '@resources/imagens'
 import margens from '@resources/margens'
 import {titulo2} from '@resources/textos'
 import styled from 'styled-components'
@@ -29,10 +28,14 @@ export const TituloLayout = styled.h2`
   height: max-content;
 `
 
-export const BannerLayout = styled.div`
+interface BannerLayoutProps {
+  imagemFundo: string
+}
+
+export const BannerLayout = styled.div<BannerLayoutProps>`
   width: 100%;
   height: 140px;
-  background: url(${imagens.texturaAmarelo.src});
+  background: url(${(props) => props.imagemFundo});
   background-size: contain;
   background-repeat: repeat;
 `

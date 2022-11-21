@@ -1,7 +1,6 @@
 import {InformacoesPessoais} from '@components/InformacoesPessoais'
+import {Logo} from '@components/Logo'
 import {OpcaoMenu} from '@data/tipos'
-import imagens from '@resources/imagens'
-import Image from 'next/image'
 import {
   ContainerMenuLateral,
   Opcao,
@@ -24,12 +23,8 @@ export function MenuLateral({
 }: Props) {
   return (
     <ContainerMenuLateral>
-      <Image
-        src={imagens.sankofaLongaAmarela.src}
-        alt={imagens.sankofaLongaTerra.alt}
-        width={150}
-        height={100}
-      />
+      <Logo cor="amarela" />
+
       <Titulo>{titulo}</Titulo>
 
       <InformacoesPessoais imagem="" nome="Juliane" />

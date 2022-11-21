@@ -6,11 +6,12 @@ import {useEffect, useState} from 'react'
 import {ContainerLogo} from './Logo.styled'
 
 interface Props {
-  cor?: 'branco' | 'terra'
+  cor?: 'branco' | 'terra' | 'amarela'
 }
 
 export function Logo({cor = 'branco'}: Props) {
-  const {idSankofaLongaTerra, idSankofaLongaBranca} = imagens
+  const {idSankofaLongaTerra, idSankofaLongaBranca, idSankofaLongaAmarela} =
+    imagens
   const [imagem, setImagem] = useState({
     src: '',
     alt: '',
@@ -18,6 +19,7 @@ export function Logo({cor = 'branco'}: Props) {
 
   const reqSankofaBranca = buscaAsset(idSankofaLongaBranca)
   const reqSankofaTerra = buscaAsset(idSankofaLongaTerra)
+  const reqSankofaAmarela = buscaAsset(idSankofaLongaAmarela)
 
   function atualizaImagemLogo() {
     if (cor === 'terra') {
@@ -27,6 +29,15 @@ export function Logo({cor = 'branco'}: Props) {
         setImagem({
           src: imagemBuscada.url,
           alt: 'Logo Sankofa Terra',
+        })
+      })
+    } else if (cor === 'amarela') {
+      reqSankofaAmarela.then((resposta) => {
+        const imagemBuscada = resposta.dados.asset as Asset
+
+        setImagem({
+          src: imagemBuscada.url,
+          alt: 'Logo Sankofa Amarela',
         })
       })
     } else {
