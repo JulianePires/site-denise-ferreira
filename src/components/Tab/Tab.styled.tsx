@@ -12,6 +12,7 @@ import styled from 'styled-components'
 
 export const ContainerTab = styled.span`
   display: flex;
+  flex-direction: column;
 
   width: 100%;
 `
@@ -21,12 +22,10 @@ export const ControleTab = styled.ul`
   justify-content: space-around;
   align-items: center;
 
-  width: 40px;
+  width: 100%;
+  height: 50px;
 
   list-style: none;
-
-  writing-mode: vertical-lr;
-  transform: rotate(180deg);
 `
 
 interface OpcaoTabProps {
@@ -39,7 +38,7 @@ export const OpcaoTab = styled.li<OpcaoTabProps>`
   font-size: 21px;
   transition: 0.5s ease-in-out all;
 
-  border-left: ${(props) => (props.ativa === 'true' ? '1px solid' : 'none')};
+  border-bottom: ${(props) => (props.ativa === 'true' ? '1px solid' : 'none')};
   cursor: pointer;
 
   &:hover {

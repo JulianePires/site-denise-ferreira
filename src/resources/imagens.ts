@@ -8,6 +8,8 @@ const imagens: ChaveValor<string> = {
   idSankofaLongaAmarela: 'clar1dewe0fst0blykphegpgq',
   idTexturaAzul: 'claldyeqt1y8q09kc8u31f3tr',
   idTexturaAmarela: 'clale0q6i1ygk09kcie5ymyw3',
+  idTexturaTerra: 'clale0q6t1ygt09kcu3ir9sy1',
+  idTexturaVinho: 'clale0qce1yhe09kck3zr6fsd',
   idPlaceholder: 'clale0q5s20in0blvqfvc1eb5',
 }
 

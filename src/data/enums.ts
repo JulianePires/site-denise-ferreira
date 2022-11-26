@@ -41,3 +41,10 @@ export enum Direcoes {
   H = 'horizontal',
   V = 'vertical',
 }
+
+export enum Rotas {
+  HOME = '/',
+  ATUACAO = '/atuacao',
+  BLOG = '/blog',
+  CONTATO = '/contato',
+}

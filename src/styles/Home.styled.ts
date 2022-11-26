@@ -6,12 +6,22 @@ import styled from 'styled-components'
 
 interface ContainerBannerProps {
   largura: string
+  corFundo?: string
+  imagemFundo?: string
 }
 
 export const ContainerBanner = styled.span<ContainerBannerProps>`
   display: flex;
   flex-direction: column;
   justify-content: center;
+
+  background: ${(props) =>
+    props.imagemFundo
+      ? `url(${props.imagemFundo})`
+      : props.corFundo
+        ? props.corFundo
+        : 'none'};
+  background-size: cover;
 
   padding: ${margens.xlarge}px;
   width: 100%;
