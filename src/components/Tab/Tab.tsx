@@ -1,4 +1,11 @@
-import {useState} from 'react'
+import {OpcoesMenuTab} from '@data/enums'
+import {Asset, ChaveValor, TemasCores} from '@data/tipos'
+import conteudoTexto from '@resources/conteudoTexto'
+import cores from '@resources/cores'
+import imagens from '@resources/imagens'
+import {buscaAsset} from '@services/requisicoes/asset'
+import Image from 'next/image'
+import {useEffect, useState} from 'react'
 import {
   ContainerTab,
   ControleTab,
@@ -8,36 +15,111 @@ import {
   TituloLayoutTab,
 } from './Tab.styled'
 
-type OpcoesTab = 'sonhar' | 'agir' | 'ser'
+type OpcaoTabTipo = {
+  nomeOpcao: 'sonhar' | 'agir' | 'ser'
+  icone: string
+  corFundo: TemasCores
+  titulo: string
+  conteudo: string
+}
+
+//TODO: Adicionar animação aos textos
 
 export function Tab() {
-  const opcoesTab: OpcoesTab[] = ['sonhar', 'agir', 'ser']
-  const [tabAtiva, setTabAtiva] = useState<OpcoesTab>('ser')
+  const [urlImagemFundo, setUrlImagemFundo] = useState('')
+  const [sankofaLaranja, setSankofaLaranja] = useState('')
+  const [sankofaAzulPetroleo, setSankofaAzulPetroleo] = useState('')
+  const [sankofaVinho, setSankofaVinho] = useState('')
 
-  function defineTabAtualComoAtiva(tab: OpcoesTab) {
+  const opcoesTab: OpcaoTabTipo[] = [
+    {
+      nomeOpcao: OpcoesMenuTab.SER,
+      icone: sankofaLaranja,
+      corFundo: cores.laranja as TemasCores,
+      titulo: conteudoTexto.textoTab[OpcoesMenuTab.SER].titulo,
+      conteudo: conteudoTexto.textoTab[OpcoesMenuTab.SER].conteúdo,
+    },
+    {
+      nomeOpcao: OpcoesMenuTab.AGIR,
+      icone: sankofaAzulPetroleo,
+      corFundo: cores.azulPetroleo as TemasCores,
+      titulo: conteudoTexto.textoTab[OpcoesMenuTab.AGIR].titulo,
+      conteudo: conteudoTexto.textoTab[OpcoesMenuTab.AGIR].conteúdo,
+    },
+    {
+      nomeOpcao: OpcoesMenuTab.SONHAR,
+      icone: sankofaVinho,
+      corFundo: cores.vinho as TemasCores,
+      titulo: conteudoTexto.textoTab[OpcoesMenuTab.SONHAR].titulo,
+      conteudo: conteudoTexto.textoTab[OpcoesMenuTab.SONHAR].conteúdo,
+    },
+  ]
+
+  const [tabAtiva, setTabAtiva] = useState<OpcaoTabTipo>(opcoesTab[0])
+
+  const {
+    idTexturaAmarela,
+    idSankofaLaranja,
+    idSankofaAzulPetroleo,
+    idSankofaVinho,
+  } = imagens
+
+  function defineTabAtualComoAtiva(tab: OpcaoTabTipo) {
     setTabAtiva(tab)
   }
 
+  function atualizaImagens() {
+    const reqTexturaAmarela = buscaAsset(idTexturaAmarela)
+    const reqSankofaLaranja = buscaAsset(idSankofaLaranja)
+    const reqSankofaAzulPetroleo = buscaAsset(idSankofaAzulPetroleo)
+    const reqSankofaVinho = buscaAsset(idSankofaVinho)
+
+    reqTexturaAmarela.then((resposta) => {
+      const imagem = resposta.dados.asset as Asset
+      setUrlImagemFundo(imagem.url)
+    })
+
+    reqSankofaLaranja.then((resposta) => {
+      const imagem = resposta.dados.asset as Asset
+      setSankofaLaranja(imagem.url)
+    })
+
+    reqSankofaAzulPetroleo.then((resposta) => {
+      const imagem = resposta.dados.asset as Asset
+      setSankofaAzulPetroleo(imagem.url)
+    })
+
+    reqSankofaVinho.then((resposta) => {
+      const imagem = resposta.dados.asset as Asset
+      setSankofaVinho(imagem.url)
+    })
+  }
+
+  useEffect(() => {
+    atualizaImagens()
+  }, [])
+
   return (
-    <ContainerTab>
-      <ControleTab>
-        {opcoesTab.map((opcao, index) => (
+    <ContainerTab corFundo={tabAtiva.corFundo}>
+      <ControleTab imagemFundo={urlImagemFundo}>
+        {opcoesTab.map((opcao: OpcaoTabTipo, index: number) => (
           <OpcaoTab
-            ativa={String(opcao === tabAtiva)}
+            ativa={String(opcao.nomeOpcao === tabAtiva.nomeOpcao)}
             onClick={() => defineTabAtualComoAtiva(opcao)}
             key={index}>
-            {opcao}
+            <Image
+              src={opcao.icone}
+              alt={opcao.nomeOpcao}
+              width={66.67}
+              height={50}
+            />
+            {opcao.nomeOpcao}
           </OpcaoTab>
         ))}
       </ControleTab>
       <LayoutTab>
-        <TituloLayoutTab>Quem eu sou</TituloLayoutTab>
-        <TextoLayoutTab>
-          Inserir aqui quem eu sou, quem eu sou, quem eu sou.Inserir aqui quem
-          eu sou, quem eu sou, quem eu sou. Inserir aqui quem eu sou, quem eu
-          sou, quem eu sou. Inserir aqui quem eu sou, quem eu sou, quem eu sou.
-          Inserir aqui quem eu sou, quem eu sou, quem eu sou.
-        </TextoLayoutTab>
+        <TituloLayoutTab>{tabAtiva.titulo}</TituloLayoutTab>
+        <TextoLayoutTab>{tabAtiva.conteudo}</TextoLayoutTab>
       </LayoutTab>
     </ContainerTab>
   )

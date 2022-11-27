@@ -48,3 +48,15 @@ export enum Rotas {
   BLOG = '/blog',
   CONTATO = '/contato',
 }
+
+export enum OpcoesMenuTab {
+  SONHAR = 'sonhar',
+  SER = 'ser',
+  AGIR = 'agir',
+}
+
+export enum IconesMenuTab {
+  SANKOFAAZULPETROLEO = 'sankofaAzulPetroleo',
+  SANKOFALARANJA = 'sankofaLaranja',
+  SANKOFAVINHO = 'sankofaVinho',
+}

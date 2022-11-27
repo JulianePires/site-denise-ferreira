@@ -1,5 +1,4 @@
 import dispositivos from '@resources/dispositivos'
-import margens from '@resources/margens'
 import styled from 'styled-components'
 
 interface ContainerExternoConteudoProps {

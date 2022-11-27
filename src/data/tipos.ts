@@ -51,7 +51,12 @@ export type Caminho = {
   params: ChaveValor<string>
 }
 
-export type TemasCores = 'vinho' | 'terra' | 'amarelo' | 'azulPetroleo'
+export type TemasCores =
+  | 'vinho'
+  | 'terra'
+  | 'amarelo'
+  | 'azulPetroleo'
+  | 'laranja'
 
 export type Tema = {
   corPrimaria: string

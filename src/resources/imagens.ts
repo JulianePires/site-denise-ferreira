@@ -11,6 +11,9 @@ const imagens: ChaveValor<string> = {
   idTexturaTerra: 'clale0q6t1ygt09kcu3ir9sy1',
   idTexturaVinho: 'clale0qce1yhe09kck3zr6fsd',
   idPlaceholder: 'clale0q5s20in0blvqfvc1eb5',
+  idSankofaLaranja: 'claza1euc22v60blp782iwopg',
+  idSankofaAzulPetroleo: 'claldyevm208o0blv76q9lch2',
+  idSankofaVinho: 'claldx1dp1y5y09kc2ontt23s',
 }
 
 export default imagens
