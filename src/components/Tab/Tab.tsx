@@ -23,8 +23,6 @@ type OpcaoTabTipo = {
   conteudo: string
 }
 
-//TODO: Adicionar animação aos textos
-
 export function Tab() {
   const [urlImagemFundo, setUrlImagemFundo] = useState('')
   const [sankofaLaranja, setSankofaLaranja] = useState('')
@@ -100,7 +98,7 @@ export function Tab() {
   }, [])
 
   return (
-    <ContainerTab corFundo={tabAtiva.corFundo}>
+    <ContainerTab id="ancora-tab" corFundo={tabAtiva.corFundo}>
       <ControleTab imagemFundo={urlImagemFundo}>
         {opcoesTab.map((opcao: OpcaoTabTipo, index: number) => (
           <OpcaoTab
@@ -118,8 +116,15 @@ export function Tab() {
         ))}
       </ControleTab>
       <LayoutTab>
-        <TituloLayoutTab>{tabAtiva.titulo}</TituloLayoutTab>
-        <TextoLayoutTab>{tabAtiva.conteudo}</TextoLayoutTab>
+        <TituloLayoutTab data-aos="fade-right" data-aos-anchor="#ancora-tab">
+          {tabAtiva.titulo}
+        </TituloLayoutTab>
+        <TextoLayoutTab
+          data-aos="fade-right"
+          data-aos-anchor="#ancora-tab"
+          data-aos-delay="200">
+          {tabAtiva.conteudo}
+        </TextoLayoutTab>
       </LayoutTab>
     </ContainerTab>
   )

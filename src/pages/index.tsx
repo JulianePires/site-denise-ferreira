@@ -85,15 +85,11 @@ export async function getStaticProps() {
   const {
     idLogoBranca,
     idFotoDenise,
-    idTexturaAzul,
-    idTexturaVinho,
     idTexturaTerra,
   } = imagens
 
   const reqLogoBranca = await buscaAsset(idLogoBranca)
   const reqFotoDenise = await buscaAsset(idFotoDenise)
-  const reqTexturaAzul = await buscaAsset(idTexturaAzul)
-  const reqTexturaVinho = await buscaAsset(idTexturaVinho)
   const reqTexturaTerra = await buscaAsset(idTexturaTerra)
 
   let logoBranca = {}
