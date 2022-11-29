@@ -7,11 +7,16 @@ interface Props {
   gap: string
   margem?: string
   children: ReactNode
+  wrap?: boolean
 }
 
-export function Stack({direcao, gap, margem, children}: Props) {
+export function Stack({direcao, gap, margem, children, wrap = false}: Props) {
   return (
-    <ContainerStack direcao={direcao} gap={gap} margem={margem}>
+    <ContainerStack
+      direcao={direcao}
+      gap={gap}
+      margem={margem}
+      wrap={String(wrap)}>
       {children}
     </ContainerStack>
   )

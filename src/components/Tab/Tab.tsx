@@ -1,7 +1,7 @@
 import {Container} from '@components/Container'
-import { Stack } from '@components/Stack'
+import {Stack} from '@components/Stack'
 import {OpcoesMenuTab} from '@data/enums'
-import {Asset, ChaveValor, TemasCores} from '@data/tipos'
+import {Asset, TemasCores} from '@data/tipos'
 import conteudoTexto from '@resources/conteudoTexto'
 import cores from '@resources/cores'
 import imagens from '@resources/imagens'
@@ -29,27 +29,27 @@ export function Tab() {
   const [urlImagemFundo, setUrlImagemFundo] = useState('')
   const [sankofaLaranja, setSankofaLaranja] = useState('')
   const [sankofaAzulPetroleo, setSankofaAzulPetroleo] = useState('')
-  const [sankofaVinho, setSankofaVinho] = useState('')
+  const [sankofaAzul, setSankofaAzul] = useState('')
 
   const opcoesTab: OpcaoTabTipo[] = [
     {
       nomeOpcao: OpcoesMenuTab.SER,
-      icone: sankofaLaranja,
-      corFundo: cores.laranja as TemasCores,
+      icone: sankofaAzulPetroleo,
+      corFundo: cores.azulPetroleo as TemasCores,
       titulo: conteudoTexto.textoTab[OpcoesMenuTab.SER].titulo,
       conteudo: conteudoTexto.textoTab[OpcoesMenuTab.SER].conteúdo,
     },
     {
       nomeOpcao: OpcoesMenuTab.AGIR,
-      icone: sankofaAzulPetroleo,
-      corFundo: cores.azulPetroleo as TemasCores,
+      icone: sankofaLaranja,
+      corFundo: cores.laranja as TemasCores,
       titulo: conteudoTexto.textoTab[OpcoesMenuTab.AGIR].titulo,
       conteudo: conteudoTexto.textoTab[OpcoesMenuTab.AGIR].conteúdo,
     },
     {
       nomeOpcao: OpcoesMenuTab.SONHAR,
-      icone: sankofaVinho,
-      corFundo: cores.vinho as TemasCores,
+      icone: sankofaAzul,
+      corFundo: cores.azulRoyal as TemasCores,
       titulo: conteudoTexto.textoTab[OpcoesMenuTab.SONHAR].titulo,
       conteudo: conteudoTexto.textoTab[OpcoesMenuTab.SONHAR].conteúdo,
     },
@@ -61,7 +61,7 @@ export function Tab() {
     idTexturaAzul,
     idSankofaLaranja,
     idSankofaAzulPetroleo,
-    idSankofaVinho,
+    idSankofaAzul,
   } = imagens
 
   function defineTabAtualComoAtiva(tab: OpcaoTabTipo) {
@@ -72,7 +72,7 @@ export function Tab() {
     const reqTexturaAzul = buscaAsset(idTexturaAzul)
     const reqSankofaLaranja = buscaAsset(idSankofaLaranja)
     const reqSankofaAzulPetroleo = buscaAsset(idSankofaAzulPetroleo)
-    const reqSankofaVinho = buscaAsset(idSankofaVinho)
+    const reqSankofaAzul = buscaAsset(idSankofaAzul)
 
     reqTexturaAzul.then((resposta) => {
       const imagem = resposta.dados.asset as Asset
@@ -89,9 +89,9 @@ export function Tab() {
       setSankofaAzulPetroleo(imagem.url)
     })
 
-    reqSankofaVinho.then((resposta) => {
+    reqSankofaAzul.then((resposta) => {
       const imagem = resposta.dados.asset as Asset
-      setSankofaVinho(imagem.url)
+      setSankofaAzul(imagem.url)
     })
   }
 
@@ -101,7 +101,7 @@ export function Tab() {
 
   return (
     <ContainerTab id="ancora-tab" corFundo={tabAtiva.corFundo}>
-      <ControleTab corFundo={cores.amarelo}>
+      <ControleTab corFundo={cores.vinho}>
         {opcoesTab.map((opcao: OpcaoTabTipo, index: number) => (
           <OpcaoTab
             ativa={String(opcao.nomeOpcao === tabAtiva.nomeOpcao)}
@@ -110,7 +110,6 @@ export function Tab() {
             <Image
               src={opcao.icone}
               alt={opcao.nomeOpcao}
-              sizes=""
               width={66.67}
               height={50}
             />
@@ -118,7 +117,7 @@ export function Tab() {
           </OpcaoTab>
         ))}
       </ControleTab>
-      <Stack direcao="horizontal" gap='0'>
+      <Stack direcao="horizontal" gap="0" wrap={true}>
         <LayoutTab>
           <TituloLayoutTab data-aos="fade-right" data-aos-anchor="#ancora-tab">
             {tabAtiva.titulo}

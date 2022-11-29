@@ -64,21 +64,20 @@ export const OpcaoTab = styled.li<OpcaoTabProps>`
   justify-content: center;
 
   text-transform: uppercase;
-  font-family: ${subtitulo.fontFamily};
+  font-family: ${paragrafo.fontFamily};
   font-size: 21px;
   transition: 0.5s ease-in-out all;
 
   padding: 2px;
   border-radius: 4px;
 
-  color: ${(props) =>
-    props.ativa === 'true' ? cores.branco : cores.terra};
+  color: ${(props) => (props.ativa === 'true' ? cores.amarelo : cores.branco)};
   cursor: pointer;
 
   transform: scale(${(props) => (props.ativa === 'true' ? 1.1 : 1)});
 
   &:hover {
-    color: ${cores.vinho};
+    color: ${cores.terra};
   }
 
   & img {

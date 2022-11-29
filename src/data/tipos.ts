@@ -57,6 +57,7 @@ export type TemasCores =
   | 'amarelo'
   | 'azulPetroleo'
   | 'laranja'
+  | 'azulRoyal'
 
 export type Tema = {
   corPrimaria: string
