@@ -1,9 +1,9 @@
-import {Asset} from '@data/tipos'
+import { Asset } from '@data/tipos'
 import imagens from '@resources/imagens'
-import {buscaAsset} from '@services/requisicoes/asset'
+import { buscaAsset } from '@services/requisicoes/asset'
 import Image from 'next/image'
-import {useEffect, useState} from 'react'
-import {ContainerLogo} from './Logo.styled'
+import { useLayoutEffect, useState } from 'react'
+import { ContainerLogo } from './Logo.styled'
 
 interface Props {
   cor?: 'branco' | 'terra' | 'amarela'
@@ -52,7 +52,7 @@ export function Logo({cor = 'branco'}: Props) {
     }
   }
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     atualizaImagemLogo()
   }, [cor])
 

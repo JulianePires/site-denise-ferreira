@@ -1,35 +1,7 @@
 import dispositivos from '@resources/dispositivos'
-import margens from '@resources/margens'
 import {detalhe, subtitulo} from '@resources/textos'
 import Image from 'next/image'
 import styled from 'styled-components'
-
-interface ContainerBannerProps {
-  largura: string
-  corFundo?: string
-  imagemFundo?: string
-}
-
-export const ContainerBanner = styled.span<ContainerBannerProps>`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-
-  background: ${(props) =>
-    props.imagemFundo
-      ? `url(${props.imagemFundo})`
-      : props.corFundo
-        ? props.corFundo
-        : 'none'};
-  background-size: cover;
-
-  padding: ${margens.xlarge}px;
-  width: 100%;
-
-  @media ${dispositivos.laptop} {
-    padding: 0 0 0 ${margens.xxxlarge}px;
-  }
-`
 
 export const LogoBanner = styled(Image)`
   width: 200px;
@@ -65,7 +37,7 @@ export const TextoDescricaoBanner = styled.p`
 
   @media ${dispositivos.laptopL} {
     font-size: 1.5rem;
-    width: 650px;
+    width: 600px;
   }
 `
 
@@ -89,9 +61,6 @@ export const FotoBanner = styled(Image)`
     width: 350px;
   }
 
-  @media (min-width: 1440px) {
-    width: 420px;
-  }
 `
 
 interface ContainerTexturaProps {

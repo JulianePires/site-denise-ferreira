@@ -1,4 +1,5 @@
 import {Botao} from '@components/Botao'
+import {Container} from '@components/Container'
 import {ContainerConteudo} from '@components/ContainerConteudo'
 import {Stack} from '@components/Stack'
 import {Tab} from '@components/Tab'
@@ -8,13 +9,9 @@ import {LayoutPaginasSite} from '@layouts/LayoutPaginasSite'
 import conteudoTexto from '@resources/conteudoTexto'
 import cores from '@resources/cores'
 import imagens from '@resources/imagens'
+import margens from '@resources/margens'
 import {buscaAsset} from '@services/requisicoes/asset'
-import {
-  ContainerBanner,
-  FotoBanner,
-  LogoBanner,
-  TextoDescricaoBanner,
-} from '@styles/Home.styled'
+import * as S from '@styles/Home.styled'
 
 import {useRouter} from 'next/router'
 
@@ -34,9 +31,9 @@ export default function Home({fotoDenise, logoBranca, texturaTerra}: Props) {
   return (
     <LayoutPaginasSite titulo="Página Inicial">
       <ContainerConteudo corBackground={cores.terra}>
-        <ContainerBanner largura="100%" id="ancora-banner">
+        <Container largura="100%" id="ancora-banner">
           <Stack direcao={Direcoes.V} gap="1rem" margem="0 0 2.5rem 0">
-            <LogoBanner
+            <S.LogoBanner
               src={logoBranca.url}
               alt="Logo Denise Ferreira"
               width={logoBranca.width}
@@ -44,12 +41,12 @@ export default function Home({fotoDenise, logoBranca, texturaTerra}: Props) {
               data-aos="fade-right"
               data-aos-anchor="#ancora-banner"
             />
-            <TextoDescricaoBanner
+            <S.TextoDescricaoBanner
               data-aos="fade-right"
               data-aos-anchor="#ancora-banner"
               data-aos-delay="200">
               {conteudoTexto.textoDescricaoBanner}
-            </TextoDescricaoBanner>
+            </S.TextoDescricaoBanner>
           </Stack>
           <Botao
             aoClicar={navegarParaPaginaDeContato}
@@ -58,12 +55,14 @@ export default function Home({fotoDenise, logoBranca, texturaTerra}: Props) {
             estilo={EstilosBotao.SOLID}>
             Entre em contato
           </Botao>
-        </ContainerBanner>
-        <ContainerBanner
+        </Container>
+        <Container
           largura="100%"
           corFundo={cores.azulPetroleo}
-          imagemFundo={texturaTerra.url}>
-          <FotoBanner
+          imagemFundo={texturaTerra.url}
+          padding={`${margens.xxxlarge}px ${margens.large}px`}
+        >
+          <S.FotoBanner
             src={fotoDenise.url}
             alt="Foto Denise Ferreira"
             width={fotoDenise.width}
@@ -72,7 +71,7 @@ export default function Home({fotoDenise, logoBranca, texturaTerra}: Props) {
             data-aos-anchor="#ancora-banner"
             data-aos-delay="300"
           />
-        </ContainerBanner>
+        </Container>
       </ContainerConteudo>
       <ContainerConteudo corBackground={cores.azulPetroleo}>
         <Tab />
@@ -82,11 +81,7 @@ export default function Home({fotoDenise, logoBranca, texturaTerra}: Props) {
 }
 
 export async function getStaticProps() {
-  const {
-    idLogoBranca,
-    idFotoDenise,
-    idTexturaTerra,
-  } = imagens
+  const {idLogoBranca, idFotoDenise, idTexturaTerra} = imagens
 
   const reqLogoBranca = await buscaAsset(idLogoBranca)
   const reqFotoDenise = await buscaAsset(idFotoDenise)

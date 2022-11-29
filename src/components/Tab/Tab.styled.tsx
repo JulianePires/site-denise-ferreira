@@ -27,7 +27,8 @@ export const ContainerTab = styled.span<ContainerTabProps>`
 `
 
 interface ControleTabProps {
-  imagemFundo: string
+  imagemFundo?: string
+  corFundo?: string
 }
 
 export const ControleTab = styled.ul<ControleTabProps>`
@@ -36,7 +37,11 @@ export const ControleTab = styled.ul<ControleTabProps>`
   align-items: center;
 
   background: ${(props) =>
-    props.imagemFundo ? `url(${props.imagemFundo})` : cores.azulPetroleo};
+    props.corFundo
+      ? props.corFundo
+      : props.imagemFundo
+        ? `url(${props.imagemFundo})`
+        : cores.azulPetroleo};
 
   background-size: 25em;
 
@@ -66,13 +71,18 @@ export const OpcaoTab = styled.li<OpcaoTabProps>`
   padding: 2px;
   border-radius: 4px;
 
-  color: ${(props) => (props.ativa === 'true' ? cores.azulPetroleo : cores.terra)};
+  color: ${(props) =>
+    props.ativa === 'true' ? cores.branco : cores.terra};
   cursor: pointer;
 
   transform: scale(${(props) => (props.ativa === 'true' ? 1.1 : 1)});
 
   &:hover {
     color: ${cores.vinho};
+  }
+
+  & img {
+    width: auto;
   }
 `
 

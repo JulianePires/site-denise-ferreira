@@ -1,3 +1,5 @@
+import {Container} from '@components/Container'
+import { Stack } from '@components/Stack'
 import {OpcoesMenuTab} from '@data/enums'
 import {Asset, ChaveValor, TemasCores} from '@data/tipos'
 import conteudoTexto from '@resources/conteudoTexto'
@@ -56,7 +58,7 @@ export function Tab() {
   const [tabAtiva, setTabAtiva] = useState<OpcaoTabTipo>(opcoesTab[0])
 
   const {
-    idTexturaAmarela,
+    idTexturaAzul,
     idSankofaLaranja,
     idSankofaAzulPetroleo,
     idSankofaVinho,
@@ -67,12 +69,12 @@ export function Tab() {
   }
 
   function atualizaImagens() {
-    const reqTexturaAmarela = buscaAsset(idTexturaAmarela)
+    const reqTexturaAzul = buscaAsset(idTexturaAzul)
     const reqSankofaLaranja = buscaAsset(idSankofaLaranja)
     const reqSankofaAzulPetroleo = buscaAsset(idSankofaAzulPetroleo)
     const reqSankofaVinho = buscaAsset(idSankofaVinho)
 
-    reqTexturaAmarela.then((resposta) => {
+    reqTexturaAzul.then((resposta) => {
       const imagem = resposta.dados.asset as Asset
       setUrlImagemFundo(imagem.url)
     })
@@ -99,7 +101,7 @@ export function Tab() {
 
   return (
     <ContainerTab id="ancora-tab" corFundo={tabAtiva.corFundo}>
-      <ControleTab imagemFundo={urlImagemFundo}>
+      <ControleTab corFundo={cores.amarelo}>
         {opcoesTab.map((opcao: OpcaoTabTipo, index: number) => (
           <OpcaoTab
             ativa={String(opcao.nomeOpcao === tabAtiva.nomeOpcao)}
@@ -108,6 +110,7 @@ export function Tab() {
             <Image
               src={opcao.icone}
               alt={opcao.nomeOpcao}
+              sizes=""
               width={66.67}
               height={50}
             />
@@ -115,17 +118,20 @@ export function Tab() {
           </OpcaoTab>
         ))}
       </ControleTab>
-      <LayoutTab>
-        <TituloLayoutTab data-aos="fade-right" data-aos-anchor="#ancora-tab">
-          {tabAtiva.titulo}
-        </TituloLayoutTab>
-        <TextoLayoutTab
-          data-aos="fade-right"
-          data-aos-anchor="#ancora-tab"
-          data-aos-delay="200">
-          {tabAtiva.conteudo}
-        </TextoLayoutTab>
-      </LayoutTab>
+      <Stack direcao="horizontal" gap='0'>
+        <LayoutTab>
+          <TituloLayoutTab data-aos="fade-right" data-aos-anchor="#ancora-tab">
+            {tabAtiva.titulo}
+          </TituloLayoutTab>
+          <TextoLayoutTab
+            data-aos="fade-right"
+            data-aos-anchor="#ancora-tab"
+            data-aos-delay="200">
+            {tabAtiva.conteudo}
+          </TextoLayoutTab>
+        </LayoutTab>
+        <Container imagemFundo={urlImagemFundo} />
+      </Stack>
     </ContainerTab>
   )
 }

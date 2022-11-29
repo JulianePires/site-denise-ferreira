@@ -14,6 +14,7 @@ const imagens: ChaveValor<string> = {
   idSankofaLaranja: 'claza1euc22v60blp782iwopg',
   idSankofaAzulPetroleo: 'claldyevm208o0blv76q9lch2',
   idSankofaVinho: 'claldx1dp1y5y09kc2ontt23s',
+  idImagemJurista: 'clb25ir9n00r00bkkl4ey6p89',
 }
 
 export default imagens

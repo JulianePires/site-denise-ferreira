@@ -3,6 +3,7 @@ import styled from 'styled-components'
 
 interface ContainerExternoConteudoProps {
   corBackground: string
+  altura?: number
 }
 
 export const ContainerExternoConteudo = styled.section<ContainerExternoConteudoProps>`
@@ -15,6 +16,5 @@ export const ContainerExternoConteudo = styled.section<ContainerExternoConteudoP
 
   @media ${dispositivos.laptop} {
     flex-wrap: nowrap;
-    height: 764px;
   }
 `
