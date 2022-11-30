@@ -7,7 +7,9 @@ import {LayoutPaginasSite} from '@layouts/LayoutPaginasSite'
 import conteudoTexto from '@resources/conteudoTexto'
 import cores from '@resources/cores'
 import imagens from '@resources/imagens'
+import margens from '@resources/margens'
 import {buscaAsset} from '@services/requisicoes/asset'
+import * as S from '@styles/Atuacao.styled'
 
 interface Props {
   imagemJurista: Asset
@@ -20,13 +22,22 @@ export default function Atuacao({texturaTerra, imagemJurista}: Props) {
   return (
     <LayoutPaginasSite titulo="Atuação">
       <ContainerConteudo corBackground={cores.terra}>
-        <Container>
-          <Texto tamanho={TamanhosTexto.M}>{textoAtuacao.jurista.titulo}</Texto>
-          <Texto tamanho={TamanhosTexto.G}>
+        <Container padding={`${margens.xxxlarge}px ${margens.xxxlarge}px`}>
+          <Texto tamanho={TamanhosTexto.G}>{textoAtuacao.jurista.titulo}</Texto>
+          <Texto tamanho={TamanhosTexto.M}>
             {textoAtuacao.jurista.conteudo}
           </Texto>
         </Container>
-        <Container></Container>
+        <Container
+          imagemFundo={texturaTerra.url && texturaTerra.url}
+          padding={`${margens.xxxlarge}px ${margens.xxxlarge}px`}>
+          <S.ImagemJurista
+            src={imagemJurista.url && imagemJurista.url}
+            alt="Imagem jurista assinando papéis"
+            width={380}
+            height={300}
+          />
+        </Container>
       </ContainerConteudo>
     </LayoutPaginasSite>
   )

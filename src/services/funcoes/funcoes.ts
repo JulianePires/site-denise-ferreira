@@ -27,3 +27,11 @@ export function trataRespostaRequisicao(resposta: any): RespostaRequisicao {
     erro: '',
   }
 }
+
+function sleep(delay: number) {
+  const start = new Date().getTime()
+  while (new Date().getTime() < start + delay);
+}
+
+export {sleep}
+
