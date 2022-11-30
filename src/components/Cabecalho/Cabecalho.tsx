@@ -1,11 +1,7 @@
-import { Logo } from '@components/Logo'
+import {Logo} from '@components/Logo'
 import opcoesMenuHome from '@routes/menu'
-import { useRouter } from 'next/router'
-import {
-  ContainerCabecalho,
-  ContainerOpcoesMenu,
-  OpcaoMenu,
-} from './Cabecalho.styled'
+import {useRouter} from 'next/router'
+import * as S from './Cabecalho.styled'
 
 export function Cabecalho() {
   const router = useRouter()
@@ -16,19 +12,18 @@ export function Cabecalho() {
   }
 
   return (
-    <ContainerCabecalho>
+    <S.ContainerCabecalho>
       <Logo />
-      <ContainerOpcoesMenu>
+      <S.ContainerOpcoesMenu>
         {opcoesMenuHome.map((opcao, index) => (
-          <OpcaoMenu
+          <S.OpcaoMenu
             onClick={() => aoClicarNaOpcao(opcao.caminho)}
             atual={String(caminho === opcao.caminho)}
-            key={index}
-          >
+            key={index}>
             {opcao.nome}
-          </OpcaoMenu>
+          </S.OpcaoMenu>
         ))}
-      </ContainerOpcoesMenu>
-    </ContainerCabecalho>
+      </S.ContainerOpcoesMenu>
+    </S.ContainerCabecalho>
   )
 }

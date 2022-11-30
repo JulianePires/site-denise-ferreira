@@ -1,5 +1,5 @@
 import {ReactNode} from 'react'
-import {ContainerExternoConteudo} from './ContainerConteudo.styled'
+import * as S from './ContainerConteudo.styled'
 
 interface Props {
   children: ReactNode
@@ -9,8 +9,8 @@ interface Props {
 
 export function ContainerConteudo({children, corBackground, altura}: Props) {
   return (
-    <ContainerExternoConteudo corBackground={corBackground} altura={altura}>
+    <S.ContainerExternoConteudo corBackground={corBackground} altura={altura}>
       {children}
-    </ContainerExternoConteudo>
+    </S.ContainerExternoConteudo>
   )
 }

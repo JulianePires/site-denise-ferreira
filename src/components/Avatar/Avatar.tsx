@@ -3,7 +3,7 @@ import {Asset} from '@data/tipos'
 import imagens from '@resources/imagens'
 import {buscaAsset} from '@services/requisicoes/asset'
 import {useEffect, useState} from 'react'
-import {ContainerAvatar} from './Avatar.styled'
+import * as S from './Avatar.styled'
 
 interface Props {
   src?: string
@@ -36,7 +36,7 @@ export function Avatar({src, alt, tamanho}: Props) {
 
   console.log(tamanho)
   return (
-    <ContainerAvatar
+    <S.ContainerAvatar
       src={src ? src : placeholder.src}
       alt={alt ? alt : placeholder.alt}
       width={tamanho}

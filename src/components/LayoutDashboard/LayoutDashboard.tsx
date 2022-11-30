@@ -2,12 +2,7 @@ import {Asset} from '@data/tipos'
 import imagens from '@resources/imagens'
 import {buscaAsset} from '@services/requisicoes/asset'
 import {ReactNode, useEffect, useState} from 'react'
-import {
-  BannerLayout,
-  ContainerExternoLayout,
-  ContainerInternoLayout,
-  TituloLayout,
-} from './LayoutDashboard.styled'
+import * as S from './LayoutDashboard.styled'
 
 interface Props {
   titulo: string
@@ -32,12 +27,12 @@ export function LayoutDashboard({titulo, children}: Props) {
   }, [])
 
   return (
-    <ContainerExternoLayout>
-      <BannerLayout imagemFundo={textura} />
-      <ContainerInternoLayout>
-        <TituloLayout>{titulo}</TituloLayout>
+    <S.ContainerExternoLayout>
+      <S.BannerLayout imagemFundo={textura} />
+      <S.ContainerInternoLayout>
+        <S.TituloLayout>{titulo}</S.TituloLayout>
         {children}
-      </ContainerInternoLayout>
-    </ContainerExternoLayout>
+      </S.ContainerInternoLayout>
+    </S.ContainerExternoLayout>
   )
 }

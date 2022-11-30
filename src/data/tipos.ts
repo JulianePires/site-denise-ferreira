@@ -81,7 +81,7 @@ export type Asset = {
 
 export type DirecoesTipo = 'horizontal' | 'vertical'
 
-export type TamanhosTexto = 'PP' | 'P' | 'M' | 'G' | 'GG' | 'XG'
+export type TamanhosTextoTipo = 'PP' | 'P' | 'M' | 'G' | 'GG' | 'XG'
 
 export type ContainerTipo = {
   id?: string

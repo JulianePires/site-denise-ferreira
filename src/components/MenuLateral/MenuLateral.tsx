@@ -1,12 +1,7 @@
 import {InformacoesPessoais} from '@components/InformacoesPessoais'
 import {Logo} from '@components/Logo'
 import {OpcaoMenu} from '@data/tipos'
-import {
-  ContainerMenuLateral,
-  Opcao,
-  OpcoesMenu,
-  Titulo,
-} from './MenuLateral.styled'
+import * as S from './MenuLateral.styled'
 
 interface Props {
   titulo: string
@@ -22,23 +17,23 @@ export function MenuLateral({
   opcaoAtual,
 }: Props) {
   return (
-    <ContainerMenuLateral>
+    <S.ContainerMenuLateral>
       <Logo cor="amarela" />
 
-      <Titulo>{titulo}</Titulo>
+      <S.Titulo>{titulo}</S.Titulo>
 
       <InformacoesPessoais imagem="" nome="Juliane" />
 
-      <OpcoesMenu>
+      <S.OpcoesMenu>
         {opcoes.map((opcao, index) => (
-          <Opcao
+          <S.Opcao
             atual={String(opcao.caminho === opcaoAtual)}
             onClick={() => aoAlterarOpcao(opcao)}
             key={index}>
             {opcao.nome}
-          </Opcao>
+          </S.Opcao>
         ))}
-      </OpcoesMenu>
-    </ContainerMenuLateral>
+      </S.OpcoesMenu>
+    </S.ContainerMenuLateral>
   )
 }

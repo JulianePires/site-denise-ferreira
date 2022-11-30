@@ -8,14 +8,7 @@ import imagens from '@resources/imagens'
 import {buscaAsset} from '@services/requisicoes/asset'
 import Image from 'next/image'
 import {useEffect, useState} from 'react'
-import {
-  ContainerTab,
-  ControleTab,
-  LayoutTab,
-  OpcaoTab,
-  TextoLayoutTab,
-  TituloLayoutTab,
-} from './Tab.styled'
+import * as S from './Tab.styled'
 
 type OpcaoTabTipo = {
   nomeOpcao: 'sonhar' | 'agir' | 'ser'
@@ -100,10 +93,10 @@ export function Tab() {
   }, [])
 
   return (
-    <ContainerTab id="ancora-tab" corFundo={tabAtiva.corFundo}>
-      <ControleTab corFundo={cores.vinho}>
+    <S.ContainerTab id="ancora-tab" corFundo={tabAtiva.corFundo}>
+      <S.ControleTab corFundo={cores.vinho}>
         {opcoesTab.map((opcao: OpcaoTabTipo, index: number) => (
-          <OpcaoTab
+          <S.OpcaoTab
             ativa={String(opcao.nomeOpcao === tabAtiva.nomeOpcao)}
             onClick={() => defineTabAtualComoAtiva(opcao)}
             key={index}>
@@ -114,23 +107,25 @@ export function Tab() {
               height={50}
             />
             {opcao.nomeOpcao}
-          </OpcaoTab>
+          </S.OpcaoTab>
         ))}
-      </ControleTab>
+      </S.ControleTab>
       <Stack direcao="horizontal" gap="0" wrap={true}>
-        <LayoutTab>
-          <TituloLayoutTab data-aos="fade-right" data-aos-anchor="#ancora-tab">
+        <S.LayoutTab>
+          <S.TituloLayoutTab
+            data-aos="fade-right"
+            data-aos-anchor="#ancora-tab">
             {tabAtiva.titulo}
-          </TituloLayoutTab>
-          <TextoLayoutTab
+          </S.TituloLayoutTab>
+          <S.TextoLayoutTab
             data-aos="fade-right"
             data-aos-anchor="#ancora-tab"
             data-aos-delay="200">
             {tabAtiva.conteudo}
-          </TextoLayoutTab>
-        </LayoutTab>
+          </S.TextoLayoutTab>
+        </S.LayoutTab>
         <Container imagemFundo={urlImagemFundo} />
       </Stack>
-    </ContainerTab>
+    </S.ContainerTab>
   )
 }

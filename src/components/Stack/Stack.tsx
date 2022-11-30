@@ -1,6 +1,6 @@
 import {DirecoesTipo} from '@data/tipos'
 import {ReactNode} from 'react'
-import {ContainerStack} from './Stack.styled'
+import * as S from './Stack.styled'
 
 interface Props {
   direcao: DirecoesTipo
@@ -12,12 +12,12 @@ interface Props {
 
 export function Stack({direcao, gap, margem, children, wrap = false}: Props) {
   return (
-    <ContainerStack
+    <S.ContainerStack
       direcao={direcao}
       gap={gap}
       margem={margem}
       wrap={String(wrap)}>
       {children}
-    </ContainerStack>
+    </S.ContainerStack>
   )
 }

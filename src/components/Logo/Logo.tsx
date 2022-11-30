@@ -1,9 +1,9 @@
-import { Asset } from '@data/tipos'
+import {Asset} from '@data/tipos'
 import imagens from '@resources/imagens'
-import { buscaAsset } from '@services/requisicoes/asset'
+import {buscaAsset} from '@services/requisicoes/asset'
 import Image from 'next/image'
-import { useLayoutEffect, useState } from 'react'
-import { ContainerLogo } from './Logo.styled'
+import {useLayoutEffect, useState} from 'react'
+import * as S from './Logo.styled'
 
 interface Props {
   cor?: 'branco' | 'terra' | 'amarela'
@@ -57,8 +57,8 @@ export function Logo({cor = 'branco'}: Props) {
   }, [cor])
 
   return (
-    <ContainerLogo>
+    <S.ContainerLogo>
       <Image src={imagem.src} alt={imagem.alt} width={94} height={70} />
-    </ContainerLogo>
+    </S.ContainerLogo>
   )
 }

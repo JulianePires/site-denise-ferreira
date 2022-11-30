@@ -60,3 +60,12 @@ export enum IconesMenuTab {
   SANKOFALARANJA = 'sankofaLaranja',
   SANKOFAVINHO = 'sankofaVinho',
 }
+
+export enum TamanhosTexto {
+  PP = 'PP',
+  P = 'P',
+  M = 'M',
+  G = 'G',
+  GG = 'GG',
+  XG = 'XG',
+}

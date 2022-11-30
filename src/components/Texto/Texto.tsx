@@ -1,6 +1,7 @@
-import {TamanhosTexto} from '@data/tipos'
+import {TamanhosTexto} from '@data/enums'
+import {TamanhosTextoTipo} from '@data/tipos'
 import {ReactNode} from 'react'
-import {TextoG, TextoGG, TextoM, TextoP, TextoPP, TextoXG} from './Texto.styled'
+import * as S from './Texto.styled'
 
 interface Props {
   children: ReactNode
@@ -8,16 +9,17 @@ interface Props {
 }
 
 export function Texto({children, tamanho}: Props) {
-  const ComponenteTexto = componenteTextoTamanho[tamanho]
-  
+  const tamanhoTexto = TamanhosTexto[tamanho] as TamanhosTextoTipo
+  const ComponenteTexto = componenteTextoTamanho[tamanhoTexto]
+
   return <ComponenteTexto>{children}</ComponenteTexto>
 }
 
 const componenteTextoTamanho = {
-  PP: TextoPP,
-  P: TextoP,
-  M: TextoM,
-  G: TextoG,
-  GG: TextoGG,
-  XG: TextoXG,
+  PP: S.TextoPP,
+  P: S.TextoP,
+  M: S.TextoM,
+  G: S.TextoG,
+  GG: S.TextoGG,
+  XG: S.TextoXG,
 }

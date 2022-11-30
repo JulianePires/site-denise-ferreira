@@ -1,6 +1,6 @@
 import {BotaoIcone} from '@components/BotaoIcone'
 import {Logo} from '@components/Logo'
-import {ContainerRodape, TextoRodape} from './Rodape.styled'
+import * as S from './Rodape.styled'
 import {FaInstagram, FaLinkedinIn} from 'react-icons/fa'
 import {GrMail} from 'react-icons/gr'
 import {Stack} from '@components/Stack'
@@ -9,9 +9,9 @@ import conteudoTexto from '@resources/conteudoTexto'
 
 export function Rodape() {
   return (
-    <ContainerRodape>
+    <S.ContainerRodape>
       <Logo cor="terra" />
-      <TextoRodape>{conteudoTexto.textoRodape}</TextoRodape>
+      <S.TextoRodape>{conteudoTexto.textoRodape}</S.TextoRodape>
       <Stack direcao={Direcoes.H} gap="3rem">
         <BotaoIcone
           corBackground="terra"
@@ -25,6 +25,6 @@ export function Rodape() {
           icone={FaLinkedinIn}
         />
       </Stack>
-    </ContainerRodape>
+    </S.ContainerRodape>
   )
 }

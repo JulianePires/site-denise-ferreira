@@ -1,6 +1,6 @@
 import {Avatar} from '@components/Avatar'
 import {TamanhosComponente} from '@data/enums'
-import {ContainerInformacoesPessoais, Nome} from './InformacoesPessoais.styled'
+import * as S from './InformacoesPessoais.styled'
 
 interface Props {
   nome: string
@@ -9,13 +9,13 @@ interface Props {
 
 export function InformacoesPessoais({nome, imagem}: Props) {
   return (
-    <ContainerInformacoesPessoais>
+    <S.ContainerInformacoesPessoais>
       <Avatar
         src={imagem}
         alt="Imagem de perfil do usuario logado"
         tamanho={TamanhosComponente.M}
       />
-      <Nome>Olá, {nome}!</Nome>
-    </ContainerInformacoesPessoais>
+      <S.Nome>Olá, {nome}!</S.Nome>
+    </S.ContainerInformacoesPessoais>
   )
 }

@@ -1,7 +1,7 @@
 import {TamanhosComponente} from '@data/enums'
 import {TemasCores} from '@data/tipos'
 import {ReactNode} from 'react'
-import {ContainerBotao} from './Botao.styled'
+import * as S from './Botao.styled'
 
 interface Props {
   children: ReactNode
@@ -13,12 +13,12 @@ interface Props {
 
 export function Botao({children, tamanho, estilo, tema, aoClicar}: Props) {
   return (
-    <ContainerBotao
+    <S.ContainerBotao
       tema={tema}
       tamanho={tamanho}
       estilo={estilo}
       onClick={aoClicar}>
       {children}
-    </ContainerBotao>
+    </S.ContainerBotao>
   )
 }

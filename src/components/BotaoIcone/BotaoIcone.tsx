@@ -1,6 +1,6 @@
-import { TemasCores } from '@data/tipos'
-import { ContainerBotaoIcone } from './BotaoIcone.styled'
-import { IconType } from 'react-icons'
+import {TemasCores} from '@data/tipos'
+import * as S from './BotaoIcone.styled'
+import {IconType} from 'react-icons'
 
 interface Props {
   corBackground: TemasCores
@@ -8,11 +8,11 @@ interface Props {
   icone: IconType
 }
 
-export function BotaoIcone({ corBackground, corIcone, icone }: Props) {
+export function BotaoIcone({corBackground, corIcone, icone}: Props) {
   const ComponenteIcone = icone
   return (
-    <ContainerBotaoIcone corIcone={corIcone} corBackground={corBackground}>
+    <S.ContainerBotaoIcone corIcone={corIcone} corBackground={corBackground}>
       <ComponenteIcone />
-    </ContainerBotaoIcone>
+    </S.ContainerBotaoIcone>
   )
 }
