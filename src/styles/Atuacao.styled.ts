@@ -1,9 +1,17 @@
+import {Texto} from '@components/Texto'
+import {TamanhosTexto} from '@data/enums'
 import {ContainerTipo} from '@data/tipos'
 import dispositivos from '@resources/dispositivos'
+import {subtitulo} from '@resources/textos'
 import Image from 'next/image'
 import styled from 'styled-components'
 
 export const ContainerJurista = styled.span<ContainerTipo>``
+
+export const TituloJurista = styled(Texto).attrs({
+  tamanho: TamanhosTexto.GG,
+  fonteAlternativa: subtitulo.fontFamily,
+})``
 
 export const ImagemJurista = styled(Image)`
   align-self: center;

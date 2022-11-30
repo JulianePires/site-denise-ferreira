@@ -1,7 +1,7 @@
 import cores from '@resources/cores'
 import dispositivos from '@resources/dispositivos'
 import margens from '@resources/margens'
-import { detalhe, paragrafo, subtitulo } from '@resources/textos'
+import {detalhe, paragrafo, subtitulo} from '@resources/textos'
 import styled from 'styled-components'
 
 export const ContainerCabecalho = styled.header`
@@ -49,7 +49,9 @@ export const OpcaoMenu = styled.li<OpcaoMenuProps>`
     font-size: ${subtitulo.fontSize};
   }
 
-  color: ${(props) => (props.atual === 'true' ? cores.laranja : cores.branco)};
+  color: ${cores.branco};
+  text-decoration: ${(props) =>
+    props.atual === 'true' ? 'underline' : 'none'};
 
   cursor: pointer;
   transition: 0.3s ease-in-out all;

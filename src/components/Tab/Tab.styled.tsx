@@ -71,8 +71,10 @@ export const OpcaoTab = styled.li<OpcaoTabProps>`
   padding: 2px;
   border-radius: 4px;
 
-  color: ${(props) => (props.ativa === 'true' ? cores.amarelo : cores.branco)};
+  color: ${cores.branco};
   cursor: pointer;
+  text-decoration: ${(props) =>
+    props.ativa === 'true' ? 'underline' : 'none'};
 
   transform: scale(${(props) => (props.ativa === 'true' ? 1.1 : 1)});
 

@@ -23,7 +23,7 @@ export default function Atuacao({texturaTerra, imagemJurista}: Props) {
     <LayoutPaginasSite titulo="Atuação">
       <ContainerConteudo corBackground={cores.terra}>
         <Container padding={`${margens.xxxlarge}px ${margens.xxxlarge}px`}>
-          <Texto tamanho={TamanhosTexto.G}>{textoAtuacao.jurista.titulo}</Texto>
+          <S.TituloJurista>{textoAtuacao.jurista.titulo}</S.TituloJurista>
           <Texto tamanho={TamanhosTexto.M}>
             {textoAtuacao.jurista.conteudo}
           </Texto>

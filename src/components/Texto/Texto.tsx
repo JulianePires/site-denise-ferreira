@@ -6,13 +6,18 @@ import * as S from './Texto.styled'
 interface Props {
   children: ReactNode
   tamanho: TamanhosTexto
+  fonteAlternativa?: string
 }
 
-export function Texto({children, tamanho}: Props) {
+export function Texto({children, tamanho, fonteAlternativa}: Props) {
   const tamanhoTexto = TamanhosTexto[tamanho] as TamanhosTextoTipo
   const ComponenteTexto = componenteTextoTamanho[tamanhoTexto]
 
-  return <ComponenteTexto>{children}</ComponenteTexto>
+  return (
+    <ComponenteTexto fonteAlternativa={fonteAlternativa}>
+      {children}
+    </ComponenteTexto>
+  )
 }
 
 const componenteTextoTamanho = {
