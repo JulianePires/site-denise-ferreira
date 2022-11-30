@@ -10,7 +10,7 @@ export const ContainerExternoConteudo = styled.section<ContainerExternoConteudoP
   display: flex;
   flex-wrap: wrap;
 
-  height: fit-content;
+  height: ${(props) => (props.altura ? props.altura + 'px' : 'fit-content')};
 
   background: ${(props) => props.corBackground};
 

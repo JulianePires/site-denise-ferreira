@@ -1,3 +1,4 @@
+import {Container} from '@components/Container'
 import {ContainerConteudo} from '@components/ContainerConteudo'
 import {TextoG, TextoM} from '@components/Texto/Texto.styled'
 import {StatusRequisicao} from '@data/enums'
@@ -7,17 +8,23 @@ import conteudoTexto from '@resources/conteudoTexto'
 import cores from '@resources/cores'
 import imagens from '@resources/imagens'
 import {buscaAsset} from '@services/requisicoes/asset'
-import {ContainerJurista} from '@styles/Atuacao.styled'
 
-export default function Atuacao() {
+interface Props {
+  imagemJurista: Asset
+  texturaTerra: Asset
+}
+
+export default function Atuacao({texturaTerra, imagemJurista}: Props) {
   const {textoAtuacao} = conteudoTexto
+
   return (
     <LayoutPaginasSite titulo="Atuação">
       <ContainerConteudo corBackground={cores.terra}>
-        <ContainerJurista>
+        <Container>
           <TextoG>{textoAtuacao.jurista.titulo}</TextoG>
           <TextoM>{textoAtuacao.jurista.conteudo}</TextoM>
-        </ContainerJurista>
+        </Container>
+        <Container></Container>
       </ContainerConteudo>
     </LayoutPaginasSite>
   )

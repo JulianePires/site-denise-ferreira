@@ -6,17 +6,17 @@ const conteudoTexto = {
     ser: {
       titulo: 'Quem eu sou',
       conteúdo:
-        'Inserir aqui quem eu sou, quem eu sou, quem eu sou. Inserir aqui quem eu sou, quem eu sou, quem eu sou. Inserir aqui quem eu sou, quem eu sou, quem eu sou. Inserir aqui quem eu sou, quem eu sou, quem eu sou. Inserir aqui quem eu sou, quem eu sou, quem eu sou.',
+        'Sou uma Mulher Negra, Mestre em Educação, servidora pública e reconhecida pela minha expertise no campo da adoção - especialmente na perspectiva das questões raciais pertinentes a esse universo. São 20 anos de estrada que me trouxeram até aqui.',
     },
     agir: {
       titulo: 'O que eu faço',
       conteúdo:
-        'Inserir aqui o que faço, o que faço, o que faço.Inserir aqui o que faço, o que faço, o que faço. Inserir aqui o que faço, o que faço, o que faço. Inserir aqui o que faço, o que faço, o que faço. Inserir aqui o que faço, o que faço, o que faço.',
+        'Atuo como Assistente social no Tribunal de Justiça da Bahia, sou escritora com livros publicados, palestrante e facilitadora de cursos online. Também gosto de levar as minhas formações para estabelecimentos comerciais e instituições públicas.',
     },
     sonhar: {
       titulo: 'Com o que sonho',
       conteúdo:
-        'Inserir aqui com o que sonho, com o que sonho, com o que sonho.Inserir aqui com o que sonho, com o que sonho, com o que sonho. Inserir aqui com o que sonho, com o que sonho, com o que sonho. Inserir aqui com o que sonho, com o que sonho, com o que sonho. Inserir aqui com o que sonho, com o que sonho, com o que sonho.',
+        'Sonho com um mundo onde possamos ver a justiça racial e social acontecer. Especialmente, para nossas crianças, adolescentes, mulheres, população LGBTQIA+ e parcelas vulnerabilizadas da sociedade. Um mundo sem racismo, sem machismo, sem genocídio dos povos originários, sem LGBTfobia é possível e é por ele que trabalho.',
     },
   },
   textoAtuacao: {

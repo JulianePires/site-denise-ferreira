@@ -4,11 +4,12 @@ import {ContainerExternoConteudo} from './ContainerConteudo.styled'
 interface Props {
   children: ReactNode
   corBackground: string
+  altura?: number
 }
 
-export function ContainerConteudo({children, corBackground}: Props) {
+export function ContainerConteudo({children, corBackground, altura}: Props) {
   return (
-    <ContainerExternoConteudo corBackground={corBackground}>
+    <ContainerExternoConteudo corBackground={corBackground} altura={altura}>
       {children}
     </ContainerExternoConteudo>
   )

@@ -60,8 +60,7 @@ export default function Home({fotoDenise, logoBranca, texturaTerra}: Props) {
           largura="100%"
           corFundo={cores.azulPetroleo}
           imagemFundo={texturaTerra.url}
-          padding={`${margens.xxxlarge}px ${margens.large}px`}
-        >
+          padding={`${margens.xxxlarge}px ${margens.large}px`}>
           <S.FotoBanner
             src={fotoDenise.url}
             alt="Foto Denise Ferreira"
