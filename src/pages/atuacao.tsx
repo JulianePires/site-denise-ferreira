@@ -39,6 +39,12 @@ export default function Atuacao({texturaTerra, imagemJurista}: Props) {
           />
         </Container>
       </ContainerConteudo>
+      <ContainerConteudo corBackground={cores.azulPetroleo}>
+        <S.CabecalhoEscritora>
+          <S.TituloEscritora>{textoAtuacao.escritora.titulo}</S.TituloEscritora>
+        </S.CabecalhoEscritora>
+        
+      </ContainerConteudo>
     </LayoutPaginasSite>
   )
 }

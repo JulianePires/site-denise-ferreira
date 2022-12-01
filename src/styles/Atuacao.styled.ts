@@ -24,3 +24,17 @@ export const ImagemJurista = styled(Image)`
     width: 380px;
   }
 `
+
+export const CabecalhoEscritora = styled.span`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 100%;
+  height: 120px;
+`
+
+export const TituloEscritora = styled(Texto).attrs({
+  tamanho: TamanhosTexto.GG,
+  fonteAlternativa: subtitulo.fontFamily,
+})``

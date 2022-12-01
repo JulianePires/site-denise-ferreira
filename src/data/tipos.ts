@@ -90,3 +90,9 @@ export type ContainerTipo = {
   imagemFundo?: string
   padding?: string
 }
+
+export type ElementoCarrosselTipo = {
+  imagem: string
+  descricao: string
+  linkExterno?: string
+}
