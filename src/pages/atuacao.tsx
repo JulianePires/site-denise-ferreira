@@ -1,7 +1,6 @@
 import {Carrossel} from '@components/Carrossel'
 import {Container} from '@components/Container'
 import {ContainerConteudo} from '@components/ContainerConteudo'
-import {Stack} from '@components/Stack'
 import {Texto} from '@components/Texto'
 import {Direcoes, StatusRequisicao, TamanhosTexto} from '@data/enums'
 import {Asset, ElementoCarrosselTipo} from '@data/tipos'
@@ -10,6 +9,7 @@ import conteudoTexto from '@resources/conteudoTexto'
 import cores from '@resources/cores'
 import imagens from '@resources/imagens'
 import margens from '@resources/margens'
+import {detalhe} from '@resources/textos'
 import {buscaAsset} from '@services/requisicoes/asset'
 import * as S from '@styles/Atuacao.styled'
 
@@ -19,8 +19,8 @@ interface Props {
 
 export default function Atuacao({imagensAtuacao}: Props) {
   const [
-    texturaTerra,
     imagemJurista,
+    texturaTerra,
     texturaAzulPetroleo,
     livrosEIniciativas1,
     livrosEIniciativas2,
@@ -65,16 +65,16 @@ export default function Atuacao({imagensAtuacao}: Props) {
 
   return (
     <LayoutPaginasSite titulo="Atuação">
-      <ContainerConteudo corBackground={cores.terra}>
-        <Container padding={`${margens.xxxlarge}px ${margens.xxxlarge}px`}>
+      <S.ContainerJurista>
+        <Container>
           <S.TituloJurista>{textoAtuacao.jurista.titulo}</S.TituloJurista>
-          <Texto tamanho={TamanhosTexto.M}>
+          <S.TextoDescricaoJurista>
             {textoAtuacao.jurista.conteudo}
-          </Texto>
+          </S.TextoDescricaoJurista>
         </Container>
         <Container
           imagemFundo={texturaTerra.url && texturaTerra.url}
-          padding={`${margens.xxxlarge}px ${margens.xxxlarge}px`}>
+          padding={`${margens.xxxlarge}px ${margens.xlarge}px`}>
           <S.ImagemJurista
             src={imagemJurista.url && imagemJurista.url}
             alt="Imagem jurista assinando papéis"
@@ -82,7 +82,7 @@ export default function Atuacao({imagensAtuacao}: Props) {
             height={300}
           />
         </Container>
-      </ContainerConteudo>
+      </S.ContainerJurista>
       <ContainerConteudo
         direcao={Direcoes.V}
         corBackground={cores.azulPetroleo}>

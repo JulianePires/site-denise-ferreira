@@ -1,18 +1,37 @@
 import {ContainerConteudo} from '@components/ContainerConteudo'
 import {Texto} from '@components/Texto'
 import {TamanhosTexto} from '@data/enums'
-import {ContainerTipo} from '@data/tipos'
+import cores from '@resources/cores'
 import dispositivos from '@resources/dispositivos'
-import {subtitulo} from '@resources/textos'
+import {detalhe, subtitulo} from '@resources/textos'
 import Image from 'next/image'
 import styled from 'styled-components'
 
-export const ContainerJurista = styled.span<ContainerTipo>``
+export const ContainerJurista = styled(ContainerConteudo).attrs({
+  corBackground: cores.terra,
+  altura: 600,
+})``
 
 export const TituloJurista = styled(Texto).attrs({
-  tamanho: TamanhosTexto.GG,
+  tamanho: TamanhosTexto.XG,
   fonteAlternativa: subtitulo.fontFamily,
 })``
+
+export const TextoDescricaoJurista = styled.p`
+  ${detalhe}
+
+  font-size: 1rem;
+
+  @media ${dispositivos.tablet} {
+    width: 320px;
+  }
+
+  @media ${dispositivos.laptop} {
+    font-size: 1.5rem;
+    line-height: ${subtitulo.lineHeight};
+    width: 100%;
+  }
+`
 
 export const ImagemJurista = styled(Image)`
   align-self: center;
@@ -22,7 +41,7 @@ export const ImagemJurista = styled(Image)`
   border-radius: 10px;
 
   @media ${dispositivos.tablet} {
-    width: 380px;
+    width: 500px;
   }
 `
 

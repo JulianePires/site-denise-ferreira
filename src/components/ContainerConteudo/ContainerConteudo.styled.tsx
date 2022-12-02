@@ -15,8 +15,9 @@ export const ContainerExternoConteudo = styled.section<ContainerExternoConteudoP
   flex-direction: ${(props) =>
     props.direcao === Direcoes.V ? 'column' : 'row'};
 
-  height: ${(props) => (props.altura ? props.altura + 'px' : 'fit-content')};
+  height: 'fit-content';
 
+  min-height: ${(props) => props.altura}px;
   background: ${(props) => props.corBackground};
 
   @media ${dispositivos.laptop} {
