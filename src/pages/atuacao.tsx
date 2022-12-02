@@ -1,6 +1,8 @@
+import {Botao} from '@components/Botao'
 import {Carrossel} from '@components/Carrossel'
 import {Container} from '@components/Container'
 import {ContainerConteudo} from '@components/ContainerConteudo'
+import {Icone} from '@components/Icone'
 import {Loader} from '@components/Loader'
 import {Direcoes, StatusRequisicao} from '@data/enums'
 import {Asset, ElementoCarrosselTipo} from '@data/tipos'
@@ -12,6 +14,7 @@ import margens from '@resources/margens'
 import {buscaAsset} from '@services/requisicoes/asset'
 import * as S from '@styles/Atuacao.styled'
 import {isEmpty} from 'ramda'
+import {BsCheck2Square} from 'react-icons/bs'
 
 interface Props {
   imagensAtuacao: Asset[]
@@ -64,6 +67,9 @@ export default function Atuacao({imagensAtuacao}: Props) {
   ]
 
   const idAncoraJurista = 'ancora-jurista'
+  const idAncoraPalestrante = 'ancora-palestrante'
+
+  const itensPalestrante = textoAtuacao.palestrante.palestras
 
   return (
     <LayoutPaginasSite titulo="Atuação">
@@ -107,6 +113,31 @@ export default function Atuacao({imagensAtuacao}: Props) {
         </S.CabecalhoEscritora>
         <Container imagemFundo={texturaAzulPetroleo && texturaAzulPetroleo.url}>
           <Carrossel elementos={elementosCarrossel} direcao={Direcoes.H} />
+        </Container>
+      </ContainerConteudo>
+      <ContainerConteudo corBackground={cores.vinho}>
+        <Container id={idAncoraPalestrante}>
+          <S.TituloPalestrante>
+            {textoAtuacao.palestrante.titulo}
+          </S.TituloPalestrante>
+          <S.ListaPalestrante>
+            {itensPalestrante.map((item, index) => (
+              <S.ItemListaPalestrante key={index}>
+                <Icone
+                  icone={BsCheck2Square}
+                  cor={cores.amarelo}
+                  tamanho={32}
+                />
+                <S.TextoItemListaPalestrante>
+                  {item}
+                </S.TextoItemListaPalestrante>
+              </S.ItemListaPalestrante>
+            ))}
+          </S.ListaPalestrante>
+          {/* eslint-disable-next-line @typescript-eslint/no-empty-function */}
+          <Botao tamanho="M" tema="vinho" estilo="outline" aoClicar={() => {}}>
+            Contratar
+          </Botao>
         </Container>
       </ContainerConteudo>
     </LayoutPaginasSite>

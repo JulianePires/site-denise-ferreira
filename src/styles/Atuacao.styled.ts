@@ -59,3 +59,32 @@ export const TituloEscritora = styled(Texto).attrs({
   tamanho: TamanhosTexto.GG,
   fonteAlternativa: subtitulo.fontFamily,
 })``
+
+export const TituloPalestrante = styled(Texto).attrs({
+  tamanho: TamanhosTexto.XG,
+  fonteAlternativa: subtitulo.fontFamily,
+})``
+
+export const ListaPalestrante = styled.ul`
+  display: flex;
+  flex-direction: column;
+
+  padding: 0;
+  margin: 0 0 2rem 0;
+
+  list-style: none;
+`
+
+export const ItemListaPalestrante = styled.li`
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+
+  height: 2.5rem;
+  margin: 0;
+  padding: 0;
+`
+
+export const TextoItemListaPalestrante = styled(Texto).attrs({
+  tamanho: TamanhosTexto.G,
+})``
