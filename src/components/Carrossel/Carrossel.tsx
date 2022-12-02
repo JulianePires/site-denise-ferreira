@@ -9,6 +9,7 @@ import * as S from './Carrossel.styled'
 import 'react-responsive-carousel/lib/styles/carousel.min.css'
 import {isEmpty} from 'ramda'
 import {Loader} from '@components/Loader'
+import {redirecionaParaUrlExterna} from '@services/funcoes'
 
 interface Props {
   direcao: DirecoesTipo
@@ -70,7 +71,10 @@ export function Carrossel({direcao, elementos}: Props) {
             </S.DescricaoImagemCarrossel>
             <S.BotaoImagemCarrossel
               // eslint-disable-next-line @typescript-eslint/no-empty-function
-              aoClicar={() => {}}
+              aoClicar={() =>
+                elemento.linkExterno &&
+                redirecionaParaUrlExterna(elemento.linkExterno)
+              }
               tema="amarelo"
               estilo={EstilosBotao.GHOST}
               tamanho="P">

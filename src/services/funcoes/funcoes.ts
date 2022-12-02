@@ -28,10 +28,11 @@ export function trataRespostaRequisicao(resposta: any): RespostaRequisicao {
   }
 }
 
-function sleep(delay: number) {
+export function sleep(delay: number) {
   const start = new Date().getTime()
   while (new Date().getTime() < start + delay);
 }
 
-export {sleep}
-
+export function redirecionaParaUrlExterna(url: string) {
+  window.open(url, '_blank')
+}
