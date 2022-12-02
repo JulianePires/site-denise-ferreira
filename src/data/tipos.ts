@@ -91,8 +91,11 @@ export type ContainerTipo = {
   padding?: string
 }
 
+export type PublicacaoEscritoraTipo = 'livro' | 'iniciativa'
+
 export type ElementoCarrosselTipo = {
   imagem: string
   descricao: string
   linkExterno?: string
+  tipo: PublicacaoEscritoraTipo
 }

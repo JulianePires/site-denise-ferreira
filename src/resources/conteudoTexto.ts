@@ -27,6 +27,27 @@ const conteudoTexto = {
     },
     escritora: {
       titulo: 'Livros e iniciativas',
+      textoBotaoCarrossel: {
+        iniciativa: 'Saber mais',
+        livro: 'Comprar',
+      },
+      descricaoElemento: {
+        elemento1: 'Top 10 nos mais vendidos da editora',
+        elemento2: 'Outro livro entre os mais vendidos',
+        elemento3: 'Obra na qual tive o prazer de coordenar',
+        elemento4: 'Coletivo Liga do Dendê',
+        elemento5: 'Clube Leitura Amigos do Akin',
+      },
+      linkElemento: {
+        elemento1:
+          'https://novapraxiseditorial.com/produto/pericia-social-e-defesa-de-direitos-principais-demandas-e-pormenores-tecnicos-segundo-expertos-de-6-paises/',
+        elemento2:
+          'https://novapraxiseditorial.com/produto/a-materializacao-do-pensamento-critico-na-producao-de-documentos-tecnicos-do-servico-social-extrato/',
+        elemento3:
+          'https://novapraxiseditorial.com/produto/el-peritaje-en-el-trabajo-social-y-la-defensa-de-los-derechos-principales-demandas-y-detalles-tecnicos-segun-expertos-de-6-paises-e-book/',
+        elemento4: 'https://www.instagram.com/coletivoligadodende/',
+        elemento5: 'https://www.instagram.com/akinruda_oficial/',
+      },
     },
     palestrante: {
       titulo: 'Palestras e formações ',

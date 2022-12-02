@@ -1,14 +1,19 @@
+import {Direcoes} from '@data/enums'
+import {DirecoesTipo} from '@data/tipos'
 import dispositivos from '@resources/dispositivos'
 import styled from 'styled-components'
 
 interface ContainerExternoConteudoProps {
   corBackground: string
   altura?: number
+  direcao?: DirecoesTipo
 }
 
 export const ContainerExternoConteudo = styled.section<ContainerExternoConteudoProps>`
   display: flex;
   flex-wrap: wrap;
+  flex-direction: ${(props) =>
+    props.direcao === Direcoes.V ? 'column' : 'row'};
 
   height: ${(props) => (props.altura ? props.altura + 'px' : 'fit-content')};
 

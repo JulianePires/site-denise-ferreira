@@ -1,3 +1,4 @@
+import {ContainerConteudo} from '@components/ContainerConteudo'
 import {Texto} from '@components/Texto'
 import {TamanhosTexto} from '@data/enums'
 import {ContainerTipo} from '@data/tipos'
@@ -29,6 +30,7 @@ export const CabecalhoEscritora = styled.span`
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-shrink: 1;
 
   width: 100%;
   height: 120px;

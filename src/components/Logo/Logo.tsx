@@ -2,7 +2,7 @@ import {Asset} from '@data/tipos'
 import imagens from '@resources/imagens'
 import {buscaAsset} from '@services/requisicoes/asset'
 import Image from 'next/image'
-import {useLayoutEffect, useState} from 'react'
+import {useEffect, useState} from 'react'
 import * as S from './Logo.styled'
 
 interface Props {
@@ -52,7 +52,7 @@ export function Logo({cor = 'branco'}: Props) {
     }
   }
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     atualizaImagemLogo()
   }, [cor])
 
