@@ -110,7 +110,7 @@ export function Tab() {
           </S.OpcaoTab>
         ))}
       </S.ControleTab>
-      <Stack direcao="horizontal" gap="0" wrap={true}>
+      <Stack direcao="horizontal" gap="0" quebra={true}>
         <S.LayoutTab>
           <S.TituloLayoutTab
             data-aos="fade-right"

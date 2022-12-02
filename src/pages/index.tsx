@@ -79,7 +79,7 @@ export default function Home({fotoDenise, logoBranca, texturaTerra}: Props) {
   )
 }
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
   const {idLogoBranca, idFotoDenise, idTexturaTerra} = imagens
 
   const reqLogoBranca = await buscaAsset(idLogoBranca)
