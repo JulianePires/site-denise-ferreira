@@ -7,14 +7,17 @@ interface Props {
   children: ReactNode
   tamanho: TamanhosTexto
   fonteAlternativa?: string
+  'data-aos'?: string
+  'data-aos-anchor'?: string
+  'data-aos-delay'?: string
 }
 
-export function Texto({children, tamanho, fonteAlternativa}: Props) {
+export function Texto({children, tamanho, fonteAlternativa, ...rest}: Props) {
   const tamanhoTexto = TamanhosTexto[tamanho] as TamanhosTextoTipo
   const ComponenteTexto = componenteTextoTamanho[tamanhoTexto]
 
   return (
-    <ComponenteTexto fonteAlternativa={fonteAlternativa}>
+    <ComponenteTexto fonteAlternativa={fonteAlternativa} {...rest}>
       {children}
     </ComponenteTexto>
   )

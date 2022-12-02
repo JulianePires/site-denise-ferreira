@@ -9,7 +9,7 @@ import styled from 'styled-components'
 
 export const ContainerJurista = styled(ContainerConteudo).attrs({
   corBackground: cores.terra,
-  altura: 600,
+  altura: 700,
 })``
 
 export const TituloJurista = styled(Texto).attrs({

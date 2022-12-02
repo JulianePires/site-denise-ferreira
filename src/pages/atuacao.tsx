@@ -63,12 +63,21 @@ export default function Atuacao({imagensAtuacao}: Props) {
     },
   ]
 
+  const idAncoraJurista = 'ancora-jurista'
+
   return (
     <LayoutPaginasSite titulo="Atuação">
       <S.ContainerJurista>
-        <Container>
-          <S.TituloJurista>{textoAtuacao.jurista.titulo}</S.TituloJurista>
-          <S.TextoDescricaoJurista>
+        <Container id={idAncoraJurista}>
+          <S.TituloJurista
+            data-aos="fade-right"
+            data-aos-anchor={`#${idAncoraJurista}`}>
+            {textoAtuacao.jurista.titulo}
+          </S.TituloJurista>
+          <S.TextoDescricaoJurista
+            data-aos="fade-right"
+            data-aos-anchor={`#${idAncoraJurista}`}
+            data-aos-delay="200">
             {textoAtuacao.jurista.conteudo}
           </S.TextoDescricaoJurista>
         </Container>
@@ -80,6 +89,9 @@ export default function Atuacao({imagensAtuacao}: Props) {
             alt="Imagem jurista assinando papéis"
             width={380}
             height={300}
+            data-aos="fade-left"
+            data-aos-anchor={`#${idAncoraJurista}`}
+            data-aos-delay="300"
           />
         </Container>
       </S.ContainerJurista>
