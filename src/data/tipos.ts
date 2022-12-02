@@ -99,3 +99,11 @@ export type ElementoCarrosselTipo = {
   linkExterno?: string
   tipo: PublicacaoEscritoraTipo
 }
+
+export type AlinhamentoTipo =
+  | 'flex-start'
+  | 'flex-end'
+  | 'center'
+  | 'space-between'
+  | 'space-around'
+  | 'space-evenly'

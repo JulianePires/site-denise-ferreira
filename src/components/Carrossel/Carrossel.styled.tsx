@@ -3,7 +3,11 @@ import {Stack} from '@components/Stack'
 import {Texto} from '@components/Texto'
 import {Direcoes, TamanhosTexto} from '@data/enums'
 import {DirecoesTipo} from '@data/tipos'
+import cores from '@resources/cores'
+import dispositivos from '@resources/dispositivos'
+import {paragrafo} from '@resources/textos'
 import Image from 'next/image'
+import {Carousel} from 'react-responsive-carousel'
 import styled from 'styled-components'
 
 interface ContainerCarrosselProps {
@@ -15,30 +19,44 @@ export const ContainerCarrossel = styled.div<ContainerCarrosselProps>`
   flex-direction: ${(props) =>
     props.direcao === Direcoes.H ? 'row' : 'column'};
   gap: 1rem;
+  align-items: center;
+  justify-content: center;
 
   width: 100%;
-
-  overflow-x: hidden;
+  height: 600px;
 `
 
-interface ImagensCarrosselProps {
-  direcao: DirecoesTipo
-}
-
-export const ImagensCarrossel = styled.div<ImagensCarrosselProps>`
+export const ImagensCarrossel = styled(Carousel)`
   display: flex;
-  flex-direction: ${(props) =>
-    props.direcao === Direcoes.H ? 'row' : 'column'};
-  gap: 4%;
+  align-items: center;
+  width: 300px;
+  height: fit-content;
 
-  transform: translate(-25%, 0);
+  @media ${dispositivos.tablet} {
+    width: 400px;
+  }
+
+  @media ${dispositivos.laptop} {
+    width: 500px;
+  }
 `
 
-export const ImagemCarrossel = styled(Image)``
+export const ImagemCarrossel = styled(Image)`
+  width: 250px;
+  height: auto;
+
+  @media ${dispositivos.tablet} {
+    width: 400px;
+  }
+`
 
 export const DescricaoImagemCarrossel = styled(Texto).attrs({
   tamanho: TamanhosTexto.P,
-})``
+})`
+  background: ${cores.azulPetroleo} !important;
+  font-size: ${paragrafo.fontSize} !important;
+  cursor: pointer;
+`
 
 export const BotaoImagemCarrossel = styled(Botao)``
 

@@ -1,15 +1,13 @@
 import {Carrossel} from '@components/Carrossel'
 import {Container} from '@components/Container'
 import {ContainerConteudo} from '@components/ContainerConteudo'
-import {Texto} from '@components/Texto'
-import {Direcoes, StatusRequisicao, TamanhosTexto} from '@data/enums'
+import {Direcoes, StatusRequisicao} from '@data/enums'
 import {Asset, ElementoCarrosselTipo} from '@data/tipos'
 import {LayoutPaginasSite} from '@layouts/LayoutPaginasSite'
 import conteudoTexto from '@resources/conteudoTexto'
 import cores from '@resources/cores'
 import imagens from '@resources/imagens'
 import margens from '@resources/margens'
-import {detalhe} from '@resources/textos'
 import {buscaAsset} from '@services/requisicoes/asset'
 import * as S from '@styles/Atuacao.styled'
 
@@ -109,7 +107,7 @@ export default function Atuacao({imagensAtuacao}: Props) {
   )
 }
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
   const {
     idImagemJurista,
     idTexturaTerra,

@@ -6,49 +6,61 @@ import {useState} from 'react'
 import {BsArrowLeftCircleFill, BsArrowRightCircleFill} from 'react-icons/bs'
 import * as S from './Carrossel.styled'
 
+import 'react-responsive-carousel/lib/styles/carousel.min.css'
+
 interface Props {
   direcao: DirecoesTipo
   elementos: ElementoCarrosselTipo[]
 }
 
 export function Carrossel({direcao, elementos}: Props) {
-  const [elementoAtual, setElementoAtual] = useState(1)
+  const [elementoAtual, setElementoAtual] = useState(0)
   const quantidadeDeElementos = elementos.length
-  const elementosManipulaveis = elementos
 
   function avancaElementoAtual() {
-    if (elementoAtual + 1 === quantidadeDeElementos + 1) {
-      setElementoAtual(1)
+    if (elementoAtual + 1 === quantidadeDeElementos) {
+      setElementoAtual(0)
     } else {
       setElementoAtual(elementoAtual + 1)
     }
-    const primeiroElemento =
-      elementosManipulaveis.shift() as ElementoCarrosselTipo
-    elementosManipulaveis.push(primeiroElemento)
   }
 
   function retrocedeElementoAtual() {
-    if (elementoAtual - 1 === 0) {
-      setElementoAtual(quantidadeDeElementos)
+    if (elementoAtual - 1 === -1) {
+      setElementoAtual(quantidadeDeElementos - 1)
     } else {
       setElementoAtual(elementoAtual - 1)
     }
-    const ultimoElemento = elementosManipulaveis.pop() as ElementoCarrosselTipo
-    elementosManipulaveis.unshift(ultimoElemento)
+  }
+
+  function atualizaElementoAtual(index: number) {
+    if (elementoAtual !== index) {
+      setElementoAtual(index)
+    }
   }
 
   return (
-    <S.ContainerCarrossel direcao={direcao}>
-      <S.ImagensCarrossel direcao={direcao}>
-        {elementosManipulaveis.map((elemento, index) => (
-          <Stack key={index} direcao={Direcoes.V} gap="1rem">
+    <S.ContainerCarrossel
+      direcao={direcao === Direcoes.V ? Direcoes.H : Direcoes.V}>
+      <S.ImagensCarrossel
+        selectedItem={elementoAtual}
+        autoPlay
+        onChange={atualizaElementoAtual}
+        showThumbs={false}
+        showStatus={false}
+        showIndicators={false}
+        useKeyboardArrows
+        animationHandler="fade"
+        infiniteLoop>
+        {elementos.map((elemento, index) => (
+          <Stack key={index} direcao={Direcoes.V} gap="1rem" alinhar="center">
             <S.ImagemCarrossel
               src={elemento.imagem}
               alt={elemento.descricao}
               width={400}
               height={400}
             />
-            <S.DescricaoImagemCarrossel>
+            <S.DescricaoImagemCarrossel className="legend">
               {elemento.descricao}
             </S.DescricaoImagemCarrossel>
             <S.BotaoImagemCarrossel
@@ -66,8 +78,10 @@ export function Carrossel({direcao, elementos}: Props) {
           </Stack>
         ))}
       </S.ImagensCarrossel>
-      <Stack direcao={Direcoes.H} gap="1rem">
-        <S.IndexCarrossel>{`0${elementoAtual}|0${quantidadeDeElementos}`}</S.IndexCarrossel>
+      <Stack direcao={Direcoes.H} gap="1rem" alinhar="center">
+        <S.IndexCarrossel>{`0${
+          elementoAtual + 1
+        }|0${quantidadeDeElementos}`}</S.IndexCarrossel>
         <S.SetaCarrossel onClick={retrocedeElementoAtual}>
           <BsArrowLeftCircleFill />
         </S.SetaCarrossel>
