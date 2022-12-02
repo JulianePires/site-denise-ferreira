@@ -18,9 +18,11 @@ export const Container = styled.span<ContainerTipo>`
 
   padding: ${margens.xlarge}px;
   width: 100%;
+  height: ${props => props.altura ? props.altura : 'initial'};
 
   @media ${dispositivos.laptop} {
-    padding: ${props => props.padding ? props.padding : `0 0 0 ${margens.xxxlarge}px`};
+    padding: ${(props) =>
+    props.padding ? props.padding : `0 0 0 ${margens.xxxlarge}px`};
   }
 
   @media ${dispositivos.laptopL} {

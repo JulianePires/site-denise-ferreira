@@ -124,7 +124,7 @@ export function Tab() {
             {tabAtiva.conteudo}
           </S.TextoLayoutTab>
         </S.LayoutTab>
-        <Container imagemFundo={urlImagemFundo} />
+        <Container altura='100%' imagemFundo={urlImagemFundo} />
       </Stack>
     </S.ContainerTab>
   )

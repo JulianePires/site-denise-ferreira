@@ -89,6 +89,7 @@ export type ContainerTipo = {
   corFundo?: string
   imagemFundo?: string
   padding?: string
+  altura?: string
 }
 
 export type PublicacaoEscritoraTipo = 'livro' | 'iniciativa'

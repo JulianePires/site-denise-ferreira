@@ -1,6 +1,7 @@
 import {Carrossel} from '@components/Carrossel'
 import {Container} from '@components/Container'
 import {ContainerConteudo} from '@components/ContainerConteudo'
+import {Loader} from '@components/Loader'
 import {Direcoes, StatusRequisicao} from '@data/enums'
 import {Asset, ElementoCarrosselTipo} from '@data/tipos'
 import {LayoutPaginasSite} from '@layouts/LayoutPaginasSite'
@@ -10,6 +11,7 @@ import imagens from '@resources/imagens'
 import margens from '@resources/margens'
 import {buscaAsset} from '@services/requisicoes/asset'
 import * as S from '@styles/Atuacao.styled'
+import {isEmpty} from 'ramda'
 
 interface Props {
   imagensAtuacao: Asset[]
@@ -82,15 +84,19 @@ export default function Atuacao({imagensAtuacao}: Props) {
         <Container
           imagemFundo={texturaTerra.url && texturaTerra.url}
           padding={`${margens.xxxlarge}px ${margens.xlarge}px`}>
-          <S.ImagemJurista
-            src={imagemJurista.url && imagemJurista.url}
-            alt="Imagem jurista assinando papéis"
-            width={380}
-            height={300}
-            data-aos="fade-left"
-            data-aos-anchor={`#${idAncoraJurista}`}
-            data-aos-delay="300"
-          />
+          {isEmpty(imagemJurista.url) ? (
+            <Loader />
+          ) : (
+            <S.ImagemJurista
+              src={imagemJurista.url}
+              alt="Imagem jurista assinando papéis"
+              width={380}
+              height={300}
+              data-aos="fade-left"
+              data-aos-anchor={`#${idAncoraJurista}`}
+              data-aos-delay="300"
+            />
+          )}
         </Container>
       </S.ContainerJurista>
       <ContainerConteudo
