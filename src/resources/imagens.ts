@@ -23,6 +23,11 @@ const imagens: ChaveValor<string> = {
   idLivrosEIniciativas4: 'clb4aqj180i3x0akcht161pb3',
   idLivrosEIniciativas5: 'clb4aqj180i6t0alza01vw2ut',
   idTexturaAzulPetroleo: 'clale0q6b20j10blvcwpt9ez4',
+  idPalestras1: 'clb9gb39g4vwv0alztwb8qhe8',
+  idPalestras2: 'clb9gb3aj3rwu0alvxl3muj3o',
+  idPalestras3: 'clb9gc24p4vy20alzansuctyj',
+  idPalestras4: 'clb9gb39t4vxa0alz9jpgikca',
+  idPalestras5: 'clb9gb39x3rwg0alvaj143ohk',
 }
 
 export default imagens

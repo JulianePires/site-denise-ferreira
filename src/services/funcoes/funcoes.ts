@@ -33,6 +33,6 @@ export function sleep(delay: number) {
   while (new Date().getTime() < start + delay);
 }
 
-export function redirecionaParaUrlExterna(url: string) {
+export function abreUrlExternaEmNovaAba(url: string) {
   window.open(url, '_blank')
 }

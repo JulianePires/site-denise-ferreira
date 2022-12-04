@@ -3,14 +3,22 @@ import {Texto} from '@components/Texto'
 import {TamanhosTexto} from '@data/enums'
 import cores from '@resources/cores'
 import dispositivos from '@resources/dispositivos'
-import {detalhe, subtitulo} from '@resources/textos'
+import {
+  detalhe,
+  paragrafo,
+  subtitulo,
+  titulo1,
+  titulo2,
+} from '@resources/textos'
 import Image from 'next/image'
 import styled from 'styled-components'
 
 export const ContainerJurista = styled(ContainerConteudo).attrs({
   corBackground: cores.terra,
-  altura: 700,
-})``
+  altura: 600,
+})`
+  overflow-x: hidden;
+`
 
 export const TituloJurista = styled(Texto).attrs({
   tamanho: TamanhosTexto.XG,
@@ -20,15 +28,16 @@ export const TituloJurista = styled(Texto).attrs({
 export const TextoDescricaoJurista = styled.p`
   ${detalhe}
 
-  font-size: 1rem;
-
-  @media ${dispositivos.tablet} {
-    width: 320px;
-  }
+  font-size: 1.2rem;
 
   @media ${dispositivos.laptop} {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     line-height: ${subtitulo.lineHeight};
+    width: 90%;
+  }
+
+  @media ${dispositivos.laptopL} {
+    font-size: 1.5rem;
     width: 100%;
   }
 `
@@ -40,8 +49,12 @@ export const ImagemJurista = styled(Image)`
   height: auto;
   border-radius: 10px;
 
-  @media ${dispositivos.tablet} {
-    width: 500px;
+  @media ${dispositivos.laptop} {
+    width: 300px;
+  }
+
+  @media ${dispositivos.laptop} {
+    width: 400px;
   }
 `
 
@@ -86,5 +99,13 @@ export const ItemListaPalestrante = styled.li`
 `
 
 export const TextoItemListaPalestrante = styled(Texto).attrs({
-  tamanho: TamanhosTexto.G,
-})``
+  tamanho: TamanhosTexto.PP,
+})`
+  @media ${dispositivos.tablet} {
+    ${paragrafo}
+  }
+
+  @media ${dispositivos.laptop} {
+    ${subtitulo}
+  }
+`

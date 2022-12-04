@@ -33,12 +33,16 @@ export const ImagensCarrossel = styled(Carousel)`
   height: fit-content;
 
   @media ${dispositivos.tablet} {
-    width: 400px;
+    width: 300px;
   }
 
   @media ${dispositivos.laptop} {
-    width: 500px;
+    width: 400px;
   }
+
+  @media ${dispositivos.laptopL} {
+    width: 500px;
+  } 
 `
 
 export const ImagemCarrossel = styled(Image)`

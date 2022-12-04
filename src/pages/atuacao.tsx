@@ -30,10 +30,15 @@ export default function Atuacao({imagensAtuacao}: Props) {
     livrosEIniciativas3,
     livrosEIniciativas4,
     livrosEIniciativas5,
+    palestras1,
+    palestras2,
+    palestras3,
+    palestras4,
+    palestras5,
   ] = imagensAtuacao
   const {textoAtuacao} = conteudoTexto
 
-  const elementosCarrossel: ElementoCarrosselTipo[] = [
+  const elementosCarrosselEscritora: ElementoCarrosselTipo[] = [
     {
       imagem: livrosEIniciativas1.url,
       descricao: textoAtuacao.escritora.descricaoElemento.elemento1,
@@ -63,6 +68,29 @@ export default function Atuacao({imagensAtuacao}: Props) {
       descricao: textoAtuacao.escritora.descricaoElemento.elemento5,
       linkExterno: textoAtuacao.escritora.linkElemento.elemento5,
       tipo: 'iniciativa',
+    },
+  ]
+
+  const elementosCarrosselPalestrante: ElementoCarrosselTipo[] = [
+    {
+      imagem: palestras1.url,
+      descricao: textoAtuacao.palestrante.palestras[0],
+    },
+    {
+      imagem: palestras2.url,
+      descricao: textoAtuacao.palestrante.palestras[1],
+    },
+    {
+      imagem: palestras3.url,
+      descricao: textoAtuacao.palestrante.palestras[2],
+    },
+    {
+      imagem: palestras4.url,
+      descricao: textoAtuacao.palestrante.palestras[3],
+    },
+    {
+      imagem: palestras5.url,
+      descricao: textoAtuacao.palestrante.palestras[4],
     },
   ]
 
@@ -112,17 +140,26 @@ export default function Atuacao({imagensAtuacao}: Props) {
           <S.TituloEscritora>{textoAtuacao.escritora.titulo}</S.TituloEscritora>
         </S.CabecalhoEscritora>
         <Container imagemFundo={texturaAzulPetroleo && texturaAzulPetroleo.url}>
-          <Carrossel elementos={elementosCarrossel} direcao={Direcoes.H} />
+          <Carrossel
+            elementos={elementosCarrosselEscritora}
+            direcao={Direcoes.H}
+          />
         </Container>
       </ContainerConteudo>
-      <ContainerConteudo corBackground={cores.vinho}>
+      <ContainerConteudo corBackground={cores.vinho} altura={600}>
         <Container id={idAncoraPalestrante}>
-          <S.TituloPalestrante>
+          <S.TituloPalestrante
+            data-aos="fade-right"
+            data-aos-anchor={`#${idAncoraPalestrante}`}>
             {textoAtuacao.palestrante.titulo}
           </S.TituloPalestrante>
           <S.ListaPalestrante>
             {itensPalestrante.map((item, index) => (
-              <S.ItemListaPalestrante key={index}>
+              <S.ItemListaPalestrante
+                key={index}
+                data-aos="fade-right"
+                data-aos-anchor={`#${idAncoraPalestrante}`}
+                data-aos-delay={`${(index + 1) * 100}`}>
                 <Icone
                   icone={BsCheck2Square}
                   cor={cores.amarelo}
@@ -135,9 +172,15 @@ export default function Atuacao({imagensAtuacao}: Props) {
             ))}
           </S.ListaPalestrante>
           {/* eslint-disable-next-line @typescript-eslint/no-empty-function */}
-          <Botao tamanho="M" tema="vinho" estilo="outline" aoClicar={() => {}}>
+          <Botao tamanho="G" tema="vinho" estilo="outline" aoClicar={() => {}}>
             Contratar
           </Botao>
+        </Container>
+        <Container>
+          <Carrossel
+            elementos={elementosCarrosselPalestrante}
+            direcao={Direcoes.V}
+          />
         </Container>
       </ContainerConteudo>
     </LayoutPaginasSite>
@@ -154,6 +197,11 @@ export async function getServerSideProps() {
     idLivrosEIniciativas3,
     idLivrosEIniciativas4,
     idLivrosEIniciativas5,
+    idPalestras1,
+    idPalestras2,
+    idPalestras3,
+    idPalestras4,
+    idPalestras5,
   } = imagens
 
   const reqImagemJurista = await buscaAsset(idImagemJurista)
@@ -164,6 +212,11 @@ export async function getServerSideProps() {
   const reqLivrosEIniciativas3 = await buscaAsset(idLivrosEIniciativas3)
   const reqLivrosEIniciativas4 = await buscaAsset(idLivrosEIniciativas4)
   const reqLivrosEIniciativas5 = await buscaAsset(idLivrosEIniciativas5)
+  const reqPalestras1 = await buscaAsset(idPalestras1)
+  const reqPalestras2 = await buscaAsset(idPalestras2)
+  const reqPalestras3 = await buscaAsset(idPalestras3)
+  const reqPalestras4 = await buscaAsset(idPalestras4)
+  const reqPalestras5 = await buscaAsset(idPalestras5)
 
   let imagemJurista = {}
   let texturaTerra = {}
@@ -173,6 +226,11 @@ export async function getServerSideProps() {
   let livrosEIniciativas3 = {}
   let livrosEIniciativas4 = {}
   let livrosEIniciativas5 = {}
+  let palestras1 = {}
+  let palestras2 = {}
+  let palestras3 = {}
+  let palestras4 = {}
+  let palestras5 = {}
 
   if (reqImagemJurista.status === StatusRequisicao.SUCESSO) {
     imagemJurista = reqImagemJurista.dados.asset as Asset
@@ -206,6 +264,26 @@ export async function getServerSideProps() {
     livrosEIniciativas5 = reqLivrosEIniciativas5.dados.asset as Asset
   }
 
+  if (reqPalestras1.status === StatusRequisicao.SUCESSO) {
+    palestras1 = reqPalestras1.dados.asset as Asset
+  }
+
+  if (reqPalestras2.status === StatusRequisicao.SUCESSO) {
+    palestras2 = reqPalestras2.dados.asset as Asset
+  }
+
+  if (reqPalestras3.status === StatusRequisicao.SUCESSO) {
+    palestras3 = reqPalestras3.dados.asset as Asset
+  }
+
+  if (reqPalestras4.status === StatusRequisicao.SUCESSO) {
+    palestras4 = reqPalestras4.dados.asset as Asset
+  }
+
+  if (reqPalestras5.status === StatusRequisicao.SUCESSO) {
+    palestras5 = reqPalestras5.dados.asset as Asset
+  }
+
   return {
     props: {
       imagensAtuacao: [
@@ -217,6 +295,11 @@ export async function getServerSideProps() {
         livrosEIniciativas3,
         livrosEIniciativas4,
         livrosEIniciativas5,
+        palestras1,
+        palestras2,
+        palestras3,
+        palestras4,
+        palestras5,
       ],
     },
   }

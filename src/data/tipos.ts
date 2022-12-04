@@ -98,7 +98,7 @@ export type ElementoCarrosselTipo = {
   imagem: string
   descricao: string
   linkExterno?: string
-  tipo: PublicacaoEscritoraTipo
+  tipo?: PublicacaoEscritoraTipo
 }
 
 export type AlinhamentoTipo =
