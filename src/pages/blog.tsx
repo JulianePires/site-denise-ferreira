@@ -1,6 +1,6 @@
 import {Post} from '@data/tipos'
 import {LayoutPaginasSite} from '@layouts/LayoutPaginasSite'
-import {buscaPosts} from '@services/requisicoes/post'
+import {buscaPosts} from '@infrastructure/requisicoes/post'
 import {StatusRequisicao} from 'src/data/enums'
 
 interface BlogProps {

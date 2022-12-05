@@ -14,7 +14,7 @@ import * as S from './Carrossel.styled'
 import 'react-responsive-carousel/lib/styles/carousel.min.css'
 import {isEmpty} from 'ramda'
 import {Loader} from '@components/Loader'
-import {abreUrlExternaEmNovaAba} from '@services/funcoes'
+import {abreUrlExternaEmNovaAba} from '@infrastructure/funcoes'
 
 interface Props {
   direcao: DirecoesTipo

@@ -108,3 +108,11 @@ export type AlinhamentoTipo =
   | 'space-between'
   | 'space-around'
   | 'space-evenly'
+
+export type FormularioContatoTipo = {
+  nome: string
+  email: string
+  cidade: string
+  organizacao: string
+  conteudoMensagem: string
+}

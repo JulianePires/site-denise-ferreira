@@ -10,7 +10,7 @@ import conteudoTexto from '@resources/conteudoTexto'
 import cores from '@resources/cores'
 import imagens from '@resources/imagens'
 import margens from '@resources/margens'
-import {buscaAsset} from '@services/requisicoes/asset'
+import {buscaAsset} from '@infrastructure/requisicoes/asset'
 import * as S from '@styles/Home.styled'
 
 import {useRouter} from 'next/router'

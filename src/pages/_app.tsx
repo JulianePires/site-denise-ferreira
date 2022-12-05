@@ -1,5 +1,5 @@
 import {ApolloProvider} from '@apollo/client'
-import {cliente} from '@services/cliente'
+import {cliente} from '@infrastructure/cliente'
 import EstiloGlobal from '@styles/global'
 import AOS from 'aos'
 import 'aos/dist/aos.css'

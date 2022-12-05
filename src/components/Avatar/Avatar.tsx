@@ -1,7 +1,7 @@
 import {TamanhosComponente} from '@data/enums'
 import {Asset} from '@data/tipos'
 import imagens from '@resources/imagens'
-import {buscaAsset} from '@services/requisicoes/asset'
+import {buscaAsset} from '@infrastructure/requisicoes/asset'
 import {useEffect, useState} from 'react'
 import * as S from './Avatar.styled'
 

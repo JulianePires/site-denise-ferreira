@@ -1,6 +1,6 @@
 import {gql} from '@apollo/client'
-import {cliente} from '@services/cliente'
-import {trataRespostaRequisicao} from '@services/funcoes'
+import {cliente} from '@infrastructure/cliente'
+import {trataRespostaRequisicao} from '@infrastructure/funcoes'
 
 export const BUSCA_USUARIOS_QUERY = gql`
   query BuscaUsuarios {
