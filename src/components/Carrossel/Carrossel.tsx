@@ -3,7 +3,12 @@ import {Direcoes, EstilosBotao} from '@data/enums'
 import {DirecoesTipo, ElementoCarrosselTipo} from '@data/tipos'
 import conteudoTexto from '@resources/conteudoTexto'
 import {useState} from 'react'
-import {BsArrowLeftCircleFill, BsArrowRightCircleFill} from 'react-icons/bs'
+import {
+  BsArrowLeftCircleFill,
+  BsArrowRightCircleFill,
+  BsArrowUpCircleFill,
+  BsArrowDownCircleFill,
+} from 'react-icons/bs'
 import * as S from './Carrossel.styled'
 
 import 'react-responsive-carousel/lib/styles/carousel.min.css'
@@ -42,61 +47,84 @@ export function Carrossel({direcao, elementos}: Props) {
     }
   }
 
+  function renderizaBotaoSePossuirLinkExterno(elemento: ElementoCarrosselTipo) {
+    let botao
+
+    if (elemento.linkExterno) {
+      botao = (
+        <S.BotaoImagemCarrossel
+          aoClicar={() =>
+            elemento.linkExterno &&
+            abreUrlExternaEmNovaAba(elemento.linkExterno)
+          }
+          tema="amarelo"
+          estilo={EstilosBotao.GHOST}
+          tamanho="P">
+          {elemento.tipo &&
+            conteudoTexto.textoAtuacao.escritora.textoBotaoCarrossel[
+              elemento.tipo
+            ]}
+        </S.BotaoImagemCarrossel>
+      )
+    } else {
+      botao = []
+    }
+
+    return botao
+  }
+
+  const statusControleCarrossel = `0${
+    elementoAtual + 1
+  } | 0${quantidadeDeElementos}`
+
   return (
     <S.ContainerCarrossel
       direcao={direcao === Direcoes.V ? Direcoes.H : Direcoes.V}>
       <S.ImagensCarrossel
-        selectedItem={elementoAtual}
         autoPlay
-        onChange={atualizaElementoAtual}
+        infiniteLoop
         showThumbs={false}
         showStatus={false}
         showIndicators={false}
-        infiniteLoop
+        selectedItem={elementoAtual}
+        onChange={atualizaElementoAtual}
         axis={direcao}>
         {elementos.map((elemento, index) => (
           <Stack key={index} direcao={Direcoes.V} gap="1rem" alinhar="center">
-            {isEmpty(elemento.imagem) ? (
-              <Loader />
-            ) : (
-              <S.ImagemCarrossel
-                src={elemento.imagem}
-                alt={elemento.descricao}
-                width={400}
-                height={400}
-              />
-            )}
-            <S.DescricaoImagemCarrossel className="legend">
-              {elemento.descricao}
-            </S.DescricaoImagemCarrossel>
-            {elemento.linkExterno && elemento.tipo && (
-              <S.BotaoImagemCarrossel
-                aoClicar={() =>
-                  elemento.linkExterno &&
-                  abreUrlExternaEmNovaAba(elemento.linkExterno)
-                }
-                tema="amarelo"
-                estilo={EstilosBotao.GHOST}
-                tamanho="P">
-                {
-                  conteudoTexto?.textoAtuacao.escritora.textoBotaoCarrossel[
-                    elemento.tipo
-                  ]
-                }
-              </S.BotaoImagemCarrossel>
-            )}
+            <>
+              {isEmpty(elemento.imagem) ? (
+                <Loader />
+              ) : (
+                <S.ImagemCarrossel
+                  src={elemento.imagem}
+                  alt={elemento.descricao}
+                  width={400}
+                  height={400}
+                />
+              )}
+              <S.DescricaoImagemCarrossel className="legend">
+                {elemento.descricao}
+              </S.DescricaoImagemCarrossel>
+              {renderizaBotaoSePossuirLinkExterno(elemento)}
+            </>
           </Stack>
         ))}
       </S.ImagensCarrossel>
-      <Stack direcao={Direcoes.H} gap="1rem" alinhar="center">
-        <S.IndexCarrossel>{`0${
-          elementoAtual + 1
-        }|0${quantidadeDeElementos}`}</S.IndexCarrossel>
+      <Stack direcao={direcao} gap="1rem" alinhar="center">
+        <S.IndexCarrossel>{statusControleCarrossel}</S.IndexCarrossel>
         <S.SetaCarrossel onClick={retrocedeElementoAtual}>
-          <BsArrowLeftCircleFill />
+          {direcao === 'horizontal' ? (
+            <BsArrowLeftCircleFill />
+          ) : (
+            <BsArrowUpCircleFill />
+          )}
         </S.SetaCarrossel>
         <S.SetaCarrossel onClick={avancaElementoAtual}>
-          <BsArrowRightCircleFill />
+          {direcao === 'horizontal' ? (
+            <BsArrowRightCircleFill />
+          ) : (
+            <BsArrowDownCircleFill />
+          )}
         </S.SetaCarrossel>
       </Stack>
     </S.ContainerCarrossel>

@@ -49,6 +49,8 @@ export const ImagemCarrossel = styled(Image)`
   width: 250px;
   height: auto;
 
+  border-radius: 1rem;
+
   @media ${dispositivos.tablet} {
     width: 400px;
   }
@@ -57,7 +59,7 @@ export const ImagemCarrossel = styled(Image)`
 export const DescricaoImagemCarrossel = styled(Texto).attrs({
   tamanho: TamanhosTexto.P,
 })`
-  background: ${cores.azulPetroleo} !important;
+  background: ${cores.vinho} !important;
   font-size: ${paragrafo.fontSize} !important;
   cursor: pointer;
 `
