@@ -17,12 +17,19 @@ export function Rodape() {
           corBackground="terra"
           corIcone="amarelo"
           icone={FaInstagram}
+          ariaLabel="Ir ao instagram"
         />
-        <BotaoIcone corBackground="terra" corIcone="amarelo" icone={GrMail} />
+        <BotaoIcone
+          corBackground="terra"
+          corIcone="amarelo"
+          icone={GrMail}
+          ariaLabel="Ir ao gmail"
+        />
         <BotaoIcone
           corBackground="terra"
           corIcone="amarelo"
           icone={FaLinkedinIn}
+          ariaLabel="Ir ao linkedin"
         />
       </Stack>
     </S.ContainerRodape>

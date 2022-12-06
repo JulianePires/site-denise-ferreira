@@ -5,7 +5,7 @@ import styled from 'styled-components'
 
 export const LogoBanner = styled(Image)`
   width: 200px;
-  height: max-content;
+  height: auto;
 
   @media ${dispositivos.tablet} {
     width: 300px;
@@ -60,7 +60,6 @@ export const FotoBanner = styled(Image)`
   @media ${dispositivos.laptopL} {
     width: 350px;
   }
-
 `
 
 interface ContainerTexturaProps {

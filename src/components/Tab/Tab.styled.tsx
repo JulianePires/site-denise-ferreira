@@ -9,6 +9,7 @@ import {
   titulo1,
   titulo2,
 } from '@resources/textos'
+import Image from 'next/image'
 import styled from 'styled-components'
 
 interface ContainerTabProps {
@@ -53,6 +54,11 @@ export const ControleTab = styled.ul<ControleTabProps>`
   list-style: none;
 `
 
+export const ImagemOpcaoTab = styled(Image)`
+  height: 50px;
+  width: auto;
+`
+
 interface OpcaoTabProps {
   ativa: string
 }
@@ -80,10 +86,6 @@ export const OpcaoTab = styled.li<OpcaoTabProps>`
 
   &:hover {
     color: ${cores.terra};
-  }
-
-  & img {
-    width: auto;
   }
 `
 

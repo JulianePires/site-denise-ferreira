@@ -13,6 +13,7 @@ import cores from '@resources/cores'
 import imagens from '@resources/imagens'
 import margens from '@resources/margens'
 import * as S from '@styles/Atuacao.styled'
+import {GetServerSidePropsContext} from 'next'
 import {useRouter} from 'next/router'
 import {isEmpty} from 'ramda'
 import {BsCheck2Square} from 'react-icons/bs'
@@ -196,8 +197,9 @@ export default function Atuacao({imagensAtuacao}: Props) {
             tamanho="G"
             tema="vinho"
             estilo="outline"
-            aoClicar={navegarParaPaginaDeContato}>
-            Contratar
+            aoClicar={navegarParaPaginaDeContato}
+            ariaLabel={textoAtuacao.palestrante.botao.ariaLabel}>
+            {textoAtuacao.palestrante.botao.texto}
           </Botao>
         </Container>
 
@@ -212,7 +214,12 @@ export default function Atuacao({imagensAtuacao}: Props) {
   )
 }
 
-export async function getServerSideProps() {
+export async function getServerSideProps({res}: GetServerSidePropsContext) {
+  res.setHeader(
+    'Cache-Control',
+    'public, s-maxage=10, stale-while-revalidate=59',
+  )
+
   const {
     idImagemJurista,
     idTexturaTerra,

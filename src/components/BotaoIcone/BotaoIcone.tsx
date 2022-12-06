@@ -6,12 +6,16 @@ interface Props {
   corBackground: TemasCores
   corIcone: TemasCores
   icone: IconType
+  ariaLabel: string
 }
 
-export function BotaoIcone({corBackground, corIcone, icone}: Props) {
+export function BotaoIcone({corBackground, corIcone, icone, ariaLabel}: Props) {
   const ComponenteIcone = icone
   return (
-    <S.ContainerBotaoIcone corIcone={corIcone} corBackground={corBackground}>
+    <S.ContainerBotaoIcone
+      aria-label={ariaLabel}
+      corIcone={corIcone}
+      corBackground={corBackground}>
       <ComponenteIcone />
     </S.ContainerBotaoIcone>
   )

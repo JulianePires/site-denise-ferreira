@@ -12,6 +12,7 @@ import cores from '@resources/cores'
 import imagens from '@resources/imagens'
 import margens from '@resources/margens'
 import * as S from '@styles/Home.styled'
+import {GetServerSidePropsContext} from 'next'
 import {useRouter} from 'next/router'
 
 interface Props {
@@ -21,6 +22,7 @@ interface Props {
 }
 
 export default function Home({fotoDenise, logoBranca, texturaTerra}: Props) {
+  const {botaoContato, textoHome} = conteudoTexto
   const router = useRouter()
 
   function navegarParaPaginaDeContato() {
@@ -44,15 +46,16 @@ export default function Home({fotoDenise, logoBranca, texturaTerra}: Props) {
               data-aos="fade-right"
               data-aos-anchor="#ancora-banner"
               data-aos-delay="200">
-              {conteudoTexto.textoDescricaoBanner}
+              {textoHome.textoDescricaoBanner}
             </S.TextoDescricaoBanner>
           </Stack>
           <Botao
             aoClicar={navegarParaPaginaDeContato}
             tema="vinho"
             tamanho="G"
-            estilo={EstilosBotao.SOLID}>
-            Entre em contato
+            estilo={EstilosBotao.SOLID}
+            ariaLabel={botaoContato.ariaLabel}>
+            {botaoContato.texto}
           </Botao>
         </Container>
         <Container
@@ -78,7 +81,12 @@ export default function Home({fotoDenise, logoBranca, texturaTerra}: Props) {
   )
 }
 
-export async function getServerSideProps() {
+export async function getServerSideProps({res}: GetServerSidePropsContext) {
+  res.setHeader(
+    'Cache-Control',
+    'public, s-maxage=10, stale-while-revalidate=59',
+  )
+
   const {idLogoBranca, idFotoDenise, idTexturaTerra} = imagens
 
   const reqLogoBranca = await buscaAsset(idLogoBranca)

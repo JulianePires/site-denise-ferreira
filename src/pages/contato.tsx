@@ -18,6 +18,7 @@ import imagens from '@resources/imagens'
 import margens from '@resources/margens'
 import * as S from '@styles/Contato.styled'
 import {useFormik} from 'formik'
+import {GetServerSidePropsContext} from 'next'
 import * as Yup from 'yup'
 
 interface Props {
@@ -26,7 +27,7 @@ interface Props {
 
 export default function Contato({imagensContato}: Props) {
   const [texturaVinho] = imagensContato
-  const {textoContato} = conteudoTexto
+  const {textoContato, botaoContato} = conteudoTexto
 
   const formik = useFormik<FormularioContatoTipo>({
     initialValues: {
@@ -154,8 +155,9 @@ export default function Contato({imagensContato}: Props) {
               desabilitaTema
               corFundoAlternativa={cores.branco}
               corFonteAlternativa={cores.terra}
-              aoClicar={formik.handleSubmit}>
-              {textoContato.textoBotao}
+              aoClicar={formik.handleSubmit}
+              ariaLabel={botaoContato.ariaLabel}>
+              {botaoContato.texto}
             </S.BotaoEnviarMensagemContato>
           </S.FormularioContato>
         </Container>
@@ -164,7 +166,12 @@ export default function Contato({imagensContato}: Props) {
   )
 }
 
-export async function getServerSideProps() {
+export async function getServerSideProps({res}: GetServerSidePropsContext) {
+  res.setHeader(
+    'Cache-Control',
+    'public, s-maxage=10, stale-while-revalidate=59',
+  )
+
   const {idTexturaVinho} = imagens
 
   const reqTexturaVinho = await buscaAsset(idTexturaVinho)

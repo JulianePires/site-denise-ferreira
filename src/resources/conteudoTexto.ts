@@ -1,24 +1,27 @@
 const conteudoTexto = {
-  textoDescricaoBanner:
-    'Mais de 20 anos de carreira, especialista em direito da criança e do adolescente, com foco em adoção e relações raciais.',
-  textoRodape: '@DeniseFerreira | Todos os direitos reservados',
-  textoTab: {
-    ser: {
-      titulo: 'Quem eu sou',
-      conteúdo:
-        'Sou uma Mulher Negra, Mestre em Educação, servidora pública e reconhecida pela minha expertise no campo da adoção - especialmente na perspectiva das questões raciais pertinentes a esse universo. São 20 anos de estrada que me trouxeram até aqui.',
+  textoHome: {
+    textoDescricaoBanner:
+      'Mais de 20 anos de carreira, especialista em direito da criança e do adolescente, com foco em adoção e relações raciais.',
+    textoTab: {
+      ser: {
+        titulo: 'Quem eu sou',
+        conteúdo:
+          'Sou uma Mulher Negra, Mestre em Educação, servidora pública e reconhecida pela minha expertise no campo da adoção - especialmente na perspectiva das questões raciais pertinentes a esse universo. São 20 anos de estrada que me trouxeram até aqui.',
+      },
+      agir: {
+        titulo: 'O que eu faço',
+        conteúdo:
+          'Atuo como Assistente social no Tribunal de Justiça da Bahia, sou escritora com livros publicados, palestrante e facilitadora de cursos online. Também gosto de levar as minhas formações para estabelecimentos comerciais e instituições públicas.',
+      },
+      sonhar: {
+        titulo: 'Com o que sonho',
+        conteúdo:
+          'Sonho com um mundo onde possamos ver a justiça racial e social acontecer. Especialmente, para nossas crianças, adolescentes, mulheres, população LGBTQIA+ e parcelas vulnerabilizadas da sociedade. Um mundo sem racismo, sem machismo, sem genocídio dos povos originários, sem LGBTfobia é possível e é por ele que trabalho.',
+      },
     },
-    agir: {
-      titulo: 'O que eu faço',
-      conteúdo:
-        'Atuo como Assistente social no Tribunal de Justiça da Bahia, sou escritora com livros publicados, palestrante e facilitadora de cursos online. Também gosto de levar as minhas formações para estabelecimentos comerciais e instituições públicas.',
-    },
-    sonhar: {
-      titulo: 'Com o que sonho',
-      conteúdo:
-        'Sonho com um mundo onde possamos ver a justiça racial e social acontecer. Especialmente, para nossas crianças, adolescentes, mulheres, população LGBTQIA+ e parcelas vulnerabilizadas da sociedade. Um mundo sem racismo, sem machismo, sem genocídio dos povos originários, sem LGBTfobia é possível e é por ele que trabalho.',
-    },
+   
   },
+  textoRodape: '@DeniseFerreira | Todos os direitos reservados',
   textoAtuacao: {
     jurista: {
       titulo: 'Tribunal de Justiça da Bahia',
@@ -58,6 +61,10 @@ const conteudoTexto = {
         'Direitos da Criança e do Adolescente',
         'Literatura infantojuvenil afrocentrada',
       ],
+      botao: {
+        texto: 'Contratar',
+        ariaLabel: 'Botão que ativa o envio de email',
+      },
     },
   },
   textoContato: {
@@ -73,31 +80,34 @@ const conteudoTexto = {
       nome: {
         nomeCampo: 'nome',
         label: 'Nome',
-        placeholder: 'Qual o seu nome?'
+        placeholder: 'Qual o seu nome?',
       },
       email: {
         nomeCampo: 'email',
         label: 'E-mail',
-        placeholder: 'Qual o seu e-mail?'
+        placeholder: 'Qual o seu e-mail?',
       },
       cidade: {
         nomeCampo: 'cidade',
         label: 'Cidade',
-        placeholder: 'Qual a cidade onde você mora?'
+        placeholder: 'Qual a cidade onde você mora?',
       },
       organizacao: {
         nomeCampo: 'organizacao',
         label: 'Organização',
-        placeholder: 'Onde você trabalha?'
+        placeholder: 'Onde você trabalha?',
       },
       conteudoMensagem: {
         nomeCampo: 'conteudoMensagem',
         label: 'Mensagem',
-        placeholder: 'O que você tem a nos dizer?'
-      }
+        placeholder: 'O que você tem a nos dizer?',
+      },
     },
-    textoBotao: 'Entrar em contato',
   },
+  botaoContato: {
+    texto: 'Entre em contato',
+    ariaLabel: 'Botão que leva para página de contato',
+  } 
 }
 
 export default conteudoTexto

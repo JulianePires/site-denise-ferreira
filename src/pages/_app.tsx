@@ -3,10 +3,10 @@ import {cliente} from '@infrastructure/cliente'
 import EstiloGlobal from '@styles/global'
 import AOS from 'aos'
 import 'aos/dist/aos.css'
-import type {AppProps} from 'next/app'
+import type {AppProps, NextWebVitalsMetric} from 'next/app'
 import {useEffect} from 'react'
 
-export default function App({Component, pageProps}: AppProps) {
+function App({Component, pageProps}: AppProps) {
   function iniciaEfeitosAOS() {
     AOS.init({
       // Global settings:
@@ -40,3 +40,5 @@ export default function App({Component, pageProps}: AppProps) {
     </ApolloProvider>
   )
 }
+
+export default App

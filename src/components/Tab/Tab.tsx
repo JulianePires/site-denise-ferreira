@@ -23,28 +23,30 @@ export function Tab() {
   const [sankofaLaranja, setSankofaLaranja] = useState('')
   const [sankofaAzulPetroleo, setSankofaAzulPetroleo] = useState('')
   const [sankofaAzul, setSankofaAzul] = useState('')
-
+  
+  const {textoTab} = conteudoTexto.textoHome
+  
   const opcoesTab: OpcaoTabTipo[] = [
     {
       nomeOpcao: OpcoesMenuTab.SER,
       icone: sankofaAzulPetroleo,
       corFundo: cores.azulPetroleo as TemasCores,
-      titulo: conteudoTexto.textoTab[OpcoesMenuTab.SER].titulo,
-      conteudo: conteudoTexto.textoTab[OpcoesMenuTab.SER].conteúdo,
+      titulo: textoTab[OpcoesMenuTab.SER].titulo,
+      conteudo: textoTab[OpcoesMenuTab.SER].conteúdo,
     },
     {
       nomeOpcao: OpcoesMenuTab.AGIR,
       icone: sankofaLaranja,
       corFundo: cores.laranja as TemasCores,
-      titulo: conteudoTexto.textoTab[OpcoesMenuTab.AGIR].titulo,
-      conteudo: conteudoTexto.textoTab[OpcoesMenuTab.AGIR].conteúdo,
+      titulo: textoTab[OpcoesMenuTab.AGIR].titulo,
+      conteudo: textoTab[OpcoesMenuTab.AGIR].conteúdo,
     },
     {
       nomeOpcao: OpcoesMenuTab.SONHAR,
       icone: sankofaAzul,
       corFundo: cores.azulRoyal as TemasCores,
-      titulo: conteudoTexto.textoTab[OpcoesMenuTab.SONHAR].titulo,
-      conteudo: conteudoTexto.textoTab[OpcoesMenuTab.SONHAR].conteúdo,
+      titulo: textoTab[OpcoesMenuTab.SONHAR].titulo,
+      conteudo: textoTab[OpcoesMenuTab.SONHAR].conteúdo,
     },
   ]
 
@@ -100,7 +102,7 @@ export function Tab() {
             ativa={String(opcao.nomeOpcao === tabAtiva.nomeOpcao)}
             onClick={() => defineTabAtualComoAtiva(opcao)}
             key={index}>
-            <Image
+            <S.ImagemOpcaoTab
               src={opcao.icone}
               alt={opcao.nomeOpcao}
               width={66.67}
@@ -124,7 +126,7 @@ export function Tab() {
             {tabAtiva.conteudo}
           </S.TextoLayoutTab>
         </S.LayoutTab>
-        <Container altura='100%' imagemFundo={urlImagemFundo} />
+        <Container altura="100%" imagemFundo={urlImagemFundo} />
       </Stack>
     </S.ContainerTab>
   )

@@ -13,6 +13,7 @@ interface Props {
   corFundoAlternativa?: string
   desabilitaTema?: boolean
   aoClicar: () => void
+  ariaLabel: string
 }
 
 export function Botao({
@@ -25,6 +26,7 @@ export function Botao({
   corFundoAlternativa,
   desabilitaTema = false,
   aoClicar,
+  ariaLabel,
 }: Props) {
   return (
     <S.ContainerBotao
@@ -35,7 +37,8 @@ export function Botao({
       type={tipo}
       desabilitaTema={String(desabilitaTema)}
       corFundo={corFundoAlternativa}
-      corFonte={corFonteAlternativa}>
+      corFonte={corFonteAlternativa}
+      aria-label={ariaLabel}>
       {children}
     </S.ContainerBotao>
   )

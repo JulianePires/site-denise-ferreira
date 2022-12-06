@@ -23,7 +23,7 @@ const barlowMedium = Barlow({
 const xillian: FontModule = {
   className: 'xillian',
   style: {
-    fontFamily: 'Xillian',
+    fontFamily: 'Xillian, sans-serif',
     fontWeight: 400,
   },
 }
