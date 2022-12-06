@@ -2,7 +2,7 @@ import {Botao} from '@components/Botao'
 import {Stack} from '@components/Stack'
 import {Texto} from '@components/Texto'
 import {Direcoes, TamanhosTexto} from '@data/enums'
-import {DirecoesTipo} from '@data/tipos'
+import {DirecoesTipo, TemasCores} from '@data/tipos'
 import cores from '@resources/cores'
 import dispositivos from '@resources/dispositivos'
 import {paragrafo} from '@resources/textos'
@@ -42,7 +42,7 @@ export const ImagensCarrossel = styled(Carousel)`
 
   @media ${dispositivos.laptopL} {
     width: 500px;
-  } 
+  }
 `
 
 export const ImagemCarrossel = styled(Image)`
@@ -56,12 +56,22 @@ export const ImagemCarrossel = styled(Image)`
   }
 `
 
-export const DescricaoImagemCarrossel = styled(Texto).attrs({
-  tamanho: TamanhosTexto.P,
-})`
-  background: ${cores.vinho} !important;
+interface DescricaoImagemCarrosselProps {
+  corLegenda?: TemasCores
+}
+
+export const DescricaoImagemCarrossel = styled(
+  Texto,
+)<DescricaoImagemCarrosselProps>`
+  background: ${({corLegenda}) =>
+    corLegenda ? cores[corLegenda] : cores.vinho} !important;
   font-size: ${paragrafo.fontSize} !important;
   cursor: pointer;
+  opacity: 0.8 !important;
+
+  &:hover {
+    opacity: 1 !important;
+  }
 `
 
 export const BotaoImagemCarrossel = styled(Botao)``

@@ -15,8 +15,8 @@ export const ContainerIcone = styled.div<ContainerIconeProps>`
   width: ${(props) => props.tamanho}px;
   height: ${(props) => props.tamanho}px;
 
-  font-size: ${(props) =>
-    props.tamanhoFonte ? props.tamanhoFonte : props.tamanho}px;
-  color: ${(props) => props.cor};
+  font-size: ${({tamanho, tamanhoFonte}) =>
+    tamanhoFonte ? tamanhoFonte : tamanho}px;
+  color: ${({cor}) => cor};
   background: ${(props) => (props.corFundo ? props.corFundo : 'none')};
 `

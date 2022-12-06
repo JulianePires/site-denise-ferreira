@@ -137,17 +137,20 @@ export default function Atuacao({imagensAtuacao}: Props) {
       <ContainerConteudo
         direcao={Direcoes.V}
         corBackground={cores.azulPetroleo}>
-        <S.CabecalhoEscritora id={idAncoraEscritora}>
+        <S.CabecalhoEscritora>
           <S.TituloEscritora
             data-aos="fade-left"
             data-aos-anchor={`#${idAncoraEscritora}`}>
             {textoAtuacao.escritora.titulo}
           </S.TituloEscritora>
         </S.CabecalhoEscritora>
-        <Container imagemFundo={texturaAzulPetroleo && texturaAzulPetroleo.url}>
+        <Container
+          imagemFundo={texturaAzulPetroleo && texturaAzulPetroleo.url}
+          id={idAncoraEscritora}>
           <Carrossel
             elementos={elementosCarrosselEscritora}
             direcao={Direcoes.H}
+            corLegenda="azulPetroleo"
           />
         </Container>
       </ContainerConteudo>

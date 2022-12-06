@@ -1,5 +1,6 @@
 import {Loader} from '@components/Loader'
-import {RespostaRequisicao} from '@data/tipos'
+import {RespostaRequisicao, Tema, TemasCores} from '@data/tipos'
+import cores from '@resources/cores'
 import {AnyNaptrRecord} from 'dns'
 import {StatusRequisicao} from 'src/data/enums'
 
@@ -37,4 +38,36 @@ export function sleep(delay: number) {
 
 export function abreUrlExternaEmNovaAba(url: string) {
   window.open(url, '_blank')
+}
+
+export function trataCoresPorTema(tema: TemasCores): Tema {
+  if (tema === 'amarelo') {
+    return {
+      corPrimaria: cores.amarelo,
+      corSecundaria: cores.azulPetroleo,
+      corGhost: cores.amareloGhost,
+    }
+  }
+
+  if (tema === 'azulPetroleo') {
+    return {
+      corPrimaria: cores.azulPetroleo,
+      corSecundaria: cores.amarelo,
+      corGhost: cores.azulPetroleoGhost,
+    }
+  }
+
+  if (tema === 'terra') {
+    return {
+      corPrimaria: cores.terra,
+      corSecundaria: cores.amarelo,
+      corGhost: cores.terraGhost,
+    }
+  }
+
+  return {
+    corPrimaria: cores.vinho,
+    corSecundaria: cores.branco,
+    corGhost: cores.vinhoGhost,
+  }
 }
