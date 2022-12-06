@@ -69,6 +69,33 @@ const conteudoTexto = {
         'Este espaço também é para você que deseja fazer um comentário, deixar uma sugestão, marcar uma conversa.',
       texto3: 'Obrigada por ter chegado até aqui!',
     },
+    textoFormulario: {
+      nome: {
+        nomeCampo: 'nome',
+        label: 'Nome',
+        placeholder: 'Qual o seu nome?'
+      },
+      email: {
+        nomeCampo: 'email',
+        label: 'E-mail',
+        placeholder: 'Qual o seu e-mail?'
+      },
+      cidade: {
+        nomeCampo: 'cidade',
+        label: 'Cidade',
+        placeholder: 'Qual a cidade onde você mora?'
+      },
+      organizacao: {
+        nomeCampo: 'organizacao',
+        label: 'Organização',
+        placeholder: 'Onde você trabalha?'
+      },
+      conteudoMensagem: {
+        nomeCampo: 'conteudoMensagem',
+        label: 'Mensagem',
+        placeholder: 'O que você tem a nos dizer?'
+      }
+    },
     textoBotao: 'Entrar em contato',
   },
 }

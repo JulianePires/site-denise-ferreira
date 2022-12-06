@@ -1,43 +1,61 @@
+import {isEmpty} from 'ramda'
 import {ChangeEventHandler, HTMLInputTypeAttribute} from 'react'
-import {
-  ContainerCampoTexto,
-  FeedbackCampoTexto,
-  InputCampoTexto,
-  LabelCampoTexto,
-} from './Input.styled'
+import * as S from './Input.styled'
 
 interface Props {
   id: string
   nomeCampo: string
+  placeholder: string
   label: string
-  possuiErro?: boolean
   erro?: string
   valor: string
   tipo?: HTMLInputTypeAttribute
-  aoAlterar: ChangeEventHandler<HTMLInputElement>
+  textArea?: boolean
+  aoAlterar: ChangeEventHandler<HTMLInputElement | HTMLTextAreaElement>
 }
 
 export function Input({
   id,
   nomeCampo,
+  placeholder,
   label,
-  possuiErro = false,
-  erro,
+  erro = '',
   valor,
   tipo = 'text',
+  textArea = false,
   aoAlterar,
 }: Props) {
+  function verificaSePossuiErro(erro: string) {
+    return String(!isEmpty(erro))
+  }
+
   return (
-    <ContainerCampoTexto>
-      <LabelCampoTexto htmlFor={id}>{label}</LabelCampoTexto>
-      <InputCampoTexto
-        id={id}
-        name={nomeCampo}
-        type={tipo}
-        value={valor}
-        onChange={aoAlterar}
-      />
-      {possuiErro && <FeedbackCampoTexto>{erro}</FeedbackCampoTexto>}
-    </ContainerCampoTexto>
+    <S.ContainerCampoTexto>
+      <S.LabelCampoTexto htmlFor={id}>{label}</S.LabelCampoTexto>
+      {textArea ? (
+        <S.TextareaCampoTexto
+          id={id}
+          name={nomeCampo}
+          value={valor}
+          onChange={aoAlterar}
+          placeholder={placeholder}
+          possuiErro={verificaSePossuiErro(erro)}
+        />
+      ) : (
+        <S.InputCampoTexto
+          id={id}
+          name={nomeCampo}
+          type={tipo}
+          value={valor}
+          onChange={aoAlterar}
+          placeholder={placeholder}
+          possuiErro={verificaSePossuiErro(erro)}
+        />
+      )}
+
+      {verificaSePossuiErro(erro) && (
+        <S.FeedbackCampoTexto>{erro}</S.FeedbackCampoTexto>
+      )}
+    </S.ContainerCampoTexto>
   )
 }

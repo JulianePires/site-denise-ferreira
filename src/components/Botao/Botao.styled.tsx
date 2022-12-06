@@ -1,13 +1,16 @@
-import { EstilosBotao, TamanhosComponente } from '@data/enums'
-import { Tema, TemasCores } from '@data/tipos'
+import {EstilosBotao, TamanhosComponente} from '@data/enums'
+import {Tema, TemasCores} from '@data/tipos'
 import cores from '@resources/cores'
-import { paragrafo } from '@resources/textos'
+import {paragrafo, subtitulo} from '@resources/textos'
 import styled from 'styled-components'
 
 interface ContainerBotaoProps {
   estilo: string
   tamanho: keyof typeof TamanhosComponente
   tema: TemasCores
+  desabilitaTema?: string
+  corFundo?: string
+  corFonte?: string
 }
 
 function trataCoresPorTema(tema: TemasCores): Tema {
@@ -43,35 +46,42 @@ function trataCoresPorTema(tema: TemasCores): Tema {
 }
 
 export const ContainerBotao = styled.button<ContainerBotaoProps>`
-  background: ${(props) => {
-    if (props.estilo === EstilosBotao.UNSTYLED) {
+  background: ${({estilo, tema, desabilitaTema, corFundo}) => {
+    if (desabilitaTema === 'true') {
+      return corFundo
+    }
+    if (estilo === EstilosBotao.UNSTYLED) {
       return 'none'
     }
-    if (props.estilo === EstilosBotao.OUTLINE) {
-      return trataCoresPorTema(props.tema).corSecundaria
+    if (estilo === EstilosBotao.OUTLINE) {
+      return trataCoresPorTema(tema).corSecundaria
     }
-    if (props.estilo === EstilosBotao.GHOST) {
-      return trataCoresPorTema(props.tema).corGhost
+    if (estilo === EstilosBotao.GHOST) {
+      return trataCoresPorTema(tema).corGhost
     }
-    if (props) return trataCoresPorTema(props.tema).corPrimaria
+    if (tema) return trataCoresPorTema(tema).corPrimaria
   }};
 
-  color: ${(props) => {
-    if (props.estilo === EstilosBotao.SOLID) {
-      return trataCoresPorTema(props.tema).corSecundaria
+  color: ${({estilo, tema, desabilitaTema, corFonte}) => {
+    if (desabilitaTema === 'true') {
+      return corFonte
     }
-    return trataCoresPorTema(props.tema).corPrimaria
+    if (estilo === EstilosBotao.SOLID) {
+      return trataCoresPorTema(tema).corSecundaria
+    }
+    return trataCoresPorTema(tema).corPrimaria
   }};
 
-  border: ${(props) => {
-    if (props.estilo === EstilosBotao.OUTLINE) {
-      return `2px solid ${trataCoresPorTema(props.tema).corPrimaria}`
+  border: ${({estilo, tema}) => {
+    if (estilo === EstilosBotao.OUTLINE) {
+      return `2px solid ${trataCoresPorTema(tema).corPrimaria}`
     }
     return 'none'
   }};
 
   ${paragrafo}
 
+  font-family: ${subtitulo.fontFamily};
   height: 45px;
   width: fit-content;
   border-radius: 8px;

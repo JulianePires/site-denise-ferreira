@@ -63,7 +63,7 @@ export const CabecalhoEscritora = styled.span`
 `
 
 export const TituloEscritora = styled(Texto).attrs({
-  tamanho: TamanhosTexto.GG,
+  tamanho: TamanhosTexto.XG,
   fonteAlternativa: subtitulo.fontFamily,
 })``
 

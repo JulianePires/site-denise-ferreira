@@ -5,7 +5,11 @@ import dispositivos from '@resources/dispositivos'
 import {detalhe, subtitulo} from '@resources/textos'
 import styled from 'styled-components'
 
-export const FormularioContato = styled.form``
+export const FormularioContato = styled.form`
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+`
 
 export const TituloContato = styled(Texto).attrs({
   tamanho: TamanhosTexto.XG,

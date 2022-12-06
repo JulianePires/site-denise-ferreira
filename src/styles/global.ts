@@ -16,6 +16,8 @@ const EstiloGlobal = createGlobalStyle`
     padding: 0;
     margin: 0;
     font-family: ${fontes.barlowMedium.style.fontFamily};
+    color: ${cores.branco};
+    background: ${cores.terra};
   }
 
 
@@ -26,16 +28,6 @@ const EstiloGlobal = createGlobalStyle`
 
   * {
     box-sizing: border-box;
-  }
-
-  @media (prefers-color-scheme: dark) {
-    html {
-      color-scheme: dark;
-    }
-    body {
-      color: ${cores.branco};
-      background: ${cores.terra};
-    }
   }
 `
 

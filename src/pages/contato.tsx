@@ -26,7 +26,7 @@ interface Props {
 }
 
 export default function Contato({imagensContato}: Props) {
-  const [texturaTerra] = imagensContato
+  const [texturaVinho] = imagensContato
   const {textoContato} = conteudoTexto
 
   const formik = useFormik<FormularioContatoTipo>({
@@ -77,68 +77,73 @@ export default function Contato({imagensContato}: Props) {
           <S.TextoDescricaoContato>
             {textoContato.descricao.texto1}
           </S.TextoDescricaoContato>
-          
+
           <S.TextoDescricaoContato>
             {textoContato.descricao.texto2}
           </S.TextoDescricaoContato>
-          
+
           <S.TextoDescricaoContato>
             {textoContato.descricao.texto3}
           </S.TextoDescricaoContato>
         </Container>
 
-        <Container imagemFundo={texturaTerra.url}>
+        <Container imagemFundo={texturaVinho.url}>
           <S.FormularioContato>
             <Input
-              id="nome"
-              nomeCampo="nome"
-              label="Nome"
+              id={textoContato.textoFormulario.nome.nomeCampo}
+              nomeCampo={textoContato.textoFormulario.nome.nomeCampo}
+              label={textoContato.textoFormulario.nome.label}
+              placeholder={textoContato.textoFormulario.nome.placeholder}
               tipo="text"
-              possuiErro={!isEmpty(formik.errors.nome)}
               erro={formik.errors.nome}
               valor={formik.values.nome}
               aoAlterar={formik.handleChange}
             />
 
             <Input
-              id="email"
-              nomeCampo="email"
-              label="E-mail"
+              id={textoContato.textoFormulario.email.nomeCampo}
+              nomeCampo={textoContato.textoFormulario.email.nomeCampo}
+              label={textoContato.textoFormulario.email.label}
+              placeholder={textoContato.textoFormulario.email.placeholder}
               tipo="email"
-              possuiErro={!isEmpty(formik.errors.email)}
               erro={formik.errors.email}
               valor={formik.values.email}
               aoAlterar={formik.handleChange}
             />
 
             <Input
-              id="cidade"
-              nomeCampo="cidade"
-              label="Cidade"
+              id={textoContato.textoFormulario.cidade.nomeCampo}
+              nomeCampo={textoContato.textoFormulario.cidade.nomeCampo}
+              label={textoContato.textoFormulario.cidade.label}
+              placeholder={textoContato.textoFormulario.cidade.placeholder}
               tipo="text"
-              possuiErro={!isEmpty(formik.errors.cidade)}
               erro={formik.errors.cidade}
               valor={formik.values.cidade}
               aoAlterar={formik.handleChange}
             />
 
             <Input
-              id="organizacao"
-              nomeCampo="organizacao"
-              label="Organizacao"
+              id={textoContato.textoFormulario.organizacao.nomeCampo}
+              nomeCampo={textoContato.textoFormulario.organizacao.nomeCampo}
+              label={textoContato.textoFormulario.organizacao.label}
+              placeholder={textoContato.textoFormulario.organizacao.placeholder}
               tipo="text"
-              possuiErro={!isEmpty(formik.errors.organizacao)}
               erro={formik.errors.organizacao}
               valor={formik.values.organizacao}
               aoAlterar={formik.handleChange}
             />
 
             <Input
-              id="conteudoMensagem"
-              nomeCampo="conteudoMensagem"
-              label="Mensagem"
+              id={textoContato.textoFormulario.conteudoMensagem.nomeCampo}
+              nomeCampo={
+                textoContato.textoFormulario.conteudoMensagem.nomeCampo
+              }
+              label={textoContato.textoFormulario.conteudoMensagem.label}
+              placeholder={
+                textoContato.textoFormulario.conteudoMensagem.placeholder
+              }
               tipo="text"
-              possuiErro={!isEmpty(formik.errors.conteudoMensagem)}
+              textArea={true}
               erro={formik.errors.conteudoMensagem}
               valor={formik.values.conteudoMensagem}
               aoAlterar={formik.handleChange}
@@ -146,11 +151,12 @@ export default function Contato({imagensContato}: Props) {
 
             <S.BotaoEnviarMensagemContato
               tamanho="M"
-              tema="terra"
-              estilo="outline"
               tipo="submit"
+              desabilitaTema
+              corFundoAlternativa={cores.branco}
+              corFonteAlternativa={cores.terra}
               aoClicar={formik.handleSubmit}>
-              Enviar
+              {textoContato.textoBotao}
             </S.BotaoEnviarMensagemContato>
           </S.FormularioContato>
         </Container>
@@ -160,19 +166,19 @@ export default function Contato({imagensContato}: Props) {
 }
 
 export async function getServerSideProps() {
-  const {idTexturaTerra} = imagens
+  const {idTexturaVinho} = imagens
 
-  const reqTexturaTerra = await buscaAsset(idTexturaTerra)
+  const reqTexturaVinho = await buscaAsset(idTexturaVinho)
 
-  let texturaTerra = {}
+  let texturaVinho = {}
 
-  if (reqTexturaTerra.status === StatusRequisicao.SUCESSO) {
-    texturaTerra = reqTexturaTerra.dados.asset as Asset
+  if (reqTexturaVinho.status === StatusRequisicao.SUCESSO) {
+    texturaVinho = reqTexturaVinho.dados.asset as Asset
   }
 
   return {
     props: {
-      imagensContato: [texturaTerra],
+      imagensContato: [texturaVinho],
     },
   }
 }

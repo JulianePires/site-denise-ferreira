@@ -13,6 +13,10 @@ const cores: ChaveValor<string> = {
   azulPetroleoGhost: '#24828A4D',
   amareloGhost: '#FFD65C4D',
   terraGhost: '#C155254D',
+  sucesso: '#A3E635',
+  alerta: '#FCD34D',
+  erro: '#E11D48',
+  info: '#0EA5E9',
 }
 
 export default cores

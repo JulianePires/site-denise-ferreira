@@ -95,6 +95,7 @@ export default function Atuacao({imagensAtuacao}: Props) {
   ]
 
   const idAncoraJurista = 'ancora-jurista'
+  const idAncoraEscritora = 'ancora-escritora'
   const idAncoraPalestrante = 'ancora-palestrante'
 
   const itensPalestrante = textoAtuacao.palestrante.palestras
@@ -136,8 +137,12 @@ export default function Atuacao({imagensAtuacao}: Props) {
       <ContainerConteudo
         direcao={Direcoes.V}
         corBackground={cores.azulPetroleo}>
-        <S.CabecalhoEscritora>
-          <S.TituloEscritora>{textoAtuacao.escritora.titulo}</S.TituloEscritora>
+        <S.CabecalhoEscritora id={idAncoraEscritora}>
+          <S.TituloEscritora
+            data-aos="fade-left"
+            data-aos-anchor={`#${idAncoraEscritora}`}>
+            {textoAtuacao.escritora.titulo}
+          </S.TituloEscritora>
         </S.CabecalhoEscritora>
         <Container imagemFundo={texturaAzulPetroleo && texturaAzulPetroleo.url}>
           <Carrossel
