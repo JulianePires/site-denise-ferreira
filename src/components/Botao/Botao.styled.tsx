@@ -1,6 +1,6 @@
 import {EstilosBotao, TamanhosComponente} from '@data/enums'
-import {Tema, TemasCores} from '@data/tipos'
-import cores from '@resources/cores'
+import {TemasCores} from '@data/tipos'
+import {trataCoresPorTema} from '@infrastructure/funcoes'
 import {paragrafo, subtitulo} from '@resources/textos'
 import styled from 'styled-components'
 
@@ -11,38 +11,6 @@ interface ContainerBotaoProps {
   desabilitaTema?: string
   corFundo?: string
   corFonte?: string
-}
-
-function trataCoresPorTema(tema: TemasCores): Tema {
-  if (tema === 'amarelo') {
-    return {
-      corPrimaria: cores.amarelo,
-      corSecundaria: cores.azulPetroleo,
-      corGhost: cores.amareloGhost,
-    }
-  }
-
-  if (tema === 'azulPetroleo') {
-    return {
-      corPrimaria: cores.azulPetroleo,
-      corSecundaria: cores.amarelo,
-      corGhost: cores.azulPetroleoGhost,
-    }
-  }
-
-  if (tema === 'terra') {
-    return {
-      corPrimaria: cores.terra,
-      corSecundaria: cores.amarelo,
-      corGhost: cores.terraGhost,
-    }
-  }
-
-  return {
-    corPrimaria: cores.vinho,
-    corSecundaria: cores.branco,
-    corGhost: cores.vinhoGhost,
-  }
 }
 
 export const ContainerBotao = styled.button<ContainerBotaoProps>`
