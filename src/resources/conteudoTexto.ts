@@ -60,6 +60,17 @@ const conteudoTexto = {
       ],
     },
   },
+  textoContato: {
+    titulo: 'Contato',
+    descricao: {
+      texto1:
+        'Pensou em algum projeto em que possamos trabalhar conjuntamente? Entre em contato, será um prazer conhecer a sua proposta.',
+      texto2:
+        'Este espaço também é para você que deseja fazer um comentário, deixar uma sugestão, marcar uma conversa.',
+      texto3: 'Obrigada por ter chegado até aqui!',
+    },
+    textoBotao: 'Entrar em contato',
+  },
 }
 
 export default conteudoTexto

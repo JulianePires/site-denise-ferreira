@@ -3,13 +3,7 @@ import {Texto} from '@components/Texto'
 import {TamanhosTexto} from '@data/enums'
 import cores from '@resources/cores'
 import dispositivos from '@resources/dispositivos'
-import {
-  detalhe,
-  paragrafo,
-  subtitulo,
-  titulo1,
-  titulo2,
-} from '@resources/textos'
+import {detalhe, paragrafo, subtitulo} from '@resources/textos'
 import Image from 'next/image'
 import styled from 'styled-components'
 
