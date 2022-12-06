@@ -5,14 +5,13 @@ import {Stack} from '@components/Stack'
 import {Tab} from '@components/Tab'
 import {Direcoes, EstilosBotao, Rotas, StatusRequisicao} from '@data/enums'
 import {Asset} from '@data/tipos'
+import {buscaAsset} from '@infrastructure/requisicoes/asset'
 import {LayoutPaginasSite} from '@layouts/LayoutPaginasSite'
 import conteudoTexto from '@resources/conteudoTexto'
 import cores from '@resources/cores'
 import imagens from '@resources/imagens'
 import margens from '@resources/margens'
-import {buscaAsset} from '@infrastructure/requisicoes/asset'
 import * as S from '@styles/Home.styled'
-
 import {useRouter} from 'next/router'
 
 interface Props {

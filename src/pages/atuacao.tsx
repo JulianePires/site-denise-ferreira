@@ -4,15 +4,16 @@ import {Container} from '@components/Container'
 import {ContainerConteudo} from '@components/ContainerConteudo'
 import {Icone} from '@components/Icone'
 import {Loader} from '@components/Loader'
-import {Direcoes, StatusRequisicao} from '@data/enums'
+import {Direcoes, Rotas, StatusRequisicao} from '@data/enums'
 import {Asset, ElementoCarrosselTipo} from '@data/tipos'
+import {buscaAsset} from '@infrastructure/requisicoes/asset'
 import {LayoutPaginasSite} from '@layouts/LayoutPaginasSite'
 import conteudoTexto from '@resources/conteudoTexto'
 import cores from '@resources/cores'
 import imagens from '@resources/imagens'
 import margens from '@resources/margens'
-import {buscaAsset} from '@infrastructure/requisicoes/asset'
 import * as S from '@styles/Atuacao.styled'
+import {useRouter} from 'next/router'
 import {isEmpty} from 'ramda'
 import {BsCheck2Square} from 'react-icons/bs'
 
@@ -21,6 +22,12 @@ interface Props {
 }
 
 export default function Atuacao({imagensAtuacao}: Props) {
+  const router = useRouter()
+
+  function navegarParaPaginaDeContato() {
+    router.push(Rotas.CONTATO)
+  }
+
   const [
     imagemJurista,
     texturaTerra,
@@ -109,6 +116,7 @@ export default function Atuacao({imagensAtuacao}: Props) {
             data-aos-anchor={`#${idAncoraJurista}`}>
             {textoAtuacao.jurista.titulo}
           </S.TituloJurista>
+
           <S.TextoDescricaoJurista
             data-aos="fade-right"
             data-aos-anchor={`#${idAncoraJurista}`}
@@ -116,6 +124,7 @@ export default function Atuacao({imagensAtuacao}: Props) {
             {textoAtuacao.jurista.conteudo}
           </S.TextoDescricaoJurista>
         </Container>
+
         <Container
           imagemFundo={texturaTerra.url && texturaTerra.url}
           padding={`${margens.xxxlarge}px ${margens.xlarge}px`}>
@@ -144,6 +153,7 @@ export default function Atuacao({imagensAtuacao}: Props) {
             {textoAtuacao.escritora.titulo}
           </S.TituloEscritora>
         </S.CabecalhoEscritora>
+
         <Container
           imagemFundo={texturaAzulPetroleo && texturaAzulPetroleo.url}
           id={idAncoraEscritora}>
@@ -161,6 +171,7 @@ export default function Atuacao({imagensAtuacao}: Props) {
             data-aos-anchor={`#${idAncoraPalestrante}`}>
             {textoAtuacao.palestrante.titulo}
           </S.TituloPalestrante>
+
           <S.ListaPalestrante>
             {itensPalestrante.map((item, index) => (
               <S.ItemListaPalestrante
@@ -173,17 +184,23 @@ export default function Atuacao({imagensAtuacao}: Props) {
                   cor={cores.amarelo}
                   tamanho={32}
                 />
+
                 <S.TextoItemListaPalestrante>
                   {item}
                 </S.TextoItemListaPalestrante>
               </S.ItemListaPalestrante>
             ))}
           </S.ListaPalestrante>
-          {/* eslint-disable-next-line @typescript-eslint/no-empty-function */}
-          <Botao tamanho="G" tema="vinho" estilo="outline" aoClicar={() => {}}>
+
+          <Botao
+            tamanho="G"
+            tema="vinho"
+            estilo="outline"
+            aoClicar={navegarParaPaginaDeContato}>
             Contratar
           </Botao>
         </Container>
+
         <Container>
           <Carrossel
             elementos={elementosCarrosselPalestrante}

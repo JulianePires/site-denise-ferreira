@@ -18,7 +18,6 @@ import imagens from '@resources/imagens'
 import margens from '@resources/margens'
 import * as S from '@styles/Contato.styled'
 import {useFormik} from 'formik'
-import {isEmpty} from 'ramda'
 import * as Yup from 'yup'
 
 interface Props {
