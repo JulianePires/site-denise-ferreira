@@ -61,7 +61,13 @@ export function Carrossel({direcao, elementos, corLegenda = 'vinho'}: Props) {
           }
           tema="amarelo"
           estilo={EstilosBotao.GHOST}
-          tamanho="P">
+          tamanho="P"
+          ariaLabel={`Acessar ${
+            elemento.tipo &&
+            conteudoTexto.textoAtuacao.escritora.textoBotaoCarrossel[
+              elemento.tipo
+            ]
+          }`}>
           {elemento.tipo &&
             conteudoTexto.textoAtuacao.escritora.textoBotaoCarrossel[
               elemento.tipo

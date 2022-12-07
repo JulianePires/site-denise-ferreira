@@ -2,11 +2,10 @@ import {Container} from '@components/Container'
 import {Stack} from '@components/Stack'
 import {OpcoesMenuTab} from '@data/enums'
 import {Asset, TemasCores} from '@data/tipos'
+import {buscaAsset} from '@infrastructure/requisicoes/asset'
 import conteudoTexto from '@resources/conteudoTexto'
 import cores from '@resources/cores'
 import imagens from '@resources/imagens'
-import {buscaAsset} from '@infrastructure/requisicoes/asset'
-import Image from 'next/image'
 import {useEffect, useState} from 'react'
 import * as S from './Tab.styled'
 
@@ -23,9 +22,9 @@ export function Tab() {
   const [sankofaLaranja, setSankofaLaranja] = useState('')
   const [sankofaAzulPetroleo, setSankofaAzulPetroleo] = useState('')
   const [sankofaAzul, setSankofaAzul] = useState('')
-  
+
   const {textoTab} = conteudoTexto.textoHome
-  
+
   const opcoesTab: OpcaoTabTipo[] = [
     {
       nomeOpcao: OpcoesMenuTab.SER,

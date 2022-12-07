@@ -1,4 +1,5 @@
 import {Botao} from '@components/Botao'
+import {ImagemComFallback} from '@components/ImagemComFallback'
 import {Stack} from '@components/Stack'
 import {Texto} from '@components/Texto'
 import {Direcoes, TamanhosTexto} from '@data/enums'
@@ -6,7 +7,6 @@ import {DirecoesTipo, TemasCores} from '@data/tipos'
 import cores from '@resources/cores'
 import dispositivos from '@resources/dispositivos'
 import {paragrafo} from '@resources/textos'
-import Image from 'next/image'
 import {Carousel} from 'react-responsive-carousel'
 import styled from 'styled-components'
 
@@ -45,7 +45,7 @@ export const ImagensCarrossel = styled(Carousel)`
   }
 `
 
-export const ImagemCarrossel = styled(Image)`
+export const ImagemCarrossel = styled(ImagemComFallback)`
   width: 250px;
   height: auto;
 

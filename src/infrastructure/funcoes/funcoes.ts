@@ -1,7 +1,5 @@
-import {Loader} from '@components/Loader'
 import {RespostaRequisicao, Tema, TemasCores} from '@data/tipos'
 import cores from '@resources/cores'
-import {AnyNaptrRecord} from 'dns'
 import {StatusRequisicao} from 'src/data/enums'
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any

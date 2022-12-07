@@ -30,12 +30,10 @@ const BUSCA_ASSET_QUERY = gql`
 `
 
 export async function buscaAsset(id: string) {
-  const resposta = await cliente
-    .query({
-      query: BUSCA_ASSET_QUERY,
-      variables: {id},
-    })
-    .catch((err) => 'Ocorreu um erro')
+  const resposta = await cliente.query({
+    query: BUSCA_ASSET_QUERY,
+    variables: {id},
+  })
 
   const respostaTratada = trataRespostaRequisicao(resposta)
 

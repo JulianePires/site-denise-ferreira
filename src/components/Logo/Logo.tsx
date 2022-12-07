@@ -1,7 +1,7 @@
+import {ImagemComFallback} from '@components/ImagemComFallback'
 import {Asset} from '@data/tipos'
-import imagens from '@resources/imagens'
 import {buscaAsset} from '@infrastructure/requisicoes/asset'
-import Image from 'next/image'
+import imagens from '@resources/imagens'
 import {useEffect, useState} from 'react'
 import * as S from './Logo.styled'
 
@@ -58,7 +58,12 @@ export function Logo({cor = 'branco'}: Props) {
 
   return (
     <S.ContainerLogo>
-      <Image src={imagem.src} alt={imagem.alt} width={94} height={70} />
+      <ImagemComFallback
+        src={imagem.src}
+        alt={imagem.alt}
+        width={94}
+        height={70}
+      />
     </S.ContainerLogo>
   )
 }

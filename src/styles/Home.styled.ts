@@ -1,9 +1,9 @@
+import {ImagemComFallback} from '@components/ImagemComFallback'
 import dispositivos from '@resources/dispositivos'
 import {detalhe, subtitulo} from '@resources/textos'
-import Image from 'next/image'
 import styled from 'styled-components'
 
-export const LogoBanner = styled(Image)`
+export const LogoBanner = styled(ImagemComFallback)`
   width: 200px;
   height: auto;
 
@@ -41,7 +41,7 @@ export const TextoDescricaoBanner = styled.p`
   }
 `
 
-export const FotoBanner = styled(Image)`
+export const FotoBanner = styled(ImagemComFallback)`
   width: 200px;
   height: auto;
 

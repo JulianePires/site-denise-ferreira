@@ -1,3 +1,4 @@
+import {ImagemComFallback} from '@components/ImagemComFallback'
 import {TemasCores} from '@data/tipos'
 import cores from '@resources/cores'
 import dispositivos from '@resources/dispositivos'
@@ -9,7 +10,6 @@ import {
   titulo1,
   titulo2,
 } from '@resources/textos'
-import Image from 'next/image'
 import styled from 'styled-components'
 
 interface ContainerTabProps {
@@ -54,7 +54,7 @@ export const ControleTab = styled.ul<ControleTabProps>`
   list-style: none;
 `
 
-export const ImagemOpcaoTab = styled(Image)`
+export const ImagemOpcaoTab = styled(ImagemComFallback)`
   height: 50px;
   width: auto;
 `

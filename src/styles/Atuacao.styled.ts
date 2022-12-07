@@ -1,10 +1,10 @@
 import {ContainerConteudo} from '@components/ContainerConteudo'
+import {ImagemComFallback} from '@components/ImagemComFallback'
 import {Texto} from '@components/Texto'
 import {TamanhosTexto} from '@data/enums'
 import cores from '@resources/cores'
 import dispositivos from '@resources/dispositivos'
 import {detalhe, paragrafo, subtitulo} from '@resources/textos'
-import Image from 'next/image'
 import styled from 'styled-components'
 
 export const ContainerJurista = styled(ContainerConteudo).attrs({
@@ -36,7 +36,7 @@ export const TextoDescricaoJurista = styled.p`
   }
 `
 
-export const ImagemJurista = styled(Image)`
+export const ImagemJurista = styled(ImagemComFallback)`
   align-self: center;
 
   width: 300px;
