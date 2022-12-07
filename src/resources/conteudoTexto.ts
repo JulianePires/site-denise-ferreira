@@ -19,7 +19,6 @@ const conteudoTexto = {
           'Sonho com um mundo onde possamos ver a justiça racial e social acontecer. Especialmente, para nossas crianças, adolescentes, mulheres, população LGBTQIA+ e parcelas vulnerabilizadas da sociedade. Um mundo sem racismo, sem machismo, sem genocídio dos povos originários, sem LGBTfobia é possível e é por ele que trabalho.',
       },
     },
-   
   },
   textoRodape: '@DeniseFerreira | Todos os direitos reservados',
   textoAtuacao: {
@@ -67,6 +66,9 @@ const conteudoTexto = {
       },
     },
   },
+  textoBlog: {
+    titulo: 'Blog',
+  },
   textoContato: {
     titulo: 'Contato',
     descricao: {
@@ -107,7 +109,7 @@ const conteudoTexto = {
   botaoContato: {
     texto: 'Entre em contato',
     ariaLabel: 'Botão que leva para página de contato',
-  } 
+  },
 }
 
 export default conteudoTexto

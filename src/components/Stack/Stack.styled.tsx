@@ -8,6 +8,7 @@ export interface ContainerStackProps {
   gap: string
   margem?: string
   wrap?: string
+  largura?: string
   alinhar?: AlinhamentoTipo
   justificar?: AlinhamentoTipo
   autoAlinhar?: AlinhamentoTipo
@@ -20,6 +21,8 @@ export const ContainerStack = styled.span<ContainerStackProps>`
     props.direcao === Direcoes.H ? 'row' : 'column'};
   gap: ${(props) => props.gap};
   margin: ${(props) => props.margem};
+
+  width: ${(props) => props.largura || '100%'};
 
   align-items: ${(props) => props.alinhar};
   justify-content: ${(props) => props.justificar};

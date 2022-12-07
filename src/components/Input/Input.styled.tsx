@@ -1,3 +1,4 @@
+import {Stack} from '@components/Stack'
 import cores from '@resources/cores'
 import margens from '@resources/margens'
 import {detalhe, paragrafo, subtitulo} from '@resources/textos'
@@ -16,6 +17,10 @@ export const LabelCampoTexto = styled.label`
   color: ${cores.branco};
 `
 
+export const WrapInput = styled(Stack)`
+  width: 100%;
+`
+
 interface InputCampoTextoProps {
   possuiErro: string
 }
@@ -24,6 +29,7 @@ export const InputCampoTexto = styled.input<InputCampoTextoProps>`
   ${detalhe}
 
   height: 2.5rem;
+  width: 100%;
 
   border: none;
   border-bottom: 2px solid;
