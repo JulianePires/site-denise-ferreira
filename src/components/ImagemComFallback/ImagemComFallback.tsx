@@ -1,8 +1,7 @@
-import Image, {ImageProps} from 'next/image'
-import {useEffect, useState} from 'react'
+import Image, { ImageProps } from 'next/image'
+import { useState } from 'react'
 
 import FallbackImagem from '@assets/imagens/FallbackImagem.png'
-import {isEmpty} from 'ramda'
 
 interface Props extends ImageProps {
   fallback?: string

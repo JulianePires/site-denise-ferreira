@@ -25,18 +25,19 @@ export const InputCampoTexto = styled.input<InputCampoTextoProps>`
 
   height: 2.5rem;
 
-  border: 2px solid;
+  border: none;
+  border-bottom: 2px solid;
   border-color: ${(props) =>
-    props.possuiErro === 'true' ? cores.erro : cores.vinho};
-  border-radius: 8px;
-  background: ${cores.terra};
+    props.possuiErro === 'true' ? cores.erro : cores.terra};
+  color: ${cores.branco};
+  background: none;
 
   padding: ${margens.xxsmall}px ${margens.xsmall}px;
 
   font-family: ${paragrafo.fontFamily};
 
   &::placeholder {
-    color: ${cores.vinho};
+    color: ${cores.terra};
   }
 `
 
@@ -49,19 +50,23 @@ export const TextareaCampoTexto = styled.textarea<TextareaCampoTextoProps>`
 
   height: 8rem;
 
-  border: 2px solid;
+  border: none;
+  border-bottom: 2px solid;
   border-color: ${(props) =>
-    props.possuiErro === 'true' ? cores.erro : cores.vinho};
-  border-radius: 8px;
-  background: ${cores.terra};
+    props.possuiErro === 'true' ? cores.erro : cores.terra};
+  color: ${cores.branco};
+  background: none;
 
-  padding: ${margens.xsmall}px;
+  padding: ${margens.xxsmall}px ${margens.xsmall}px;
 
   font-family: ${paragrafo.fontFamily};
 
   &::placeholder {
-    color: ${cores.vinho};
+    color: ${cores.terra};
+    align-self: flex-end;
   }
+
+  resize: none;
 `
 
 export const FeedbackCampoTexto = styled.p`
