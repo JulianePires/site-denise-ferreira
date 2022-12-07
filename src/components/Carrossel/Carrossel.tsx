@@ -12,8 +12,6 @@ import {
 import * as S from './Carrossel.styled'
 
 import 'react-responsive-carousel/lib/styles/carousel.min.css'
-import {isEmpty} from 'ramda'
-import {Loader} from '@components/Loader'
 import {abreUrlExternaEmNovaAba} from '@infrastructure/funcoes'
 import cores from '@resources/cores'
 
@@ -61,7 +59,7 @@ export function Carrossel({direcao, elementos, corLegenda = 'vinho'}: Props) {
           }
           tema="amarelo"
           estilo={EstilosBotao.GHOST}
-          tamanho="P"
+          tamanho="M"
           ariaLabel={`Acessar ${
             elemento.tipo &&
             conteudoTexto.textoAtuacao.escritora.textoBotaoCarrossel[
@@ -86,8 +84,7 @@ export function Carrossel({direcao, elementos, corLegenda = 'vinho'}: Props) {
   } | 0${quantidadeDeElementos}`
 
   return (
-    <S.ContainerCarrossel
-      direcao={direcao === Direcoes.V ? Direcoes.H : Direcoes.V}>
+    <S.ContainerCarrossel direcao={direcao}>
       <S.ImagensCarrossel
         autoPlay
         infiniteLoop
@@ -102,16 +99,13 @@ export function Carrossel({direcao, elementos, corLegenda = 'vinho'}: Props) {
         {elementos.map((elemento, index) => (
           <Stack key={index} direcao={Direcoes.V} gap="1rem" alinhar="center">
             <>
-              {isEmpty(elemento.imagem) ? (
-                <Loader />
-              ) : (
-                <S.ImagemCarrossel
-                  src={elemento.imagem}
-                  alt={elemento.descricao}
-                  width={400}
-                  height={400}
-                />
-              )}
+              <S.ImagemCarrossel
+                src={elemento.imagem}
+                alt={elemento.descricao}
+                width={400}
+                height={400}
+              />
+
               <S.DescricaoImagemCarrossel
                 tamanho={TamanhosTexto.P}
                 className="legend"
@@ -123,7 +117,7 @@ export function Carrossel({direcao, elementos, corLegenda = 'vinho'}: Props) {
           </Stack>
         ))}
       </S.ImagensCarrossel>
-      <Stack direcao={direcao} gap="1rem" alinhar="center">
+      <Stack direcao={Direcoes.H} gap="1rem" alinhar="center" justificar="center">
         <S.IndexCarrossel>{statusControleCarrossel}</S.IndexCarrossel>
         <S.SetaCarrossel onClick={retrocedeElementoAtual}>
           {direcao === 'horizontal' ? (

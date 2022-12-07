@@ -6,7 +6,7 @@ import styled from 'styled-components'
 
 interface ContainerBotaoProps {
   estilo: string
-  tamanho: keyof typeof TamanhosComponente
+  tamanho?: keyof typeof TamanhosComponente
   tema: TemasCores
   desabilitaTema?: string
   corFundo?: string
@@ -51,7 +51,8 @@ export const ContainerBotao = styled.button<ContainerBotaoProps>`
 
   font-family: ${subtitulo.fontFamily};
   height: 45px;
-  width: fit-content;
+  width: ${({tamanho}) =>
+    tamanho ? TamanhosComponente[tamanho] + 'px' : 'max-content'};
   border-radius: 8px;
   padding: 1.5rem;
 

@@ -33,8 +33,23 @@ export type Post = {
   slug: string
   image: {
     url: string
+    height: number
   }
+  categories: Categoria[]
+  createdAt: string
   publishedAt: string
+  access: number
+  createdBy: {
+    entryId: string
+    name: string
+    picture: string
+  }
+}
+
+export type Categoria = {
+  id: string
+  name: string
+  slug: string
 }
 
 export type OpcaoMenu = {

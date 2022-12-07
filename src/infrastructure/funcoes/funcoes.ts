@@ -69,3 +69,24 @@ export function trataCoresPorTema(tema: TemasCores): Tema {
     corGhost: cores.vinhoGhost,
   }
 }
+
+export function formataDataParaPadrao(dataISO: string) {
+  const meses = [
+    'Jan',
+    'Fev',
+    'Mar',
+    'Abr',
+    'Mai',
+    'Jun',
+    'Jul',
+    'Ago',
+    'Set',
+    'Out',
+    'Nov',
+    'Dez',
+  ]
+  const data = new Date(dataISO)
+  const dataFormatada =
+    data.getDate() + '/' + meses[data.getMonth()] + '/' + data.getFullYear()
+  return dataFormatada
+}

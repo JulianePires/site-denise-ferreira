@@ -4,12 +4,18 @@ import {Texto} from '@components/Texto'
 import {TamanhosTexto} from '@data/enums'
 import cores from '@resources/cores'
 import dispositivos from '@resources/dispositivos'
-import {detalhe, paragrafo, subtitulo} from '@resources/textos'
+import {
+  detalhe,
+  paragrafo,
+  subtitulo,
+  titulo1,
+  titulo2,
+} from '@resources/textos'
 import styled from 'styled-components'
 
 export const ContainerJurista = styled(ContainerConteudo).attrs({
   corBackground: cores.terra,
-  altura: 600,
+  altura: 500,
 })`
   overflow-x: hidden;
 `
@@ -17,7 +23,13 @@ export const ContainerJurista = styled(ContainerConteudo).attrs({
 export const TituloJurista = styled(Texto).attrs({
   tamanho: TamanhosTexto.XG,
   fonteAlternativa: subtitulo.fontFamily,
-})``
+})`
+  font-size: ${titulo1.fontSize};
+
+  @media ${dispositivos.mobileL} {
+    font-size: ${titulo2.fontSize};
+  }
+`
 
 export const TextoDescricaoJurista = styled.p`
   ${detalhe}
@@ -65,12 +77,24 @@ export const CabecalhoEscritora = styled.span`
 export const TituloEscritora = styled(Texto).attrs({
   tamanho: TamanhosTexto.XG,
   fonteAlternativa: subtitulo.fontFamily,
-})``
+})`
+  font-size: ${titulo1.fontSize};
+
+  @media ${dispositivos.mobileL} {
+    font-size: ${titulo2.fontSize};
+  }
+`
 
 export const TituloPalestrante = styled(Texto).attrs({
   tamanho: TamanhosTexto.XG,
   fonteAlternativa: subtitulo.fontFamily,
-})``
+})`
+  font-size: ${titulo1.fontSize};
+
+  @media ${dispositivos.mobileL} {
+    font-size: ${titulo2.fontSize};
+  }
+`
 
 export const ListaPalestrante = styled.ul`
   display: flex;
@@ -99,7 +123,7 @@ export const TextoItemListaPalestrante = styled(Texto).attrs({
     ${paragrafo}
   }
 
-  @media ${dispositivos.laptop} {
+  @media ${dispositivos.laptopL} {
     ${subtitulo}
   }
 `

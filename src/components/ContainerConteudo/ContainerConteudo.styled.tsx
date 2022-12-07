@@ -7,13 +7,18 @@ interface ContainerExternoConteudoProps {
   corBackground: string
   altura?: number
   direcao?: DirecoesTipo
+  reverso: string
 }
 
 export const ContainerExternoConteudo = styled.section<ContainerExternoConteudoProps>`
   display: flex;
   flex-wrap: wrap;
   flex-direction: ${(props) =>
-    props.direcao === Direcoes.V ? 'column' : 'row'};
+    props.direcao === Direcoes.V
+      ? 'column'
+      : props.reverso === 'true'
+        ? 'column-reverse'
+        : 'row'};
 
   height: 'fit-content';
 
@@ -22,5 +27,11 @@ export const ContainerExternoConteudo = styled.section<ContainerExternoConteudoP
 
   @media ${dispositivos.laptop} {
     flex-wrap: nowrap;
+  }
+
+  @media ${dispositivos.laptop} {
+    flex-wrap: nowrap;
+    flex-direction: ${(props) =>
+    props.direcao === Direcoes.V ? 'column' : 'row'};
   }
 `

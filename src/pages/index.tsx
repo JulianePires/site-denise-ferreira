@@ -52,7 +52,6 @@ export default function Home({fotoDenise, logoBranca, texturaTerra}: Props) {
           <Botao
             aoClicar={navegarParaPaginaDeContato}
             tema="vinho"
-            tamanho="G"
             estilo={EstilosBotao.SOLID}
             ariaLabel={botaoContato.ariaLabel}>
             {botaoContato.texto}

@@ -16,8 +16,7 @@ interface ContainerCarrosselProps {
 
 export const ContainerCarrossel = styled.div<ContainerCarrosselProps>`
   display: flex;
-  flex-direction: ${(props) =>
-    props.direcao === Direcoes.H ? 'row' : 'column'};
+  flex-direction: column;
   gap: 1rem;
   align-items: center;
   justify-content: center;

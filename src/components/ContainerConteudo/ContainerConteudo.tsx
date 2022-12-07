@@ -8,6 +8,7 @@ interface Props {
   corBackground: string
   altura?: number
   direcao?: DirecoesTipo
+  reverso?: boolean
 }
 
 export function ContainerConteudo({
@@ -15,12 +16,14 @@ export function ContainerConteudo({
   corBackground,
   altura,
   direcao = Direcoes.H,
+  reverso = false,
 }: Props) {
   return (
     <S.ContainerExternoConteudo
       direcao={direcao}
       corBackground={corBackground}
-      altura={altura}>
+      altura={altura}
+      reverso={String(reverso)}>
       {children}
     </S.ContainerExternoConteudo>
   )

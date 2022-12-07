@@ -12,7 +12,7 @@ export function Rodape() {
     <S.ContainerRodape>
       <Logo cor="terra" />
       <S.TextoRodape>{conteudoTexto.textoRodape}</S.TextoRodape>
-      <Stack direcao={Direcoes.H} gap="3rem">
+      <Stack largura="fit-content" direcao={Direcoes.H} gap="3rem">
         <BotaoIcone
           corBackground="terra"
           corIcone="amarelo"

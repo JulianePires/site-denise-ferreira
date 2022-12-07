@@ -3,7 +3,6 @@ import {Carrossel} from '@components/Carrossel'
 import {Container} from '@components/Container'
 import {ContainerConteudo} from '@components/ContainerConteudo'
 import {Icone} from '@components/Icone'
-import {Loader} from '@components/Loader'
 import {Direcoes, Rotas, StatusRequisicao} from '@data/enums'
 import {Asset, ElementoCarrosselTipo} from '@data/tipos'
 import {buscaAsset} from '@infrastructure/requisicoes/asset'
@@ -15,7 +14,6 @@ import margens from '@resources/margens'
 import * as S from '@styles/Atuacao.styled'
 import {GetServerSidePropsContext} from 'next'
 import {useRouter} from 'next/router'
-import {isEmpty} from 'ramda'
 import {BsCheck2Square} from 'react-icons/bs'
 
 interface Props {
@@ -128,20 +126,17 @@ export default function Atuacao({imagensAtuacao}: Props) {
 
         <Container
           imagemFundo={texturaTerra.url && texturaTerra.url}
-          padding={`${margens.xxxlarge}px ${margens.xlarge}px`}>
-          {isEmpty(imagemJurista.url) ? (
-            <Loader />
-          ) : (
-            <S.ImagemJurista
-              src={imagemJurista.url}
-              alt="Imagem jurista assinando papéis"
-              width={380}
-              height={300}
-              data-aos="fade-left"
-              data-aos-anchor={`#${idAncoraJurista}`}
-              data-aos-delay="300"
-            />
-          )}
+          padding={`${margens.xxxlarge}px ${margens.xlarge}px`}
+          altura="600px">
+          <S.ImagemJurista
+            src={imagemJurista.url}
+            alt="Imagem jurista assinando papéis"
+            width={380}
+            height={300}
+            // data-aos="fade-left"
+            // data-aos-anchor={`#${idAncoraJurista}`}
+            // data-aos-delay="300"
+          />
         </Container>
       </S.ContainerJurista>
       <ContainerConteudo
@@ -194,7 +189,7 @@ export default function Atuacao({imagensAtuacao}: Props) {
           </S.ListaPalestrante>
 
           <Botao
-            tamanho="G"
+            tamanho="M"
             tema="vinho"
             estilo="outline"
             aoClicar={navegarParaPaginaDeContato}
@@ -203,7 +198,7 @@ export default function Atuacao({imagensAtuacao}: Props) {
           </Botao>
         </Container>
 
-        <Container>
+        <Container padding={`${margens.xxxlarge}px ${margens.xlarge}px`}>
           <Carrossel
             elementos={elementosCarrosselPalestrante}
             direcao={Direcoes.V}

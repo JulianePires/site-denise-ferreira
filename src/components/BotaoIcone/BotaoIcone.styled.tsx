@@ -13,8 +13,8 @@ export const ContainerBotaoIcone = styled.button<ContainerBotaoIconeProps>`
   justify-content: center;
   align-items: center;
 
-  width: ${TamanhosComponente.P}px;
-  height: ${TamanhosComponente.P}px;
+  width: 50px;
+  height: 50px;
   border-radius: 50%;
 
   background: ${(props) => cores[props.corBackground]};

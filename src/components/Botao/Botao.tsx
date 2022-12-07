@@ -5,7 +5,7 @@ import * as S from './Botao.styled'
 
 interface Props {
   children: ReactNode
-  tamanho: keyof typeof TamanhosComponente
+  tamanho?: keyof typeof TamanhosComponente
   estilo?: 'unstyled' | 'ghost' | 'outline' | 'solid'
   tema?: TemasCores
   tipo?: 'button' | 'submit' | 'reset'

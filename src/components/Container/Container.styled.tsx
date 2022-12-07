@@ -15,10 +15,12 @@ export const Container = styled.span<ContainerTipo>`
         ? props.corFundo
         : 'none'};
   background-size: cover;
+  background-position: center;
 
   padding: ${margens.xlarge}px;
   width: 100%;
-  height: ${props => props.altura ? props.altura : 'initial'};
+  min-height: ${(props) => (props.altura ? props.altura : 'initial')};
+  height: 100%;
 
   @media ${dispositivos.laptop} {
     padding: ${(props) =>
