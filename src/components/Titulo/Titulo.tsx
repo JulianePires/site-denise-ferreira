@@ -3,8 +3,9 @@ import * as S from './Titulo.styled'
 
 interface Props {
   children: ReactNode
+  corTexto?: string
 }
 
-export function Titulo({children}: Props) {
-  return <S.ContainerTitulo>{children}</S.ContainerTitulo>
+export function Titulo({children, corTexto}: Props) {
+  return <S.ContainerTitulo corTexto={corTexto}>{children}</S.ContainerTitulo>
 }

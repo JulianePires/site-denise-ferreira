@@ -3,6 +3,7 @@ import {Botao} from '@components/Botao'
 import {Container} from '@components/Container'
 import {ControleElementos} from '@components/ControleElementos'
 import {Stack} from '@components/Stack'
+import {Titulo} from '@components/Titulo'
 import {Post} from '@data/tipos'
 import {formataDataParaPadrao} from '@infrastructure/funcoes'
 import {buscaPosts, buscaPostsDestaque} from '@infrastructure/requisicoes/post'
@@ -22,9 +23,9 @@ interface BlogProps {
 
 export default function Blog({posts, destaques}: BlogProps) {
   const [indexDestaque, setIndexDestaque] = useState<number>(0)
-  const destaque = destaques[indexDestaque]
+  const postDestaque = destaques[indexDestaque]
   const maxDestaques = destaques.length
-  const {titulo} = conteudoTexto.textoBlog
+  const {titulo, destaque} = conteudoTexto.textoBlog
 
   console.log(destaques)
 
@@ -52,10 +53,10 @@ export default function Blog({posts, destaques}: BlogProps) {
     <LayoutPaginasSite titulo="Blog">
       <S.ContainerDestaqueBlog corBackground={cores.terra} reverso={true}>
         <Container padding={`${margens.xxxlarge}px ${margens.large}px`}>
-          <S.TituloDestaqueBlog>{destaque?.title}</S.TituloDestaqueBlog>
+          <S.TituloDestaqueBlog>{postDestaque?.title}</S.TituloDestaqueBlog>
 
           <S.ConteudoDestaqueBlog>
-            {destaque.content.body.text.slice(0, 200) + '...'}
+            {postDestaque.content.body.text.slice(0, 200) + '...'}
           </S.ConteudoDestaqueBlog>
 
           <Stack
@@ -66,19 +67,19 @@ export default function Blog({posts, destaques}: BlogProps) {
             <>
               <S.AgrupamentoDestaqueBlog>
                 <Avatar
-                  src={destaque.createdBy.picture}
+                  src={postDestaque.createdBy.picture}
                   alt="Imagem do criador do post"
                   tamanho={50}
                 />
                 <S.InformacoesDestaqueBlog>
-                  {destaque.createdBy.name}
+                  {postDestaque.createdBy.name}
                 </S.InformacoesDestaqueBlog>
               </S.AgrupamentoDestaqueBlog>
 
               <S.AgrupamentoDestaqueBlog>
                 <BsCalendarDateFill color={cores.branco} />
                 <S.InformacoesDestaqueBlog>
-                  {formataDataParaPadrao(destaque.createdAt)}
+                  {formataDataParaPadrao(postDestaque.createdAt)}
                 </S.InformacoesDestaqueBlog>
               </S.AgrupamentoDestaqueBlog>
 
@@ -88,8 +89,8 @@ export default function Blog({posts, destaques}: BlogProps) {
                 estilo="solid"
                 // eslint-disable-next-line @typescript-eslint/no-empty-function
                 aoClicar={() => {}}
-                ariaLabel="Acessar post em destaque">
-                Ver mais
+                ariaLabel={destaque.botao.ariaLabel}>
+                {destaque.botao.texto}
               </Botao>
             </>
           </Stack>
@@ -101,8 +102,11 @@ export default function Blog({posts, destaques}: BlogProps) {
             aoClicarEmAnterior={voltarIndexDestaque}
           />
         </Container>
-        <Container altura="600px" imagemFundo={destaque.image.url} />
+        <Container altura="600px" imagemFundo={postDestaque.image.url} />
       </S.ContainerDestaqueBlog>
+      <S.CabecalhoArtigos>
+        <Titulo corTexto={cores.vinho}>{titulo}</Titulo>
+      </S.CabecalhoArtigos>
     </LayoutPaginasSite>
   )
 }

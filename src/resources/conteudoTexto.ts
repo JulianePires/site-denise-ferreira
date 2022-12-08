@@ -67,7 +67,13 @@ const conteudoTexto = {
     },
   },
   textoBlog: {
-    titulo: 'Blog',
+    destaque: {
+      botao: {
+        texto: 'Ver mais',
+        ariaLabel: 'Botão que leva à página de detalhes do artigo em destaque',
+      },
+    },
+    titulo: 'Meus Artigos',
   },
   textoContato: {
     titulo: 'Contato',

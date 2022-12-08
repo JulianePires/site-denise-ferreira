@@ -1,5 +1,6 @@
 import {TamanhosTexto} from '@data/enums'
 import {TamanhosTextoTipo} from '@data/tipos'
+import cores from '@resources/cores'
 import {ReactNode} from 'react'
 import * as S from './Texto.styled'
 
@@ -7,6 +8,7 @@ interface Props {
   children: ReactNode
   tamanho: TamanhosTexto
   fonteAlternativa?: string
+  corTexto?: string
   className?: string
   'data-aos'?: string
   'data-aos-anchor'?: string
@@ -17,6 +19,7 @@ export function Texto({
   children,
   tamanho,
   fonteAlternativa,
+  corTexto = cores.branco,
   className,
   ...rest
 }: Props) {
@@ -26,6 +29,7 @@ export function Texto({
   return (
     <ComponenteTexto
       fonteAlternativa={fonteAlternativa}
+      corTexto={corTexto}
       className={className}
       {...rest}>
       {children}
