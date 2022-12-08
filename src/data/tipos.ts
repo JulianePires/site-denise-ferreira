@@ -105,6 +105,7 @@ export type ContainerTipo = {
   imagemFundo?: string
   padding?: string
   altura?: string
+  justificar?: AlinhamentoTipo
 }
 
 export type PublicacaoEscritoraTipo = 'livro' | 'iniciativa'

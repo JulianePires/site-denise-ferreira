@@ -133,9 +133,9 @@ export default function Atuacao({imagensAtuacao}: Props) {
             alt="Imagem jurista assinando papéis"
             width={380}
             height={300}
-            // data-aos="fade-left"
-            // data-aos-anchor={`#${idAncoraJurista}`}
-            // data-aos-delay="300"
+            data-aos="fade-left"
+            data-aos-anchor={`#${idAncoraJurista}`}
+            data-aos-delay="300"
           />
         </Container>
       </S.ContainerJurista>
@@ -194,7 +194,7 @@ export default function Atuacao({imagensAtuacao}: Props) {
           </Botao>
         </Container>
 
-        <Container padding={`${margens.xxxlarge}px ${margens.xlarge}px`}>
+        <Container padding={`${margens.xxxlarge}px ${margens.xxxlarge}px`}>
           <Carrossel
             elementos={elementosCarrosselPalestrante}
             direcao={Direcoes.V}

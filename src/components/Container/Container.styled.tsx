@@ -6,7 +6,7 @@ import styled from 'styled-components'
 export const Container = styled.span<ContainerTipo>`
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: ${({justificar}) => (justificar ? justificar : 'center')};
 
   background: ${(props) =>
     props.imagemFundo

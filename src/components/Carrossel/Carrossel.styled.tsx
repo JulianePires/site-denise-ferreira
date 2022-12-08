@@ -1,8 +1,6 @@
 import {Botao} from '@components/Botao'
 import {ImagemComFallback} from '@components/ImagemComFallback'
-import {Stack} from '@components/Stack'
 import {Texto} from '@components/Texto'
-import {Direcoes, TamanhosTexto} from '@data/enums'
 import {DirecoesTipo, TemasCores} from '@data/tipos'
 import cores from '@resources/cores'
 import dispositivos from '@resources/dispositivos'
@@ -44,10 +42,15 @@ export const ImagensCarrossel = styled(Carousel)`
   }
 `
 
-export const ImagemCarrossel = styled(ImagemComFallback)`
+interface ImagemCarrosselProps {
+  corBorda?: string
+}
+
+export const ImagemCarrossel = styled(ImagemComFallback)<ImagemCarrosselProps>`
   width: 250px;
   height: auto;
 
+  border: 12px solid ${({corBorda}) => corBorda};
   border-radius: 1rem;
 
   @media ${dispositivos.tablet} {
@@ -74,20 +77,3 @@ export const DescricaoImagemCarrossel = styled(
 `
 
 export const BotaoImagemCarrossel = styled(Botao)``
-
-export const ControleCarrossel = styled(Stack).attrs({
-  direcao: Direcoes.H,
-  gap: '1rem',
-})``
-
-export const IndexCarrossel = styled(Texto).attrs({
-  tamanho: TamanhosTexto.P,
-})``
-
-export const SetaCarrossel = styled.button`
-  background: none;
-  border: none;
-  cursor: pointer;
-
-  font-size: 25px;
-`

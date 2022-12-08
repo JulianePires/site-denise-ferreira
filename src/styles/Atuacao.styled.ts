@@ -43,17 +43,10 @@ export const TextoDescricaoJurista = styled.p`
 export const ImagemJurista = styled(ImagemComFallback)`
   align-self: center;
 
-  width: 300px;
+  width: 80%;
   height: auto;
-  border-radius: 10px;
 
-  @media ${dispositivos.laptop} {
-    width: 300px;
-  }
-
-  @media ${dispositivos.laptop} {
-    width: 400px;
-  }
+  border: 12px solid ${cores.terra};
 `
 
 export const CabecalhoEscritora = styled.span`

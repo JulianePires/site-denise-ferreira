@@ -2,10 +2,10 @@ import {ChaveValor} from '@data/tipos'
 
 const cores: ChaveValor<string> = {
   azulRoyal: '#2B3193',
-  azulPetroleo: '#24828A',
+  azulPetroleo: '#27818B',
   laranja: '#F36B2B',
   terra: '#C15525',
-  vinho: '#7B2900',
+  vinho: '#7C2B17',
   amarelo: '#FFD65C',
   preto: '#000000',
   branco: '#ffffff',

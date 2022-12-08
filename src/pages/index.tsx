@@ -15,6 +15,8 @@ import * as S from '@styles/Home.styled'
 import {GetServerSidePropsContext} from 'next'
 import {useRouter} from 'next/router'
 
+import ImagemDeniseFerreira from '@assets/imagens/ImagemDeniseFerreira1.png'
+
 interface Props {
   fotoDenise: Asset
   logoBranca: Asset
@@ -57,21 +59,17 @@ export default function Home({fotoDenise, logoBranca, texturaTerra}: Props) {
             {botaoContato.texto}
           </Botao>
         </Container>
-        <Container
-          largura="100%"
-          corFundo={cores.azulPetroleo}
-          imagemFundo={texturaTerra.url}
-          padding={`${margens.xxxlarge}px ${margens.large}px`}>
+        <S.ContainerFotoBanner imagemFundo={texturaTerra.url}>
           <S.FotoBanner
-            src={fotoDenise.url}
+            src={ImagemDeniseFerreira.src}
             alt="Foto Denise Ferreira"
-            width={fotoDenise.width}
-            height={fotoDenise.height}
+            width={600}
+            height={600}
             data-aos="fade-left"
             data-aos-anchor="#ancora-banner"
             data-aos-delay="300"
           />
-        </Container>
+        </S.ContainerFotoBanner>
       </ContainerConteudo>
       <ContainerConteudo corBackground={cores.azulPetroleo}>
         <Tab />
