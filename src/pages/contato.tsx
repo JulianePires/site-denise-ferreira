@@ -150,7 +150,6 @@ export default function Contato({imagensContato}: Props) {
             />
 
             <S.BotaoEnviarMensagemContato
-              tamanho="G"
               tipo="submit"
               desabilitaTema
               corFundoAlternativa={cores.branco}

@@ -1,4 +1,5 @@
 import {ImagemComFallback} from '@components/ImagemComFallback'
+import {Titulo} from '@components/Titulo'
 import {TemasCores} from '@data/tipos'
 import cores from '@resources/cores'
 import dispositivos from '@resources/dispositivos'
@@ -98,13 +99,7 @@ export const LayoutTab = styled.span`
   }
 `
 
-export const TituloLayoutTab = styled.h3`
-  font-size: ${titulo1.fontSize};
-
-  @media ${dispositivos.tablet} {
-    font-size: ${titulo2.fontSize};
-  }
-`
+export const TituloLayoutTab = styled(Titulo)``
 
 export const TextoLayoutTab = styled.p`
   ${paragrafo}

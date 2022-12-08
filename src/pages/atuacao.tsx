@@ -143,11 +143,7 @@ export default function Atuacao({imagensAtuacao}: Props) {
         direcao={Direcoes.V}
         corBackground={cores.azulPetroleo}>
         <S.CabecalhoEscritora>
-          <S.TituloEscritora
-            data-aos="fade-left"
-            data-aos-anchor={`#${idAncoraEscritora}`}>
-            {textoAtuacao.escritora.titulo}
-          </S.TituloEscritora>
+          <S.TituloEscritora>{textoAtuacao.escritora.titulo}</S.TituloEscritora>
         </S.CabecalhoEscritora>
 
         <Container

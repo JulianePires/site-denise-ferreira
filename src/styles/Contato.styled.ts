@@ -1,5 +1,6 @@
 import {Botao} from '@components/Botao'
 import {Texto} from '@components/Texto'
+import {Titulo} from '@components/Titulo'
 import {TamanhosTexto} from '@data/enums'
 import dispositivos from '@resources/dispositivos'
 import {detalhe, subtitulo} from '@resources/textos'
@@ -11,10 +12,7 @@ export const FormularioContato = styled.form`
   gap: 1rem;
 `
 
-export const TituloContato = styled(Texto).attrs({
-  tamanho: TamanhosTexto.XG,
-  fonteAlternativa: subtitulo.fontFamily,
-})``
+export const TituloContato = styled(Titulo)``
 
 export const BotaoEnviarMensagemContato = styled(Botao)``
 

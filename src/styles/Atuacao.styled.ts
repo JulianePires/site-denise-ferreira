@@ -1,6 +1,7 @@
 import {ContainerConteudo} from '@components/ContainerConteudo'
 import {ImagemComFallback} from '@components/ImagemComFallback'
 import {Texto} from '@components/Texto'
+import {Titulo} from '@components/Titulo'
 import {TamanhosTexto} from '@data/enums'
 import cores from '@resources/cores'
 import dispositivos from '@resources/dispositivos'
@@ -20,16 +21,7 @@ export const ContainerJurista = styled(ContainerConteudo).attrs({
   overflow-x: hidden;
 `
 
-export const TituloJurista = styled(Texto).attrs({
-  tamanho: TamanhosTexto.XG,
-  fonteAlternativa: subtitulo.fontFamily,
-})`
-  font-size: ${titulo1.fontSize};
-
-  @media ${dispositivos.mobileL} {
-    font-size: ${titulo2.fontSize};
-  }
-`
+export const TituloJurista = styled(Titulo)``
 
 export const TextoDescricaoJurista = styled.p`
   ${detalhe}
@@ -74,16 +66,7 @@ export const CabecalhoEscritora = styled.span`
   height: 120px;
 `
 
-export const TituloEscritora = styled(Texto).attrs({
-  tamanho: TamanhosTexto.XG,
-  fonteAlternativa: subtitulo.fontFamily,
-})`
-  font-size: ${titulo1.fontSize};
-
-  @media ${dispositivos.mobileL} {
-    font-size: ${titulo2.fontSize};
-  }
-`
+export const TituloEscritora = styled(Titulo)``
 
 export const TituloPalestrante = styled(Texto).attrs({
   tamanho: TamanhosTexto.XG,
