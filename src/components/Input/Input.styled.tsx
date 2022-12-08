@@ -9,12 +9,16 @@ export const ContainerCampoTexto = styled.div`
   flex-direction: column;
 `
 
-export const LabelCampoTexto = styled.label`
+interface LabelCampoTextoProps {
+  cor: string
+}
+
+export const LabelCampoTexto = styled.label<LabelCampoTextoProps>`
   ${paragrafo}
 
   font-family: ${subtitulo.fontFamily};
 
-  color: ${cores.branco};
+  color: ${({cor}) => cor};
 `
 
 export const WrapInput = styled(Stack)`
@@ -23,13 +27,14 @@ export const WrapInput = styled(Stack)`
 
 interface InputCampoTextoProps {
   possuiErro: string
+  largura: string
 }
 
 export const InputCampoTexto = styled.input<InputCampoTextoProps>`
   ${detalhe}
 
   height: 2.5rem;
-  width: 100%;
+  width: ${({largura}) => largura};
 
   border: none;
   border-bottom: 2px solid;

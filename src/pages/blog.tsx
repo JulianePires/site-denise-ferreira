@@ -1,11 +1,14 @@
 import {Avatar} from '@components/Avatar'
 import {Botao} from '@components/Botao'
+import {CabecalhoArtigos} from '@components/CabecalhoArtigos'
 import {Container} from '@components/Container'
 import {ControleElementos} from '@components/ControleElementos'
+import {Input} from '@components/Input'
 import {Stack} from '@components/Stack'
 import {Titulo} from '@components/Titulo'
-import {Post} from '@data/tipos'
+import {Categoria, Post} from '@data/tipos'
 import {formataDataParaPadrao} from '@infrastructure/funcoes'
+import {buscaCategorias} from '@infrastructure/requisicoes/categoria'
 import {buscaPosts, buscaPostsDestaque} from '@infrastructure/requisicoes/post'
 import {LayoutPaginasSite} from '@layouts/LayoutPaginasSite'
 import conteudoTexto from '@resources/conteudoTexto'
@@ -23,11 +26,11 @@ interface BlogProps {
 
 export default function Blog({posts, destaques}: BlogProps) {
   const [indexDestaque, setIndexDestaque] = useState<number>(0)
+  const [buscaArtigo, setBuscaArtigo] = useState<string>('')
+  const [erroBuscaArtigo, setErroBuscaArtigo] = useState<string>('')
   const postDestaque = destaques[indexDestaque]
   const maxDestaques = destaques.length
-  const {titulo, destaque} = conteudoTexto.textoBlog
-
-  console.log(destaques)
+  const {destaque} = conteudoTexto.textoBlog
 
   function avancarIndexDestaque() {
     if (indexDestaque + 1 === maxDestaques) {
@@ -43,6 +46,10 @@ export default function Blog({posts, destaques}: BlogProps) {
     } else {
       setIndexDestaque(indexDestaque - 1)
     }
+  }
+
+  function alterarValorBuscaArtigo(valor: string) {
+    setBuscaArtigo(valor)
   }
 
   useEffect(() => {
@@ -104,9 +111,11 @@ export default function Blog({posts, destaques}: BlogProps) {
         </Container>
         <Container altura="600px" imagemFundo={postDestaque.image.url} />
       </S.ContainerDestaqueBlog>
-      <S.CabecalhoArtigos>
-        <Titulo corTexto={cores.vinho}>{titulo}</Titulo>
-      </S.CabecalhoArtigos>
+      <CabecalhoArtigos
+        textoBusca={buscaArtigo}
+        aoAlterarTextoBusca={alterarValorBuscaArtigo}
+        erro={erroBuscaArtigo}
+      />
     </LayoutPaginasSite>
   )
 }

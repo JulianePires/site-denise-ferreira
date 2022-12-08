@@ -45,6 +45,7 @@ export const TextoDescricaoBanner = styled.p`
 
 export const ContainerFotoBanner = styled(Container).attrs({
   largura: '100%',
+  altura: '500px',
   padding: `0px ${margens.large}px`,
   justificar: 'flex-end',
 })`
@@ -52,7 +53,7 @@ export const ContainerFotoBanner = styled(Container).attrs({
 `
 
 export const FotoBanner = styled(ImagemComFallback)`
-  width: 200px;
+  width: 300px;
   height: auto;
 
   align-self: center;
@@ -62,11 +63,11 @@ export const FotoBanner = styled(ImagemComFallback)`
   border-radius: 16px;
 
   @media ${dispositivos.tablet} {
-    width: 250px;
+    width: 350px;
   }
 
   @media ${dispositivos.laptop} {
-    width: 280px;
+    width: 400px;
   }
 
   @media ${dispositivos.laptopL} {

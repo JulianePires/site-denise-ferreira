@@ -1,7 +1,7 @@
 import * as S from './Stack.styled'
 
 interface Props extends S.ContainerStackProps {
-  children: React.ReactNode
+  children: JSX.Element | JSX.Element[]
   quebra?: boolean
 }
 

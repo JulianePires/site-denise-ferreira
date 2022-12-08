@@ -25,11 +25,13 @@ interface Props {
   nomeCampo: string
   placeholder: string
   label: string
+  corLabel?: string
   erro?: string
   valor: string
   tipo?: HTMLInputTypeAttribute
   textArea?: boolean
   icone?: IconType
+  largura?: string
   aoAlterar: ChangeEventHandler<HTMLInputElement | HTMLTextAreaElement>
 }
 
@@ -38,22 +40,26 @@ export function Input({
   nomeCampo,
   placeholder,
   label,
+  corLabel = cores.branco,
   erro = '',
   valor,
   tipo = 'text',
   textArea = false,
   icone,
+  largura = '100%',
   aoAlterar,
 }: Props) {
   function verificaSePossuiErro(erro: string) {
     return String(!isEmpty(erro))
   }
 
-  const Icone = iconesInput[nomeCampo]
+  const Icone = icone ? icone : iconesInput[nomeCampo]
 
   return (
     <S.ContainerCampoTexto>
-      <S.LabelCampoTexto htmlFor={id}>{label}</S.LabelCampoTexto>
+      <S.LabelCampoTexto cor={corLabel} htmlFor={id}>
+        {label}
+      </S.LabelCampoTexto>
       {textArea ? (
         <S.TextareaCampoTexto
           id={id}
@@ -65,12 +71,13 @@ export function Input({
         />
       ) : (
         <S.WrapInput direcao={Direcoes.H} gap="0.5rem" alinhar="center">
-          <Icone color={cores.branco} width={20} />
+          <Icone color={corLabel} width={20} />
           <S.InputCampoTexto
             id={id}
             name={nomeCampo}
             type={tipo}
             value={valor}
+            largura={largura}
             onChange={aoAlterar}
             placeholder={placeholder}
             possuiErro={verificaSePossuiErro(erro)}

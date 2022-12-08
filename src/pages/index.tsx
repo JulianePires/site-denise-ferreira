@@ -34,7 +34,10 @@ export default function Home({fotoDenise, logoBranca, texturaTerra}: Props) {
   return (
     <LayoutPaginasSite titulo="Página Inicial">
       <ContainerConteudo corBackground={cores.terra}>
-        <Container largura="100%" id="ancora-banner">
+        <Container
+          largura="100%"
+          id="ancora-banner"
+          padding={`${margens.xxxlarge}px ${margens.xxxlarge}px`}>
           <Stack direcao={Direcoes.V} gap="1rem" margem="0 0 2.5rem 0">
             <S.LogoBanner
               src={logoBranca.url}
