@@ -45,7 +45,7 @@ export const TextoDescricaoBanner = styled.p`
 
 export const ContainerFotoBanner = styled(Container).attrs({
   largura: '100%',
-  altura: '500px',
+  altura: '600px',
   padding: `0px ${margens.large}px`,
   justificar: 'flex-end',
 })`
