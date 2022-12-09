@@ -30,6 +30,7 @@ export default function Atuacao({imagensAtuacao}: Props) {
   const [
     imagemJurista,
     texturaTerra,
+    texturaAzul,
     texturaAzulPetroleo,
     livrosEIniciativas1,
     livrosEIniciativas2,
@@ -156,7 +157,7 @@ export default function Atuacao({imagensAtuacao}: Props) {
           />
         </Container>
       </ContainerConteudo>
-      <ContainerConteudo corBackground={cores.vinho} altura={600}>
+      <ContainerConteudo corBackground={cores.azulPetroleo} altura={600}>
         <Container id={idAncoraPalestrante}>
           <S.TituloPalestrante
             data-aos="fade-right"
@@ -186,18 +187,21 @@ export default function Atuacao({imagensAtuacao}: Props) {
 
           <Botao
             tamanho="M"
-            tema="vinho"
-            estilo="outline"
+            tema="amarelo"
+            estilo="solid"
             aoClicar={navegarParaPaginaDeContato}
             ariaLabel={textoAtuacao.palestrante.botao.ariaLabel}>
             {textoAtuacao.palestrante.botao.texto}
           </Botao>
         </Container>
 
-        <Container padding={`${margens.xxxlarge}px ${margens.xxxlarge}px`}>
+        <Container
+          imagemFundo={texturaAzul.url}
+          padding={`${margens.xxxlarge}px ${margens.xxxlarge}px`}>
           <Carrossel
             elementos={elementosCarrosselPalestrante}
             direcao={Direcoes.V}
+            corLegenda='azulPetroleo'
           />
         </Container>
       </ContainerConteudo>
@@ -214,6 +218,7 @@ export async function getServerSideProps({res}: GetServerSidePropsContext) {
   const {
     idImagemJurista,
     idTexturaTerra,
+    idTexturaAzul,
     idTexturaAzulPetroleo,
     idLivrosEIniciativas1,
     idLivrosEIniciativas2,
@@ -229,6 +234,7 @@ export async function getServerSideProps({res}: GetServerSidePropsContext) {
 
   const reqImagemJurista = await buscaAsset(idImagemJurista)
   const reqTexturaTerra = await buscaAsset(idTexturaTerra)
+  const reqTexturaAzul = await buscaAsset(idTexturaAzul)
   const reqTexturaAzulPetroleo = await buscaAsset(idTexturaAzulPetroleo)
   const reqLivrosEIniciativas1 = await buscaAsset(idLivrosEIniciativas1)
   const reqLivrosEIniciativas2 = await buscaAsset(idLivrosEIniciativas2)
@@ -243,6 +249,7 @@ export async function getServerSideProps({res}: GetServerSidePropsContext) {
 
   let imagemJurista = {}
   let texturaTerra = {}
+  let texturaAzul = {}
   let texturaAzulPetroleo = {}
   let livrosEIniciativas1 = {}
   let livrosEIniciativas2 = {}
@@ -261,6 +268,10 @@ export async function getServerSideProps({res}: GetServerSidePropsContext) {
 
   if (reqTexturaTerra.status === StatusRequisicao.SUCESSO) {
     texturaTerra = reqTexturaTerra.dados.asset as Asset
+  }
+
+  if (reqTexturaAzul.status === StatusRequisicao.SUCESSO) {
+    texturaAzul = reqTexturaAzul.dados.asset as Asset
   }
 
   if (reqTexturaAzulPetroleo.status === StatusRequisicao.SUCESSO) {
@@ -312,6 +323,7 @@ export async function getServerSideProps({res}: GetServerSidePropsContext) {
       imagensAtuacao: [
         imagemJurista,
         texturaTerra,
+        texturaAzul,
         texturaAzulPetroleo,
         livrosEIniciativas1,
         livrosEIniciativas2,
