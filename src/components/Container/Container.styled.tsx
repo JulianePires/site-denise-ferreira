@@ -23,11 +23,11 @@ export const Container = styled.span<ContainerTipo>`
   height: 100%;
 
   @media ${dispositivos.laptop} {
-    padding: ${(props) =>
-    props.padding ? props.padding : `0 0 0 ${margens.xxxlarge}px`};
+    padding: ${({padding}) =>
+    padding ? padding : `0 0 0 ${margens.xxxlarge}px`};
   }
 
   @media ${dispositivos.laptopL} {
-    padding: ${margens.xxxlarge}px;
+    padding: ${({padding}) => (padding ? padding : margens.xxxlarge + 'px')};
   }
 `

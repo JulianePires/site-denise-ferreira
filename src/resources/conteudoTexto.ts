@@ -30,7 +30,7 @@ const conteudoTexto = {
     escritora: {
       titulo: 'Livros e iniciativas',
       textoBotaoCarrossel: {
-        iniciativa: 'Saber mais',
+        iniciativa: 'Conheça',
         livro: 'Comprar',
       },
       descricaoElemento: {

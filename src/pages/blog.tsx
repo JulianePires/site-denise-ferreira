@@ -87,7 +87,7 @@ export default function Blog({posts, destaques}: BlogProps) {
             </Stack>
 
             <Botao
-              tamanho="M"
+              tamanho="G"
               tema="vinho"
               estilo="solid"
               // eslint-disable-next-line @typescript-eslint/no-empty-function

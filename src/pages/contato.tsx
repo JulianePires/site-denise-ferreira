@@ -71,7 +71,7 @@ export default function Contato({imagensContato}: Props) {
   return (
     <LayoutPaginasSite titulo="Contato">
       <ContainerConteudo corBackground={cores.terra}>
-        <Container padding={`${margens.xxxlarge}px ${margens.xxxlarge}px`}>
+        <Container padding={`${margens.xlarge}px ${margens.xxxlarge}px`}>
           <S.TituloContato>{textoContato.titulo}</S.TituloContato>
 
           <S.TextoDescricaoContato>
