@@ -1,7 +1,8 @@
+import {ReactNode} from 'react'
 import * as S from './Stack.styled'
 
 interface Props extends S.ContainerStackProps {
-  children: JSX.Element | JSX.Element[]
+  children: ReactNode | Iterable<ReactNode>
   quebra?: boolean
 }
 

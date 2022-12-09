@@ -23,7 +23,7 @@ interface Props {
   texturaTerra: Asset
 }
 
-export default function Home({fotoDenise, logoBranca, texturaTerra}: Props) {
+export default function Home({logoBranca, texturaTerra}: Props) {
   const {botaoContato, textoHome} = conteudoTexto
   const router = useRouter()
 

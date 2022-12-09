@@ -1,3 +1,5 @@
+import {Stack} from '@components/Stack'
+import {Direcoes} from '@data/enums'
 import {DirecoesTipo} from '@data/tipos'
 import cores from '@resources/cores'
 import {
@@ -26,7 +28,7 @@ export function ControleElementos({
   const statusControleElementos = `0${elementoDestaque + 1} | 0${tamanhoArray}`
 
   return (
-    <S.ContainerControleElementos>
+    <Stack direcao={Direcoes.H} gap="1rem" alinhar="center" justificar="center">
       <S.StatusControleElemento>
         {statusControleElementos}
       </S.StatusControleElemento>
@@ -44,6 +46,6 @@ export function ControleElementos({
           <BsArrowDownCircleFill color={cores.branco} />
         )}
       </S.BotaoControleElemento>
-    </S.ContainerControleElementos>
+    </Stack>
   )
 }

@@ -1,7 +1,5 @@
 import {Botao} from '@components/Botao'
-import {Texto} from '@components/Texto'
 import {Titulo} from '@components/Titulo'
-import {TamanhosTexto} from '@data/enums'
 import dispositivos from '@resources/dispositivos'
 import {detalhe, subtitulo} from '@resources/textos'
 import styled from 'styled-components'

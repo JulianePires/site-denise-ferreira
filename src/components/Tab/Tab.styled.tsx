@@ -4,13 +4,7 @@ import {TemasCores} from '@data/tipos'
 import cores from '@resources/cores'
 import dispositivos from '@resources/dispositivos'
 import margens from '@resources/margens'
-import {
-  detalhe,
-  paragrafo,
-  subtitulo,
-  titulo1,
-  titulo2,
-} from '@resources/textos'
+import {detalhe, paragrafo, subtitulo, titulo1} from '@resources/textos'
 import styled from 'styled-components'
 
 interface ContainerTabProps {

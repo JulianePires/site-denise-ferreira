@@ -3,12 +3,9 @@ import {Botao} from '@components/Botao'
 import {CabecalhoArtigos} from '@components/CabecalhoArtigos'
 import {Container} from '@components/Container'
 import {ControleElementos} from '@components/ControleElementos'
-import {Input} from '@components/Input'
 import {Stack} from '@components/Stack'
-import {Titulo} from '@components/Titulo'
-import {Categoria, Post} from '@data/tipos'
+import {Post} from '@data/tipos'
 import {formataDataParaPadrao} from '@infrastructure/funcoes'
-import {buscaCategorias} from '@infrastructure/requisicoes/categoria'
 import {buscaPosts, buscaPostsDestaque} from '@infrastructure/requisicoes/post'
 import {LayoutPaginasSite} from '@layouts/LayoutPaginasSite'
 import conteudoTexto from '@resources/conteudoTexto'
@@ -71,35 +68,33 @@ export default function Blog({posts, destaques}: BlogProps) {
             gap="1rem"
             justificar="space-between"
             quebra={true}>
-            <>
-              <S.AgrupamentoDestaqueBlog>
-                <Avatar
-                  src={postDestaque.createdBy.picture}
-                  alt="Imagem do criador do post"
-                  tamanho={50}
-                />
-                <S.InformacoesDestaqueBlog>
-                  {postDestaque.createdBy.name}
-                </S.InformacoesDestaqueBlog>
-              </S.AgrupamentoDestaqueBlog>
+            <Stack direcao={Direcoes.H} gap="1rem" alinhar="center">
+              <Avatar
+                src={postDestaque.createdBy.picture}
+                alt="Imagem do criador do post"
+                tamanho={50}
+              />
+              <S.InformacoesDestaqueBlog>
+                {postDestaque.createdBy.name}
+              </S.InformacoesDestaqueBlog>
+            </Stack>
 
-              <S.AgrupamentoDestaqueBlog>
-                <BsCalendarDateFill color={cores.branco} />
-                <S.InformacoesDestaqueBlog>
-                  {formataDataParaPadrao(postDestaque.createdAt)}
-                </S.InformacoesDestaqueBlog>
-              </S.AgrupamentoDestaqueBlog>
+            <Stack direcao={Direcoes.H} gap="1rem" alinhar="center">
+              <BsCalendarDateFill color={cores.branco} />
+              <S.InformacoesDestaqueBlog>
+                {formataDataParaPadrao(postDestaque.createdAt)}
+              </S.InformacoesDestaqueBlog>
+            </Stack>
 
-              <Botao
-                tamanho="M"
-                tema="vinho"
-                estilo="solid"
-                // eslint-disable-next-line @typescript-eslint/no-empty-function
-                aoClicar={() => {}}
-                ariaLabel={destaque.botao.ariaLabel}>
-                {destaque.botao.texto}
-              </Botao>
-            </>
+            <Botao
+              tamanho="M"
+              tema="vinho"
+              estilo="solid"
+              // eslint-disable-next-line @typescript-eslint/no-empty-function
+              aoClicar={() => {}}
+              ariaLabel={destaque.botao.ariaLabel}>
+              {destaque.botao.texto}
+            </Botao>
           </Stack>
           <ControleElementos
             elementoDestaque={indexDestaque}
