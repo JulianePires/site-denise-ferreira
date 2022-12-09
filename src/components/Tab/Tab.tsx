@@ -1,6 +1,6 @@
 import {Container} from '@components/Container'
 import {Stack} from '@components/Stack'
-import {OpcoesMenuTab} from '@data/enums'
+import {Direcoes, OpcoesMenuTab} from '@data/enums'
 import {Asset, TemasCores} from '@data/tipos'
 import {buscaAsset} from '@infrastructure/requisicoes/asset'
 import conteudoTexto from '@resources/conteudoTexto'
@@ -96,20 +96,22 @@ export function Tab() {
   return (
     <S.ContainerTab id="ancora-tab" corFundo={tabAtiva.corFundo}>
       <S.ControleTab corFundo={cores.vinho}>
-        {opcoesTab.map((opcao: OpcaoTabTipo, index: number) => (
-          <S.OpcaoTab
-            ativa={String(opcao.nomeOpcao === tabAtiva.nomeOpcao)}
-            onClick={() => defineTabAtualComoAtiva(opcao)}
-            key={index}>
-            <S.ImagemOpcaoTab
-              src={opcao.icone}
-              alt={opcao.nomeOpcao}
-              width={66.67}
-              height={50}
-            />
-            {opcao.nomeOpcao}
-          </S.OpcaoTab>
-        ))}
+        <Stack direcao={Direcoes.H} largura="50%" gap='0' justificar='space-around'>
+          {opcoesTab.map((opcao: OpcaoTabTipo, index: number) => (
+            <S.OpcaoTab
+              ativa={String(opcao.nomeOpcao === tabAtiva.nomeOpcao)}
+              onClick={() => defineTabAtualComoAtiva(opcao)}
+              key={index}>
+              <S.ImagemOpcaoTab
+                src={opcao.icone}
+                alt={opcao.nomeOpcao}
+                width={66.67}
+                height={50}
+              />
+              {opcao.nomeOpcao}
+            </S.OpcaoTab>
+          ))}
+        </Stack>
       </S.ControleTab>
       <Stack direcao="horizontal" gap="0" quebra={true}>
         <S.LayoutTab

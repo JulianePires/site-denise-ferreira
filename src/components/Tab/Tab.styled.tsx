@@ -29,7 +29,6 @@ interface ControleTabProps {
 
 export const ControleTab = styled.ul<ControleTabProps>`
   display: flex;
-  justify-content: space-around;
   align-items: center;
 
   background: ${(props) =>
