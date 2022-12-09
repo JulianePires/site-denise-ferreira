@@ -16,7 +16,7 @@ import styled from 'styled-components'
 
 export const ContainerJurista = styled(ContainerConteudo).attrs({
   corBackground: cores.terra,
-  altura: 500,
+  altura: 600,
 })`
   overflow-x: hidden;
 `

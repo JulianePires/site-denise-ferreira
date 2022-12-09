@@ -14,6 +14,7 @@ interface Props {
   tamanhoArray: number
   elementoDestaque: number
   direcao: DirecoesTipo
+  cor?: string
   aoClicarEmProximo: () => void
   aoClicarEmAnterior: () => void
 }
@@ -22,6 +23,7 @@ export function ControleElementos({
   tamanhoArray,
   elementoDestaque,
   direcao,
+  cor = cores.branco,
   aoClicarEmProximo,
   aoClicarEmAnterior,
 }: Props) {
@@ -29,21 +31,21 @@ export function ControleElementos({
 
   return (
     <Stack direcao={Direcoes.H} gap="1rem" alinhar="center" justificar="center">
-      <S.StatusControleElemento>
+      <S.StatusControleElemento  corTexto={cor}>
         {statusControleElementos}
       </S.StatusControleElemento>
       <S.BotaoControleElemento onClick={aoClicarEmAnterior}>
         {direcao === 'horizontal' ? (
-          <BsArrowLeftCircleFill color={cores.branco} />
+          <BsArrowLeftCircleFill color={cor} />
         ) : (
-          <BsArrowUpCircleFill color={cores.branco} />
+          <BsArrowUpCircleFill color={cor} />
         )}
       </S.BotaoControleElemento>
       <S.BotaoControleElemento onClick={aoClicarEmProximo}>
         {direcao === 'horizontal' ? (
-          <BsArrowRightCircleFill color={cores.branco} />
+          <BsArrowRightCircleFill color={cor} />
         ) : (
-          <BsArrowDownCircleFill color={cores.branco} />
+          <BsArrowDownCircleFill color={cor} />
         )}
       </S.BotaoControleElemento>
     </Stack>

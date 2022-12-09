@@ -8,14 +8,23 @@ import * as S from './Carrossel.styled'
 import {ControleElementos} from '@components/ControleElementos'
 import {abreUrlExternaEmNovaAba} from '@infrastructure/funcoes'
 import 'react-responsive-carousel/lib/styles/carousel.min.css'
+import cores from '@resources/cores'
 
 interface Props {
   direcao: DirecoesTipo
   elementos: ElementoCarrosselTipo[]
   corLegenda?: TemasCores
+  corControles?: string
+  temaBotao?: TemasCores
 }
 
-export function Carrossel({direcao, elementos, corLegenda = 'vinho'}: Props) {
+export function Carrossel({
+  direcao,
+  elementos,
+  corLegenda = 'vinho',
+  corControles = cores.branco,
+  temaBotao = 'vinho'
+}: Props) {
   const [elementoAtual, setElementoAtual] = useState(0)
 
   const quantidadeDeElementos = elementos.length
@@ -52,8 +61,8 @@ export function Carrossel({direcao, elementos, corLegenda = 'vinho'}: Props) {
             elemento.linkExterno &&
             abreUrlExternaEmNovaAba(elemento.linkExterno)
           }
-          tema="amarelo"
-          estilo={EstilosBotao.GHOST}
+          tema={temaBotao}
+          estilo={EstilosBotao.SOLID}
           tamanho="M"
           ariaLabel={`Acessar ${
             elemento.tipo &&
@@ -115,6 +124,7 @@ export function Carrossel({direcao, elementos, corLegenda = 'vinho'}: Props) {
         tamanhoArray={quantidadeDeElementos}
         aoClicarEmAnterior={retrocedeElementoAtual}
         aoClicarEmProximo={avancaElementoAtual}
+        cor={corControles}
       />
     </S.ContainerCarrossel>
   )
