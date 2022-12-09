@@ -37,6 +37,7 @@ export default function Atuacao({imagensAtuacao}: Props) {
     livrosEIniciativas3,
     livrosEIniciativas4,
     livrosEIniciativas5,
+    livrosEIniciativas6,
     palestras1,
     palestras2,
     palestras3,
@@ -74,6 +75,12 @@ export default function Atuacao({imagensAtuacao}: Props) {
       imagem: livrosEIniciativas5.url,
       descricao: textoAtuacao.escritora.descricaoElemento.elemento5,
       linkExterno: textoAtuacao.escritora.linkElemento.elemento5,
+      tipo: 'iniciativa',
+    },
+    {
+      imagem: livrosEIniciativas6.url,
+      descricao: textoAtuacao.escritora.descricaoElemento.elemento6,
+      linkExterno: textoAtuacao.escritora.linkElemento.elemento6,
       tipo: 'iniciativa',
     },
   ]
@@ -227,6 +234,7 @@ export async function getServerSideProps({res}: GetServerSidePropsContext) {
     idLivrosEIniciativas3,
     idLivrosEIniciativas4,
     idLivrosEIniciativas5,
+    idLivrosEIniciativas6,
     idPalestras1,
     idPalestras2,
     idPalestras3,
@@ -243,6 +251,7 @@ export async function getServerSideProps({res}: GetServerSidePropsContext) {
   const reqLivrosEIniciativas3 = await buscaAsset(idLivrosEIniciativas3)
   const reqLivrosEIniciativas4 = await buscaAsset(idLivrosEIniciativas4)
   const reqLivrosEIniciativas5 = await buscaAsset(idLivrosEIniciativas5)
+  const reqLivrosEIniciativas6 = await buscaAsset(idLivrosEIniciativas6)
   const reqPalestras1 = await buscaAsset(idPalestras1)
   const reqPalestras2 = await buscaAsset(idPalestras2)
   const reqPalestras3 = await buscaAsset(idPalestras3)
@@ -258,6 +267,7 @@ export async function getServerSideProps({res}: GetServerSidePropsContext) {
   let livrosEIniciativas3 = {}
   let livrosEIniciativas4 = {}
   let livrosEIniciativas5 = {}
+  let livrosEIniciativas6 = {}
   let palestras1 = {}
   let palestras2 = {}
   let palestras3 = {}
@@ -300,6 +310,10 @@ export async function getServerSideProps({res}: GetServerSidePropsContext) {
     livrosEIniciativas5 = reqLivrosEIniciativas5.dados.asset as Asset
   }
 
+  if (reqLivrosEIniciativas6.status === StatusRequisicao.SUCESSO) {
+    livrosEIniciativas6 = reqLivrosEIniciativas6.dados.asset as Asset
+  }
+
   if (reqPalestras1.status === StatusRequisicao.SUCESSO) {
     palestras1 = reqPalestras1.dados.asset as Asset
   }
@@ -332,6 +346,7 @@ export async function getServerSideProps({res}: GetServerSidePropsContext) {
         livrosEIniciativas3,
         livrosEIniciativas4,
         livrosEIniciativas5,
+        livrosEIniciativas6,
         palestras1,
         palestras2,
         palestras3,

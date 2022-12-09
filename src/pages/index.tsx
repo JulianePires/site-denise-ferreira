@@ -113,3 +113,22 @@ export async function getServerSideProps({res}: GetServerSidePropsContext) {
     props: {logoBranca, fotoDenise, texturaTerra},
   }
 }
+
+//TODO: Ajustar imagem do coletivo juristas negras para o padrao do carrossel
+//TODO: Realizar configuracoes de seguranca (variaveis de ambiente)
+//TODO: Configurar autenticacao (next auth) para area de dashboard
+//TODO: Imlementar acesso privado na pagina do dashboard
+//TODO: Implementar a listagem de posts na pagina de blog
+//TODO: Implementar filtro por categoria na pagina de blog
+//TODO: Implementar busca por nome na pagina de blog
+//TODO: Implementar página de detalhamento de post
+//TODO: Criar páginas de login e criacao de conta para acesso a dashboard
+//TODO: Criar página de criacao de post
+//TODO: Criar página de edicao de post
+//TODO: Criar pagina de gerenciamento de usuarios
+//TODO: Criar pagina de edicao de perfil
+//TODO: Verificar SEO e aplicar melhorias
+//TODO: Criar página 404
+//TODO: Criar página 500
+//TODO: Criar fallback personalizado
+//TODO: Criar página de loader

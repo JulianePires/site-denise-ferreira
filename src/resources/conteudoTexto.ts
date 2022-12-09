@@ -39,6 +39,7 @@ const conteudoTexto = {
         elemento3: 'Obra na qual tive o prazer de coordenar',
         elemento4: 'Coletivo Liga do Dendê',
         elemento5: 'Clube Leitura Amigos do Akin',
+        elemento6: 'Integrante do Coletivo Juristas Negras'
       },
       linkElemento: {
         elemento1:
@@ -49,6 +50,7 @@ const conteudoTexto = {
           'https://novapraxiseditorial.com/produto/el-peritaje-en-el-trabajo-social-y-la-defensa-de-los-derechos-principales-demandas-y-detalles-tecnicos-segun-expertos-de-6-paises-e-book/',
         elemento4: 'https://www.instagram.com/coletivoligadodende/',
         elemento5: 'https://www.instagram.com/akinruda_oficial/',
+        elemento6: 'https://www.instagram.com/akinruda_oficial/',
       },
     },
     palestrante: {
