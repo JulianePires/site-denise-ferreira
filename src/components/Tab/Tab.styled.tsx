@@ -84,10 +84,16 @@ export const OpcaoTab = styled.li<OpcaoTabProps>`
   }
 `
 
-export const LayoutTab = styled.span`
+interface LayoutTabProps {
+  corTexto: string
+}
+
+export const LayoutTab = styled.span<LayoutTabProps>`
   padding: ${margens.xxlarge}px;
   width: 100%;
 
+  color: ${({corTexto}) => corTexto};
+  
   @media ${dispositivos.laptop} {
     padding: ${margens.xxxlarge}px;
   }

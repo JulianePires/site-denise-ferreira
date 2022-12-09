@@ -21,7 +21,7 @@ export function Tab() {
   const [urlImagemFundo, setUrlImagemFundo] = useState('')
   const [sankofaLaranja, setSankofaLaranja] = useState('')
   const [sankofaAzulPetroleo, setSankofaAzulPetroleo] = useState('')
-  const [sankofaAzul, setSankofaAzul] = useState('')
+  const [sankofaAmarela, setSankofaAmarela] = useState('')
 
   const {textoTab} = conteudoTexto.textoHome
 
@@ -42,8 +42,8 @@ export function Tab() {
     },
     {
       nomeOpcao: OpcoesMenuTab.SONHAR,
-      icone: sankofaAzul,
-      corFundo: cores.azulRoyal as TemasCores,
+      icone: sankofaAmarela,
+      corFundo: cores.amarelo as TemasCores,
       titulo: textoTab[OpcoesMenuTab.SONHAR].titulo,
       conteudo: textoTab[OpcoesMenuTab.SONHAR].conteúdo,
     },
@@ -55,7 +55,7 @@ export function Tab() {
     idTexturaAzul,
     idSankofaLaranja,
     idSankofaAzulPetroleo,
-    idSankofaAzul,
+    idSankofaAmarela,
   } = imagens
 
   function defineTabAtualComoAtiva(tab: OpcaoTabTipo) {
@@ -66,7 +66,7 @@ export function Tab() {
     const reqTexturaAzul = buscaAsset(idTexturaAzul)
     const reqSankofaLaranja = buscaAsset(idSankofaLaranja)
     const reqSankofaAzulPetroleo = buscaAsset(idSankofaAzulPetroleo)
-    const reqSankofaAzul = buscaAsset(idSankofaAzul)
+    const reqSankofaAmarela = buscaAsset(idSankofaAmarela)
 
     reqTexturaAzul.then((resposta) => {
       const imagem = resposta.dados.asset as Asset
@@ -83,9 +83,9 @@ export function Tab() {
       setSankofaAzulPetroleo(imagem.url)
     })
 
-    reqSankofaAzul.then((resposta) => {
+    reqSankofaAmarela.then((resposta) => {
       const imagem = resposta.dados.asset as Asset
-      setSankofaAzul(imagem.url)
+      setSankofaAmarela(imagem.url)
     })
   }
 
@@ -112,8 +112,14 @@ export function Tab() {
         ))}
       </S.ControleTab>
       <Stack direcao="horizontal" gap="0" quebra={true}>
-        <S.LayoutTab>
+        <S.LayoutTab
+          corTexto={
+            tabAtiva.corFundo === cores.amarelo ? cores.vinho : cores.branco
+          }>
           <S.TituloLayoutTab
+            corTexto={
+              tabAtiva.corFundo === cores.amarelo ? cores.vinho : cores.branco
+            }
             data-aos="fade-right"
             data-aos-anchor="#ancora-tab">
             {tabAtiva.titulo}

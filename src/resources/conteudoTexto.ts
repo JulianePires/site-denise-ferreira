@@ -56,8 +56,8 @@ const conteudoTexto = {
       palestras: [
         'Adoção',
         'Perícia social',
-        'Questões étnicos-raciais',
-        'Direitos da Criança e do Adolescente',
+        'Questões étnico-raciais',
+        'Sistema de Garantia de Direitos da Criança e Adolescente',
         'Literatura infantojuvenil afrocentrada',
       ],
       botao: {

@@ -17,6 +17,7 @@ const imagens: ChaveValor<string> = {
   idImagemJurista: 'clb25ir9n00r00bkkl4ey6p89',
   idSankofaAmarelo: 'clb2unq08132z0bkkp4yal1v7',
   idSankofaAzul: 'clb2uze5w11an0bkc9busgsq3',
+  idSankofaAmarela: 'clb2unq08132z0bkkp4yal1v7',
   idLivrosEIniciativas1: 'clb4aqiyq0i5z0alzznaydx6d',
   idLivrosEIniciativas2: 'clb4aqj0s0i3r0akcuqh8qeyc',
   idLivrosEIniciativas3: 'clb4aqizl0i6f0alzumzv74fh',
