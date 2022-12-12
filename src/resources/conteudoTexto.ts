@@ -50,7 +50,7 @@ const conteudoTexto = {
           'https://novapraxiseditorial.com/produto/el-peritaje-en-el-trabajo-social-y-la-defensa-de-los-derechos-principales-demandas-y-detalles-tecnicos-segun-expertos-de-6-paises-e-book/',
         elemento4: 'https://www.instagram.com/coletivoligadodende/',
         elemento5: 'https://www.instagram.com/akinruda_oficial/',
-        elemento6: 'https://www.instagram.com/akinruda_oficial/',
+        elemento6: 'https://www.instagram.com/juristasnegras/',
       },
     },
     palestrante: {
