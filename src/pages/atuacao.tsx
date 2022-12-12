@@ -147,11 +147,13 @@ export default function Atuacao({imagensAtuacao}: Props) {
           />
         </Container>
       </S.ContainerJurista>
-      <ContainerConteudo
-        direcao={Direcoes.H}
-        corBackground={cores.azulRoyal}>
-        <Container>
-          <S.TituloEscritora>{textoAtuacao.escritora.titulo}</S.TituloEscritora>
+      <ContainerConteudo direcao={Direcoes.H} corBackground={cores.azulRoyal}>
+        <Container id={idAncoraEscritora}>
+          <S.TituloEscritora
+            data-aos="fade-right"
+            data-aos-anchor={`#${idAncoraEscritora}`}>
+            {textoAtuacao.escritora.titulo}
+          </S.TituloEscritora>
         </Container>
 
         <Container
@@ -162,7 +164,7 @@ export default function Atuacao({imagensAtuacao}: Props) {
             direcao={Direcoes.H}
             corLegenda="azulPetroleo"
             corControles={cores.azulPetroleo}
-            temaBotao='azulPetroleo'
+            temaBotao="azulPetroleo"
           />
         </Container>
       </ContainerConteudo>
@@ -210,7 +212,7 @@ export default function Atuacao({imagensAtuacao}: Props) {
           <Carrossel
             elementos={elementosCarrosselPalestrante}
             direcao={Direcoes.V}
-            corLegenda='azulRoyal'
+            corLegenda="azulRoyal"
           />
         </Container>
       </ContainerConteudo>
