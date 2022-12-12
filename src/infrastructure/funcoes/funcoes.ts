@@ -4,7 +4,12 @@ import {StatusRequisicao} from 'src/data/enums'
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export function trataRespostaRequisicao(resposta: any): RespostaRequisicao {
-  const {loading, error, data} = resposta
+  const respostaFinal = resposta ? resposta : {
+    loading: false,
+    error: {},
+    data: {}
+  }
+  const {loading, error, data} = respostaFinal
 
   if (loading) {
     return {

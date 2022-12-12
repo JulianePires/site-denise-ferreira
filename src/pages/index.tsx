@@ -114,7 +114,6 @@ export async function getServerSideProps({res}: GetServerSidePropsContext) {
   }
 }
 
-//TODO: Ajustar imagem do coletivo juristas negras para o padrao do carrossel
 //TODO: Realizar configuracoes de seguranca (variaveis de ambiente)
 //TODO: Configurar autenticacao (next auth) para area de dashboard
 //TODO: Imlementar acesso privado na pagina do dashboard

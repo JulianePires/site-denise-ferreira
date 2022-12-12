@@ -1,6 +1,7 @@
 import {ApolloProvider} from '@apollo/client'
 import {cliente} from '@infrastructure/cliente'
 import EstiloGlobal from '@styles/global'
+import '@styles/global.css'
 import AOS from 'aos'
 import 'aos/dist/aos.css'
 import type {AppProps} from 'next/app'
