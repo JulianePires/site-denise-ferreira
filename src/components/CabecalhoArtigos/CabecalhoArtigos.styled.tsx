@@ -5,7 +5,6 @@ import styled from 'styled-components'
 import BannerAmareloDesktop from '@assets/imagens/BannerAmareloDesktop.png'
 import BannerAmareloMobile from '@assets/imagens/BannerAmareloMobile.png'
 import BannerAmareloTablet from '@assets/imagens/BannerAmareloTablet.png'
-import {Input} from '@components/Input'
 
 export const CabecalhoArtigos = styled.div`
   width: 100%;

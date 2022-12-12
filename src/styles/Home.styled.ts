@@ -34,7 +34,7 @@ export const TextoDescricaoBanner = styled.p`
   @media ${dispositivos.laptop} {
     font-size: 1.1rem;
     line-height: ${subtitulo.lineHeight};
-    width: 470px;
+    width: 400px;
   }
 
   @media ${dispositivos.laptopL} {
@@ -47,7 +47,7 @@ export const ContainerFotoBanner = styled(Container).attrs({
   largura: '100%',
   altura: '600px',
   padding: `0px ${margens.large}px`,
-  justificar: 'flex-end',
+  justificar: 'center',
 })`
   padding-bottom: 0;
 `
@@ -58,24 +58,22 @@ export const FotoBanner = styled(ImagemComFallback)`
 
   align-self: center;
 
-  margin-top: auto;
-
   border-radius: 16px;
 
   @media ${dispositivos.tablet} {
-    width: 350px;
+    width: 250px;
   }
 
   @media ${dispositivos.laptop} {
-    width: 400px;
+    width: 300px;
   }
 
   @media ${dispositivos.laptopL} {
-    width: 500px;
+    width: 350px;
   }
 
   @media ${dispositivos.desktop} {
-    width: 600px;
+    width: 400px;
   }
 `
 

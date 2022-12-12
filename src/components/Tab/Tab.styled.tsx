@@ -3,7 +3,6 @@ import {Titulo} from '@components/Titulo'
 import {TemasCores} from '@data/tipos'
 import cores from '@resources/cores'
 import dispositivos from '@resources/dispositivos'
-import margens from '@resources/margens'
 import {detalhe, paragrafo, subtitulo, titulo1} from '@resources/textos'
 import styled from 'styled-components'
 
@@ -22,6 +21,18 @@ export const ContainerTab = styled.span<ContainerTabProps>`
   transition: 0.5s ease-in-out all;
 `
 
+export const BarraControleTab = styled.span`
+  display: flex;
+  align-items: center;
+
+  background: ${cores.vinho};
+
+  width: 100%;
+  height: 140px;
+  margin: 0;
+  padding: 0;
+`
+
 interface ControleTabProps {
   imagemFundo?: string
   corFundo?: string
@@ -30,22 +41,15 @@ interface ControleTabProps {
 export const ControleTab = styled.ul<ControleTabProps>`
   display: flex;
   align-items: center;
-
-  background: ${(props) =>
-    props.corFundo
-      ? props.corFundo
-      : props.imagemFundo
-        ? `url(${props.imagemFundo})`
-        : cores.azulPetroleo};
-
-  background-size: 25em;
+  justify-content: space-around;
 
   width: 100%;
-  height: 120px;
-  margin: 0;
-  padding: 0;
 
   list-style: none;
+
+  @media ${dispositivos.laptop} {
+    width: 50vw;
+  }
 `
 
 export const ImagemOpcaoTab = styled(ImagemComFallback)`
@@ -83,31 +87,24 @@ export const OpcaoTab = styled.li<OpcaoTabProps>`
   }
 `
 
-interface LayoutTabProps {
+export const TituloLayoutTab = styled(Titulo)``
+
+interface TextoLayoutTabProps {
   corTexto: string
 }
 
-export const LayoutTab = styled.span<LayoutTabProps>`
-  padding: ${margens.xxlarge}px;
-  width: 100%;
+export const TextoLayoutTab = styled.p<TextoLayoutTabProps>`
+  ${paragrafo}
 
   color: ${({corTexto}) => corTexto};
-  
-  @media ${dispositivos.laptop} {
-    padding: ${margens.xxxlarge}px;
-  }
-`
 
-export const TituloLayoutTab = styled(Titulo)``
-
-export const TextoLayoutTab = styled.p`
-  ${paragrafo}
+  width: 100%;
 
   font-family: ${detalhe.fontFamily};
   font-size: ${subtitulo.fontSize};
   line-height: 3rem;
 
-  @media ${dispositivos.laptopL} {
+  @media ${dispositivos.tablet} {
     font-size: ${titulo1.fontSize};
     line-height: 4rem;
   }

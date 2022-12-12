@@ -1,11 +1,12 @@
 import {Container} from '@components/Container'
 import {Stack} from '@components/Stack'
-import {Direcoes, OpcoesMenuTab} from '@data/enums'
+import {OpcoesMenuTab} from '@data/enums'
 import {Asset, TemasCores} from '@data/tipos'
 import {buscaAsset} from '@infrastructure/requisicoes/asset'
 import conteudoTexto from '@resources/conteudoTexto'
 import cores from '@resources/cores'
 import imagens from '@resources/imagens'
+import margens from '@resources/margens'
 import {useEffect, useState} from 'react'
 import * as S from './Tab.styled'
 
@@ -20,8 +21,9 @@ type OpcaoTabTipo = {
 export function Tab() {
   const [urlImagemFundo, setUrlImagemFundo] = useState('')
   const [sankofaLaranja, setSankofaLaranja] = useState('')
-  const [sankofaAzulPetroleo, setSankofaAzulPetroleo] = useState('')
   const [sankofaAmarela, setSankofaAmarela] = useState('')
+  const [sankofaAzulPetroleo, setSankofaAzulPetroleo] = useState('')
+  const [larguraTela, setLarguraTela] = useState(0)
 
   const {textoTab} = conteudoTexto.textoHome
 
@@ -50,6 +52,9 @@ export function Tab() {
   ]
 
   const [tabAtiva, setTabAtiva] = useState<OpcaoTabTipo>(opcoesTab[0])
+
+  const corTexto =
+    tabAtiva.corFundo === cores.amarelo ? cores.vinho : cores.branco
 
   const {
     idTexturaAzul,
@@ -93,10 +98,15 @@ export function Tab() {
     atualizaImagens()
   }, [])
 
+  useEffect(() => {
+    setLarguraTela(window.innerWidth)
+    console.log(larguraTela)
+  }, [window.innerWidth])
+
   return (
     <S.ContainerTab id="ancora-tab" corFundo={tabAtiva.corFundo}>
-      <S.ControleTab corFundo={cores.vinho}>
-        <Stack direcao={Direcoes.H} largura="50%" gap='0' justificar='space-around'>
+      <S.BarraControleTab>
+        <S.ControleTab>
           {opcoesTab.map((opcao: OpcaoTabTipo, index: number) => (
             <S.OpcaoTab
               ativa={String(opcao.nomeOpcao === tabAtiva.nomeOpcao)}
@@ -111,17 +121,16 @@ export function Tab() {
               {opcao.nomeOpcao}
             </S.OpcaoTab>
           ))}
-        </Stack>
-      </S.ControleTab>
+        </S.ControleTab>
+      </S.BarraControleTab>
       <Stack direcao="horizontal" gap="0" quebra={true}>
-        <S.LayoutTab
-          corTexto={
-            tabAtiva.corFundo === cores.amarelo ? cores.vinho : cores.branco
-          }>
+        <Container
+          altura={
+            tabAtiva.nomeOpcao === OpcoesMenuTab.SONHAR ? '700px' : '550px'
+          }
+          padding={`${margens.xxxlarge}px ${margens.xxxlarge}px`}>
           <S.TituloLayoutTab
-            corTexto={
-              tabAtiva.corFundo === cores.amarelo ? cores.vinho : cores.branco
-            }
+            corTexto={corTexto}
             data-aos="fade-right"
             data-aos-anchor="#ancora-tab">
             {tabAtiva.titulo}
@@ -129,10 +138,11 @@ export function Tab() {
           <S.TextoLayoutTab
             data-aos="fade-right"
             data-aos-anchor="#ancora-tab"
-            data-aos-delay="200">
+            data-aos-delay="200"
+            corTexto={corTexto}>
             {tabAtiva.conteudo}
           </S.TextoLayoutTab>
-        </S.LayoutTab>
+        </Container>
         <Container altura="100%" imagemFundo={urlImagemFundo} />
       </Stack>
     </S.ContainerTab>

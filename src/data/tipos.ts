@@ -106,6 +106,7 @@ export type ContainerTipo = {
   padding?: string
   altura?: string
   justificar?: AlinhamentoTipo
+  gap?: string
 }
 
 export type PublicacaoEscritoraTipo = 'livro' | 'iniciativa'

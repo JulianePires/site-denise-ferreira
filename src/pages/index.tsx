@@ -23,7 +23,7 @@ interface Props {
   texturaTerra: Asset
 }
 
-export default function Home({logoBranca, texturaTerra}: Props) {
+export default function Home({fotoDenise ,logoBranca, texturaTerra}: Props) {
   const {botaoContato, textoHome} = conteudoTexto
   const router = useRouter()
 
@@ -64,10 +64,10 @@ export default function Home({logoBranca, texturaTerra}: Props) {
         </Container>
         <S.ContainerFotoBanner imagemFundo={texturaTerra.url}>
           <S.FotoBanner
-            src={ImagemDeniseFerreira.src}
+            src={fotoDenise.url}
             alt="Foto Denise Ferreira"
             width={600}
-            height={600}
+            height={800}
             data-aos="fade-left"
             data-aos-anchor="#ancora-banner"
             data-aos-delay="300"

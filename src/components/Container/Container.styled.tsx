@@ -7,6 +7,7 @@ export const Container = styled.span<ContainerTipo>`
   display: flex;
   flex-direction: column;
   justify-content: ${({justificar}) => (justificar ? justificar : 'center')};
+  gap: ${({gap}) => gap ? gap : '2rem'};
 
   background: ${(props) =>
     props.imagemFundo
@@ -23,6 +24,7 @@ export const Container = styled.span<ContainerTipo>`
   height: 100%;
 
   @media ${dispositivos.laptop} {
+    width: 50vw;
     padding: ${({padding}) =>
     padding ? padding : `0 0 0 ${margens.xxxlarge}px`};
   }

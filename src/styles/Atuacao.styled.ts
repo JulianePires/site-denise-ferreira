@@ -27,10 +27,11 @@ export const TextoDescricaoJurista = styled.p`
   ${detalhe}
 
   font-size: 1.2rem;
+  width: 70%;
+  line-height: ${subtitulo.lineHeight};
 
   @media ${dispositivos.laptop} {
     font-size: 1.3rem;
-    line-height: ${subtitulo.lineHeight};
     width: 90%;
   }
 

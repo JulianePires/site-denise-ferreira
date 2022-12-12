@@ -67,7 +67,9 @@ export default function Blog({posts, destaques}: BlogProps) {
             direcao={Direcoes.H}
             gap="1rem"
             justificar="space-between"
-            quebra={true}>
+            alinhar='center'
+            quebra={true}
+            margem="0 0 2rem 0">
             <Stack direcao={Direcoes.H} gap="1rem" alinhar="center">
               <Avatar
                 src={postDestaque.createdBy.picture}
