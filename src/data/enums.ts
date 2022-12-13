@@ -69,3 +69,8 @@ export enum TamanhosTexto {
   GG = 'GG',
   XG = 'XG',
 }
+
+export enum OrdenacaoFiltroPosts {
+  ASC = 'titulo_ASC',
+  DES = 'titulo_DESC',
+}

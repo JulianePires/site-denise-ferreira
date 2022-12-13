@@ -28,6 +28,8 @@ export const WrapInput = styled(Stack)`
 interface InputCampoTextoProps {
   possuiErro: string
   largura: string
+  corCampo: string
+  corTexto: string
 }
 
 export const InputCampoTexto = styled.input<InputCampoTextoProps>`
@@ -38,9 +40,9 @@ export const InputCampoTexto = styled.input<InputCampoTextoProps>`
 
   border: none;
   border-bottom: 2px solid;
-  border-color: ${(props) =>
-    props.possuiErro === 'true' ? cores.erro : cores.terra};
-  color: ${cores.branco};
+  border-color: ${({possuiErro, corCampo}) =>
+    possuiErro === 'true' ? cores.erro : corCampo};
+  color: ${({corTexto}) => corTexto};
   background: none;
 
   padding: ${margens.xxsmall}px ${margens.xsmall}px;
@@ -48,7 +50,7 @@ export const InputCampoTexto = styled.input<InputCampoTextoProps>`
   font-family: ${paragrafo.fontFamily};
 
   &::placeholder {
-    color: ${cores.terra};
+    color: ${({corCampo}) => corCampo};
   }
 `
 

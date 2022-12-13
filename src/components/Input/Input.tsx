@@ -26,6 +26,8 @@ interface Props {
   placeholder: string
   label: string
   corLabel?: string
+  corCampo?: string
+  corTexto?: string
   erro?: string
   valor: string
   tipo?: HTMLInputTypeAttribute
@@ -41,6 +43,8 @@ export function Input({
   placeholder,
   label,
   corLabel = cores.branco,
+  corCampo = cores.terra,
+  corTexto = cores.branco,
   erro = '',
   valor,
   tipo = 'text',
@@ -81,6 +85,8 @@ export function Input({
             onChange={aoAlterar}
             placeholder={placeholder}
             possuiErro={verificaSePossuiErro(erro)}
+            corCampo={corCampo}
+            corTexto={corTexto}
           />
         </S.WrapInput>
       )}

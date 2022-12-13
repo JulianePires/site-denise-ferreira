@@ -23,7 +23,6 @@ export function Tab() {
   const [sankofaLaranja, setSankofaLaranja] = useState('')
   const [sankofaAmarela, setSankofaAmarela] = useState('')
   const [sankofaAzulPetroleo, setSankofaAzulPetroleo] = useState('')
-  const [larguraTela, setLarguraTela] = useState(0)
 
   const {textoTab} = conteudoTexto.textoHome
 
@@ -97,11 +96,6 @@ export function Tab() {
   useEffect(() => {
     atualizaImagens()
   }, [])
-
-  useEffect(() => {
-    setLarguraTela(window.innerWidth)
-    console.log(larguraTela)
-  }, [window.innerWidth])
 
   return (
     <S.ContainerTab id="ancora-tab" corFundo={tabAtiva.corFundo}>

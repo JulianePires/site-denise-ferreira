@@ -18,32 +18,37 @@ export type Usuario = {
   password: string
 }
 
+export type ImagemRequisicao = {
+  url: string
+  width: number
+  height: number
+}
+
+export type Perfil = {
+  id: string
+  nome: string
+  email: string
+  foto: ImagemRequisicao
+  username: string
+}
+
+
 export type Post = {
   id: string
-  title: string
-  subtitle: string
-  author: string
-  content: {
-    id: string
-    heading: string
+  titulo: string
+  subtitulo: string
+  autor: Perfil
+  conteudo: {
     body: {
       text: string
     }
   }
   slug: string
-  image: {
-    url: string
-    height: number
-  }
+  imagem: ImagemRequisicao
   categories: Categoria[]
   createdAt: string
   publishedAt: string
   access: number
-  createdBy: {
-    entryId: string
-    name: string
-    picture: string
-  }
 }
 
 export type Categoria = {
@@ -133,3 +138,5 @@ export type FormularioContatoTipo = {
   organizacao: string
   conteudoMensagem: string
 }
+
+export type FiltroOrdenacaoPosts = 'titulo_ASC' | 'titulo_DESC'

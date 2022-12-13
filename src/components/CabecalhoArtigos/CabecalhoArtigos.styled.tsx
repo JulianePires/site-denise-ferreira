@@ -5,6 +5,7 @@ import styled from 'styled-components'
 import BannerAmareloDesktop from '@assets/imagens/BannerAmareloDesktop.png'
 import BannerAmareloMobile from '@assets/imagens/BannerAmareloMobile.png'
 import BannerAmareloTablet from '@assets/imagens/BannerAmareloTablet.png'
+import cores from '@resources/cores'
 
 export const CabecalhoArtigos = styled.div`
   width: 100%;
@@ -16,17 +17,7 @@ export const CabecalhoArtigos = styled.div`
 
   padding: ${margens.medium}px ${margens.xxxlarge}px;
 
-  background: url(${BannerAmareloMobile.src});
-  background-size: cover;
-  background-position: center;
-
-  @media ${dispositivos.tablet} {
-    background: url(${BannerAmareloTablet.src});
-  }
-
-  @media ${dispositivos.laptopL} {
-    background: url(${BannerAmareloDesktop.src});
-  }
+  background: ${cores.amarelo};
 `
 
 export const FiltroCategorias = styled.ul``

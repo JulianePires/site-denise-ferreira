@@ -6,33 +6,31 @@ export const BUSCA_POSTS_QUERY = gql`
   query BuscaPosts {
     posts(orderBy: publishedAt_ASC) {
       id
-      title
-      subtitle
-      author
-      content {
+      slug
+      titulo
+      subtitulo
+      imagem
+      conteudo {
         ... on Content {
-          id
-          heading
           body {
             text
           }
         }
       }
-      categories {
+      categorias {
         id
-        name
+        nome
         slug
       }
-      createdBy {
-        entryId: id
-        name
-        picture
+      autor {
+        id
+        nome
+        email
+        foto
+        username
       }
-      slug
-      image
-      access
       createdAt
-      publishedAt
+      access
     }
   }
 `
@@ -41,68 +39,97 @@ export const BUSCA_POSTS_DESTAQUE_QUERY = gql`
   query BuscaPostsDestaque {
     posts(orderBy: access_DESC, first: 5) {
       id
-      title
-      subtitle
-      author
-      content {
+      slug
+      titulo
+      subtitulo
+      imagem
+      conteudo {
         ... on Content {
-          id
-          heading
           body {
             text
           }
         }
       }
-      categories {
+      categorias {
         id
-        name
+        nome
         slug
       }
-      createdBy {
-        entryId: id
-        name
-        picture
+      autor {
+        id
+        nome
+        email
+        foto
+        username
       }
-      slug
-      image
-      access
       createdAt
-      publishedAt
+      access
     }
   }
 `
 
 export const BUSCA_POSTS_CATEGORIA_QUERY = gql`
   query BuscaPostsPorCategoria($id: ID!) {
-    posts(orderBy: publishedAt_DESC, where: {categories_every: {id: $id}}) {
+    posts(orderBy: publishedAt_DESC, where: {categorias_every: {id: $id}}) {
       id
-      title
-      subtitle
-      author
-      content {
+      slug
+      titulo
+      subtitulo
+      imagem
+      conteudo {
         ... on Content {
-          id
-          heading
           body {
             text
           }
         }
       }
-      categories {
+      categorias {
         id
-        name
+        nome
         slug
       }
-      createdBy {
-        entryId: id
-        name
-        picture
+      autor {
+        id
+        nome
+        email
+        foto
+        username
       }
-      slug
-      image
-      access
       createdAt
-      publishedAt
+      access
+    }
+  }
+`
+
+export const BUSCA_POSTS_FILTRO_QUERY = gql`
+  query BuscaPostsComFiltro($titulo: String = "") {
+    posts(where: {titulo_contains: $titulo}) {
+      createdAt
+      id
+      imagem
+      slug
+      subtitulo
+      titulo
+      categorias {
+        id
+        nome
+        slug
+      }
+      autor {
+        id
+        nome
+        email
+        foto
+        username
+      }
+      conteudo {
+        ... on Content {
+          body {
+            text
+          }
+        }
+      }
+      access
     }
   }
 `
@@ -131,6 +158,17 @@ export async function buscaPostsPorCategoria(idCategoria: string) {
   const resposta = await cliente.query({
     query: BUSCA_POSTS_DESTAQUE_QUERY,
     variables: {id: idCategoria},
+  })
+
+  const respostaTratada = trataRespostaRequisicao(resposta)
+
+  return respostaTratada
+}
+
+export async function buscaPostsComFiltro(titulo = '') {
+  const resposta = await cliente.query({
+    query: BUSCA_POSTS_FILTRO_QUERY,
+    variables: {titulo},
   })
 
   const respostaTratada = trataRespostaRequisicao(resposta)

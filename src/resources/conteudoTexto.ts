@@ -71,11 +71,11 @@ const conteudoTexto = {
   textoBlog: {
     destaque: {
       botao: {
-        texto: 'Ver mais',
+        texto: 'Ler',
         ariaLabel: 'Botão que leva à página de detalhes do artigo em destaque',
       },
     },
-    titulo: 'Meus Artigos',
+    titulo: 'Blog',
   },
   textoContato: {
     titulo: 'Contato',

@@ -19,12 +19,12 @@ export const Container = styled.span<ContainerTipo>`
   background-position: center;
 
   padding: ${margens.xlarge}px;
-  width: 100%;
+  width: ${({largura}) => largura ? largura : '100%'};
   min-height: ${(props) => (props.altura ? props.altura : 'initial')};
   height: 100%;
 
   @media ${dispositivos.laptop} {
-    width: 50vw;
+    width: ${({largura}) => largura ? largura : '50vw'};
     padding: ${({padding}) =>
     padding ? padding : `0 0 0 ${margens.xxxlarge}px`};
   }
