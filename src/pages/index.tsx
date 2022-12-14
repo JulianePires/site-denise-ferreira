@@ -15,8 +15,6 @@ import * as S from '@styles/Home.styled'
 import {GetServerSidePropsContext} from 'next'
 import {useRouter} from 'next/router'
 
-import ImagemDeniseFerreira from '@assets/imagens/ImagemDeniseFerreira1.png'
-
 interface Props {
   fotoDenise: Asset
   logoBranca: Asset
@@ -33,7 +31,7 @@ export default function Home({fotoDenise ,logoBranca, texturaTerra}: Props) {
 
   return (
     <LayoutPaginasSite titulo="Página Inicial">
-      <ContainerConteudo corBackground={cores.terra}>
+      <ContainerConteudo corBackground={cores.terra} altura={600}>
         <Container
           largura="100%"
           id="ancora-banner"

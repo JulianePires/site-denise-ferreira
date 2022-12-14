@@ -119,9 +119,7 @@ export function Tab() {
       </S.BarraControleTab>
       <Stack direcao="horizontal" gap="0" quebra={true}>
         <Container
-          altura={
-            tabAtiva.nomeOpcao === OpcoesMenuTab.SONHAR ? '700px' : '550px'
-          }
+          altura='fit-content'
           padding={`${margens.xxxlarge}px ${margens.xxxlarge}px`}>
           <S.TituloLayoutTab
             corTexto={corTexto}

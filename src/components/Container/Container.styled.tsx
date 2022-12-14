@@ -34,4 +34,6 @@ export const Container = styled.span<ContainerTipo>`
   @media ${dispositivos.laptopL} {
     padding: ${({padding}) => (padding ? padding : margens.xxxlarge + 'px')};
   }
+
+  
 `

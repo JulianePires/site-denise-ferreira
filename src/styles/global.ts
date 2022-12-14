@@ -11,6 +11,33 @@ const EstiloGlobal = createGlobalStyle`
     font-weight: 500;  
   }
 
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: ${cores.vinho} ${cores.terra};
+  }
+
+  *::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  *::-webkit-scrollbar-track {
+    background: ${cores.vinho};
+  }
+
+  *::-webkit-scrollbar-thumb {
+    background-color: ${cores.terra};
+    border-radius: 20px;
+  }
+
+  html{
+    @media (max-width: 1080px) {
+      font-size: 93.75%; /*15px*/
+    }
+    @media (max-width: 720px) {
+      font-size: 87.5%; /*14px*/
+    }
+  }
+
   html,
   body {
     padding: 0;

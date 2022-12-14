@@ -38,7 +38,7 @@ export function PostListagem({
   const textoAlternativoFotoAutor = `Foto de perfil de ${nome}`
   const router = useRouter()
 
-  const conteudoLimitado = conteudo.slice(0, 150) + '...'
+  const conteudoFormatado = conteudo.replace(/\\n/g, '<br>').slice(0, 150) + '...'
 
   const dataCriacaoFormatada = formataDataParaPadrao(dataCriacao)
 
@@ -69,7 +69,7 @@ export function PostListagem({
       <S.ImagemCartaoPost src={src} alt={alt} width={300} height={300} />
       <S.ConteudoCartaoPost>
         <S.TituloPost href={rotaPost}>{titulo}</S.TituloPost>
-        <S.AmostraConteudoPost>{conteudoLimitado}</S.AmostraConteudoPost>
+        <S.AmostraConteudoPost>{conteudoFormatado}</S.AmostraConteudoPost>
       </S.ConteudoCartaoPost>
       <S.RodapeCartaoPost imagemFundo={imagemFundoRodape}>
         <Stack direcao={Direcoes.H} gap="1rem">

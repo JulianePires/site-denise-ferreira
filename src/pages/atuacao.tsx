@@ -116,7 +116,7 @@ export default function Atuacao({imagensAtuacao}: Props) {
 
   return (
     <LayoutPaginasSite titulo="Atuação">
-      <S.ContainerJurista>
+      <S.ContainerJurista altura={600}>
         <Container
           id={idAncoraJurista}
           padding={`${margens.xxxlarge}px ${margens.xlarge}px`}>
@@ -149,7 +149,7 @@ export default function Atuacao({imagensAtuacao}: Props) {
           />
         </Container>
       </S.ContainerJurista>
-      <ContainerConteudo direcao={Direcoes.H} corBackground={cores.azulRoyal}>
+      <ContainerConteudo direcao={Direcoes.H} corBackground={cores.azulRoyal} altura={600}>
         <Container
           id={idAncoraEscritora}
           padding={`${margens.xxxlarge}px ${margens.xlarge}px`}>
