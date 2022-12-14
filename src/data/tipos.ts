@@ -13,7 +13,7 @@ export type RespostaRequisicao = {
 
 export type Usuario = {
   id: string
-  name: string
+  nome: string
   email: string
   password: string
 }
@@ -45,7 +45,7 @@ export type Post = {
   }
   slug: string
   imagem: ImagemRequisicao
-  categories: Categoria[]
+  categorias: Categoria[]
   createdAt: string
   publishedAt: string
   access: number
@@ -53,7 +53,7 @@ export type Post = {
 
 export type Categoria = {
   id: string
-  name: string
+  nome: string
   slug: string
 }
 
@@ -112,6 +112,9 @@ export type ContainerTipo = {
   altura?: string
   justificar?: AlinhamentoTipo
   gap?: string
+  overflowY?: OverflowTipo
+  overflowX?: OverflowTipo
+  className?: string
 }
 
 export type PublicacaoEscritoraTipo = 'livro' | 'iniciativa'
@@ -140,3 +143,5 @@ export type FormularioContatoTipo = {
 }
 
 export type FiltroOrdenacaoPosts = 'titulo_ASC' | 'titulo_DESC'
+
+export type OverflowTipo =  'visible' | 'hidden' | 'clip' | 'scroll' | 'auto'

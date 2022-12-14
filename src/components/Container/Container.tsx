@@ -6,6 +6,6 @@ interface Props extends ContainerTipo {
   children?: ReactNode
 }
 
-export function Container({children, ...rest}: Props) {
+export function Container({children, className, ...rest}: Props) {
   return <S.Container {...rest}>{children}</S.Container>
 }

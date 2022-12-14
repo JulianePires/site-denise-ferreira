@@ -4,6 +4,7 @@ import * as S from './Stack.styled'
 interface Props extends S.ContainerStackProps {
   children: ReactNode | Iterable<ReactNode>
   quebra?: boolean
+  className?: string
 }
 
 export function Stack({
@@ -11,6 +12,7 @@ export function Stack({
   quebra = false,
   alinhar = 'flex-start',
   justificar = 'flex-start',
+  className,
   ...rest
 }: Props) {
   return (
@@ -18,7 +20,8 @@ export function Stack({
       {...rest}
       wrap={String(quebra)}
       alinhar={alinhar}
-      justificar={justificar}>
+      justificar={justificar}
+      className={className}>
       {children}
     </S.ContainerStack>
   )

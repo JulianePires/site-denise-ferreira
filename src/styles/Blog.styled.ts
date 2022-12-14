@@ -1,5 +1,6 @@
 import {ContainerConteudo} from '@components/ContainerConteudo'
 import {ImagemComFallback} from '@components/ImagemComFallback'
+import {Input} from '@components/Input'
 import {Stack} from '@components/Stack'
 import {Texto} from '@components/Texto'
 import {Titulo} from '@components/Titulo'
@@ -41,4 +42,11 @@ export const AgrupamentoDestaqueBlog = styled(Stack).attrs({
   alinhar: 'center',
 })`
   width: fit-content;
+`
+export const BuscaPostBlog = styled(Input)`
+  width: 200px;
+
+  @media ${dispositivos.tablet} {
+    width: 300px;
+  }
 `

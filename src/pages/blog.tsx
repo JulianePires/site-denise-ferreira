@@ -4,6 +4,7 @@ import {Container} from '@components/Container'
 import {ContainerConteudo} from '@components/ContainerConteudo'
 import {ControleElementos} from '@components/ControleElementos'
 import {Input} from '@components/Input'
+import {PostListagem} from '@components/PostListagem'
 import {Stack} from '@components/Stack'
 import {Titulo} from '@components/Titulo'
 import {Asset, Post} from '@data/tipos'
@@ -118,22 +119,23 @@ export default function Blog({destaques, texturaAmarela}: BlogProps) {
       </S.ContainerDestaqueBlog>
       <ContainerConteudo corBackground={cores.vinho} direcao={Direcoes.V}>
         <Container
-          altura="140px"
-          imagemFundo={texturaAmarela.url}
+          altura="150px"
+          corFundo={cores.amarelo}
           largura="100%">
           <Stack
             direcao={Direcoes.H}
-            gap="auto"
+            gap="1rem"
             justificar="space-between"
             alinhar="center"
-            largura="100%">
+            largura="100%"
+            quebra={true}
+          >
             <Titulo corTexto={cores.vinho}>{titulo}</Titulo>
-            <Input
+            <S.BuscaPostBlog
               id="buscarArtigo"
               label="Buscar"
               nomeCampo="buscarArtigo"
-              placeholder="O que você está buscando?"
-              largura="300px"
+              placeholder="O que buscar?"
               icone={BiSearchAlt}
               valor={buscaTitulo}
               aoAlterar={({target}) => alteraValorBuscaTitulo(target.value)}
@@ -143,8 +145,37 @@ export default function Blog({destaques, texturaAmarela}: BlogProps) {
             />
           </Stack>
         </Container>
-        <Container altura="600px" largura="100%">
-          
+        <Container altura="fit-content" largura="100%" padding={`${margens.xxxlarge}px ${margens.large}px`} overflowX='scroll'>
+          <Stack direcao={Direcoes.H} gap="2rem" largura='fit-content' >
+            {posts.map(
+              ({
+                autor,
+                categorias,
+                conteudo,
+                createdAt,
+                id,
+                imagem,
+                slug,
+                subtitulo,
+                titulo,
+              }) => (
+                <PostListagem
+                  key={id}
+                  autor={autor}
+                  categorias={categorias}
+                  conteudo={conteudo.body.text}
+                  dataCriacao={createdAt}
+                  imagem={{
+                    src: imagem.url,
+                    alt: titulo,
+                  }}
+                  slug={slug}
+                  titulo={titulo}
+                  subtitulo={subtitulo}
+                />
+              ),
+            )}
+          </Stack>
         </Container>
       </ContainerConteudo>
     </LayoutPaginasSite>
