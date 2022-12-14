@@ -38,7 +38,7 @@ export function PostListagem({
   const textoAlternativoFotoAutor = `Foto de perfil de ${nome}`
   const router = useRouter()
 
-  const conteudoFormatado = conteudo.replace(/\\n/g, '<br>').slice(0, 150) + '...'
+  const conteudoFormatado = conteudo.replace(/\\n/g, '\n').slice(0, 150) + '...'
 
   const dataCriacaoFormatada = formataDataParaPadrao(dataCriacao)
 
@@ -80,11 +80,11 @@ export function PostListagem({
           </Stack>
         </Stack>
 
-        <Stack direcao={Direcoes.H} gap="0.5rem" quebra={true}>
+        <S.CategoriasPost direcao={Direcoes.H} gap="0.5rem" largura='280px' quebra={true}>
           {categorias?.slice(0,4).map(({id, nome, slug}) => (
             <Pilula key={id} nome={nome} valor={slug} aoClicar={() => {}} />
           ))}
-        </Stack>
+        </S.CategoriasPost>
       </S.RodapeCartaoPost>
     </S.CartaoPost>
   )

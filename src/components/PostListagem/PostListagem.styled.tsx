@@ -1,3 +1,4 @@
+import { Stack } from '@components/Stack'
 import cores from '@resources/cores'
 import dispositivos from '@resources/dispositivos'
 import margens from '@resources/margens'
@@ -95,4 +96,7 @@ export const NomeAutorPost = styled.p`
 
 export const DataCriacaoPost = styled.p`
   ${detalhe}
+`
+export const CategoriasPost = styled(Stack)`
+  flex-wrap: wrap;
 `

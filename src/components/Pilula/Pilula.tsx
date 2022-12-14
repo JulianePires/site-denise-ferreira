@@ -23,7 +23,7 @@ export function Pilula({nome, valor, aoClicar}: Props) {
     <ContainerPilula
       // onClick={aoClicarNaPilula}
       ativa={String(ativa)}>
-      <NomePilula>{nome}</NomePilula>
+      <NomePilula>{nome.slice(0,18)}</NomePilula>
     </ContainerPilula>
   )
 }

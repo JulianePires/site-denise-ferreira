@@ -11,9 +11,10 @@ export const ContainerPilula = styled.div<ContainerPilulaProps>`
   display: flex;
   align-items: center;
   justify-content: center;
-  text-overflow: clip;
+  flex-wrap: nowrap;
 
-  width: max-content;
+  width: fit-content;
+  height: 30px;
 
   background: ${({ativa}) => (ativa === 'true' ? cores.vinho : cores.terra)};
   color: ${cores.branco};
@@ -25,6 +26,7 @@ export const ContainerPilula = styled.div<ContainerPilulaProps>`
 export const NomePilula = styled.p`
   ${detalhe}
 
+  width: max-content;
   font-size: 14px;
   font-family: ${paragrafo.fontFamily};
 `

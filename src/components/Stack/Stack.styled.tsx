@@ -9,6 +9,7 @@ export interface ContainerStackProps {
   margem?: string
   wrap?: string
   largura?: string
+  altura?: string
   alinhar?: AlinhamentoTipo
   justificar?: AlinhamentoTipo
   autoAlinhar?: AlinhamentoTipo
@@ -23,6 +24,7 @@ export const ContainerStack = styled.span<ContainerStackProps>`
   margin: ${(props) => props.margem};
 
   width: ${(props) => props.largura || '100%'};
+  height: ${(props) => props.altura || 'initial'};
 
   align-items: ${(props) => props.alinhar};
   justify-content: ${(props) => props.justificar};
