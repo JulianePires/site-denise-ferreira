@@ -44,6 +44,7 @@ export function Erro({codigo, mensagem, largura}: Props) {
       padding={`${margens.xxxlarge}px ${margens.xxxlarge}px`}
       imagemFundo={imagemFundo}
       justificar='center'
+      altura='650px'
     >
       <S.ImagemErro
         animationData={error}

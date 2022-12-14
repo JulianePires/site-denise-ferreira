@@ -11,6 +11,7 @@ export const ContainerErro = styled(Container)`
 export const ImagemErro = styled(Lottie)`
   width: 300px;
   height: auto;
+  align-self: center;
 
   @media ${dispositivos.tablet} {
     width: 400px;
