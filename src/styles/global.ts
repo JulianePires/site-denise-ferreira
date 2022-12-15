@@ -15,6 +15,7 @@ const EstiloGlobal = createGlobalStyle`
     scrollbar-width: thin;
     scrollbar-color: ${cores.vinho} ${cores.terra};
     text-rendering: optimizeLegibility;
+    text-justify: newspaper;
   }
 
   *::-webkit-scrollbar {

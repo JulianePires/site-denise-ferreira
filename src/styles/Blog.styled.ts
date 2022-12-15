@@ -17,6 +17,7 @@ export const ConteudoDestaqueBlog = styled.p`
   ${detalhe}
 
   font-size: 1.2rem;
+  text-align: justify;
 
   @media ${dispositivos.laptop} {
     font-size: 1.3rem;

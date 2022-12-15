@@ -26,6 +26,9 @@ export const TituloJurista = styled(Titulo)``
 export const TextoDescricaoJurista = styled.p`
   ${detalhe}
 
+  text-align: justify;
+  text-justify: newspaper;
+
   font-size: 1.2rem;
   width: 70%;
   line-height: ${subtitulo.lineHeight};
@@ -66,7 +69,8 @@ export const TextoDescricaoEscritora = styled.p`
   ${detalhe}
 
   text-align: justify;
-  text-rendering: optimizeLegibility;
+  text-justify: newspaper;
+  
   font-size: 1.2rem;
   width: 70%;
   line-height: ${subtitulo.lineHeight};

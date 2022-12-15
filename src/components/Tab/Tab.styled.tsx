@@ -99,6 +99,8 @@ export const TextoLayoutTab = styled.p<TextoLayoutTabProps>`
   color: ${({corTexto}) => corTexto};
 
   width: 100%;
+  text-align: justify;
+  text-justify: newspaper;
 
   font-family: ${detalhe.fontFamily};
   font-size: ${subtitulo.fontSize};

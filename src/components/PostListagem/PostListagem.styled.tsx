@@ -56,6 +56,7 @@ export const TituloPost = styled(Link)`
 
   font-family: ${subtitulo.fontFamily};
   font-size: 1.2rem;
+  text-align: justify;
 `
 
 export const SubtituloPost = styled.p``
@@ -64,6 +65,7 @@ export const AmostraConteudoPost = styled.p`
   color: ${cores.branco};
 
   font-family: ${paragrafo.fontFamily};
+  text-align: justify;
 `
 
 interface RodapeCartaoPost {

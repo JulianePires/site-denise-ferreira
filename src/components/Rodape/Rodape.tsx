@@ -15,7 +15,7 @@ export function Rodape() {
   }
 
   function redirecionarParaLinkedin() {
-    abreUrlExternaEmNovaAba('https://www.instagram.com/soudeniseferreira/')
+    abreUrlExternaEmNovaAba('https://www.linkedin.com/in/soudeniseferreira/')
   }
 
   function acionarEnvioDeEmail() {

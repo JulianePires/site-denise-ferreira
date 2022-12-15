@@ -18,6 +18,7 @@ export const TextoDescricaoContato = styled.p`
   ${detalhe}
 
   font-size: 1rem;
+  text-align: justify;
 
   @media ${dispositivos.tablet} {
     width: 320px;
