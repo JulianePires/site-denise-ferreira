@@ -62,6 +62,26 @@ export const CabecalhoEscritora = styled.span`
 
 export const TituloEscritora = styled(Titulo)``
 
+export const TextoDescricaoEscritora = styled.p`
+  ${detalhe}
+
+  text-align: justify;
+  text-rendering: optimizeLegibility;
+  font-size: 1.2rem;
+  width: 70%;
+  line-height: ${subtitulo.lineHeight};
+
+  @media ${dispositivos.laptop} {
+    font-size: 1.3rem;
+    width: 90%;
+  }
+
+  @media ${dispositivos.laptopL} {
+    font-size: 1.5rem;
+    width: 100%;
+  }
+`
+
 export const TituloPalestrante = styled(Texto).attrs({
   tamanho: TamanhosTexto.XG,
   fonteAlternativa: subtitulo.fontFamily,

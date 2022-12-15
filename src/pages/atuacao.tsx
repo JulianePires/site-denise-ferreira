@@ -149,7 +149,10 @@ export default function Atuacao({imagensAtuacao}: Props) {
           />
         </Container>
       </S.ContainerJurista>
-      <ContainerConteudo direcao={Direcoes.H} corBackground={cores.azulRoyal} altura={600}>
+      <ContainerConteudo
+        direcao={Direcoes.H}
+        corBackground={cores.azulRoyal}
+        altura={600}>
         <Container
           id={idAncoraEscritora}
           padding={`${margens.xxxlarge}px ${margens.xlarge}px`}>
@@ -158,6 +161,13 @@ export default function Atuacao({imagensAtuacao}: Props) {
             data-aos-anchor={`#${idAncoraEscritora}`}>
             {textoAtuacao.escritora.titulo}
           </S.TituloEscritora>
+
+          <S.TextoDescricaoEscritora
+            data-aos="fade-right"
+            data-aos-anchor={`#${idAncoraEscritora}`}
+            data-aos-delay="100">
+            {textoAtuacao.escritora.conteudo}
+          </S.TextoDescricaoEscritora>
         </Container>
 
         <Container

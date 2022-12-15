@@ -1,4 +1,4 @@
-import {useCallback, useState} from 'react'
+import {useState} from 'react'
 import {ContainerPilula, NomePilula} from './Pilula.styled'
 
 interface Props {
@@ -23,7 +23,7 @@ export function Pilula({nome, valor, aoClicar}: Props) {
     <ContainerPilula
       // onClick={aoClicarNaPilula}
       ativa={String(ativa)}>
-      <NomePilula>{nome.slice(0,18)}</NomePilula>
+      <NomePilula>{nome.slice(0, 18)}</NomePilula>
     </ContainerPilula>
   )
 }

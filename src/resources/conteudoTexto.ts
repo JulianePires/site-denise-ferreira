@@ -1,22 +1,22 @@
 const conteudoTexto = {
   textoHome: {
     textoDescricaoBanner:
-      'Mais de 20 anos de carreira, especialista em direito da criança e do adolescente, com foco em adoção e relações raciais.',
+      'Mais de 20 anos de carreira, especialista no Sistema de garantia de direitos da criança e do adolescente, com foco em adoção e relações étnico-raciais.',
     textoTab: {
       ser: {
         titulo: 'Quem eu sou',
         conteúdo:
-          'Sou uma Mulher Negra, Mestre em Educação, servidora pública e reconhecida pela minha expertise no campo da adoção - especialmente na perspectiva das questões raciais pertinentes a esse universo. São 20 anos de estrada que me trouxeram até aqui.',
+          'Sou uma Mulher Negra, Mestre em Educação, servidora pública e reconhecida pela minha expertise no campo da adoção - especialmente na perspectiva das questões raciais pertinentes a esse universo. Pioneira da criação e formatação de Curso preparatório para a adoção na perspectiva Étnico-racial no Brasil.',
       },
       agir: {
         titulo: 'O que eu faço',
         conteúdo:
-          'Atuo como Assistente social no Tribunal de Justiça da Bahia, sou escritora com livros publicados, palestrante e facilitadora de cursos online. Também gosto de levar as minhas formações para estabelecimentos comerciais e instituições públicas.',
+          'Atuo como Assistente social no Tribunal de Justiça da Bahia, sou escritora com livros publicados, palestrante e facilitadora de cursos online e presenciais. As minhas formações podem ser ministradas no setor público e privado.',
       },
       sonhar: {
         titulo: 'Com o que sonho',
         conteúdo:
-          'Sonho com um mundo onde possamos ver a justiça racial e social acontecer. Especialmente, para nossas crianças, adolescentes, mulheres, população LGBTQIA+ e parcelas vulnerabilizadas da sociedade. Um mundo sem racismo, sem machismo, sem genocídio dos povos originários, sem LGBTfobia é possível e é por ele que trabalho.',
+          'Sonho com um mundo onde possamos ver a justiça racial e social acontecer. Especialmente, para nossas crianças, adolescentes, e parcelas vulnerabilizadas da sociedade. Um mundo sem racismo, sem machismo, sem genocídio dos povos originários, sem LGBTfobia é possível e é por ele que trabalho.',
       },
     },
   },
@@ -25,10 +25,11 @@ const conteudoTexto = {
     jurista: {
       titulo: 'Tribunal de Justiça da Bahia',
       conteudo:
-        'Há quem diga que eu sou a personificação da multipotência. E não é que faz sentido? Só no Tribunal de Justiça da Bahia são xy anos, com vasta experiência em processos de adoção de crianças e adolescentes. Atuo em diversas frentes de trabalho para ver o mundo no qual acredito acontecer.',
+        'Há quem diga que eu sou a personificação da multipotência. E não é que faz sentido? Só no Tribunal de Justiça da Bahia são 20 anos, com vasta experiência em processos de adoção de crianças e adolescentes. Atuo em diversas frentes de trabalho para ver o mundo no qual acredito acontecer.',
     },
     escritora: {
       titulo: 'Livros e iniciativas',
+      conteudo: 'Sou Coorganizadora e autora dos livros que vocês poderão conhecer neste carrossel e integro as iniciativas que separei também para partilhar. Acredito na produção do conhecimento como ferramenta de transformação, no poder da literatura infantojuvenil afrocentrada e na força que temos quando nos organizamos em coletividade. Confira!',
       textoBotaoCarrossel: {
         iniciativa: 'Conheça',
         livro: 'Comprar',
