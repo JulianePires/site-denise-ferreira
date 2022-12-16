@@ -17,10 +17,12 @@ export const ContainerInformacoesPost = styled(Container).attrs({
   alinhar: 'center',
 })`
   position: relative;
+  text-align: center;
 `
 
 export const TituloPost = styled(Titulo)`
   font-size: xx-large;
+  text-align: center;
 
   @media ${dispositivos.mobileL} {
     font-size: 2rem;
