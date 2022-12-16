@@ -92,4 +92,5 @@ export const RodapeCartaoPost = styled.span<RodapeCartaoPost>`
 
 export const CategoriasPost = styled(Stack)`
   flex-wrap: wrap;
+  text-justify: auto;
 `

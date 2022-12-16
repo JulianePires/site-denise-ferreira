@@ -1,7 +1,8 @@
 import {Container} from '@components/Container'
+import {Stack} from '@components/Stack'
 import {Texto} from '@components/Texto'
 import {Titulo} from '@components/Titulo'
-import {TamanhosTexto} from '@data/enums'
+import {Direcoes, TamanhosTexto} from '@data/enums'
 import cores from '@resources/cores'
 import dispositivos from '@resources/dispositivos'
 import margens from '@resources/margens'
@@ -11,7 +12,7 @@ import styled from 'styled-components'
 
 export const ContainerInformacoesPost = styled(Container).attrs({
   largura: '100%',
-  altura: '600px',
+  altura: '700px',
   justificar: 'flex-start',
   alinhar: 'center',
 })`
@@ -51,7 +52,7 @@ export const ImagemPost = styled(Image)`
 
   @media ${dispositivos.tablet} {
     width: 450px;
-    top: 50%;
+    top: 55%;
   }
 
   @media ${dispositivos.laptop} {

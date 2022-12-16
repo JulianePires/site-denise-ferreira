@@ -74,6 +74,7 @@ export function PostListagem({
           dataCriacaoPost={dataCriacao}
           imagemAvatar={foto.url}
           nomeAutor={nome}
+          justificar="flex-start"
         />
 
         <S.CategoriasPost

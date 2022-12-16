@@ -1,29 +1,39 @@
-import {Container} from '@components/Container'
-import {StatusRequisicao} from '@data/enums'
-import {Asset, Post as PostTipo} from '@data/tipos'
-import {buscaAsset} from '@infrastructure/requisicoes/asset'
-import {buscaPostPorSlug, buscaPosts} from '@infrastructure/requisicoes/post'
-import {LayoutPaginasSite} from '@layouts/LayoutPaginasSite'
+import { InformacoesAutorPost } from '@components/InformacoesAutorPost'
+import { Pilula } from '@components/Pilula'
+import { Stack } from '@components/Stack'
+import { Direcoes, StatusRequisicao } from '@data/enums'
+import { Asset, Post as PostTipo } from '@data/tipos'
+import { buscaAsset } from '@infrastructure/requisicoes/asset'
+import { buscaPostPorSlug, buscaPosts } from '@infrastructure/requisicoes/post'
+import { LayoutPaginasSite } from '@layouts/LayoutPaginasSite'
 import imagens from '@resources/imagens'
-import {GetStaticPaths, GetStaticProps, InferGetStaticPropsType} from 'next'
-import * as S from '@styles/Post.styled'
-import {InformacoesAutorPost} from '@components/InformacoesAutorPost'
 import margens from '@resources/margens'
+import * as S from '@styles/Post.styled'
+import { GetStaticPaths, GetStaticProps, InferGetStaticPropsType } from 'next'
 
 export default function Post({
   post,
   texturaVinho,
 }: InferGetStaticPropsType<typeof getStaticProps>) {
-  const {titulo, subtitulo, imagem, autor, createdAt, conteudo} =
+  const {titulo, subtitulo, imagem, autor, createdAt, conteudo, categorias} =
     post as PostTipo
 
   const trechosConteudo = conteudo.body.text.split(/\\n/g)
-  console.log(trechosConteudo)
+
   return (
     <LayoutPaginasSite titulo={titulo}>
       <S.ContainerInformacoesPost
         imagemFundo={texturaVinho.url}
         padding={`${margens.xxxlarge}px ${margens.xlarge}px`}>
+        <Stack
+          direcao={Direcoes.H}
+          gap="0.5rem"
+          largura="100%"
+          justificar="center" quebra={true}>
+          {categorias?.map(({id, nome, slug}) => (
+            <Pilula key={id} nome={nome} valor={slug} />
+          ))}
+        </Stack>
         <S.TituloPost>{titulo}</S.TituloPost>
         <S.SubtituloPost>{subtitulo}</S.SubtituloPost>
         <InformacoesAutorPost
