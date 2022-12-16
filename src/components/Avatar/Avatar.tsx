@@ -17,6 +17,7 @@ export function Avatar({src, alt, tamanho}: Props) {
       fallback={FallbackAvatar.src}
       width={tamanho}
       height={tamanho}
+      fill
     />
   )
 }

@@ -19,16 +19,14 @@ import imagens from '@resources/imagens'
 import margens from '@resources/margens'
 import * as S from '@styles/Contato.styled'
 import {useFormik} from 'formik'
-import {GetServerSidePropsContext} from 'next'
+import {GetStaticProps, InferGetStaticPropsType} from 'next'
 import * as Yup from 'yup'
 
 //TODO: Configurar envio de email com sendgrid
 
-interface Props {
-  imagensContato: Asset[]
-}
-
-export default function Contato({imagensContato}: Props) {
+export default function Contato({
+  imagensContato,
+}: InferGetStaticPropsType<typeof getStaticProps>) {
   const [texturaVinho] = imagensContato
   const {textoContato, botaoContato} = conteudoTexto
 
@@ -175,12 +173,7 @@ export default function Contato({imagensContato}: Props) {
   )
 }
 
-export async function getServerSideProps({res}: GetServerSidePropsContext) {
-  res.setHeader(
-    'Cache-Control',
-    'public, s-maxage=10, stale-while-revalidate=59',
-  )
-
+export const getStaticProps: GetStaticProps = async () => {
   const {idTexturaVinho} = imagens
 
   const reqTexturaVinho = await buscaAsset(idTexturaVinho)
