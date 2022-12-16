@@ -20,6 +20,7 @@ import imagens from '@resources/imagens'
 import margens from '@resources/margens'
 import * as S from '@styles/Blog.styled'
 import {GetStaticProps, InferGetStaticPropsType} from 'next'
+import {useRouter} from 'next/router'
 import {isEmpty} from 'ramda'
 import {useEffect, useState} from 'react'
 import {BiSearchAlt} from 'react-icons/bi'
@@ -52,9 +53,11 @@ export default function Blog({
     }
   }
 
-  // function alterarValorBuscaArtigo(valor: string) {
-  //   setEstadoFiltro({tipo: AcoesReducerFiltroPosts.BUSCANOME, dado: valor})
-  // }
+  function navegaParaPaginaDoPost(slug: string) {
+    const rotaPost = `/posts/${slug}`
+    const router = useRouter()
+    router.push(rotaPost)
+  }
 
   useEffect(() => {
     setTimeout(() => avancarIndexDestaque(), 2000)
@@ -101,8 +104,7 @@ export default function Blog({
               tamanho="G"
               tema="amarelo"
               estilo="ghost"
-              // eslint-disable-next-line @typescript-eslint/no-empty-function
-              aoClicar={() => {}}
+              aoClicar={() => navegaParaPaginaDoPost(postDestaque.slug)}
               ariaLabel={destaque.botao.ariaLabel}>
               {destaque.botao.texto}
               <BsBoxArrowInUpRight className="ml-2" />
