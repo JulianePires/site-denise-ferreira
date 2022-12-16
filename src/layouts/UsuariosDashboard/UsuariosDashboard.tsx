@@ -8,7 +8,6 @@ interface Props {
 }
 
 export function UsuariosDashboard({usuarios}: Props) {
-  console.log(usuarios)
   return (
     <LayoutDashboard titulo={OpcoesPaginasDashboard.USUARIOS}>
       <ContainerUsuarios>Alguma coisa</ContainerUsuarios>

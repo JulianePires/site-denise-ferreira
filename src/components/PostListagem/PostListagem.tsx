@@ -44,8 +44,6 @@ export function PostListagem({
     router.push(rotaPost)
   }
 
-  console.log(categorias)
-
   function atualizaImagemFundoRodape() {
     const {idTexturaVinho} = imagens
     const reqTexturaVinho = buscaAsset(idTexturaVinho)

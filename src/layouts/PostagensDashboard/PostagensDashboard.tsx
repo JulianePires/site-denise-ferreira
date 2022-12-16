@@ -7,7 +7,6 @@ interface Props {
 }
 
 export function PostagensDashboard({postagens}: Props) {
-  console.log(postagens)
   return (
     <LayoutDashboard titulo="Postagens">
       <ContainerPostagens>Alguma coisa</ContainerPostagens>

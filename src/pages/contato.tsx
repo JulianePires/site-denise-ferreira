@@ -10,6 +10,7 @@ import {
   minCaracteresTexto,
 } from '@infrastructure/constantes'
 import errosValidacao from '@infrastructure/erros/validacao'
+import {abreUrlExternaEmNovaAba} from '@infrastructure/funcoes'
 import {buscaAsset} from '@infrastructure/requisicoes/asset'
 import {LayoutPaginasSite} from '@layouts/LayoutPaginasSite'
 import conteudoTexto from '@resources/conteudoTexto'
@@ -21,6 +22,8 @@ import {useFormik} from 'formik'
 import {GetServerSidePropsContext} from 'next'
 import * as Yup from 'yup'
 
+//TODO: Configurar envio de email com sendgrid
+
 interface Props {
   imagensContato: Asset[]
 }
@@ -28,6 +31,12 @@ interface Props {
 export default function Contato({imagensContato}: Props) {
   const [texturaVinho] = imagensContato
   const {textoContato, botaoContato} = conteudoTexto
+
+  const acionaEnvioDeEmail = (texto: string) => {
+    abreUrlExternaEmNovaAba(
+      `mailto:Denise Ferreira?subject=Contato%20Denise%20Ferreira&body=${texto}`,
+    )
+  }
 
   const formik = useFormik<FormularioContatoTipo>({
     initialValues: {
@@ -64,7 +73,8 @@ export default function Contato({imagensContato}: Props) {
         .required(errosValidacao.campoObrigatorio),
     }),
     onSubmit: (values) => {
-      console.log(values)
+      const {conteudoMensagem} = values
+      acionaEnvioDeEmail(conteudoMensagem)
     },
   })
 

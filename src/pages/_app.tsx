@@ -6,6 +6,7 @@ import AOS from 'aos'
 import 'aos/dist/aos.css'
 import type {AppProps} from 'next/app'
 import {useEffect} from 'react'
+import {Analytics} from '@vercel/analytics/react'
 
 function App({Component, pageProps}: AppProps) {
   function iniciaEfeitosAOS() {
@@ -37,6 +38,7 @@ function App({Component, pageProps}: AppProps) {
   return (
     <ApolloProvider client={cliente}>
       <Component {...pageProps} />
+      <Analytics />
       <EstiloGlobal />
     </ApolloProvider>
   )

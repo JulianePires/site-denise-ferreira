@@ -17,7 +17,6 @@ const usePosts = () => {
     reqPostsComFiltro
       .then((resposta) => {
         if (resposta.status === StatusRequisicao.SUCESSO) {
-          console.log(resposta.dados)
           const postsBuscados = resposta.dados.posts as Post[]
           setPosts(postsBuscados)
         }
