@@ -66,9 +66,6 @@ export default function Home({fotoDenise ,logoBranca, texturaTerra}: Props) {
             alt="Foto Denise Ferreira"
             width={600}
             height={800}
-            data-aos="fade-left"
-            data-aos-anchor="#ancora-banner"
-            data-aos-delay="300"
           />
         </S.ContainerFotoBanner>
       </ContainerConteudo>

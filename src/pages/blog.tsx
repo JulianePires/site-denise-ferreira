@@ -19,19 +19,16 @@ import cores from '@resources/cores'
 import imagens from '@resources/imagens'
 import margens from '@resources/margens'
 import * as S from '@styles/Blog.styled'
+import {GetStaticProps, InferGetStaticPropsType} from 'next'
 import {isEmpty} from 'ramda'
 import {useEffect, useState} from 'react'
 import {BiSearchAlt} from 'react-icons/bi'
 import {BsBoxArrowInUpRight, BsCalendarDateFill} from 'react-icons/bs'
 import {Direcoes, StatusRequisicao} from 'src/data/enums'
 
-interface BlogProps {
-  posts: Post[]
-  destaques: Post[]
-  texturaAmarela: Asset
-}
-
-export default function Blog({destaques, texturaAmarela}: BlogProps) {
+export default function Blog({
+  destaques,
+}: InferGetStaticPropsType<typeof getStaticProps>) {
   const [indexDestaque, setIndexDestaque] = useState<number>(0)
   const postDestaque = destaques[indexDestaque]
   const maxDestaques = destaques.length
@@ -197,7 +194,7 @@ export default function Blog({destaques, texturaAmarela}: BlogProps) {
   )
 }
 
-export async function getServerSideProps() {
+export const getStaticProps: GetStaticProps = async () => {
   const {idTexturaAmarela} = imagens
 
   const {dados, status} = await buscaPosts()

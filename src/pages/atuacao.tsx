@@ -143,9 +143,6 @@ export default function Atuacao({imagensAtuacao}: Props) {
             alt="Imagem jurista assinando papéis"
             width={380}
             height={300}
-            data-aos="fade-left"
-            data-aos-anchor={`#${idAncoraJurista}`}
-            data-aos-delay="300"
           />
         </Container>
       </S.ContainerJurista>
