@@ -111,6 +111,7 @@ export type ContainerTipo = {
   padding?: string
   altura?: string
   justificar?: AlinhamentoTipo
+  alinhar?: AlinhamentoTipo
   gap?: string
   overflowY?: OverflowTipo
   overflowX?: OverflowTipo

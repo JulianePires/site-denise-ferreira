@@ -90,15 +90,6 @@ export const RodapeCartaoPost = styled.span<RodapeCartaoPost>`
   }
 `
 
-export const NomeAutorPost = styled.p`
-  ${paragrafo}
-
-  color: ${cores.amarelo};
-`
-
-export const DataCriacaoPost = styled.p`
-  ${detalhe}
-`
 export const CategoriasPost = styled(Stack)`
   flex-wrap: wrap;
 `

@@ -76,7 +76,7 @@ const conteudoTexto = {
         ariaLabel: 'Botão que leva à página de detalhes do artigo em destaque',
       },
     },
-    titulo: 'Blog',
+    titulo: 'Todos os posts',
   },
   textoContato: {
     titulo: 'Contato',

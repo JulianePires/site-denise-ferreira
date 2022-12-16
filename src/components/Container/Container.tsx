@@ -7,5 +7,5 @@ interface Props extends ContainerTipo {
 }
 
 export function Container({children, className, ...rest}: Props) {
-  return <S.Container {...rest}>{children}</S.Container>
+  return <S.Container className={className} {...rest}>{children}</S.Container>
 }

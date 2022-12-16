@@ -1,5 +1,6 @@
 /* eslint-disable @typescript-eslint/no-empty-function */
 import {Avatar} from '@components/Avatar'
+import {InformacoesAutorPost} from '@components/InformacoesAutorPost'
 import {Pilula} from '@components/Pilula'
 import {Stack} from '@components/Stack'
 import {Direcoes, StatusRequisicao} from '@data/enums'
@@ -35,12 +36,9 @@ export function PostListagem({
   const {alt, src} = imagem
   const {nome, foto} = autor
   const rotaPost = `/posts/${slug}`
-  const textoAlternativoFotoAutor = `Foto de perfil de ${nome}`
   const router = useRouter()
 
   const conteudoFormatado = conteudo.replace(/\\n/g, '\n').slice(0, 150) + '...'
-
-  const dataCriacaoFormatada = formataDataParaPadrao(dataCriacao)
 
   function direcionaParaPaginaDoPost() {
     router.push(rotaPost)
@@ -72,16 +70,18 @@ export function PostListagem({
         <S.AmostraConteudoPost>{conteudoFormatado}</S.AmostraConteudoPost>
       </S.ConteudoCartaoPost>
       <S.RodapeCartaoPost imagemFundo={imagemFundoRodape}>
-        <Stack direcao={Direcoes.H} gap="1rem">
-          <Avatar src={foto.url} alt={textoAlternativoFotoAutor} tamanho={50} />
-          <Stack direcao={Direcoes.V} gap="0.1rem">
-            <S.NomeAutorPost>{nome}</S.NomeAutorPost>
-            <S.DataCriacaoPost>{dataCriacaoFormatada}</S.DataCriacaoPost>
-          </Stack>
-        </Stack>
+        <InformacoesAutorPost
+          dataCriacaoPost={dataCriacao}
+          imagemAvatar={foto.url}
+          nomeAutor={nome}
+        />
 
-        <S.CategoriasPost direcao={Direcoes.H} gap="0.5rem" largura='280px' quebra={true}>
-          {categorias?.slice(0,4).map(({id, nome, slug}) => (
+        <S.CategoriasPost
+          direcao={Direcoes.H}
+          gap="0.5rem"
+          largura="280px"
+          quebra={true}>
+          {categorias?.slice(0, 4).map(({id, nome, slug}) => (
             <Pilula key={id} nome={nome} valor={slug} aoClicar={() => {}} />
           ))}
         </S.CategoriasPost>
