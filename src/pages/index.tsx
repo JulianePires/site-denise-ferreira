@@ -12,16 +12,14 @@ import cores from '@resources/cores'
 import imagens from '@resources/imagens'
 import margens from '@resources/margens'
 import * as S from '@styles/Home.styled'
-import {GetServerSidePropsContext} from 'next'
+import {GetStaticProps, InferGetStaticPropsType} from 'next'
 import {useRouter} from 'next/router'
 
-interface Props {
-  fotoDenise: Asset
-  logoBranca: Asset
-  texturaTerra: Asset
-}
-
-export default function Home({fotoDenise ,logoBranca, texturaTerra}: Props) {
+export default function Home({
+  fotoDenise,
+  logoBranca,
+  texturaTerra,
+}: InferGetStaticPropsType<typeof getStaticProps>) {
   const {botaoContato, textoHome} = conteudoTexto
   const router = useRouter()
 
@@ -76,12 +74,7 @@ export default function Home({fotoDenise ,logoBranca, texturaTerra}: Props) {
   )
 }
 
-export async function getServerSideProps({res}: GetServerSidePropsContext) {
-  res.setHeader(
-    'Cache-Control',
-    'public, s-maxage=10, stale-while-revalidate=59',
-  )
-
+export const getStaticProps: GetStaticProps = async () => {
   const {idLogoBranca, idFotoDenise, idTexturaTerra} = imagens
 
   const reqLogoBranca = await buscaAsset(idLogoBranca)
