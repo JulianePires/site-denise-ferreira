@@ -34,6 +34,7 @@ export default function Blog({
   const postDestaque = destaques[indexDestaque]
   const maxDestaques = destaques.length
   const {destaque, titulo} = conteudoTexto.textoBlog
+  const router = useRouter()
 
   const {posts, buscaTitulo, alteraValorBuscaTitulo} = usePosts()
 
@@ -55,7 +56,6 @@ export default function Blog({
 
   function navegaParaPaginaDoPost(slug: string) {
     const rotaPost = `/posts/${slug}`
-    const router = useRouter()
     router.push(rotaPost)
   }
 
