@@ -137,10 +137,10 @@ export function Tab() {
             {tabAtiva.conteudo}
           </S.TextoLayoutTab>
         </Container>
-        {/* eslint-disable-next-line @typescript-eslint/no-non-null-assertion */}
-        {tamanhoTela.width! >= 1024 && (
-          <Container altura="100%" imagemFundo={urlImagemFundo} />
-        )}
+        {tamanhoTela.width === undefined ||
+          (tamanhoTela.width >= 1024 && (
+            <Container altura="100%" imagemFundo={urlImagemFundo} />
+          ))}
       </Stack>
     </S.ContainerTab>
   )
