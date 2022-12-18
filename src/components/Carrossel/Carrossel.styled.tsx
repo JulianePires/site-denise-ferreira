@@ -70,6 +70,7 @@ export const DescricaoImagemCarrossel = styled(
   font-size: ${paragrafo.fontSize} !important;
   cursor: pointer;
   opacity: 0.8 !important;
+  margin-bottom: 2.5rem;
 
   &:hover {
     opacity: 1 !important;

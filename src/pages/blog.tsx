@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-non-null-assertion */
 import {Avatar} from '@components/Avatar'
 import {Botao} from '@components/Botao'
 import {Container} from '@components/Container'
@@ -10,6 +11,7 @@ import {Stack} from '@components/Stack'
 import {Titulo} from '@components/Titulo'
 import {Asset, Post} from '@data/tipos'
 import usePosts from '@hooks/usePosts'
+import useTamanhoTela from '@hooks/useTamanhoTela'
 import {formataDataParaPadrao} from '@infrastructure/funcoes'
 import {buscaAsset} from '@infrastructure/requisicoes/asset'
 import {buscaPosts, buscaPostsDestaque} from '@infrastructure/requisicoes/post'
@@ -34,6 +36,7 @@ export default function Blog({
   const postDestaque = destaques[indexDestaque]
   const maxDestaques = destaques.length
   const {destaque, titulo} = conteudoTexto.textoBlog
+  const {tamanhoTela} = useTamanhoTela()
   const router = useRouter()
 
   const {posts, buscaTitulo, alteraValorBuscaTitulo} = usePosts()
@@ -78,11 +81,15 @@ export default function Blog({
           <Stack
             direcao={Direcoes.H}
             gap="1rem"
-            justificar="space-between"
+            justificar={tamanhoTela.width! <= 514 ? 'center' : 'space-around'}
             alinhar="center"
-            quebra={true}
+            quebra={tamanhoTela.width! > 514 ? false : true}
             margem="0 0 2rem 0">
-            <Stack direcao={Direcoes.H} gap="1rem" alinhar="center">
+            <Stack
+              direcao={Direcoes.H}
+              gap="1rem"
+              alinhar="center"
+              largura="fit-content">
               <Avatar
                 src={postDestaque.autor.foto.url}
                 alt="Imagem do criador do post"
@@ -93,7 +100,11 @@ export default function Blog({
               </S.InformacoesDestaqueBlog>
             </Stack>
 
-            <Stack direcao={Direcoes.H} gap="1rem" alinhar="center">
+            <Stack
+              direcao={Direcoes.H}
+              gap="1rem"
+              alinhar="center"
+              largura="fit-content">
               <BsCalendarDateFill color={cores.branco} />
               <S.InformacoesDestaqueBlog>
                 {formataDataParaPadrao(postDestaque.createdAt)}
@@ -101,9 +112,8 @@ export default function Blog({
             </Stack>
 
             <Botao
-              tamanho="G"
-              tema="amarelo"
-              estilo="ghost"
+              tema="terra"
+              estilo="solid"
               aoClicar={() => navegaParaPaginaDoPost(postDestaque.slug)}
               ariaLabel={destaque.botao.ariaLabel}>
               {destaque.botao.texto}
@@ -118,12 +128,19 @@ export default function Blog({
             aoClicarEmAnterior={voltarIndexDestaque}
           />
         </Container>
-        <Container altura="600px" imagemFundo={postDestaque.imagem?.url} />
+
+        <Container
+          altura={
+            tamanhoTela.width! < 1024 ? `${tamanhoTela.width}px` : '720px'
+          }
+          imagemFundo={postDestaque.imagem?.url}
+          corFundo={cores.vinho}
+        />
       </S.ContainerDestaqueBlog>
       <ContainerConteudo corBackground={cores.vinho} direcao={Direcoes.V}>
         <Container altura="150px" corFundo={cores.amarelo} largura="100%">
           <Stack
-            direcao={Direcoes.H}
+            direcao={tamanhoTela.width! <= 640 ? Direcoes.V : Direcoes.H}
             gap="1rem"
             justificar="space-between"
             alinhar="center"
@@ -153,7 +170,11 @@ export default function Blog({
             direcao={Direcoes.H}
             gap="2rem"
             largura="fit-content"
-            autoAlinhar={isEmpty(posts) ? 'center' : 'flex-start'}>
+            autoAlinhar={
+              isEmpty(posts) || (tamanhoTela.width! > 1024 && posts.length < 4)
+                ? 'center'
+                : 'flex-start'
+            }>
             {isEmpty(posts) ? (
               <Erro
                 codigo={404}

@@ -29,8 +29,8 @@ export const TextoDescricaoJurista = styled.p`
   text-align: justify;
   text-justify: newspaper;
 
-  font-size: 1.2rem;
-  width: 70%;
+  font-size: 1.5rem;  
+  width: 100%;
   line-height: ${subtitulo.lineHeight};
 
   @media ${dispositivos.laptop} {
@@ -47,10 +47,14 @@ export const TextoDescricaoJurista = styled.p`
 export const ImagemJurista = styled(ImagemComFallback)`
   align-self: center;
 
-  width: 80%;
+  width: 100%;
   height: auto;
 
   border: 12px solid ${cores.terra};
+
+  @media ${dispositivos.laptop} {
+    width: 80%;
+  }
 `
 
 export const CabecalhoEscritora = styled.span`
@@ -71,8 +75,8 @@ export const TextoDescricaoEscritora = styled.p`
   text-align: justify;
   text-justify: newspaper;
   
-  font-size: 1.2rem;
-  width: 70%;
+  font-size: 1.5rem;
+  width: 100%;
   line-height: ${subtitulo.lineHeight};
 
   @media ${dispositivos.laptop} {
@@ -100,11 +104,16 @@ export const TituloPalestrante = styled(Texto).attrs({
 export const ListaPalestrante = styled.ul`
   display: flex;
   flex-direction: column;
+  gap: 1.5rem;
 
   padding: 0;
   margin: 0 0 2rem 0;
 
   list-style: none;
+
+  @media ${dispositivos.mobileL} {
+    gap: 1rem;
+  }
 `
 
 export const ItemListaPalestrante = styled.li`
@@ -112,9 +121,14 @@ export const ItemListaPalestrante = styled.li`
   align-items: center;
   gap: 1rem;
 
-  height: 2.5rem;
+  width: 100%;
+  height: 3rem;
   margin: 0;
   padding: 0;
+
+  @media ${dispositivos.mobileL} {
+    height: 2.5rem;
+  }
 `
 
 export const TextoItemListaPalestrante = styled(Texto).attrs({

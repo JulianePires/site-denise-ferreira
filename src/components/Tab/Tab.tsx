@@ -2,6 +2,7 @@ import {Container} from '@components/Container'
 import {Stack} from '@components/Stack'
 import {OpcoesMenuTab} from '@data/enums'
 import {Asset, TemasCores} from '@data/tipos'
+import useTamanhoTela from '@hooks/useTamanhoTela'
 import {buscaAsset} from '@infrastructure/requisicoes/asset'
 import conteudoTexto from '@resources/conteudoTexto'
 import cores from '@resources/cores'
@@ -23,6 +24,7 @@ export function Tab() {
   const [sankofaLaranja, setSankofaLaranja] = useState('')
   const [sankofaAmarela, setSankofaAmarela] = useState('')
   const [sankofaAzulPetroleo, setSankofaAzulPetroleo] = useState('')
+  const {tamanhoTela} = useTamanhoTela()
 
   const {textoTab} = conteudoTexto.textoHome
 
@@ -119,7 +121,7 @@ export function Tab() {
       </S.BarraControleTab>
       <Stack direcao="horizontal" gap="0" quebra={true}>
         <Container
-          altura='fit-content'
+          altura="fit-content"
           padding={`${margens.xxxlarge}px ${margens.xxxlarge}px`}>
           <S.TituloLayoutTab
             corTexto={corTexto}
@@ -135,7 +137,10 @@ export function Tab() {
             {tabAtiva.conteudo}
           </S.TextoLayoutTab>
         </Container>
-        <Container altura="100%" imagemFundo={urlImagemFundo} />
+        {/* eslint-disable-next-line @typescript-eslint/no-non-null-assertion */}
+        {tamanhoTela.width! >= 1024 && (
+          <Container altura="100%" imagemFundo={urlImagemFundo} />
+        )}
       </Stack>
     </S.ContainerTab>
   )

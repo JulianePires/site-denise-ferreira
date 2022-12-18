@@ -8,11 +8,15 @@ export const ContainerTitulo = styled(Texto).attrs({
   tamanho: TamanhosTexto.XG,
   fonteAlternativa: subtitulo.fontFamily,
 })`
-  font-size: ${titulo1.fontSize};
+  font-size: ${subtitulo.fontSize};
   text-align: justify;
-  line-height: 3.5rem;
+  line-height: 3rem;
 
-  @media ${dispositivos.mobileL} {
+  @media ${dispositivos.mobileM} {
+    font-size: ${titulo1.fontSize};
+  }
+
+  @media ${dispositivos.tablet} {
     font-size: ${titulo2.fontSize};
   }
 `

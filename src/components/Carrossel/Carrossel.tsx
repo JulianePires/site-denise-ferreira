@@ -23,7 +23,7 @@ export function Carrossel({
   elementos,
   corLegenda = 'vinho',
   corControles = cores.branco,
-  temaBotao = 'vinho'
+  temaBotao = 'vinho',
 }: Props) {
   const [elementoAtual, setElementoAtual] = useState(0)
 
@@ -98,23 +98,21 @@ export function Carrossel({
         axis={direcao}>
         {elementos.map((elemento, index) => (
           <Stack key={index} direcao={Direcoes.V} gap="1rem" alinhar="center">
-            <>
-              <S.ImagemCarrossel
-                src={elemento.imagem}
-                alt={elemento.descricao}
-                width={400}
-                height={400}
-                corBorda={corLegenda}
-              />
+            <S.ImagemCarrossel
+              src={elemento.imagem}
+              alt={elemento.descricao}
+              width={400}
+              height={400}
+              corBorda={corLegenda}
+            />
 
-              <S.DescricaoImagemCarrossel
-                tamanho={TamanhosTexto.P}
-                className="legend"
-                corLegenda={corLegenda}>
-                {elemento.descricao}
-              </S.DescricaoImagemCarrossel>
-              {renderizaBotaoSePossuirLinkExterno(elemento)}
-            </>
+            <S.DescricaoImagemCarrossel
+              tamanho={TamanhosTexto.P}
+              className="legend"
+              corLegenda={corLegenda}>
+              {elemento.descricao}
+            </S.DescricaoImagemCarrossel>
+            {renderizaBotaoSePossuirLinkExterno(elemento)}
           </Stack>
         ))}
       </S.ImagensCarrossel>
