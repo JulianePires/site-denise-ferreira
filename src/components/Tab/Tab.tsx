@@ -1,9 +1,9 @@
 import {Container} from '@components/Container'
 import {Stack} from '@components/Stack'
 import {OpcoesMenuTab} from '@data/enums'
-import {Asset, TemasCores} from '@data/tipos'
+import {TemasCores} from '@data/tipos'
+import useAssets from '@hooks/useAssets'
 import useTamanhoTela from '@hooks/useTamanhoTela'
-import {buscaAsset} from '@infrastructure/requisicoes/asset'
 import conteudoTexto from '@resources/conteudoTexto'
 import cores from '@resources/cores'
 import imagens from '@resources/imagens'
@@ -20,7 +20,7 @@ type OpcaoTabTipo = {
 }
 
 export function Tab() {
-  const [urlImagemFundo, setUrlImagemFundo] = useState('')
+  const {texturaAzul, buscaAtualizaAsset} = useAssets()
   const [sankofaLaranja, setSankofaLaranja] = useState('')
   const [sankofaAzul, setSankofaAzul] = useState('')
   const [sankofaAzulPetroleo, setSankofaAzulPetroleo] = useState('')
@@ -56,42 +56,20 @@ export function Tab() {
 
   const corTexto = cores.branco
 
-  const {
-    idTexturaAzul,
-    idSankofaLaranja,
-    idSankofaAzulPetroleo,
-    idSankofaAzul,
-  } = imagens
+  const {idSankofaLaranja, idSankofaAzulPetroleo, idSankofaAzul} = imagens
 
   function defineTabAtualComoAtiva(tab: OpcaoTabTipo) {
     setTabAtiva(tab)
   }
 
   function atualizaImagens() {
-    const reqTexturaAzul = buscaAsset(idTexturaAzul)
-    const reqSankofaLaranja = buscaAsset(idSankofaLaranja)
-    const reqSankofaAzulPetroleo = buscaAsset(idSankofaAzulPetroleo)
-    const reqSankofaAzul = buscaAsset(idSankofaAzul)
-
-    reqTexturaAzul.then((resposta) => {
-      const imagem = resposta.dados.asset as Asset
-      setUrlImagemFundo(imagem.url)
-    })
-
-    reqSankofaLaranja.then((resposta) => {
-      const imagem = resposta.dados.asset as Asset
-      setSankofaLaranja(imagem.url)
-    })
-
-    reqSankofaAzulPetroleo.then((resposta) => {
-      const imagem = resposta.dados.asset as Asset
-      setSankofaAzulPetroleo(imagem.url)
-    })
-
-    reqSankofaAzul.then((resposta) => {
-      const imagem = resposta.dados.asset as Asset
-      setSankofaAzul(imagem.url)
-    })
+    buscaAtualizaAsset(idSankofaLaranja, (imagem) =>
+      setSankofaLaranja(imagem.url),
+    )
+    buscaAtualizaAsset(idSankofaAzulPetroleo, (imagem) =>
+      setSankofaAzulPetroleo(imagem.url),
+    )
+    buscaAtualizaAsset(idSankofaAzul, (imagem) => setSankofaAzul(imagem.url))
   }
 
   useEffect(() => {
@@ -137,7 +115,7 @@ export function Tab() {
           </S.TextoLayoutTab>
         </Container>
         {(!tamanhoTela.width || tamanhoTela.width >= 1024) && (
-          <Container altura="100%" imagemFundo={urlImagemFundo} />
+          <Container altura="100%" imagemFundo={texturaAzul?.url} />
         )}
       </Stack>
     </S.ContainerTab>
