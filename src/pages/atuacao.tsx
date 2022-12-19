@@ -3,8 +3,9 @@ import {Carrossel} from '@components/Carrossel'
 import {Container} from '@components/Container'
 import {ContainerConteudo} from '@components/ContainerConteudo'
 import {Icone} from '@components/Icone'
-import {Direcoes, Rotas, StatusRequisicao} from '@data/enums'
+import {Direcoes, OpcoesMenu, Rotas, StatusRequisicao} from '@data/enums'
 import {Asset, ElementoCarrosselTipo} from '@data/tipos'
+import useNavegacao from '@hooks/useNavegacao'
 import {buscaAsset} from '@infrastructure/requisicoes/asset'
 import {LayoutPaginasSite} from '@layouts/LayoutPaginasSite'
 import conteudoTexto from '@resources/conteudoTexto'
@@ -13,7 +14,6 @@ import imagens from '@resources/imagens'
 import margens from '@resources/margens'
 import * as S from '@styles/Atuacao.styled'
 import {GetServerSidePropsContext} from 'next'
-import {useRouter} from 'next/router'
 import {BsCheck2Square} from 'react-icons/bs'
 
 interface Props {
@@ -21,10 +21,10 @@ interface Props {
 }
 
 export default function Atuacao({imagensAtuacao}: Props) {
-  const router = useRouter()
+  const {navegarParaRota} = useNavegacao()
 
   function navegarParaPaginaDeContato() {
-    router.push(Rotas.CONTATO)
+    navegarParaRota(Rotas.CONTATO)
   }
 
   const [

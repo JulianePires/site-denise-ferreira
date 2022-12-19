@@ -1,14 +1,11 @@
 /* eslint-disable @typescript-eslint/no-empty-function */
-import {Avatar} from '@components/Avatar'
 import {InformacoesAutorPost} from '@components/InformacoesAutorPost'
 import {Pilula} from '@components/Pilula'
-import {Stack} from '@components/Stack'
 import {Direcoes, StatusRequisicao} from '@data/enums'
 import {Asset, Categoria, Imagem, Perfil} from '@data/tipos'
-import {formataDataParaPadrao} from '@infrastructure/funcoes'
+import useNavegacao from '@hooks/useNavegacao'
 import {buscaAsset} from '@infrastructure/requisicoes/asset'
 import imagens from '@resources/imagens'
-import {useRouter} from 'next/router'
 import {useEffect, useState} from 'react'
 import * as S from './PostListagem.styled'
 
@@ -36,12 +33,12 @@ export function PostListagem({
   const {alt, src} = imagem
   const {nome, foto} = autor
   const rotaPost = `/posts/${slug}`
-  const router = useRouter()
+  const {navegarParaPostPorSlug} = useNavegacao()
 
   const conteudoFormatado = conteudo.replace(/\\n/g, '\n').slice(0, 150) + '...'
 
   function direcionaParaPaginaDoPost() {
-    router.push(rotaPost)
+    navegarParaPostPorSlug(slug)
   }
 
   function atualizaImagemFundoRodape() {

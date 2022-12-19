@@ -5,6 +5,7 @@ import {Stack} from '@components/Stack'
 import {Tab} from '@components/Tab'
 import {Direcoes, EstilosBotao, Rotas, StatusRequisicao} from '@data/enums'
 import {Asset} from '@data/tipos'
+import useNavegacao from '@hooks/useNavegacao'
 import {buscaAsset} from '@infrastructure/requisicoes/asset'
 import {LayoutPaginasSite} from '@layouts/LayoutPaginasSite'
 import conteudoTexto from '@resources/conteudoTexto'
@@ -13,7 +14,6 @@ import imagens from '@resources/imagens'
 import margens from '@resources/margens'
 import * as S from '@styles/Home.styled'
 import {GetStaticProps, InferGetStaticPropsType} from 'next'
-import {useRouter} from 'next/router'
 
 export default function Home({
   fotoDenise,
@@ -21,10 +21,10 @@ export default function Home({
   texturaTerra,
 }: InferGetStaticPropsType<typeof getStaticProps>) {
   const {botaoContato, textoHome} = conteudoTexto
-  const router = useRouter()
+  const {navegarParaRota} = useNavegacao()
 
   function navegarParaPaginaDeContato() {
-    router.push(Rotas.CONTATO)
+    navegarParaRota(Rotas.CONTATO)
   }
 
   return (

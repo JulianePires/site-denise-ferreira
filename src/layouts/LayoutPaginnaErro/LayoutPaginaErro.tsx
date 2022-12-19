@@ -1,14 +1,12 @@
-import {Botao} from '@components/Botao'
 import {Container} from '@components/Container'
 import {ContainerConteudo} from '@components/ContainerConteudo'
 import {Erro} from '@components/Erro'
 import {Stack} from '@components/Stack'
-import {Direcoes} from '@data/enums'
-import useTamanhoTela from '@hooks/useTamanhoTela'
+import {Direcoes, OpcoesMenu, Rotas} from '@data/enums'
+import useNavegacao from '@hooks/useNavegacao'
 import {LayoutPaginasSite} from '@layouts/LayoutPaginasSite'
 import cores from '@resources/cores'
 import margens from '@resources/margens'
-import {useRouter} from 'next/router'
 import {BsArrowLeft} from 'react-icons/bs'
 
 import * as S from './LayoutPaginaErro.styled'
@@ -22,12 +20,13 @@ interface Props {
 }
 
 export function LayoutPaginaErro({erro, titulo}: Props) {
-  const router = useRouter()
+  const {navegarParaRota} = useNavegacao()
   const {status, mensagem} = erro
 
   function navegarParaHome() {
-    router.push('/')
+    navegarParaRota(Rotas.HOME)
   }
+
   return (
     <LayoutPaginasSite titulo={titulo}>
       <ContainerConteudo
@@ -36,7 +35,9 @@ export function LayoutPaginaErro({erro, titulo}: Props) {
         reverso={true}>
         <Container
           padding={`${margens.xxxlarge}px ${margens.xxxlarge}px`}
-          largura="50%" altura='650px' justificar='center'>
+          largura="50%"
+          altura="650px"
+          justificar="center">
           <Stack
             direcao={Direcoes.V}
             gap="1rem"

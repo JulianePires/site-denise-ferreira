@@ -28,6 +28,9 @@ export enum OpcoesMenu {
   ATUACAO = 'Atuação',
   BLOG = 'Blog',
   CONTATO = 'Contato',
+  POST = 'Post',
+  CATEGORIA = 'Categoria',
+  DASHBOARD = 'Dashboard',
 }
 
 export enum EstilosBotao {
@@ -47,6 +50,9 @@ export enum Rotas {
   ATUACAO = '/atuacao',
   BLOG = '/blog',
   CONTATO = '/contato',
+  POST = '/posts/:slug',
+  CATEGORIA = '/categorias/:nome',
+  DASHBOARD = '/dashboard',
 }
 
 export enum OpcoesMenuTab {

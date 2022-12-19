@@ -5,11 +5,11 @@ import {Container} from '@components/Container'
 import {ContainerConteudo} from '@components/ContainerConteudo'
 import {ControleElementos} from '@components/ControleElementos'
 import {Erro} from '@components/Erro'
-import {Input} from '@components/Input'
 import {PostListagem} from '@components/PostListagem'
 import {Stack} from '@components/Stack'
 import {Titulo} from '@components/Titulo'
 import {Asset, Post} from '@data/tipos'
+import useNavegacao from '@hooks/useNavegacao'
 import usePosts from '@hooks/usePosts'
 import useTamanhoTela from '@hooks/useTamanhoTela'
 import {formataDataParaPadrao} from '@infrastructure/funcoes'
@@ -22,7 +22,6 @@ import imagens from '@resources/imagens'
 import margens from '@resources/margens'
 import * as S from '@styles/Blog.styled'
 import {GetStaticProps, InferGetStaticPropsType} from 'next'
-import {useRouter} from 'next/router'
 import {isEmpty} from 'ramda'
 import {useEffect, useState} from 'react'
 import {BiSearchAlt} from 'react-icons/bi'
@@ -37,7 +36,7 @@ export default function Blog({
   const maxDestaques = destaques.length
   const {destaque, titulo} = conteudoTexto.textoBlog
   const {tamanhoTela} = useTamanhoTela()
-  const router = useRouter()
+  const {navegarParaPostPorSlug} = useNavegacao()
 
   const {posts, buscaTitulo, alteraValorBuscaTitulo} = usePosts()
 
@@ -55,11 +54,6 @@ export default function Blog({
     } else {
       setIndexDestaque(indexDestaque - 1)
     }
-  }
-
-  function navegaParaPaginaDoPost(slug: string) {
-    const rotaPost = `/posts/${slug}`
-    router.push(rotaPost)
   }
 
   useEffect(() => {
@@ -114,7 +108,7 @@ export default function Blog({
             <Botao
               tema="terra"
               estilo="solid"
-              aoClicar={() => navegaParaPaginaDoPost(postDestaque.slug)}
+              aoClicar={() => navegarParaPostPorSlug(postDestaque.slug)}
               ariaLabel={destaque.botao.ariaLabel}>
               {destaque.botao.texto}
               <BsBoxArrowInUpRight className="ml-2" />
