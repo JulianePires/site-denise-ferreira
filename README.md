@@ -24,8 +24,6 @@
   <!-- <img alt="Github stars" src="https://img.shields.io/github/stars/JulianePires/site-denise-ferreira?color=56BEB8" /> -->
 </p>
 
-Status -->
-
 <h4 align="center"> 
 	🚧  Site Denise Ferreira 🚀 Em construção...  🚧
 </h4> 
@@ -44,7 +42,7 @@ Status -->
 
 <br>
 
-## :dart: About ##
+## :dart: Sobre ##
 
 Conheça Denise Ferreira, jurista, escritora, palestrante, especialista em direito da criança e do adolescente, com foco em adoção e relações raciais.
 
