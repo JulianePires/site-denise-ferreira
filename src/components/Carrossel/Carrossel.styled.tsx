@@ -60,6 +60,7 @@ export const ImagemCarrossel = styled(ImagemComFallback)<ImagemCarrosselProps>`
 
 interface DescricaoImagemCarrosselProps {
   corLegenda?: TemasCores
+  margemInferior?: string
 }
 
 export const DescricaoImagemCarrossel = styled(
@@ -70,7 +71,7 @@ export const DescricaoImagemCarrossel = styled(
   font-size: ${paragrafo.fontSize} !important;
   cursor: pointer;
   opacity: 0.8 !important;
-  margin-bottom: 2.5rem;
+  margin-bottom: ${({margemInferior}) => margemInferior || '0px'};
 
   &:hover {
     opacity: 1 !important;

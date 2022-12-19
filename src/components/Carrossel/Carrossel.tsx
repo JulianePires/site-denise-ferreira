@@ -109,7 +109,10 @@ export function Carrossel({
             <S.DescricaoImagemCarrossel
               tamanho={TamanhosTexto.P}
               className="legend"
-              corLegenda={corLegenda}>
+              corLegenda={corLegenda}
+              margemInferior={
+                elemento.linkExterno ? '2.5rem' : '-2rem'
+              }>
               {elemento.descricao}
             </S.DescricaoImagemCarrossel>
             {renderizaBotaoSePossuirLinkExterno(elemento)}

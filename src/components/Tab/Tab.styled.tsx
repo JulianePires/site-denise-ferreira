@@ -99,12 +99,15 @@ export const TextoLayoutTab = styled.p<TextoLayoutTabProps>`
   color: ${({corTexto}) => corTexto};
 
   width: 100%;
+  
   text-align: justify;
   text-justify: newspaper;
+  word-spacing: 5px;
+  letter-spacing: unset;
 
   font-family: ${detalhe.fontFamily};
-  font-size: ${subtitulo.fontSize};
-  line-height: 3rem;
+  font-size: ${paragrafo.fontSize};
+  line-height: 2rem;
 
   @media ${dispositivos.tablet} {
     font-size: ${titulo1.fontSize};

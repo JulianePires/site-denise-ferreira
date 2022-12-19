@@ -22,7 +22,7 @@ type OpcaoTabTipo = {
 export function Tab() {
   const [urlImagemFundo, setUrlImagemFundo] = useState('')
   const [sankofaLaranja, setSankofaLaranja] = useState('')
-  const [sankofaAmarela, setSankofaAmarela] = useState('')
+  const [sankofaAzul, setSankofaAzul] = useState('')
   const [sankofaAzulPetroleo, setSankofaAzulPetroleo] = useState('')
   const {tamanhoTela} = useTamanhoTela()
 
@@ -45,8 +45,8 @@ export function Tab() {
     },
     {
       nomeOpcao: OpcoesMenuTab.SONHAR,
-      icone: sankofaAmarela,
-      corFundo: cores.amarelo as TemasCores,
+      icone: sankofaAzul,
+      corFundo: cores.azulRoyal as TemasCores,
       titulo: textoTab[OpcoesMenuTab.SONHAR].titulo,
       conteudo: textoTab[OpcoesMenuTab.SONHAR].conteúdo,
     },
@@ -54,14 +54,13 @@ export function Tab() {
 
   const [tabAtiva, setTabAtiva] = useState<OpcaoTabTipo>(opcoesTab[0])
 
-  const corTexto =
-    tabAtiva.corFundo === cores.amarelo ? cores.vinho : cores.branco
+  const corTexto = cores.branco
 
   const {
     idTexturaAzul,
     idSankofaLaranja,
     idSankofaAzulPetroleo,
-    idSankofaAmarela,
+    idSankofaAzul,
   } = imagens
 
   function defineTabAtualComoAtiva(tab: OpcaoTabTipo) {
@@ -72,7 +71,7 @@ export function Tab() {
     const reqTexturaAzul = buscaAsset(idTexturaAzul)
     const reqSankofaLaranja = buscaAsset(idSankofaLaranja)
     const reqSankofaAzulPetroleo = buscaAsset(idSankofaAzulPetroleo)
-    const reqSankofaAmarela = buscaAsset(idSankofaAmarela)
+    const reqSankofaAzul = buscaAsset(idSankofaAzul)
 
     reqTexturaAzul.then((resposta) => {
       const imagem = resposta.dados.asset as Asset
@@ -89,9 +88,9 @@ export function Tab() {
       setSankofaAzulPetroleo(imagem.url)
     })
 
-    reqSankofaAmarela.then((resposta) => {
+    reqSankofaAzul.then((resposta) => {
       const imagem = resposta.dados.asset as Asset
-      setSankofaAmarela(imagem.url)
+      setSankofaAzul(imagem.url)
     })
   }
 
@@ -137,10 +136,9 @@ export function Tab() {
             {tabAtiva.conteudo}
           </S.TextoLayoutTab>
         </Container>
-        {tamanhoTela.width === undefined ||
-          (tamanhoTela.width >= 1024 && (
-            <Container altura="100%" imagemFundo={urlImagemFundo} />
-          ))}
+        {(!tamanhoTela.width || tamanhoTela.width >= 1024) && (
+          <Container altura="100%" imagemFundo={urlImagemFundo} />
+        )}
       </Stack>
     </S.ContainerTab>
   )

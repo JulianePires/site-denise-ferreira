@@ -50,7 +50,8 @@ export const ImagemJurista = styled(ImagemComFallback)`
   width: 100%;
   height: auto;
 
-  border: 12px solid ${cores.terra};
+  /* border: 12px solid ${cores.terra}; */
+  border-radius: 12px;
 
   @media ${dispositivos.laptop} {
     width: 80%;
