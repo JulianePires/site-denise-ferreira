@@ -111,6 +111,6 @@ export const TextoLayoutTab = styled.p<TextoLayoutTabProps>`
 
   @media ${dispositivos.tablet} {
     font-size: ${titulo1.fontSize};
-    line-height: 4rem;
+    line-height: 3rem;
   }
 `

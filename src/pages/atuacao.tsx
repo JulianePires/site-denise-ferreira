@@ -119,7 +119,7 @@ export default function Atuacao({imagensAtuacao}: Props) {
       <S.ContainerJurista altura={600}>
         <Container
           id={idAncoraJurista}
-          padding={`${margens.xxxlarge}px ${margens.xlarge}px`}>
+          padding={`${margens.xxxlarge}px ${margens.xxxlarge}px`}>
           <S.TituloJurista
             data-aos="fade-right"
             data-aos-anchor={`#${idAncoraJurista}`}>
@@ -152,7 +152,7 @@ export default function Atuacao({imagensAtuacao}: Props) {
         altura={600}>
         <Container
           id={idAncoraEscritora}
-          padding={`${margens.xxxlarge}px ${margens.xlarge}px`}>
+          padding={`${margens.xxxlarge}px ${margens.xxxlarge}px`}>
           <S.TituloEscritora
             data-aos="fade-right"
             data-aos-anchor={`#${idAncoraEscritora}`}>
@@ -182,7 +182,7 @@ export default function Atuacao({imagensAtuacao}: Props) {
       <ContainerConteudo corBackground={cores.azulPetroleo} altura={600}>
         <Container
           id={idAncoraPalestrante}
-          padding={`${margens.xxxlarge}px ${margens.xlarge}px`}>
+          padding={`${margens.xxxlarge}px ${margens.xxxlarge}px`}>
           <S.TituloPalestrante
             data-aos="fade-right"
             data-aos-anchor={`#${idAncoraPalestrante}`}>
