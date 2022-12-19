@@ -13,14 +13,13 @@ import cores from '@resources/cores'
 import imagens from '@resources/imagens'
 import margens from '@resources/margens'
 import * as S from '@styles/Atuacao.styled'
-import {GetServerSidePropsContext} from 'next'
+import {GetServerSidePropsContext, InferGetStaticPropsType} from 'next'
 import {BsCheck2Square} from 'react-icons/bs'
+import {getStaticProps} from '.'
 
-interface Props {
-  imagensAtuacao: Asset[]
-}
-
-export default function Atuacao({imagensAtuacao}: Props) {
+export default function Atuacao({
+  imagensAtuacao,
+}: InferGetStaticPropsType<typeof getStaticProps>) {
   const {navegarParaRota} = useNavegacao()
 
   function navegarParaPaginaDeContato() {

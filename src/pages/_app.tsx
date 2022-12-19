@@ -1,13 +1,13 @@
 import {ApolloProvider} from '@apollo/client'
+import {AssetsProvider} from '@hooks/useAssets'
 import {cliente} from '@infrastructure/cliente'
 import EstiloGlobal from '@styles/global'
-import '@styles/global.css'
 import AOS from 'aos'
-import 'aos/dist/aos.css'
 import type {AppProps} from 'next/app'
 import {useEffect} from 'react'
-import {Analytics} from '@vercel/analytics/react'
-import {AssetsProvider} from '@hooks/useAssets'
+
+import '@styles/global.css'
+import 'aos/dist/aos.css'
 
 function App({Component, pageProps}: AppProps) {
   function iniciaEfeitosAOS() {
@@ -40,7 +40,6 @@ function App({Component, pageProps}: AppProps) {
     <ApolloProvider client={cliente}>
       <AssetsProvider>
         <Component {...pageProps} />
-        <Analytics />
         <EstiloGlobal />
       </AssetsProvider>
     </ApolloProvider>

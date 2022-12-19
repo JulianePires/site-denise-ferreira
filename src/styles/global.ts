@@ -4,15 +4,13 @@ import fontes from '@resources/fontes'
 import cores from '@resources/cores'
 
 const EstiloGlobal = createGlobalStyle`
-  @tailwind base;
-  @tailwind components;
-  @tailwind utilities;
   
   @font-face {
     font-family: 'Xillian';
     src: url('/fonts/Xillian-Regular.otf') format('opentype');
     font-style: normal;
     font-weight: 500;  
+    font-display: swap;
   }
 
   * {

@@ -9,7 +9,7 @@ export const ContainerRodape = styled.footer`
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  
+
   align-self: flex-end;
 
   @media ${dispositivos.tablet} {
@@ -29,7 +29,8 @@ export const TextoRodape = styled.p`
   ${paragrafo}
 
   text-align: center;
-  color: ${cores.terra};
+  color: ${cores.vinho};
+  font-family: ${subtitulo.fontFamily};
 
   margin: ${margens.medium}px ${margens.small}px;
 

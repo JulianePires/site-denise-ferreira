@@ -1,5 +1,5 @@
-import Image, { ImageProps } from 'next/image'
-import { useState } from 'react'
+import Image, {ImageLoader, ImageProps} from 'next/image'
+import {useState} from 'react'
 
 import FallbackImagem from '@assets/imagens/FallbackImagem.png'
 
@@ -7,7 +7,7 @@ interface Props extends ImageProps {
   fallback?: string
 }
 
-export function ImagemComFallback({src, alt, fallback, ...rest}: Props) {
+export function ImagemComFallback({src, alt, fallback = '', ...rest}: Props) {
   const [origemImagem, setOrigemImagem] = useState(src)
   const [useFallback, setUseFallback] = useState(false)
 
@@ -33,6 +33,7 @@ export function ImagemComFallback({src, alt, fallback, ...rest}: Props) {
       src={trataImagemSeHouverFallback()}
       alt={useFallback ? 'Imagem não encontrada' : alt}
       {...rest}
+      loading="lazy"
       onError={() => {
         setUseFallback(true)
       }}

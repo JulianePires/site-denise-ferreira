@@ -1,8 +1,5 @@
 import {ImagemComFallback} from '@components/ImagemComFallback'
-import {Asset} from '@data/tipos'
-import {buscaAsset} from '@infrastructure/requisicoes/asset'
-import imagens from '@resources/imagens'
-import {useEffect, useState} from 'react'
+import useAssets from '@hooks/useAssets'
 import * as S from './Logo.styled'
 
 interface Props {
@@ -10,57 +7,31 @@ interface Props {
 }
 
 export function Logo({cor = 'branco'}: Props) {
-  const {idSankofaLongaTerra, idSankofaLongaBranca, idSankofaLongaAmarela} =
-    imagens
-  const [imagem, setImagem] = useState({
-    src: '',
-    alt: '',
-  })
+  const {sankofaLongaTerra, sankofaLongaBranca, sankofaLongaAmarela} =
+    useAssets()
 
-  const reqSankofaBranca = buscaAsset(idSankofaLongaBranca)
-  const reqSankofaTerra = buscaAsset(idSankofaLongaTerra)
-  const reqSankofaAmarela = buscaAsset(idSankofaLongaAmarela)
-
-  function atualizaImagemLogo() {
-    if (cor === 'terra') {
-      reqSankofaTerra.then((resposta) => {
-        const imagemBuscada = resposta.dados.asset as Asset
-
-        setImagem({
-          src: imagemBuscada.url,
-          alt: 'Logo Sankofa Terra',
-        })
-      })
-    } else if (cor === 'amarela') {
-      reqSankofaAmarela.then((resposta) => {
-        const imagemBuscada = resposta.dados.asset as Asset
-
-        setImagem({
-          src: imagemBuscada.url,
-          alt: 'Logo Sankofa Amarela',
-        })
-      })
-    } else {
-      reqSankofaBranca.then((resposta) => {
-        const imagemBuscada = resposta.dados.asset as Asset
-
-        setImagem({
-          src: imagemBuscada.url,
-          alt: 'Logo Sankofa Branca',
-        })
-      })
-    }
+  const imagemPorCor = {
+    branco: {
+      src:
+        'https://media.graphassets.com/MY9iUk6QQicoPXvNgzuJ' ||
+        (sankofaLongaBranca?.url as string),
+      alt: 'Logo Sankofa Branca',
+    },
+    amarela: {
+      src: sankofaLongaAmarela?.url as string,
+      alt: 'Logo Sankofa Amarela',
+    },
+    terra: {
+      src: sankofaLongaTerra?.url as string,
+      alt: 'Logo Sankofa Terra',
+    },
   }
-
-  useEffect(() => {
-    atualizaImagemLogo()
-  }, [cor])
 
   return (
     <S.ContainerLogo>
       <ImagemComFallback
-        src={imagem.src}
-        alt={imagem.alt}
+        src={imagemPorCor[cor].src}
+        alt={imagemPorCor[cor].alt}
         width={94}
         height={70}
       />

@@ -6,9 +6,8 @@ import useAssets from '@hooks/useAssets'
 import useTamanhoTela from '@hooks/useTamanhoTela'
 import conteudoTexto from '@resources/conteudoTexto'
 import cores from '@resources/cores'
-import imagens from '@resources/imagens'
 import margens from '@resources/margens'
-import {useEffect, useState} from 'react'
+import {useState} from 'react'
 import * as S from './Tab.styled'
 
 type OpcaoTabTipo = {
@@ -20,10 +19,9 @@ type OpcaoTabTipo = {
 }
 
 export function Tab() {
-  const {texturaAzul, buscaAtualizaAsset} = useAssets()
-  const [sankofaLaranja, setSankofaLaranja] = useState('')
-  const [sankofaAzul, setSankofaAzul] = useState('')
-  const [sankofaAzulPetroleo, setSankofaAzulPetroleo] = useState('')
+  const {texturaAzul, sankofaAzul, sankofaLaranja, sankofaAzulPetroleo} =
+    useAssets()
+
   const {tamanhoTela} = useTamanhoTela()
 
   const {textoTab} = conteudoTexto.textoHome
@@ -31,21 +29,21 @@ export function Tab() {
   const opcoesTab: OpcaoTabTipo[] = [
     {
       nomeOpcao: OpcoesMenuTab.SER,
-      icone: sankofaAzulPetroleo,
+      icone: sankofaAzulPetroleo?.url as string,
       corFundo: cores.azulPetroleo as TemasCores,
       titulo: textoTab[OpcoesMenuTab.SER].titulo,
       conteudo: textoTab[OpcoesMenuTab.SER].conteúdo,
     },
     {
       nomeOpcao: OpcoesMenuTab.AGIR,
-      icone: sankofaLaranja,
+      icone: sankofaLaranja?.url as string,
       corFundo: cores.laranja as TemasCores,
       titulo: textoTab[OpcoesMenuTab.AGIR].titulo,
       conteudo: textoTab[OpcoesMenuTab.AGIR].conteúdo,
     },
     {
       nomeOpcao: OpcoesMenuTab.SONHAR,
-      icone: sankofaAzul,
+      icone: sankofaAzul?.url as string,
       corFundo: cores.azulRoyal as TemasCores,
       titulo: textoTab[OpcoesMenuTab.SONHAR].titulo,
       conteudo: textoTab[OpcoesMenuTab.SONHAR].conteúdo,
@@ -56,25 +54,9 @@ export function Tab() {
 
   const corTexto = cores.branco
 
-  const {idSankofaLaranja, idSankofaAzulPetroleo, idSankofaAzul} = imagens
-
   function defineTabAtualComoAtiva(tab: OpcaoTabTipo) {
     setTabAtiva(tab)
   }
-
-  function atualizaImagens() {
-    buscaAtualizaAsset(idSankofaLaranja, (imagem) =>
-      setSankofaLaranja(imagem.url),
-    )
-    buscaAtualizaAsset(idSankofaAzulPetroleo, (imagem) =>
-      setSankofaAzulPetroleo(imagem.url),
-    )
-    buscaAtualizaAsset(idSankofaAzul, (imagem) => setSankofaAzul(imagem.url))
-  }
-
-  useEffect(() => {
-    atualizaImagens()
-  }, [])
 
   return (
     <S.ContainerTab id="ancora-tab" corFundo={tabAtiva.corFundo}>
