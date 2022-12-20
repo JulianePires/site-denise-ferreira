@@ -19,21 +19,22 @@ export const BotaoEnviarMensagemContato = styled(Botao)``
 export const TextoDescricaoContato = styled.p`
   ${detalhe}
 
-  font-size: 1rem;
   text-align: justify;
+  text-justify: newspaper;
 
-  @media ${dispositivos.tablet} {
-    width: 320px;
+  font-size: 1.5rem;
+  width: 100%;
+  line-height: ${subtitulo.lineHeight};
+
+  @media ${dispositivos.mobileL} {
+    width: 80%;
   }
 
   @media ${dispositivos.laptop} {
-    font-size: 1.1rem;
-    line-height: ${subtitulo.lineHeight};
-    width: 470px;
+    width: 400px;
   }
 
   @media ${dispositivos.laptopL} {
-    font-size: 1.5rem;
     width: 600px;
   }
 `

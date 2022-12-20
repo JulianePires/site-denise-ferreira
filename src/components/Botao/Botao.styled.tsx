@@ -67,4 +67,9 @@ export const ContainerBotao = styled.button<ContainerBotaoProps>`
   &:hover {
     opacity: 0.8;
   }
+
+  &:disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+  }
 `

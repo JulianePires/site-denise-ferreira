@@ -14,6 +14,7 @@ interface Props {
   desabilitaTema?: boolean
   aoClicar: () => void
   ariaLabel: string
+  desabilitado?: boolean
 }
 
 export function Botao({
@@ -27,6 +28,7 @@ export function Botao({
   desabilitaTema = false,
   aoClicar,
   ariaLabel,
+  desabilitado = false
 }: Props) {
   return (
     <S.ContainerBotao
@@ -38,7 +40,9 @@ export function Botao({
       desabilitaTema={String(desabilitaTema)}
       corFundo={corFundoAlternativa}
       corFonte={corFonteAlternativa}
-      aria-label={ariaLabel}>
+      aria-label={ariaLabel}
+      disabled={desabilitado}
+    >
       {children}
     </S.ContainerBotao>
   )

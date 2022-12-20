@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/no-non-null-assertion */
+/* eslint-disable @typescript-eslint/no-non-null-asserted-optional-chain */
 import {Botao} from '@components/Botao'
 import {Carrossel} from '@components/Carrossel'
 import {Container} from '@components/Container'
@@ -6,6 +8,7 @@ import {Icone} from '@components/Icone'
 import {Direcoes, OpcoesMenu, Rotas, StatusRequisicao} from '@data/enums'
 import {Asset, ElementoCarrosselTipo} from '@data/tipos'
 import useNavegacao from '@hooks/useNavegacao'
+import useTamanhoTela from '@hooks/useTamanhoTela'
 import {buscaAsset} from '@infrastructure/requisicoes/asset'
 import {LayoutPaginasSite} from '@layouts/LayoutPaginasSite'
 import conteudoTexto from '@resources/conteudoTexto'
@@ -21,6 +24,7 @@ export default function Atuacao({
   imagensAtuacao,
 }: InferGetStaticPropsType<typeof getStaticProps>) {
   const {navegarParaRota} = useNavegacao()
+  const {tamanhoTela} = useTamanhoTela()
 
   function navegarParaPaginaDeContato() {
     navegarParaRota(Rotas.CONTATO)
@@ -113,9 +117,12 @@ export default function Atuacao({
 
   const itensPalestrante = textoAtuacao.palestrante.palestras
 
+  const tamanhoPadrao = 600 as number
+  console.log
+
   return (
     <LayoutPaginasSite titulo="Atuação">
-      <S.ContainerJurista altura={600}>
+      <S.ContainerJurista>
         <Container
           id={idAncoraJurista}
           padding={`${margens.xxxlarge}px ${margens.xxxlarge}px`}>

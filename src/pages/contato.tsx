@@ -20,6 +20,8 @@ import margens from '@resources/margens'
 import * as S from '@styles/Contato.styled'
 import {useFormik} from 'formik'
 import {GetStaticProps, InferGetStaticPropsType} from 'next'
+import {isEmpty} from 'ramda'
+import {useEffect, useState} from 'react'
 import * as Yup from 'yup'
 
 //TODO: Configurar envio de email com sendgrid
@@ -74,6 +76,7 @@ export default function Contato({
       const {conteudoMensagem} = values
       acionaEnvioDeEmail(conteudoMensagem)
     },
+    validateOnChange: true,
   })
 
   return (
@@ -163,7 +166,8 @@ export default function Contato({
               corFundoAlternativa={cores.branco}
               corFonteAlternativa={cores.terra}
               aoClicar={formik.handleSubmit}
-              ariaLabel={botaoContato.ariaLabel}>
+              ariaLabel={botaoContato.ariaLabel}
+              desabilitado={!isEmpty(formik.errors)}>
               {botaoContato.texto}
             </S.BotaoEnviarMensagemContato>
           </S.FormularioContato>
