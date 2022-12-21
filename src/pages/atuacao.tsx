@@ -5,7 +5,7 @@ import {Carrossel} from '@components/Carrossel'
 import {Container} from '@components/Container'
 import {ContainerConteudo} from '@components/ContainerConteudo'
 import {Icone} from '@components/Icone'
-import {Direcoes, OpcoesMenu, Rotas, StatusRequisicao} from '@data/enums'
+import {Direcoes, Rotas, StatusRequisicao} from '@data/enums'
 import {Asset, ElementoCarrosselTipo} from '@data/tipos'
 import useNavegacao from '@hooks/useNavegacao'
 import useTamanhoTela from '@hooks/useTamanhoTela'
@@ -16,9 +16,8 @@ import cores from '@resources/cores'
 import imagens from '@resources/imagens'
 import margens from '@resources/margens'
 import * as S from '@styles/Atuacao.styled'
-import {GetServerSidePropsContext, InferGetStaticPropsType} from 'next'
+import {GetStaticProps, InferGetStaticPropsType} from 'next'
 import {BsCheck2Square} from 'react-icons/bs'
-import {getStaticProps} from '.'
 
 export default function Atuacao({
   imagensAtuacao,
@@ -239,12 +238,7 @@ export default function Atuacao({
   )
 }
 
-export async function getServerSideProps({res}: GetServerSidePropsContext) {
-  res.setHeader(
-    'Cache-Control',
-    'public, s-maxage=10, stale-while-revalidate=59',
-  )
-
+export const getStaticProps: GetStaticProps = async () => {
   const {
     idImagemJurista,
     idTexturaTerra,
