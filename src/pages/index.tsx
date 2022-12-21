@@ -40,6 +40,9 @@ export default function Home({
               alt="Logo Denise Ferreira"
               width={logoBranca.width}
               height={logoBranca.height}
+              sizes="(min-width: 320px) 300px,
+              (min-width: 1024px) 350px,
+              (min-width: 1440px) 420px"
               data-aos="fade-right"
               data-aos-anchor="#ancora-banner"
             />
@@ -64,6 +67,11 @@ export default function Home({
             alt="Foto Denise Ferreira"
             width={600}
             height={800}
+            sizes="(min-width: 320px) 300px,
+            (min-width: 768px) 250px,  
+            (min-width: 1024px) 300px,
+              (min-width: 1440px) 350px,
+              (min-width: 2560px) 400px"
           />
         </S.ContainerFotoBanner>
       </ContainerConteudo>

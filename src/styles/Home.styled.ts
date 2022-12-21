@@ -9,10 +9,6 @@ export const LogoBanner = styled(ImagemComFallback)`
   width: 300px;
   height: auto;
 
-  @media ${dispositivos.tablet} {
-    width: 300px;
-  }
-
   @media ${dispositivos.laptop} {
     width: 350px;
   }
