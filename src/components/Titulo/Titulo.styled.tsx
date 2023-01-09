@@ -9,7 +9,7 @@ export const ContainerTitulo = styled(Texto).attrs({
   fonteAlternativa: subtitulo.fontFamily,
 })`
   font-size: ${subtitulo.fontSize};
-  text-align: justify;
+  text-align: left;
   line-height: 3rem;
 
   @media ${dispositivos.mobileM} {

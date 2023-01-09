@@ -141,7 +141,7 @@ export default function Blog({
             alinhar="center"
             largura="100%"
             quebra={true}>
-            <Titulo corTexto={cores.vinho}>{titulo}</Titulo>
+            <Titulo corTexto={cores.vinho} >{titulo}</Titulo>
             <S.BuscaPostBlog
               id="buscarArtigo"
               label="Buscar"
