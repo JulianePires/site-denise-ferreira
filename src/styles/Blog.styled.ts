@@ -12,7 +12,7 @@ import styled from 'styled-components'
 export const ContainerDestaqueBlog = styled(ContainerConteudo)``
 
 export const TituloDestaqueBlog = styled(Titulo)`
-  text-align: justify;
+  text-align: left;
   text-overflow: clip;
 `
 
@@ -20,7 +20,7 @@ export const ConteudoDestaqueBlog = styled.p`
   ${detalhe}
 
   font-size: 1.5rem;
-  text-align: justify;
+  text-align: left;
   line-height: 2rem;
   width: 100%;
 
