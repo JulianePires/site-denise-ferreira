@@ -26,7 +26,7 @@ const imagens: ChaveValor<string> = {
   idLivrosEIniciativas6: 'clbi8dmet62s80akn8nuoap7x',
   idTexturaAzulPetroleo: 'clale0q6b20j10blvcwpt9ez4',
   idPalestras1: 'clb9gb39g4vwv0alztwb8qhe8',
-  idPalestras2: 'clb9gb3aj3rwu0alvxl3muj3o',
+  idPalestras2: 'cld95inro510s09kj55465u15',
   idPalestras3: 'clb9gc24p4vy20alzansuctyj',
   idPalestras4: 'clb9gb39t4vxa0alz9jpgikca',
   idPalestras5: 'clb9gb39x3rwg0alvaj143ohk',
