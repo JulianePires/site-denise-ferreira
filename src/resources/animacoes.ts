@@ -1,4 +1,4 @@
-import animacaoCarregamento from '@assets/arquivosLottie/loading.json'
+import animacaoCarregamento from '@/assets/arquivosLottie/loading.json'
 
 const animacoes = {
   carrregamento: animacaoCarregamento,

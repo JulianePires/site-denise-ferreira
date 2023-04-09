@@ -1,5 +1,4 @@
-import { TamanhosComponente } from '@/data/enums'
-import { TemasCores } from '@/data/tipos'
+import {TemasCores} from '@/data/tipos'
 import cores from '@/resources/cores'
 import styled from 'styled-components'
 

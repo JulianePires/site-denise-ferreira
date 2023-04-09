@@ -1,6 +1,6 @@
 import * as S from './Erro.styled'
 
-import error from '@assets/arquivosLottie/error.json'
+import error from '@/assets/arquivosLottie/error.json'
 import {Stack} from '@/components/Stack'
 import {Texto} from '@/components/Texto'
 import {Titulo} from '@/components/Titulo'

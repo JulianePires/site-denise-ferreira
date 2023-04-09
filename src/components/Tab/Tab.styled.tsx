@@ -3,7 +3,7 @@ import {Titulo} from '@/components/Titulo'
 import {TemasCores} from '@/data/tipos'
 import cores from '@/resources/cores'
 import dispositivos from '@/resources/dispositivos'
-import {detalhe, paragrafo, subtitulo, titulo1} from '@/resources/textos'
+import {detalhe, paragrafo, titulo1} from '@/resources/textos'
 import styled from 'styled-components'
 
 interface ContainerTabProps {
@@ -99,7 +99,7 @@ export const TextoLayoutTab = styled.p<TextoLayoutTabProps>`
   color: ${({corTexto}) => corTexto};
 
   width: 100%;
-  
+
   text-align: justify;
   text-justify: newspaper;
   word-spacing: 5px;

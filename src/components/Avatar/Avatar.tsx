@@ -1,7 +1,7 @@
 import {TamanhosComponente} from '@/data/enums'
 import * as S from './Avatar.styled'
 
-import FallbackAvatar from '@assets/imagens/FallbackAvatar.png'
+import FallbackAvatar from '@/assets/imagens/FallbackAvatar.png'
 
 interface Props {
   src: string

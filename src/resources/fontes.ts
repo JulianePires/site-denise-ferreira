@@ -1,6 +1,6 @@
 import {ChaveValor} from '@/data/tipos'
 import {Barlow} from '@next/font/google'
-import {FontModule} from 'next/font'
+import {NextFont} from '@next/font'
 
 const barlowLight = Barlow({
   style: 'normal',
@@ -20,7 +20,7 @@ const barlowMedium = Barlow({
   subsets: ['latin'],
 })
 
-const xillian: FontModule = {
+const xillian: NextFont = {
   className: 'xillian',
   style: {
     fontFamily: 'Xillian, sans-serif',
@@ -28,7 +28,7 @@ const xillian: FontModule = {
   },
 }
 
-const fontes: ChaveValor<FontModule> = {
+const fontes: ChaveValor<NextFont> = {
   xillian,
   barlowLight,
   barlowRegular,

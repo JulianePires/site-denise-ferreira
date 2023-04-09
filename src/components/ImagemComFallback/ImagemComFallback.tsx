@@ -1,7 +1,7 @@
-import Image, {ImageLoader, ImageProps} from 'next/image'
+import Image, {ImageProps} from 'next/image'
 import {useState} from 'react'
 
-import FallbackImagem from '@assets/imagens/FallbackImagem.png'
+import FallbackImagem from '@/assets/imagens/FallbackImagem.png'
 
 interface Props extends ImageProps {
   fallback?: string

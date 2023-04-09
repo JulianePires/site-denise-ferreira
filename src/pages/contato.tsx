@@ -1,7 +1,7 @@
 import {Container} from '@/components/Container'
 import {ContainerConteudo} from '@/components/ContainerConteudo'
 import {Input} from '@/components/Input'
-import {Rotas, StatusRequisicao} from '@/data/enums'
+import {StatusRequisicao} from '@/data/enums'
 import {Asset, FormularioContatoTipo} from '@/data/tipos'
 import {
   maxCaracteresMensagem,
@@ -21,7 +21,7 @@ import * as S from '@/styles/Contato.styled'
 import {useFormik} from 'formik'
 import {GetStaticProps, InferGetStaticPropsType} from 'next'
 import {isEmpty} from 'ramda'
-import {FormEvent, useEffect, useState} from 'react'
+import {FormEvent} from 'react'
 import * as Yup from 'yup'
 
 //TODO: Configurar envio de email com sendgrid
@@ -70,9 +70,9 @@ export default function Contato({
       const templateCorpoEmail = `Olá, Denise! Tudo bem? \n\nMe chamo ${nome}, resido na cidade de ${cidade}.${
         organizacao && '\n\nTrabalho na empresa ' + organizacao + '.'
       } \n\n ${conteudoMensagem}`
-      
+
       const mailTo = `mailto:Denise Ferreira?subject=Contato%20Denise%20Ferreira&body=${templateCorpoEmail}`
-      
+
       abreUrlExternaEmNovaAba(mailTo)
     },
     validateOnChange: true,
