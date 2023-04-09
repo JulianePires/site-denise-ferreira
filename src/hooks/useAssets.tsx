@@ -1,7 +1,7 @@
-import {StatusRequisicao} from '@data/enums'
-import {Asset} from '@data/tipos'
-import {buscaAsset} from '@infrastructure/requisicoes/asset'
-import imagens from '@resources/imagens'
+import {StatusRequisicao} from '@/data/enums'
+import {Asset} from '@/data/tipos'
+import {buscaAsset} from '@/infrastructure/requisicoes/asset'
+import imagens from '@/resources/imagens'
 import {createContext, ReactNode, useContext, useEffect, useState} from 'react'
 
 interface AssetsContextProps {

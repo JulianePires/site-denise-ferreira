@@ -1,7 +1,7 @@
-import { Botao } from '@components/Botao'
-import cores from '@resources/cores'
-import dispositivos from '@resources/dispositivos'
-import {detalhe} from '@resources/textos'
+import { Botao } from '@/components/Botao'
+import cores from '@/resources/cores'
+import dispositivos from '@/resources/dispositivos'
+import {detalhe} from '@/resources/textos'
 import Link from 'next/link'
 import styled from 'styled-components'
 

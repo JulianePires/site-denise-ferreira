@@ -1,4 +1,4 @@
-import {ChaveValor} from '@data/tipos'
+import {ChaveValor} from '@/data/tipos'
 
 const tamanhosTela: ChaveValor<string> = {
   mobileS: '320px',

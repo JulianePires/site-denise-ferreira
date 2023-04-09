@@ -1,4 +1,4 @@
-import animacoes from '@resources/animacoes'
+import animacoes from '@/resources/animacoes'
 import Lottie from 'lottie-react'
 
 export function Loader() {

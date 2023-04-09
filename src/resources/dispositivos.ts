@@ -1,4 +1,4 @@
-import {ChaveValor} from '@data/tipos'
+import {ChaveValor} from '@/data/tipos'
 import tamanhosTela from './tamanhosTela'
 
 const dispositivos: ChaveValor<string> = {

@@ -1,5 +1,5 @@
-import {Texto} from '@components/Texto'
-import {TamanhosTexto} from '@data/enums'
+import {Texto} from '@/components/Texto'
+import {TamanhosTexto} from '@/data/enums'
 import styled from 'styled-components'
 
 export const StatusControleElemento = styled(Texto).attrs({

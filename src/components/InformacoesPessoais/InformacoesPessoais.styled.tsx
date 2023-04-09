@@ -1,4 +1,4 @@
-import cores from '@resources/cores'
+import cores from '@/resources/cores'
 import styled from 'styled-components'
 
 export const ContainerInformacoesPessoais = styled.div`

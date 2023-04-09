@@ -1,4 +1,4 @@
-import {OpcaoMenu} from '@data/tipos'
+import {OpcaoMenu} from '@/data/tipos'
 
 const opcoesMenuDashboard: OpcaoMenu[] = [
   {

@@ -1,5 +1,5 @@
-import {Logo} from '@components/Logo'
-import opcoesMenuHome from '@routes/menu'
+import {Logo} from '@/components/Logo'
+import opcoesMenuHome from '@/routes/menu'
 import {useRouter} from 'next/router'
 import * as S from './Cabecalho.styled'
 

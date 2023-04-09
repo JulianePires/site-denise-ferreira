@@ -1,5 +1,5 @@
-import {OpcoesMenu} from '@data/enums'
-import {OpcaoMenu} from '@data/tipos'
+import {OpcoesMenu} from '@/data/enums'
+import {OpcaoMenu} from '@/data/tipos'
 
 const opcoesMenuHome: OpcaoMenu[] = [
   {

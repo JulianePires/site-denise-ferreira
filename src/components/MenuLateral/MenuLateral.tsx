@@ -1,6 +1,6 @@
-import {InformacoesPessoais} from '@components/InformacoesPessoais'
-import {Logo} from '@components/Logo'
-import {OpcaoMenu} from '@data/tipos'
+import {InformacoesPessoais} from '@/components/InformacoesPessoais'
+import {Logo} from '@/components/Logo'
+import {OpcaoMenu} from '@/data/tipos'
 import * as S from './MenuLateral.styled'
 
 interface Props {

@@ -1,4 +1,4 @@
-import {TemasCores} from '@data/tipos'
+import {TemasCores} from '@/data/tipos'
 import * as S from './BotaoIcone.styled'
 import {IconType} from 'react-icons'
 import {MouseEventHandler} from 'react'

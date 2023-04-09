@@ -1,5 +1,5 @@
-import {ImagemComFallback} from '@components/ImagemComFallback'
-import useAssets from '@hooks/useAssets'
+import {ImagemComFallback} from '@/components/ImagemComFallback'
+import useAssets from '@/hooks/useAssets'
 import * as S from './Logo.styled'
 
 interface Props {

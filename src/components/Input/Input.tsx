@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-non-null-assertion */
-import {Direcoes} from '@data/enums'
-import {ChaveValor} from '@data/tipos'
-import cores from '@resources/cores'
+import {Direcoes} from '@/data/enums'
+import {ChaveValor} from '@/data/tipos'
+import cores from '@/resources/cores'
 import {isEmpty} from 'ramda'
 import {ChangeEventHandler, HTMLInputTypeAttribute} from 'react'
 import {IconType} from 'react-icons'

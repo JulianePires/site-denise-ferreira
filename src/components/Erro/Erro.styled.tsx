@@ -1,5 +1,5 @@
-import {Container} from '@components/Container'
-import dispositivos from '@resources/dispositivos'
+import {Container} from '@/components/Container'
+import dispositivos from '@/resources/dispositivos'
 import Lottie from 'lottie-react'
 import styled from 'styled-components'
 

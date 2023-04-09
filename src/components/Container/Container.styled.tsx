@@ -1,6 +1,6 @@
-import {ContainerTipo} from '@data/tipos'
-import dispositivos from '@resources/dispositivos'
-import margens from '@resources/margens'
+import {ContainerTipo} from '@/data/tipos'
+import dispositivos from '@/resources/dispositivos'
+import margens from '@/resources/margens'
 import styled from 'styled-components'
 
 export const Container = styled.span<ContainerTipo>`

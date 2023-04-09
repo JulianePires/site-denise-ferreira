@@ -4,7 +4,7 @@ import {
   subtitulo,
   titulo1,
   titulo2,
-} from '@resources/textos'
+} from '@/resources/textos'
 import styled from 'styled-components'
 
 interface TextoProps {

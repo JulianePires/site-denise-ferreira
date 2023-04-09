@@ -1,6 +1,6 @@
-import {Asset} from '@data/tipos'
-import imagens from '@resources/imagens'
-import {buscaAsset} from '@infrastructure/requisicoes/asset'
+import {Asset} from '@/data/tipos'
+import imagens from '@/resources/imagens'
+import {buscaAsset} from '@/infrastructure/requisicoes/asset'
 import {ReactNode, useEffect, useState} from 'react'
 import * as S from './LayoutDashboard.styled'
 

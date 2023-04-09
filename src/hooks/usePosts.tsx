@@ -1,6 +1,6 @@
-import {StatusRequisicao} from '@data/enums'
-import {Post} from '@data/tipos'
-import {buscaPostsComFiltro} from '@infrastructure/requisicoes/post'
+import {StatusRequisicao} from '@/data/enums'
+import {Post} from '@/data/tipos'
+import {buscaPostsComFiltro} from '@/infrastructure/requisicoes/post'
 import {useEffect, useState} from 'react'
 
 const usePosts = () => {

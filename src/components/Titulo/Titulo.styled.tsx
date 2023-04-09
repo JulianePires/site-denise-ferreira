@@ -1,7 +1,7 @@
-import {Texto} from '@components/Texto'
-import {TamanhosTexto} from '@data/enums'
-import dispositivos from '@resources/dispositivos'
-import {subtitulo, titulo1, titulo2} from '@resources/textos'
+import {Texto} from '@/components/Texto'
+import {TamanhosTexto} from '@/data/enums'
+import dispositivos from '@/resources/dispositivos'
+import {subtitulo, titulo1, titulo2} from '@/resources/textos'
 import styled from 'styled-components'
 
 export const ContainerTitulo = styled(Texto).attrs({

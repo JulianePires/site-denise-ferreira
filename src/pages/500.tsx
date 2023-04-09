@@ -1,4 +1,4 @@
-import { LayoutPaginaErro } from '@layouts/LayoutPaginnaErro'
+import { LayoutPaginaErro } from '@/layouts/LayoutPaginnaErro'
 
 export default function Custom500(){
   const erro500 = {

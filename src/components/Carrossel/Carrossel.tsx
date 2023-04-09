@@ -1,14 +1,14 @@
-import {Stack} from '@components/Stack'
-import {Direcoes, EstilosBotao, TamanhosTexto} from '@data/enums'
-import {DirecoesTipo, ElementoCarrosselTipo, TemasCores} from '@data/tipos'
-import conteudoTexto from '@resources/conteudoTexto'
+import {Stack} from '@/components/Stack'
+import {Direcoes, EstilosBotao, TamanhosTexto} from '@/data/enums'
+import {DirecoesTipo, ElementoCarrosselTipo, TemasCores} from '@/data/tipos'
+import conteudoTexto from '@/resources/conteudoTexto'
 import {useState} from 'react'
 import * as S from './Carrossel.styled'
 
-import {ControleElementos} from '@components/ControleElementos'
-import {abreUrlExternaEmNovaAba} from '@infrastructure/funcoes'
+import {ControleElementos} from '@/components/ControleElementos'
+import {abreUrlExternaEmNovaAba} from '@/infrastructure/funcoes'
 import 'react-responsive-carousel/lib/styles/carousel.min.css'
-import cores from '@resources/cores'
+import cores from '@/resources/cores'
 
 interface Props {
   direcao: DirecoesTipo

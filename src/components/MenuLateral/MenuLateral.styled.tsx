@@ -1,9 +1,9 @@
 import styled from 'styled-components'
 
-import cores from '@resources/cores'
-import dispositivos from '@resources/dispositivos'
-import margens from '@resources/margens'
-import {subtitulo, titulo1} from '@resources/textos'
+import cores from '@/resources/cores'
+import dispositivos from '@/resources/dispositivos'
+import margens from '@/resources/margens'
+import {subtitulo, titulo1} from '@/resources/textos'
 
 export const ContainerMenuLateral = styled.section`
   display: flex;

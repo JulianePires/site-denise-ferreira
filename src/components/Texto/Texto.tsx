@@ -1,6 +1,6 @@
-import {TamanhosTexto} from '@data/enums'
-import {TamanhosTextoTipo} from '@data/tipos'
-import cores from '@resources/cores'
+import {TamanhosTexto} from '@/data/enums'
+import {TamanhosTextoTipo} from '@/data/tipos'
+import cores from '@/resources/cores'
 import {ReactNode} from 'react'
 import * as S from './Texto.styled'
 

@@ -1,5 +1,5 @@
-import {TamanhosComponente} from '@data/enums'
-import {TemasCores} from '@data/tipos'
+import {TamanhosComponente} from '@/data/enums'
+import {TemasCores} from '@/data/tipos'
 import {ReactNode} from 'react'
 import * as S from './Botao.styled'
 

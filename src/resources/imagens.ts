@@ -1,4 +1,4 @@
-import {ChaveValor} from '@data/tipos'
+import {ChaveValor} from '@/data/tipos'
 
 const imagens: ChaveValor<string> = {
   idLogoBranca: 'clale22ud1yk809kc82o4r7d7',

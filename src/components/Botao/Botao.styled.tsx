@@ -1,7 +1,7 @@
-import {EstilosBotao, TamanhosComponente} from '@data/enums'
-import {TemasCores} from '@data/tipos'
-import {trataCoresPorTema} from '@infrastructure/funcoes'
-import {paragrafo, subtitulo} from '@resources/textos'
+import {EstilosBotao, TamanhosComponente} from '@/data/enums'
+import {TemasCores} from '@/data/tipos'
+import {trataCoresPorTema} from '@/infrastructure/funcoes'
+import {paragrafo, subtitulo} from '@/resources/textos'
 import styled from 'styled-components'
 
 interface ContainerBotaoProps {

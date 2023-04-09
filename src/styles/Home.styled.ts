@@ -1,8 +1,8 @@
-import {Container} from '@components/Container'
-import {ImagemComFallback} from '@components/ImagemComFallback'
-import dispositivos from '@resources/dispositivos'
-import margens from '@resources/margens'
-import {detalhe, subtitulo} from '@resources/textos'
+import {Container} from '@/components/Container'
+import {ImagemComFallback} from '@/components/ImagemComFallback'
+import dispositivos from '@/resources/dispositivos'
+import margens from '@/resources/margens'
+import {detalhe, subtitulo} from '@/resources/textos'
 import styled from 'styled-components'
 
 export const LogoBanner = styled(ImagemComFallback)`

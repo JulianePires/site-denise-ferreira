@@ -1,6 +1,6 @@
-import {Direcoes} from '@data/enums'
-import {AlinhamentoTipo, DirecoesTipo} from '@data/tipos'
-import dispositivos from '@resources/dispositivos'
+import {Direcoes} from '@/data/enums'
+import {AlinhamentoTipo, DirecoesTipo} from '@/data/tipos'
+import dispositivos from '@/resources/dispositivos'
 import styled from 'styled-components'
 
 export interface ContainerStackProps {

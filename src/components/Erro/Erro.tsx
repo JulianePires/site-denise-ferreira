@@ -1,14 +1,14 @@
 import * as S from './Erro.styled'
 
 import error from '@assets/arquivosLottie/error.json'
-import {Stack} from '@components/Stack'
-import {Texto} from '@components/Texto'
-import {Titulo} from '@components/Titulo'
-import {Direcoes, StatusRequisicao, TamanhosTexto} from '@data/enums'
-import margens from '@resources/margens'
-import imagens from '@resources/imagens'
-import {buscaAsset} from '@infrastructure/requisicoes/asset'
-import {Asset} from '@data/tipos'
+import {Stack} from '@/components/Stack'
+import {Texto} from '@/components/Texto'
+import {Titulo} from '@/components/Titulo'
+import {Direcoes, StatusRequisicao, TamanhosTexto} from '@/data/enums'
+import margens from '@/resources/margens'
+import imagens from '@/resources/imagens'
+import {buscaAsset} from '@/infrastructure/requisicoes/asset'
+import {Asset} from '@/data/tipos'
 import {useEffect, useState} from 'react'
 
 interface Props {

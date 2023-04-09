@@ -1,5 +1,5 @@
-import {ImagemComFallback} from '@components/ImagemComFallback'
-import cores from '@resources/cores'
+import {ImagemComFallback} from '@/components/ImagemComFallback'
+import cores from '@/resources/cores'
 import styled from 'styled-components'
 
 export const ContainerAvatar = styled(ImagemComFallback)`

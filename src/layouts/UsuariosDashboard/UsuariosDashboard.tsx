@@ -1,6 +1,6 @@
-import {LayoutDashboard} from '@components/LayoutDashboard'
-import {OpcoesPaginasDashboard} from '@data/enums'
-import {Usuario} from '@data/tipos'
+import {LayoutDashboard} from '@/components/LayoutDashboard'
+import {OpcoesPaginasDashboard} from '@/data/enums'
+import {Usuario} from '@/data/tipos'
 import {ContainerUsuarios} from './UsuariosDashboard.styled'
 
 interface Props {

@@ -1,7 +1,7 @@
-import {Botao} from '@components/Botao'
-import {Titulo} from '@components/Titulo'
-import dispositivos from '@resources/dispositivos'
-import {detalhe, subtitulo} from '@resources/textos'
+import {Botao} from '@/components/Botao'
+import {Titulo} from '@/components/Titulo'
+import dispositivos from '@/resources/dispositivos'
+import {detalhe, subtitulo} from '@/resources/textos'
 import styled from 'styled-components'
 
 export const FormularioContato = styled.form`

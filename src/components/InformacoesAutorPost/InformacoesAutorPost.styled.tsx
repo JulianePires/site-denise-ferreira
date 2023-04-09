@@ -1,5 +1,5 @@
-import cores from '@resources/cores'
-import {detalhe, paragrafo} from '@resources/textos'
+import cores from '@/resources/cores'
+import {detalhe, paragrafo} from '@/resources/textos'
 import styled from 'styled-components'
 
 export const NomeAutorPost = styled.p`

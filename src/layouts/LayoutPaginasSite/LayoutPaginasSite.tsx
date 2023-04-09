@@ -1,6 +1,6 @@
-import {Cabecalho} from '@components/Cabecalho'
-import {Head} from '@components/Head'
-import {Rodape} from '@components/Rodape'
+import {Cabecalho} from '@/components/Cabecalho'
+import {Head} from '@/components/Head'
+import {Rodape} from '@/components/Rodape'
 import {ReactNode} from 'react'
 import {Container} from './LayoutPaginaSite.styled'
 

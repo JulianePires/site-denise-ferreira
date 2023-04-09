@@ -1,27 +1,27 @@
-import {Container} from '@components/Container'
-import {ContainerConteudo} from '@components/ContainerConteudo'
-import {Input} from '@components/Input'
-import {StatusRequisicao} from '@data/enums'
-import {Asset, FormularioContatoTipo} from '@data/tipos'
+import {Container} from '@/components/Container'
+import {ContainerConteudo} from '@/components/ContainerConteudo'
+import {Input} from '@/components/Input'
+import {Rotas, StatusRequisicao} from '@/data/enums'
+import {Asset, FormularioContatoTipo} from '@/data/tipos'
 import {
   maxCaracteresMensagem,
   maxCaracteresTexto,
   minCaracteresMensagem,
   minCaracteresTexto,
-} from '@infrastructure/constantes'
-import errosValidacao from '@infrastructure/erros/validacao'
-import {abreUrlExternaEmNovaAba} from '@infrastructure/funcoes'
-import {buscaAsset} from '@infrastructure/requisicoes/asset'
-import {LayoutPaginasSite} from '@layouts/LayoutPaginasSite'
-import conteudoTexto from '@resources/conteudoTexto'
-import cores from '@resources/cores'
-import imagens from '@resources/imagens'
-import margens from '@resources/margens'
-import * as S from '@styles/Contato.styled'
+} from '@/infrastructure/constantes'
+import errosValidacao from '@/infrastructure/erros/validacao'
+import {abreUrlExternaEmNovaAba} from '@/infrastructure/funcoes'
+import {buscaAsset} from '@/infrastructure/requisicoes/asset'
+import {LayoutPaginasSite} from '@/layouts/LayoutPaginasSite'
+import conteudoTexto from '@/resources/conteudoTexto'
+import cores from '@/resources/cores'
+import imagens from '@/resources/imagens'
+import margens from '@/resources/margens'
+import * as S from '@/styles/Contato.styled'
 import {useFormik} from 'formik'
 import {GetStaticProps, InferGetStaticPropsType} from 'next'
 import {isEmpty} from 'ramda'
-import {useEffect, useState} from 'react'
+import {FormEvent, useEffect, useState} from 'react'
 import * as Yup from 'yup'
 
 //TODO: Configurar envio de email com sendgrid
@@ -31,12 +31,6 @@ export default function Contato({
 }: InferGetStaticPropsType<typeof getStaticProps>) {
   const [texturaVinho] = imagensContato
   const {textoContato, botaoContato} = conteudoTexto
-
-  const acionaEnvioDeEmail = (texto: string) => {
-    abreUrlExternaEmNovaAba(
-      `mailto:Denise Ferreira?subject=Contato%20Denise%20Ferreira&body=${texto}`,
-    )
-  }
 
   const formik = useFormik<FormularioContatoTipo>({
     initialValues: {
@@ -72,12 +66,22 @@ export default function Contato({
         )
         .required(errosValidacao.campoObrigatorio),
     }),
-    onSubmit: (values) => {
-      const {conteudoMensagem} = values
-      acionaEnvioDeEmail(conteudoMensagem)
+    onSubmit: async ({nome, cidade, organizacao, conteudoMensagem}) => {
+      const templateCorpoEmail = `Olá, Denise! Tudo bem? \n\nMe chamo ${nome}, resido na cidade de ${cidade}.${
+        organizacao && '\n\nTrabalho na empresa ' + organizacao + '.'
+      } \n\n ${conteudoMensagem}`
+      
+      const mailTo = `mailto:Denise Ferreira?subject=Contato%20Denise%20Ferreira&body=${templateCorpoEmail}`
+      
+      abreUrlExternaEmNovaAba(mailTo)
     },
     validateOnChange: true,
   })
+
+  const acionaEnvioDeEmail = (evento: FormEvent<HTMLFormElement>) => {
+    evento.preventDefault()
+    formik.handleSubmit(evento)
+  }
 
   return (
     <LayoutPaginasSite titulo="Contato">
@@ -99,7 +103,7 @@ export default function Contato({
         </Container>
 
         <Container imagemFundo={texturaVinho.url}>
-          <S.FormularioContato>
+          <S.FormularioContato onSubmit={acionaEnvioDeEmail}>
             <Input
               id={textoContato.textoFormulario.nome.nomeCampo}
               nomeCampo={textoContato.textoFormulario.nome.nomeCampo}

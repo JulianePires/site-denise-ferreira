@@ -1,6 +1,6 @@
 import {gql} from '@apollo/client'
-import {cliente} from '@infrastructure/cliente'
-import {trataRespostaRequisicao} from '@infrastructure/funcoes'
+import {cliente} from '@/infrastructure/cliente'
+import {trataRespostaRequisicao} from '@/infrastructure/funcoes'
 
 const BUSCA_ASSET_QUERY = gql`
   query BuscaAsset($id: ID!) {

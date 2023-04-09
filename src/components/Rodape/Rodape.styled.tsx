@@ -1,7 +1,7 @@
-import cores from '@resources/cores'
-import dispositivos from '@resources/dispositivos'
-import margens from '@resources/margens'
-import {paragrafo, subtitulo} from '@resources/textos'
+import cores from '@/resources/cores'
+import dispositivos from '@/resources/dispositivos'
+import margens from '@/resources/margens'
+import {paragrafo, subtitulo} from '@/resources/textos'
 import styled from 'styled-components'
 
 export const ContainerRodape = styled.footer`

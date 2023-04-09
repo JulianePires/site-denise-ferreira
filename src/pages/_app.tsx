@@ -1,12 +1,12 @@
 import {ApolloProvider} from '@apollo/client'
-import {AssetsProvider} from '@hooks/useAssets'
-import {cliente} from '@infrastructure/cliente'
-import EstiloGlobal from '@styles/global'
+import {AssetsProvider} from '@/hooks/useAssets'
+import {cliente} from '@/infrastructure/cliente'
+import EstiloGlobal from '@/styles/global'
 import AOS from 'aos'
 import type {AppProps} from 'next/app'
 import {useEffect} from 'react'
 
-import '@styles/global.css'
+import '@/styles/global.css'
 import 'aos/dist/aos.css'
 
 function App({Component, pageProps}: AppProps) {

@@ -1,4 +1,4 @@
-import {ChaveValor} from '@data/tipos'
+import {ChaveValor} from '@/data/tipos'
 
 const cores: ChaveValor<string> = {
   azulRoyal: '#2B3193',

@@ -1,4 +1,4 @@
-import {ContainerTipo} from '@data/tipos'
+import {ContainerTipo} from '@/data/tipos'
 import {ReactNode} from 'react'
 import * as S from './Container.styled'
 

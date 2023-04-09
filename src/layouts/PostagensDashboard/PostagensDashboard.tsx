@@ -1,5 +1,5 @@
-import {LayoutDashboard} from '@components/LayoutDashboard'
-import {Post} from '@data/tipos'
+import {LayoutDashboard} from '@/components/LayoutDashboard'
+import {Post} from '@/data/tipos'
 import {ContainerPostagens} from './PostagensDashboard.styled'
 
 interface Props {

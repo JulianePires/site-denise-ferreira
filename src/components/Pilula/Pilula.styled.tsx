@@ -1,6 +1,6 @@
-import cores from '@resources/cores'
-import margens from '@resources/margens'
-import {detalhe, paragrafo} from '@resources/textos'
+import cores from '@/resources/cores'
+import margens from '@/resources/margens'
+import {detalhe, paragrafo} from '@/resources/textos'
 import styled from 'styled-components'
 
 interface ContainerPilulaProps {

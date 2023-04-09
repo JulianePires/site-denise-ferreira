@@ -1,4 +1,4 @@
-import {LayoutPaginaErro} from '@layouts/LayoutPaginnaErro'
+import {LayoutPaginaErro} from '@/layouts/LayoutPaginnaErro'
 
 export default function Custom404() {
   const erro404 = {

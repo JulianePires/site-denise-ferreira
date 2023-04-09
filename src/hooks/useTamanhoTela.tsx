@@ -1,4 +1,4 @@
-import { ChaveValor } from '@data/tipos'
+import { ChaveValor } from '@/data/tipos'
 import {useEffect, useState} from 'react'
 
 function obterDimensoesTela() {

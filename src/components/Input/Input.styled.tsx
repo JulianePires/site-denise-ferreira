@@ -1,7 +1,7 @@
-import {Stack} from '@components/Stack'
-import cores from '@resources/cores'
-import margens from '@resources/margens'
-import {detalhe, paragrafo, subtitulo} from '@resources/textos'
+import {Stack} from '@/components/Stack'
+import cores from '@/resources/cores'
+import margens from '@/resources/margens'
+import {detalhe, paragrafo, subtitulo} from '@/resources/textos'
 import styled from 'styled-components'
 
 export const ContainerCampoTexto = styled.div`

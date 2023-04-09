@@ -1,21 +1,21 @@
 /* eslint-disable @typescript-eslint/no-non-null-assertion */
-import {Head} from '@components/Head'
-import {MenuLateral} from '@components/MenuLateral'
-import {OpcoesParametroDashboard, StatusRequisicao} from '@data/enums'
+import {Head} from '@/components/Head'
+import {MenuLateral} from '@/components/MenuLateral'
+import {OpcoesParametroDashboard, StatusRequisicao} from '@/data/enums'
 import {
   Caminho,
   OpcaoMenu,
   Post,
   RespostaRequisicao,
   Usuario,
-} from '@data/tipos'
-import {CriarPostagemDashboard} from '@layouts/CriarPostagemDashboard'
-import {PostagensDashboard} from '@layouts/PostagensDashboard'
-import {UsuariosDashboard} from '@layouts/UsuariosDashboard'
-import opcoesMenuDashboard from '@routes/dashboard'
-import {buscaPosts} from '@infrastructure/requisicoes/post'
-import {buscaUsuarios} from '@infrastructure/requisicoes/usuario'
-import {Container} from '@styles/Dashboard.styled'
+} from '@/data/tipos'
+import {CriarPostagemDashboard} from '@/layouts/CriarPostagemDashboard'
+import {PostagensDashboard} from '@/layouts/PostagensDashboard'
+import {UsuariosDashboard} from '@/layouts/UsuariosDashboard'
+import opcoesMenuDashboard from '@/routes/dashboard'
+import {buscaPosts} from '@/infrastructure/requisicoes/post'
+import {buscaUsuarios} from '@/infrastructure/requisicoes/usuario'
+import {Container} from '@/styles/Dashboard.styled'
 import {GetStaticPaths, GetStaticProps} from 'next'
 import {useRouter} from 'next/router'
 

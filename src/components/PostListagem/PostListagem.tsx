@@ -1,11 +1,11 @@
 /* eslint-disable @typescript-eslint/no-empty-function */
-import {InformacoesAutorPost} from '@components/InformacoesAutorPost'
-import {Pilula} from '@components/Pilula'
-import {Direcoes, StatusRequisicao} from '@data/enums'
-import {Asset, Categoria, Imagem, Perfil} from '@data/tipos'
-import useNavegacao from '@hooks/useNavegacao'
-import {buscaAsset} from '@infrastructure/requisicoes/asset'
-import imagens from '@resources/imagens'
+import {InformacoesAutorPost} from '@/components/InformacoesAutorPost'
+import {Pilula} from '@/components/Pilula'
+import {Direcoes, StatusRequisicao} from '@/data/enums'
+import {Asset, Categoria, Imagem, Perfil} from '@/data/tipos'
+import useNavegacao from '@/hooks/useNavegacao'
+import {buscaAsset} from '@/infrastructure/requisicoes/asset'
+import imagens from '@/resources/imagens'
 import {useEffect, useState} from 'react'
 import * as S from './PostListagem.styled'
 

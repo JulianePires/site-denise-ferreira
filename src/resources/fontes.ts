@@ -1,4 +1,4 @@
-import {ChaveValor} from '@data/tipos'
+import {ChaveValor} from '@/data/tipos'
 import {Barlow} from '@next/font/google'
 import {FontModule} from 'next/font'
 

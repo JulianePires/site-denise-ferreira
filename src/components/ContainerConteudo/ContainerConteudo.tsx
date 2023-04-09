@@ -1,5 +1,5 @@
-import {Direcoes} from '@data/enums'
-import {DirecoesTipo} from '@data/tipos'
+import {Direcoes} from '@/data/enums'
+import {DirecoesTipo} from '@/data/tipos'
 import {ReactNode} from 'react'
 import * as S from './ContainerConteudo.styled'
 

@@ -1,7 +1,7 @@
-import {Stack} from '@components/Stack'
-import {Direcoes} from '@data/enums'
-import {DirecoesTipo} from '@data/tipos'
-import cores from '@resources/cores'
+import {Stack} from '@/components/Stack'
+import {Direcoes} from '@/data/enums'
+import {DirecoesTipo} from '@/data/tipos'
+import cores from '@/resources/cores'
 import {
   BsArrowLeftCircleFill,
   BsArrowUpCircleFill,

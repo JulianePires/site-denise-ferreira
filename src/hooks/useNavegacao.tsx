@@ -1,4 +1,4 @@
-import {Rotas} from '@data/enums'
+import {Rotas} from '@/data/enums'
 import {useRouter} from 'next/router'
 
 const useNavegacao = () => {

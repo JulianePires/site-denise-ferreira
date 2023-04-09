@@ -1,8 +1,8 @@
-import {Avatar} from '@components/Avatar'
-import {Stack} from '@components/Stack'
-import {Direcoes} from '@data/enums'
-import {AlinhamentoTipo} from '@data/tipos'
-import {formataDataParaPadrao} from '@infrastructure/funcoes'
+import {Avatar} from '@/components/Avatar'
+import {Stack} from '@/components/Stack'
+import {Direcoes} from '@/data/enums'
+import {AlinhamentoTipo} from '@/data/tipos'
+import {formataDataParaPadrao} from '@/infrastructure/funcoes'
 import * as S from './InformacoesAutorPost.styled'
 
 interface Props {

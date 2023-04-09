@@ -1,17 +1,17 @@
-import {ContainerConteudo} from '@components/ContainerConteudo'
-import {ImagemComFallback} from '@components/ImagemComFallback'
-import {Texto} from '@components/Texto'
-import {Titulo} from '@components/Titulo'
-import {TamanhosTexto} from '@data/enums'
-import cores from '@resources/cores'
-import dispositivos from '@resources/dispositivos'
+import {ContainerConteudo} from '@/components/ContainerConteudo'
+import {ImagemComFallback} from '@/components/ImagemComFallback'
+import {Texto} from '@/components/Texto'
+import {Titulo} from '@/components/Titulo'
+import {TamanhosTexto} from '@/data/enums'
+import cores from '@/resources/cores'
+import dispositivos from '@/resources/dispositivos'
 import {
   detalhe,
   paragrafo,
   subtitulo,
   titulo1,
   titulo2,
-} from '@resources/textos'
+} from '@/resources/textos'
 import styled from 'styled-components'
 
 export const ContainerJurista = styled(ContainerConteudo).attrs({

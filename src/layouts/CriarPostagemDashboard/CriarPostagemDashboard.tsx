@@ -1,5 +1,5 @@
-import {LayoutDashboard} from '@components/LayoutDashboard'
-import {OpcoesPaginasDashboard} from '@data/enums'
+import {LayoutDashboard} from '@/components/LayoutDashboard'
+import {OpcoesPaginasDashboard} from '@/data/enums'
 import {ContainerCriarPostagem} from './CriarPostagemDashboard.styled'
 
 export function CriarPostagemDashboard() {

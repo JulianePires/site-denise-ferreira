@@ -1,5 +1,5 @@
-import {Avatar} from '@components/Avatar'
-import {TamanhosComponente} from '@data/enums'
+import {Avatar} from '@/components/Avatar'
+import {TamanhosComponente} from '@/data/enums'
 import * as S from './InformacoesPessoais.styled'
 
 interface Props {

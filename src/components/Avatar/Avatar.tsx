@@ -1,4 +1,4 @@
-import {TamanhosComponente} from '@data/enums'
+import {TamanhosComponente} from '@/data/enums'
 import * as S from './Avatar.styled'
 
 import FallbackAvatar from '@assets/imagens/FallbackAvatar.png'

@@ -1,6 +1,6 @@
-import cores from '@resources/cores'
-import margens from '@resources/margens'
-import {titulo2} from '@resources/textos'
+import cores from '@/resources/cores'
+import margens from '@/resources/margens'
+import {titulo2} from '@/resources/textos'
 import styled from 'styled-components'
 
 export const ContainerExternoLayout = styled.div`
