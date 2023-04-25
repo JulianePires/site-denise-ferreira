@@ -139,7 +139,7 @@ export type FormularioContatoTipo = {
   nome: string
   email: string
   cidade: string
-  organizacao: string
+  organizacao?: string
   conteudoMensagem: string
 }
 
