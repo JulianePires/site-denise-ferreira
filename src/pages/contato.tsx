@@ -12,6 +12,7 @@ import {
 import errosValidacao from '@/infrastructure/erros/validacao'
 import {abreUrlExternaEmNovaAba} from '@/infrastructure/funcoes'
 import {buscaAsset} from '@/infrastructure/requisicoes/asset'
+import { enviarEmail } from '@/infrastructure/requisicoes/enviarEmail'
 import {LayoutPaginasSite} from '@/layouts/LayoutPaginasSite'
 import conteudoTexto from '@/resources/conteudoTexto'
 import cores from '@/resources/cores'
@@ -66,16 +67,11 @@ export default function Contato({
         )
         .required(errosValidacao.campoObrigatorio),
     }),
-    onSubmit: async ({nome, cidade, organizacao, conteudoMensagem}) => {
-      const templateCorpoEmail = `Olá, Denise! Tudo bem? \n\nMe chamo ${nome}, resido na cidade de ${cidade}.${
-        organizacao && '\n\nTrabalho na empresa ' + organizacao + '.'
-      } \n\n ${conteudoMensagem}`
-
-      const mailTo = `mailto:Denise Ferreira?subject=Contato%20Denise%20Ferreira&body=${templateCorpoEmail}`
-
-      abreUrlExternaEmNovaAba(mailTo)
-    },
     validateOnChange: true,
+    onSubmit: async (dados) => {
+      const resposta = await enviarEmail(dados);
+      console.log(resposta.data);
+    },
   })
 
   const acionaEnvioDeEmail = (evento: FormEvent<HTMLFormElement>) => {
@@ -144,7 +140,7 @@ export default function Contato({
               placeholder={textoContato.textoFormulario.organizacao.placeholder}
               tipo="text"
               erro={formik.errors.organizacao}
-              valor={formik.values.organizacao}
+              valor={formik.values.organizacao!}
               aoAlterar={formik.handleChange}
             />
 
