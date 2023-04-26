@@ -126,7 +126,7 @@ const Handler = async (req: NextApiRequest, res: NextApiResponse) => {
     },
   })
 
-  transporter.sendMail(mensagem, (err, info) => {
+  transporter.sendMail(mensagem, (err) => {
     if (err) {
       res.status(500).json({message: 'Ocorreu um erro ao enviar o e-mail'})
     } else {
