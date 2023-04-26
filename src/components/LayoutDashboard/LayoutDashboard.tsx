@@ -14,17 +14,13 @@ export function LayoutDashboard({titulo, children}: Props) {
   const {idTexturaAmarela} = imagens
   const reqTexturaAmarela = buscaAsset(idTexturaAmarela)
 
-  function atualizaTexturaBanner() {
+  useEffect(() => {
     reqTexturaAmarela.then((resposta) => {
       const imagemBuscada = resposta.dados.asset as Asset
 
       setTextura(imagemBuscada.url)
     })
-  }
-
-  useEffect(() => {
-    atualizaTexturaBanner()
-  }, [])
+  }, [reqTexturaAmarela])
 
   return (
     <S.ContainerExternoLayout>

@@ -9,7 +9,6 @@ import {PostListagem} from '@/components/PostListagem'
 import {Stack} from '@/components/Stack'
 import {Titulo} from '@/components/Titulo'
 import {Asset, Post} from '@/data/tipos'
-import useAssets from '@/hooks/useAssets'
 import useNavegacao from '@/hooks/useNavegacao'
 import usePosts from '@/hooks/usePosts'
 import useTamanhoTela from '@/hooks/useTamanhoTela'
@@ -27,7 +26,7 @@ import {isEmpty} from 'ramda'
 import {useEffect, useState} from 'react'
 import {BiSearchAlt} from 'react-icons/bi'
 import {BsBoxArrowInUpRight, BsCalendarDateFill} from 'react-icons/bs'
-import {Direcoes, StatusRequisicao} from 'src/data/enums'
+import {Direcoes, StatusRequisicao, TamanhosComponente} from 'src/data/enums'
 
 export default function Blog({
   destaques,
@@ -59,6 +58,7 @@ export default function Blog({
 
   useEffect(() => {
     setTimeout(() => avancarIndexDestaque(), 2000)
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   return (
@@ -88,7 +88,7 @@ export default function Blog({
               <Avatar
                 src={postDestaque.autor.foto.url}
                 alt="Imagem do criador do post"
-                tamanho={50}
+                tamanho={TamanhosComponente.PP}
               />
               <S.InformacoesDestaqueBlog>
                 {postDestaque.autor.nome}
@@ -141,7 +141,7 @@ export default function Blog({
             alinhar="center"
             largura="100%"
             quebra={true}>
-            <Titulo corTexto={cores.vinho} >{titulo}</Titulo>
+            <Titulo corTexto={cores.vinho}>{titulo}</Titulo>
             <S.BuscaPostBlog
               id="buscarArtigo"
               label="Buscar"

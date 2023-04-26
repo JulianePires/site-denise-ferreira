@@ -10,9 +10,8 @@ import {
   minCaracteresTexto,
 } from '@/infrastructure/constantes'
 import errosValidacao from '@/infrastructure/erros/validacao'
-import {abreUrlExternaEmNovaAba} from '@/infrastructure/funcoes'
 import {buscaAsset} from '@/infrastructure/requisicoes/asset'
-import { enviarEmail } from '@/infrastructure/requisicoes/enviarEmail'
+import {enviarEmail} from '@/infrastructure/requisicoes/enviarEmail'
 import {LayoutPaginasSite} from '@/layouts/LayoutPaginasSite'
 import conteudoTexto from '@/resources/conteudoTexto'
 import cores from '@/resources/cores'
@@ -23,6 +22,8 @@ import {useFormik} from 'formik'
 import {GetStaticProps, InferGetStaticPropsType} from 'next'
 import {isEmpty} from 'ramda'
 import {FormEvent} from 'react'
+import {ToastContainer, ToastOptions, toast} from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
 import * as Yup from 'yup'
 
 //TODO: Configurar envio de email com sendgrid
@@ -32,6 +33,22 @@ export default function Contato({
 }: InferGetStaticPropsType<typeof getStaticProps>) {
   const [texturaVinho] = imagensContato
   const {textoContato, botaoContato} = conteudoTexto
+
+  const opcoesToast: ToastOptions = {
+    position: 'bottom-right',
+    autoClose: 5000,
+    hideProgressBar: false,
+    closeOnClick: true,
+    pauseOnHover: true,
+    draggable: true,
+    progress: undefined,
+    theme: 'light',
+  }
+
+  const disparaFeedbackPositivo = (mensagem: string) =>
+    toast.success('💌 ' + mensagem, opcoesToast)
+  const disparaFeedbackNegativo = (erro: string) =>
+    toast.error('❌ ' + erro, opcoesToast)
 
   const formik = useFormik<FormularioContatoTipo>({
     initialValues: {
@@ -68,9 +85,16 @@ export default function Contato({
         .required(errosValidacao.campoObrigatorio),
     }),
     validateOnChange: true,
-    onSubmit: async (dados) => {
-      const resposta = await enviarEmail(dados);
-      console.log(resposta.data);
+    onSubmit: (dados, helpers) => {
+      enviarEmail(dados)
+        .then((resposta) => {
+          disparaFeedbackPositivo(resposta.data.message)
+          helpers.resetForm()
+        })
+        .catch((error) => {
+          disparaFeedbackNegativo(error.data.message)
+        })
+        .finally(() => helpers.setSubmitting(false))
     },
   })
 
@@ -140,7 +164,7 @@ export default function Contato({
               placeholder={textoContato.textoFormulario.organizacao.placeholder}
               tipo="text"
               erro={formik.errors.organizacao}
-              valor={formik.values.organizacao!}
+              valor={formik.values.organizacao}
               aoAlterar={formik.handleChange}
             />
 
@@ -168,9 +192,10 @@ export default function Contato({
               aoClicar={formik.handleSubmit}
               ariaLabel={botaoContato.ariaLabel}
               desabilitado={!isEmpty(formik.errors)}>
-              {botaoContato.texto}
+              {formik.isSubmitting ? 'Carregando...' : botaoContato.texto}
             </S.BotaoEnviarMensagemContato>
           </S.FormularioContato>
+          <ToastContainer />
         </Container>
       </ContainerConteudo>
     </LayoutPaginasSite>

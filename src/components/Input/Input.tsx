@@ -29,7 +29,7 @@ interface Props {
   corCampo?: string
   corTexto?: string
   erro?: string
-  valor: string
+  valor?: string
   tipo?: HTMLInputTypeAttribute
   textArea?: boolean
   icone?: IconType

@@ -1,4 +1,4 @@
-import { ChaveValor } from '@/data/tipos'
+import {ChaveValor} from '@/data/tipos'
 import {useEffect, useState} from 'react'
 
 function obterDimensoesTela() {
@@ -16,7 +16,7 @@ const telasPorTamanho: ChaveValor<string> = {
   768: 'tablet',
   1024: 'laptop',
   1440: 'laptopL',
-  2560: 'desktop'
+  2560: 'desktop',
 }
 
 const useTamanhoTela = () => {
@@ -27,21 +27,20 @@ const useTamanhoTela = () => {
     width: undefined,
     height: undefined,
   })
-  const [tipoTelaPorTamanho, setTipoTelaPorTamanho] = useState<string | undefined>()
-
-  function alteraTipoTelaPorTamanho(tamanho: number){
-    setTipoTelaPorTamanho(telasPorTamanho[tamanho])
-  }
+  const [tipoTelaPorTamanho, setTipoTelaPorTamanho] = useState<
+    string | undefined
+  >()
 
   useEffect(() => {
     function lidarComRedimensionamento() {
       setTamanhoTela(obterDimensoesTela())
-      tamanhoTela.width && alteraTipoTelaPorTamanho(tamanhoTela.width)
+      tamanhoTela.width &&
+        setTipoTelaPorTamanho(telasPorTamanho[tamanhoTela.width])
     }
 
     window.addEventListener('resize', lidarComRedimensionamento)
     return () => window.removeEventListener('resize', lidarComRedimensionamento)
-  }, [])
+  }, [tamanhoTela.width])
 
   return {tamanhoTela, tipoTelaPorTamanho}
 }
