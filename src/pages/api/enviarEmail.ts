@@ -1,3 +1,4 @@
+import {smtpConfigurations} from '@/infrastructure/constantes'
 import type {NextApiRequest, NextApiResponse} from 'next'
 import nodemailer from 'nodemailer'
 
@@ -15,7 +16,7 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
 
   const mensagem = {
     from: `${nome} <${email}>`,
-    to: `Denise Ferreira <${process.env.CONTACT_EMAIL_ADDRESS}>`,
+    to: `Denise Ferreira <${smtpConfigurations.CONTACT}>`,
     subject: `Contato de ${nome} do Site Denise Ferreira`,
     text: conteudoMensagem,
     html: `<!DOCTYPE html>
@@ -116,21 +117,22 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
   }
 
   const transporter = nodemailer.createTransport({
-    host: process.env.SMTP_HOST,
-    port: Number(process.env.SMTP_PORT),
+    host: smtpConfigurations.HOST,
+    port: Number(smtpConfigurations.PORT),
     secure: false,
     auth: {
-     user: process.env.SMTP_HOST_USER,
-     pass: process.env.SMTP_HOST_PASSWORD
+      user: smtpConfigurations.USER,
+      pass: smtpConfigurations.PASS,
     },
   })
 
-  try {
-    let info = await transporter.sendMail(mensagem)
-    res.status(200).json({message: 'E-mail enviado com sucesso!'})
-    console.log(info)
-  } catch (err) {
-    res.status(500).json({message: 'Ocorreu um erro ao enviar o e-mail'})
-    console.log(err)
-  }
+  transporter.sendMail(mensagem, (err, info) => {
+    if (err) {
+      res.status(500).json({message: 'Ocorreu um erro ao enviar o e-mail'})
+      console.log(err)
+    } else {
+      res.status(200).json({message: 'E-mail enviado com sucesso!'})
+      console.log(info)
+    }
+  })
 }
