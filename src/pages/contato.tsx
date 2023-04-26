@@ -10,8 +10,8 @@ import {
   minCaracteresTexto,
 } from '@/infrastructure/constantes'
 import errosValidacao from '@/infrastructure/erros/validacao'
-import {abreUrlExternaEmNovaAba} from '@/infrastructure/funcoes'
 import {buscaAsset} from '@/infrastructure/requisicoes/asset'
+import {enviarEmail} from '@/infrastructure/requisicoes/enviarEmail'
 import {LayoutPaginasSite} from '@/layouts/LayoutPaginasSite'
 import conteudoTexto from '@/resources/conteudoTexto'
 import cores from '@/resources/cores'
@@ -22,6 +22,8 @@ import {useFormik} from 'formik'
 import {GetStaticProps, InferGetStaticPropsType} from 'next'
 import {isEmpty} from 'ramda'
 import {FormEvent} from 'react'
+import {ToastContainer, ToastOptions, toast} from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
 import * as Yup from 'yup'
 
 //TODO: Configurar envio de email com sendgrid
@@ -31,6 +33,22 @@ export default function Contato({
 }: InferGetStaticPropsType<typeof getStaticProps>) {
   const [texturaVinho] = imagensContato
   const {textoContato, botaoContato} = conteudoTexto
+
+  const opcoesToast: ToastOptions = {
+    position: 'bottom-right',
+    autoClose: 5000,
+    hideProgressBar: false,
+    closeOnClick: true,
+    pauseOnHover: true,
+    draggable: true,
+    progress: undefined,
+    theme: 'light',
+  }
+
+  const disparaFeedbackPositivo = (mensagem: string) =>
+    toast.success('💌 ' + mensagem, opcoesToast)
+  const disparaFeedbackNegativo = (erro: string) =>
+    toast.error('❌ ' + erro, opcoesToast)
 
   const formik = useFormik<FormularioContatoTipo>({
     initialValues: {
@@ -66,16 +84,18 @@ export default function Contato({
         )
         .required(errosValidacao.campoObrigatorio),
     }),
-    onSubmit: async ({nome, cidade, organizacao, conteudoMensagem}) => {
-      const templateCorpoEmail = `Olá, Denise! Tudo bem? \n\nMe chamo ${nome}, resido na cidade de ${cidade}.${
-        organizacao && '\n\nTrabalho na empresa ' + organizacao + '.'
-      } \n\n ${conteudoMensagem}`
-
-      const mailTo = `mailto:Denise Ferreira?subject=Contato%20Denise%20Ferreira&body=${templateCorpoEmail}`
-
-      abreUrlExternaEmNovaAba(mailTo)
-    },
     validateOnChange: true,
+    onSubmit: (dados, helpers) => {
+      enviarEmail(dados)
+        .then((resposta) => {
+          disparaFeedbackPositivo(resposta.data.message)
+          helpers.resetForm()
+        })
+        .catch((error) => {
+          disparaFeedbackNegativo(error.data.message)
+        })
+        .finally(() => helpers.setSubmitting(false))
+    },
   })
 
   const acionaEnvioDeEmail = (evento: FormEvent<HTMLFormElement>) => {
@@ -172,9 +192,10 @@ export default function Contato({
               aoClicar={formik.handleSubmit}
               ariaLabel={botaoContato.ariaLabel}
               desabilitado={!isEmpty(formik.errors)}>
-              {botaoContato.texto}
+              {formik.isSubmitting ? 'Carregando...' : botaoContato.texto}
             </S.BotaoEnviarMensagemContato>
           </S.FormularioContato>
+          <ToastContainer />
         </Container>
       </ContainerConteudo>
     </LayoutPaginasSite>

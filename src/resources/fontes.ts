@@ -1,6 +1,6 @@
 import {ChaveValor} from '@/data/tipos'
-import {Barlow} from '@next/font/google'
-import {NextFont} from '@next/font'
+import {NextFont} from 'next/dist/compiled/@next/font'
+import {Barlow} from 'next/font/google'
 
 const barlowLight = Barlow({
   style: 'normal',

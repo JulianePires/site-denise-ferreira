@@ -23,7 +23,7 @@ export function Erro({codigo, mensagem, largura}: Props) {
 
   const reqTexturaVinho = buscaAsset(idTexturaVinho)
 
-  function atualizaImagemFundo() {
+  useEffect(() => {
     reqTexturaVinho.then((resposta) => {
       const {status, dados} = resposta
       const imagem = dados.asset as Asset
@@ -32,10 +32,6 @@ export function Erro({codigo, mensagem, largura}: Props) {
         setImagemFundo(imagem.url)
       }
     })
-  }
-
-  useEffect(() => {
-    atualizaImagemFundo()
   }, [reqTexturaVinho])
 
   return (
@@ -43,14 +39,13 @@ export function Erro({codigo, mensagem, largura}: Props) {
       largura={largura}
       padding={`${margens.xxxlarge}px ${margens.xxxlarge}px`}
       imagemFundo={imagemFundo}
-      justificar='center'
-      altura='650px'
-    >
+      justificar="center"
+      altura="650px">
       <S.ImagemErro
         animationData={error}
         alt="Mulher com as mãos erguidas em um gesto de confusão por encontrar um erro em seu computador"
       />
-      <Stack direcao={Direcoes.V} gap="1rem" alinhar='center'>
+      <Stack direcao={Direcoes.V} gap="1rem" alinhar="center">
         <Titulo>{codigo}</Titulo>
         <Texto tamanho={TamanhosTexto.M}>{mensagem}</Texto>
       </Stack>

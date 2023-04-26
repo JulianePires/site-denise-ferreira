@@ -6,7 +6,8 @@ interface Props {
   postagens: Post[]
 }
 
-export function PostagensDashboard({postagens}: Props) {
+export function PostagensDashboard(props: Props) {
+  console.log(props)
   return (
     <LayoutDashboard titulo="Postagens">
       <ContainerPostagens>Alguma coisa</ContainerPostagens>

@@ -5,3 +5,4 @@ metro.config.js
 react-native.config.js
 /node_modules/
 /coverage/
+/src/pages/_document.tsx

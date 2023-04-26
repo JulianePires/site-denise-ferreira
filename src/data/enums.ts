@@ -18,6 +18,7 @@ export enum OpcoesParametroDashboard {
 }
 
 export enum TamanhosComponente {
+  PP = 60,
   P = 120,
   M = 200,
   G = 300,
