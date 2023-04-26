@@ -1,4 +1,4 @@
-import {useState} from 'react'
+import {useCallback, useState} from 'react'
 import {ContainerPilula, NomePilula} from './Pilula.styled'
 
 interface Props {
@@ -10,18 +10,14 @@ interface Props {
 export function Pilula({nome, valor, aoClicar}: Props) {
   const [ativa, setAtiva] = useState(false)
 
-  // function alteraEstadoAtiva() {
-  //   setAtiva(!ativa)
-  // }
-
-  // const aoClicarNaPilula = useCallback(() => {
-  //   aoClicar && aoClicar(valor)
-  //   alteraEstadoAtiva()
-  // }, [])
+  const aoClicarNaPilula = useCallback(() => {
+    aoClicar && aoClicar(valor)
+    setAtiva(!ativa)
+  }, [aoClicar, ativa, valor])
 
   return (
     <ContainerPilula
-      // onClick={aoClicarNaPilula}
+      onClick={aoClicarNaPilula}
       ativa={String(ativa)}>
       <NomePilula>{nome.slice(0, 18)}</NomePilula>
     </ContainerPilula>

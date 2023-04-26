@@ -10,7 +10,7 @@ interface CorpoRequisicao {
   conteudoMensagem: string
 }
 
-export default async (req: NextApiRequest, res: NextApiResponse) => {
+const Handler = async (req: NextApiRequest, res: NextApiResponse) => {
   const {nome, email, cidade, organizacao, conteudoMensagem} =
     req.body as CorpoRequisicao
 
@@ -129,10 +129,10 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
   transporter.sendMail(mensagem, (err, info) => {
     if (err) {
       res.status(500).json({message: 'Ocorreu um erro ao enviar o e-mail'})
-      console.log(err)
     } else {
       res.status(200).json({message: 'E-mail enviado com sucesso!'})
-      console.log(info)
     }
   })
 }
+
+export default Handler
