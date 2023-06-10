@@ -13,7 +13,7 @@ export function InformacoesPessoais({nome, imagem}: Props) {
       <Avatar
         src={imagem}
         alt="Imagem de perfil do usuario logado"
-        tamanho={TamanhosComponente.M}
+        tamanho={TamanhosComponente.P}
       />
       <S.Nome>Olá, {nome}!</S.Nome>
     </S.ContainerInformacoesPessoais>

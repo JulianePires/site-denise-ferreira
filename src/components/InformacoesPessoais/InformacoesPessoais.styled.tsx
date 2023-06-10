@@ -9,4 +9,5 @@ export const ContainerInformacoesPessoais = styled.div`
 
 export const Nome = styled.p`
   color: ${cores.terra};
+  margin: 1rem 0;
 `

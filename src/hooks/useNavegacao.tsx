@@ -18,10 +18,16 @@ const useNavegacao = () => {
     router.push(rotaCategoria)
   }
 
+  const navegarParaEdicaoDePost = (id: string) => {
+    const rotaEdicaoPost = Rotas.EDITARPOST.replace(':pid', id)
+    router.push(rotaEdicaoPost)
+  }
+
   return {
     navegarParaRota,
     navegarParaPostPorSlug,
     navegarParaCategoriaPorNome,
+    navegarParaEdicaoDePost
   }
 }
 

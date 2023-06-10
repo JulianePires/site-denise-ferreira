@@ -167,6 +167,39 @@ export const BUSCA_POST_SLUG_QUERY = gql`
   }
 `
 
+export const BUSCA_POST_ID_QUERY = gql`
+  query BuscaPostPorId($id: String!) {
+    post(where: {id: $id}) {
+      createdAt
+      id
+      imagem
+      slug
+      subtitulo
+      titulo
+      categorias {
+        id
+        nome
+        slug
+      }
+      autor {
+        id
+        nome
+        email
+        foto
+        username
+      }
+      conteudo {
+        ... on Content {
+          body {
+            text
+          }
+        }
+      }
+      access
+    }
+  }
+`
+
 export async function buscaPosts() {
   const resposta = await cliente.query({
     query: BUSCA_POSTS_QUERY,
@@ -213,6 +246,17 @@ export async function buscaPostPorSlug(slug = '') {
   const resposta = await cliente.query({
     query: BUSCA_POST_SLUG_QUERY,
     variables: {slug},
+  })
+
+  const respostaTratada = trataRespostaRequisicao(resposta)
+
+  return respostaTratada
+}
+
+export async function buscaPostPorId(id = '') {
+  const resposta = await cliente.query({
+    query: BUSCA_POST_ID_QUERY,
+    variables: {id},
   })
 
   const respostaTratada = trataRespostaRequisicao(resposta)

@@ -6,6 +6,10 @@ const opcoesMenuDashboard: OpcaoMenu[] = [
     caminho: 'postagens',
   },
   {
+    nome: 'Editar Post',
+    caminho: 'postagem/{pid}'
+  },
+  {
     nome: 'Criar Postagem',
     caminho: 'criarPostagem',
   },

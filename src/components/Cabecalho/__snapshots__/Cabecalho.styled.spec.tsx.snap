@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Estilo do Cabeçalho OpcaoMenu DEVE sublinha quando a propriedade atual for "true" 1`] = `
+.c0 {
+  font-family: fontFamily;
+  font-size: 18px;
+  line-height: 25px;
+  color: #ffffff;
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+  cursor: pointer;
+  -webkit-transition: 0.3s ease-in-out all;
+  transition: 0.3s ease-in-out all;
+}
+
+.c0:hover {
+  color: #FFD65C;
+}
+
+@media (min-width:768px) {
+  .c0 {
+    font-family: fontFamily;
+    font-size: 24px;
+  }
+}
+
+<li
+  className="c0"
+/>
+`;

@@ -1,6 +1,7 @@
 import cores from '@/resources/cores'
+import fontes from '@/resources/fontes'
 import margens from '@/resources/margens'
-import {titulo2} from '@/resources/textos'
+import {paragrafo, titulo2} from '@/resources/textos'
 import styled from 'styled-components'
 
 export const ContainerExternoLayout = styled.div`
@@ -24,6 +25,7 @@ export const ContainerInternoLayout = styled.section`
 
 export const TituloLayout = styled.h2`
   ${titulo2}
+  font-family: ${paragrafo.fontFamily};
   width: 100%;
   height: max-content;
 `

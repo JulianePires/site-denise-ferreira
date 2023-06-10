@@ -4,10 +4,10 @@ import 'jest-styled-components'
 
 describe('Estilo do Cabeçalho', () => {
   describe('OpcaoMenu', () => {
-    it('DEVE ter cor laranja quando a propriedade atual for "true"', () => {
+    it('DEVE sublinha quando a propriedade atual for "true"', () => {
       const tree = renderer.create(<OpcaoMenu atual="true" />).toJSON()
       expect(tree).toMatchSnapshot()
-      expect(tree).toHaveStyleRule('color', '#F36B2B')
+      expect(tree).toHaveStyleRule('text-decoration', 'underline')
     })
   })
 })

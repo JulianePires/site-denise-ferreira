@@ -52,8 +52,9 @@ export enum Rotas {
   CONTATO = '/contato',
   POST = '/posts/:slug',
   CATEGORIA = '/categorias/:nome',
-  DASHBOARD = '/dashboard',
-  ENVIAREMAIL = '/api/enviarEmail'
+  DASHBOARD = '/dashboard/postagens',
+  ENVIAREMAIL = '/api/enviarEmail',
+  EDITARPOST = '/dashboard/postagem/:pid'
 }
 
 export enum OpcoesMenuTab {

@@ -1,14 +1,16 @@
+import {StatusRequisicao} from '@/data/enums'
 import {RespostaRequisicao, Tema, TemasCores} from '@/data/tipos'
 import cores from '@/resources/cores'
-import {StatusRequisicao} from 'src/data/enums'
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
-export function trataRespostaRequisicao(resposta: any): RespostaRequisicao {
-  const respostaFinal = resposta ? resposta : {
-    loading: false,
-    error: {},
-    data: {}
-  }
+export function trataRespostaRequisicao(resposta?: any): RespostaRequisicao {
+  const respostaFinal = resposta
+    ? resposta
+    : {
+      loading: false,
+      error: {},
+      data: {},
+    }
   const {loading, error, data} = respostaFinal
 
   if (loading) {

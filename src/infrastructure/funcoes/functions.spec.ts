@@ -15,4 +15,16 @@ describe('Função trataRespostaRequisicao', () => {
 
     expect(respostaTratada.status).toBe(StatusRequisicao.CARREGANDO)
   })
+
+  it('DEVE retornar resposta padrão quando resposta nula for passada por parâmetro', ()=>{
+    const respostaPadrao = {
+      dados: {},
+      status: StatusRequisicao.SUCESSO,
+      erro: ''
+    }
+
+    const respostaTratada = trataRespostaRequisicao()
+
+    expect(respostaTratada).toStrictEqual(respostaPadrao)
+  })
 })

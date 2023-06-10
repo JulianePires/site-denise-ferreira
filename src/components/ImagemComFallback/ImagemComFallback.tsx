@@ -34,6 +34,7 @@ export function ImagemComFallback({src, alt, fallback = '', ...rest}: Props) {
       alt={useFallback ? 'Imagem não encontrada' : alt}
       {...rest}
       loading="lazy"
+      data-testid="componente-imagem"
       onError={() => {
         setUseFallback(true)
       }}
